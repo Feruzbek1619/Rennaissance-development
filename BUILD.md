@@ -99,18 +99,18 @@ Node-id для `get_design_context`.
 
 ## Build Progress
 
-**Текущий этап:** Stage 2 — Home (`314:2857`), секция за секцией. Готово: Hero. Дальше: Stats → Почему-нас → Проекты → … По просьбе Feruz приоритет = Home точ-в-точ.
+**Текущий этап:** Stage 8 COMPLETE — все страницы манифеста собраны.
 
 - [x] Stage 0 — Scaffold + tokens + fonts
-- [~] Stage 1 — Base components (Navigation ✓, Top header ✓, Button ✓, Footer ✓, Service Card ✓, Form-карточка ✓ — полная green-секция с иллюстрацией отложена)
-- [ ] Stage 2 — Home (Hero ✓ · Stats ⃞ · Почему-нас ⃞ · Проекты ⃞ · В компании ⃞ · Вам-нужна-помощь ⃞ · Партнёры ⃞ · Производство ⃞ · FAQ ⃞ · Процесс ⃞ · Контакты ⃞)
-- [ ] Stage 3 — Projects + Project details
-- [ ] Stage 4 — About + Services + Services details
-- [ ] Stage 5 — Request Quote + Modals
-- [ ] Stage 6 — FAQ + Process + B2B
-- [ ] Stage 7 — Blog + Blog Details
-- [ ] Stage 8 — Privacy + Terms + Errors
-- [ ] Stage 9 — Animations pass
+- [x] Stage 1 — Base components (Navigation, TopHeader, Button, Footer, ServiceCard, Form)
+- [x] Stage 2 — Home (все секции: Hero, Stats, WhyUs, Projects, About, NeedHelp, Partners, Production, FAQ, Process, Contact)
+- [x] Stage 3 — Quote (`/quote`) — hero + form + map + contact cards + stats + FAQ
+- [x] Stage 4 — About (`/about`) — hero + company desc + team + stats + production + partners + why-us + NeedHelp + FAQ + projects grid
+- [x] Stage 5 — FAQ (`/faq`) — hero + accordion + extended NeedHelp form
+- [x] Stage 6 — B2B (`/b2b`) — hero + UTB description + products + FAQ + contact cards + NeedHelp
+- [x] Stage 7 — NotFound (404) + Privacy (`/privacy`) + Terms (`/terms`)
+- [x] Stage 8 — Services (`/services`) + ServiceDetails (`/services/:slug`) + Process (`/process`) + Blog (`/blog`) + BlogDetails (`/blog/:slug`) + data files (`services.ts`, `blog.ts`)
+- [ ] Stage 9 — Animations pass (Framer Motion)
 
 ---
 
@@ -179,6 +179,25 @@ Node-id для `get_design_context`.
 **Иконки:** ChevronLeft/Right (карусель).
 - `src/components/home/Hero.tsx` (332:5981): заголовок 134.7px + описание/2 кнопки (w-574) + фото 1720×800 (`hero-alandalus.png`) с круглыми стрелками карусели. pt-82 под навигацией.
 **Проверено @1920:** совпадает с Figma; build green.
+
+### Stage 8 — Services, ServiceDetails, Process, Blog, BlogDetails
+**Добавлено:**
+- `src/data/services.ts` — тип `Service` + массив 4 услуг (жилые комплексы, коммерческая, производство, проектирование). Поля: slug, title, category, description, longDescription, image, stats[4], features[6].
+- `src/data/blog.ts` — тип `BlogPost` + массив 6 постов с русскоязычным контентом о строительстве. Поля: slug, title, category, date, excerpt, content, image, readTime.
+- `src/pages/Services.tsx` — `/services`: hero primary (dark bg, "MASTERING THE ART OF STRUCTURAL PRECISION.") + accordion всех услуг (номер/категория/название → expand: описание + features grid 2-col + изображение + ссылка) + preview процесса (3 карточки) + FAQSection + NeedHelpSection.
+- `src/pages/ServiceDetails.tsx` — `/services/:slug`: hero + breadcrumb + dark stats row (4 числа) + описание/фото 2-col + process steps (4 карточки) + related projects (3 ProjectCard) + FAQSection + NeedHelpSection. NotFound при неизвестном slug.
+- `src/pages/Process.tsx` — `/process`: hero primary "STRATEGIC EXECUTION." + 3 чередующихся блока (фото слева/справа, большой номер, описание, features 2-col) + stats strip (primary bg) + FAQSection + NeedHelpSection.
+- `src/pages/Blog.tsx` — `/blog`: hero primary "NEWS, INSIGHTS & ARTICLES" + фильтры-кнопки по категориям + grid 3-col BlogCard (изображение/категория/заголовок/excerpt/дата) + pagination + NeedHelpSection.
+- `src/pages/BlogDetails.tsx` — `/blog/:slug`: hero с фоном-изображением (opacity 30% + gradient) + article (полное изображение + текст параграфами + теги) + sticky sidebar (О компании card/navy, разделы nav, CTA card) + related articles (3 карточки) + NeedHelpSection. NotFound при неизвестном slug.
+- `src/router.tsx` — добавлены роуты `/services`, `/services/:slug`, `/process`, `/blog`, `/blog/:slug`.
+
+**Паттерны/решения:**
+- `ProjectCard` экспортируется как named export `{ ProjectCard }` — не default. Импортировать только через `{ ProjectCard }`.
+- BlogCard и related-articles — inline-компоненты внутри страниц (не выносить в отдельный файл — используются только там).
+- Контент блога — оригинальный, про строительство в Узбекистане (не шаблонный Solidus).
+- Services accordion: нумерация 01–04, категория как подзаголовок, expand показывает longDescription + features grid.
+
+**Проверено (preview):** все 5 страниц рендерятся, навигация работает, 404 для неизвестных slug работает.
 
 ---
 

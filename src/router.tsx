@@ -7,12 +7,15 @@ import Quote from './pages/Quote'
 import About from './pages/About'
 import FAQ from './pages/FAQ'
 import B2B from './pages/B2B'
+import Services from './pages/Services'
+import ServiceDetails from './pages/ServiceDetails'
+import Process from './pages/Process'
+import Blog from './pages/Blog'
+import BlogDetails from './pages/BlogDetails'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import NotFound from './pages/NotFound'
 
-// Route table grows per build stage (see Build Brief → Page Manifest).
-// Stage 0 wires the shell + Home + catch-all 404; later stages add routes.
 export const router = createBrowserRouter([
   {
     element: <RootLayout />,
@@ -24,6 +27,11 @@ export const router = createBrowserRouter([
       { path: '/about', element: <About /> },
       { path: '/faq', element: <FAQ /> },
       { path: '/b2b', element: <B2B /> },
+      { path: '/services', element: <Services /> },
+      { path: '/services/:slug', element: <ServiceDetails /> },
+      { path: '/process', element: <Process /> },
+      { path: '/blog', element: <Blog /> },
+      { path: '/blog/:slug', element: <BlogDetails /> },
       { path: '/privacy', element: <Privacy /> },
       { path: '/terms', element: <Terms /> },
       { path: '*', element: <NotFound /> },
