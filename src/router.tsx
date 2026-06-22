@@ -3,6 +3,7 @@ import RootLayout from './layouts/RootLayout'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import ProjectDetails from './pages/ProjectDetails'
+import Quote from './pages/Quote'
 import NotFound from './pages/NotFound'
 
 // Route table grows per build stage (see Build Brief → Page Manifest).
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/projects', element: <Projects /> },
       { path: '/projects/:slug', element: <ProjectDetails /> },
+      { path: '/quote', element: <Quote /> },
       { path: '*', element: <NotFound /> },
     ],
   },
