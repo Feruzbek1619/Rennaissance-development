@@ -6,6 +6,7 @@ import ProjectDetails from './pages/ProjectDetails'
 import Quote from './pages/Quote'
 import About from './pages/About'
 import FAQ from './pages/FAQ'
+import B2B from './pages/B2B'
 import NotFound from './pages/NotFound'
 
 // Route table grows per build stage (see Build Brief → Page Manifest).
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
       { path: '/quote', element: <Quote /> },
       { path: '/about', element: <About /> },
       { path: '/faq', element: <FAQ /> },
+      { path: '/b2b', element: <B2B /> },
       { path: '*', element: <NotFound /> },
     ],
   },
