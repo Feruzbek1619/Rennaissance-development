@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import RootLayout from './layouts/RootLayout'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
+import ProjectDetails from './pages/ProjectDetails'
 import NotFound from './pages/NotFound'
 
 // Route table grows per build stage (see Build Brief → Page Manifest).
@@ -12,6 +13,7 @@ export const router = createBrowserRouter([
     children: [
       { path: '/', element: <Home /> },
       { path: '/projects', element: <Projects /> },
+      { path: '/projects/:slug', element: <ProjectDetails /> },
       { path: '*', element: <NotFound /> },
     ],
   },
