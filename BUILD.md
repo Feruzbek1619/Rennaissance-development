@@ -99,10 +99,10 @@ Node-id для `get_design_context`.
 
 ## Build Progress
 
-**Текущий этап:** Stage 1 — Base components (следующий).
+**Текущий этап:** Stage 1 — Base components (в работе). Готово: shell (Button, Top header, Navigation). Осталось: Footer, Service Card, Form.
 
 - [x] Stage 0 — Scaffold + tokens + fonts
-- [ ] Stage 1 — Base components (Navigation, Top header, Button, Footer, Service Card, Form)
+- [ ] Stage 1 — Base components (Navigation ✓, Top header ✓, Button ✓, Footer ⃞, Service Card ⃞, Form ⃞)
 - [ ] Stage 2 — Home (`314:2857`)
 - [ ] Stage 3 — Projects + Project details
 - [ ] Stage 4 — About + Services + Services details
@@ -136,11 +136,29 @@ Node-id для `get_design_context`.
 **Решения / заметки:**
 - npm audit: 2 issues (esbuild dev-server, moderate+high) — транзитивно через Vite, **только dev**, фикс = `vite@8` (breaking). Оставлено на Vite 5, не апгрейдим.
 - h1–h4 типошкалы в токенах нет — читать из фреймов (см. Gap выше).
+- ⚠️ Tailwind config-изменения требуют **рестарта dev-сервера** — JIT иногда не подхватывает новые токены/утилиты на лету (ловили: новые классы рендерились «прозрачными»). После правки `tailwind.config.js` — перезапуск preview.
+
+### Stage 1 — Base components (часть 1: shell)
+**Добавлено:**
+- **Fonts:** Vela Sans (Figma) → self-hosted `@fontsource/manrope` (OFL-база Vela Sans). Импорт весов 400/500/600/700/800 в `main.tsx`. Токен `font-vela` = `['Vela Sans','Manrope','sans-serif']` — настоящие Vela-файлы можно положить в `public/fonts` под семейством "Vela Sans" и они переопределят. Poppins/Instrument Sans пока через Google Fonts `<link>`.
+- **Tokens (расширение):** `dark #131612` (Main/Dark — тёмная плашка), `green #62AD5A` (Main/Green — контакт-иконки + green-форма), `bg.active #E3EBF1` (актив-таб навигации). Прозрачности — через `/60`, `/40`, `/10` (Tailwind opacity), не отдельные токены (Figma «White 60/40/10»).
+- **Assets:** `public/logo.svg` (RENAISSANCE DEVELOPMENT, 303.922×76, vector). Иконки — inline SVG в `src/components/icons.tsx` (ArrowUpRight ↗, Phone, ChevronDown, Instagram, FlagRU, Spinner), без Figma-asset-URL (те истекают за 7 дней).
+
+**Компоненты (переиспользовать):**
+- `src/lib/cn.ts` — join классов (вместо clsx).
+- `src/components/Container.tsx` — `max-w-[1920px] + xl:px-[100px]` ⇒ контент-колонка 1720 / гаттеры 100 при 1920 (точно по Figma), сужается на мелких экранах. **Все секции оборачивать в `<Container>`.**
+- `src/components/Button.tsx` — pill + arrow-circle. Варианты: `accent` (CTA оранж), `white`, `outline` (на тёмном; hover → заливка white). Размеры: `lg` (nav/hero: pl32 pr16 py16, lh1.4, h≈60), `md` (карточки «Show Details»: pl24 pr12 py12, lh1.6). Состояния: default/hover/active/disabled/loading(spinner). Рендерится как `<Link to>` / `<a href>` / `<button>`. ⚠️ hover/active для `accent`/`white` — разумные дефолты (#E85F00/#D65800), в Figma не заданы.
+- `src/components/layout/TopHeader.tsx` (Figma 7803:24664) — `bg-dark`, `font-vela`, зелёные иконки, правые ссылки `white/60`. h-42.
+- `src/components/layout/Navigation.tsx` (Figma 129:4743) — лого + пилюля-меню (актив `bg-bg-active`) + дропдаун «Каталог объектов» (проекты) + телефон + divider + CTA. h-108. NavLink для актив-состояний.
+- Оба врезаны в `RootLayout`. Sticky пока нет (по дизайну static).
+
+**Проверено (preview @1920, inspect):** top-header bg `#131612`✓, актив-таб `#E3EBF1`✓, CTA `#FF6701`/h60✓, шрифты✓, консоль чистая.
 
 ---
 
 ## Открытые вопросы (не блокируют)
 1. Дубли `Design` ↔ `Component` (Project details, About, FAQ, Request Quote) — берём версию с `Design`.
-2. Второй оранж `#FF9500` и зелёный `#62AD5A` — пока не в токенах; подтвердить оставить/дроп.
+2. ✅ РЕШЕНО (Feruz): зелёный `#62AD5A` — оставлен (контакт-иконки + green-форма «Обращение к директору»). Vela Sans — self-host (взят Manrope, OFL-база). Остаётся открытым только `#FF9500` (второй оранж) — пока не встречался, держим дропнутым до появления.
 3. 4 безымянных фрейма 1727×759 на `Design` + 3 «Modal» — назначение (слайды героя? quote/contact/success модалки?).
-4. Routes — структура из манифеста принята.
+4. Routes — структура из манифеста принята. «Контакты» в навигации → `/contacts` (в манифесте отдельной страницы нет — placeholder).
+5. **Footer** в списке компонентов нет node-id; в метаданных Home явного футера не видно (последние секции — Contact-cards + 2 «Main container»-инстанса 7825:3043/7825:3064). Надо локализовать узел футера перед сборкой.
