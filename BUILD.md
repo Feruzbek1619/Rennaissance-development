@@ -99,10 +99,10 @@ Node-id для `get_design_context`.
 
 ## Build Progress
 
-**Текущий этап:** Stage 1 — Base components (в работе). Готово: shell (Button, Top header, Navigation). Осталось: Footer, Service Card, Form.
+**Текущий этап:** Stage 1 — Base components (в работе). Готово: shell + Footer + Service Card. Осталось: Form (green/Vela).
 
 - [x] Stage 0 — Scaffold + tokens + fonts
-- [ ] Stage 1 — Base components (Navigation ✓, Top header ✓, Button ✓, Footer ⃞, Service Card ⃞, Form ⃞)
+- [ ] Stage 1 — Base components (Navigation ✓, Top header ✓, Button ✓, Footer ✓, Service Card ✓, Form ⃞)
 - [ ] Stage 2 — Home (`314:2857`)
 - [ ] Stage 3 — Projects + Project details
 - [ ] Stage 4 — About + Services + Services details
@@ -153,6 +153,21 @@ Node-id для `get_design_context`.
 - Оба врезаны в `RootLayout`. Sticky пока нет (по дизайну static).
 
 **Проверено (preview @1920, inspect):** top-header bg `#131612`✓, актив-таб `#E3EBF1`✓, CTA `#FF6701`/h60✓, шрифты✓, консоль чистая.
+
+### Stage 1 — Base components (часть 2: Service Card + Footer)
+**Добавлено:**
+- `src/components/ServiceCard.tsx` (Figma 42:885/45:141) — горизонтальная строка-услуга: заголовок (Instrument Sans 39) + описание (Poppins 16, `text-muted`) + чеклист (CheckCircle + Instrument Sans 20) + outline-кнопка «Show Details» + повёрнутое фото (−6°, absolute). **Прозрачная**, рассчитана на тёмную секцию. ⚠️ Визуальная сверка отложена до первого монтирования (Stage 4 Services) — на странице пока не используется.
+- `src/components/layout/Footer.tsx` (Figma 7802:10788) — bg `ink`(#000): CTA-заголовок + white-кнопка «Оставить заявку», 4 колонки (бренд+tagline / Навигация / ПРОЕКТЫ / Контакты) с вертикальными divider (`border-l border-white/10`), нижняя строка (копирайт + соцсети-чипы + Dasta). Врезан в RootLayout.
+- Иконки: + `CheckCircle`, `MapPin`, `Telegram`.
+- Ассеты: `public/logo-stacked.svg` (вертикальное лого 256×253), `public/assets/dasta-icon.svg` + `dasta-word.svg`.
+- **Button `white`-вариант** перенастроен под футер: `bg-white text-ink` + белый круг + navy-стрелка (было navy-круг/white-стрелка — это теперь только hover у `outline`).
+
+**⚠️ Новые шрифты (подмена + флаг):**
+- Footer-заголовок «Начните жизнь…» — Figma `MTS Compact Bold 61` (проприетарный шрифт МТС, не лицензируем) → подменён на `font-heading` (Instrument Sans bold).
+- Копирайт/кредиты — Figma `Inter` → подменён на `font-body` (Poppins).
+- Решить с Feruz: оставляем подмены или тянем настоящие шрифты (MTS Compact платный).
+
+**Проверено (preview @1920):** footer — заголовок в 1 строку✓, 4 колонки без переносов✓, white-кнопка✓, build green, консоль чистая.
 
 ---
 

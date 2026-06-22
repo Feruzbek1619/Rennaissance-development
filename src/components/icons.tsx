@@ -54,6 +54,32 @@ export function FlagRU({ className }: IconProps) {
   )
 }
 
+export function CheckCircle({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="m8.5 12 2.4 2.4 4.6-5" />
+    </svg>
+  )
+}
+
+export function MapPin({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  )
+}
+
+export function Telegram({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M21.94 4.6 18.9 19.3c-.23 1.02-.84 1.27-1.7.79l-4.62-3.4-2.23 2.15c-.25.24-.46.45-.93.45l.33-4.7 8.57-7.74c.37-.33-.08-.52-.58-.19L7.16 13l-4.56-1.43c-.99-.3-1-.99.22-1.47l17.84-6.88c.82-.3 1.54.2 1.28 1.38Z" />
+    </svg>
+  )
+}
+
 export function Spinner({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">

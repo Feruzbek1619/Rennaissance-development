@@ -35,14 +35,14 @@ const sizeClasses: Record<Size, string> = {
 
 const variantClasses: Record<Variant, string> = {
   accent: 'bg-accent text-white hover:bg-[#E85F00] active:bg-[#D65800]',
-  white: 'bg-white text-primary hover:bg-bg-subtle active:bg-border',
+  white: 'bg-white text-ink hover:bg-bg-subtle active:bg-border',
   outline: 'border border-white text-white hover:bg-white hover:text-primary active:bg-bg-subtle',
 }
 
 // 28px arrow circle. Its text color drives the arrow color.
 const circleClasses: Record<Variant, string> = {
   accent: 'bg-white text-primary',
-  white: 'bg-primary text-white',
+  white: 'bg-white text-primary',
   outline: 'bg-white text-primary group-hover:bg-primary group-hover:text-white',
 }
 
