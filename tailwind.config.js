@@ -12,12 +12,14 @@ export default {
         white: '#FFFFFF',
         bg: { DEFAULT: '#FFFFFF', subtle: '#F0F3F5', grey: '#F2F2F7', active: '#E3EBF1' },
         border: '#E5E6E8',
-        muted: { DEFAULT: '#C4C4C4', text: '#6C757D' },
+        muted: { DEFAULT: '#C4C4C4', text: '#6C757D', field: '#959695', soft: '#8A8C8A' }, // field=Main/Grey placeholder, soft=Text/Secondary (dark form)
         secondary: '#737476',
       },
       fontFamily: {
-        heading: ['Instrument Sans', 'sans-serif'],
-        body: ['Poppins', 'sans-serif'],
+        // Instrument Sans + Poppins are Latin-only; Russian copy falls back to
+        // self-hosted Manrope (full Cyrillic, geometric) so it renders correctly.
+        heading: ['Instrument Sans', 'Manrope', 'sans-serif'],
+        body: ['Poppins', 'Manrope', 'sans-serif'],
         // Vela Sans (Figma) → self-hosted Manrope, its OFL base. Real Vela files
         // can be dropped into public/fonts under the "Vela Sans" family to override.
         vela: ['Vela Sans', 'Manrope', 'sans-serif'],

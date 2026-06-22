@@ -99,11 +99,11 @@ Node-id для `get_design_context`.
 
 ## Build Progress
 
-**Текущий этап:** Stage 1 — Base components (в работе). Готово: shell + Footer + Service Card. Осталось: Form (green/Vela).
+**Текущий этап:** Stage 2 — Home (`314:2857`), секция за секцией. Готово: Hero. Дальше: Stats → Почему-нас → Проекты → … По просьбе Feruz приоритет = Home точ-в-точ.
 
 - [x] Stage 0 — Scaffold + tokens + fonts
-- [ ] Stage 1 — Base components (Navigation ✓, Top header ✓, Button ✓, Footer ✓, Service Card ✓, Form ⃞)
-- [ ] Stage 2 — Home (`314:2857`)
+- [~] Stage 1 — Base components (Navigation ✓, Top header ✓, Button ✓, Footer ✓, Service Card ✓, Form-карточка ✓ — полная green-секция с иллюстрацией отложена)
+- [ ] Stage 2 — Home (Hero ✓ · Stats ⃞ · Почему-нас ⃞ · Проекты ⃞ · В компании ⃞ · Вам-нужна-помощь ⃞ · Партнёры ⃞ · Производство ⃞ · FAQ ⃞ · Процесс ⃞ · Контакты ⃞)
 - [ ] Stage 3 — Projects + Project details
 - [ ] Stage 4 — About + Services + Services details
 - [ ] Stage 5 — Request Quote + Modals
@@ -168,6 +168,17 @@ Node-id для `get_design_context`.
 - Решить с Feruz: оставляем подмены или тянем настоящие шрифты (MTS Compact платный).
 
 **Проверено (preview @1920):** footer — заголовок в 1 строку✓, 4 колонки без переносов✓, white-кнопка✓, build green, консоль чистая.
+
+### Stage 1 — часть 3: Form-карточка (отложена в пользу Home)
+- `src/components/form/{TextField,TextArea}.tsx` + `src/components/Form.tsx` (Figma 7768:2830) — green-форма «Обращение к директору»: Vela-поля white/10, зелёная кнопка, соцсети. Карточка собрана, но **полная декоративная секция** (иллюстрация `public/assets/director-illustration.png`, свечения, watermark — скачаны) ещё не смонтирована. Feruz переключил на Home — вернёмся к green-секции на её странице.
+- Токены: `muted.field #959695`, `muted.soft #8A8C8A`. Иконка Facebook.
+
+### Stage 2 — Home → Hero
+**Шрифты (важно):** Poppins и Instrument Sans **без кириллицы** → добавлен fallback на самохостед-Manrope в `font-heading`/`font-body`. Русский текст рендерится в Manrope. Display-заголовки в Figma — `MTS Compact` (проприетарный МТС) → подмена на `font-heading`. Описание hero в Figma — Arial (несетевой дефолт) → `font-body`.
+**Button — новые варианты:** `primary` (navy-заливка, белый круг+navy-стрелка), `outlineLight` (navy-обводка на светлом; круг navy+white-стрелка, hover-заливка navy). Hero-кнопки: `!px-8` (симметричный px-32 вместо lg pl32/pr16).
+**Иконки:** ChevronLeft/Right (карусель).
+- `src/components/home/Hero.tsx` (332:5981): заголовок 134.7px + описание/2 кнопки (w-574) + фото 1720×800 (`hero-alandalus.png`) с круглыми стрелками карусели. pt-82 под навигацией.
+**Проверено @1920:** совпадает с Figma; build green.
 
 ---
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { cn } from '@/lib/cn'
 import { ArrowUpRight, Spinner } from '@/components/icons'
 
-type Variant = 'accent' | 'outline' | 'white'
+type Variant = 'accent' | 'primary' | 'outline' | 'outlineLight' | 'white'
 type Size = 'md' | 'lg'
 
 type ButtonProps = {
@@ -35,15 +35,19 @@ const sizeClasses: Record<Size, string> = {
 
 const variantClasses: Record<Variant, string> = {
   accent: 'bg-accent text-white hover:bg-[#E85F00] active:bg-[#D65800]',
+  primary: 'bg-primary text-white hover:bg-[#0A2236] active:bg-[#081B2B]',
   white: 'bg-white text-ink hover:bg-bg-subtle active:bg-border',
   outline: 'border border-white text-white hover:bg-white hover:text-primary active:bg-bg-subtle',
+  outlineLight: 'border border-primary text-primary hover:bg-primary hover:text-white',
 }
 
 // 28px arrow circle. Its text color drives the arrow color.
 const circleClasses: Record<Variant, string> = {
   accent: 'bg-white text-primary',
+  primary: 'bg-white text-primary',
   white: 'bg-white text-primary',
   outline: 'bg-white text-primary group-hover:bg-primary group-hover:text-white',
+  outlineLight: 'bg-primary text-white group-hover:bg-white group-hover:text-primary',
 }
 
 export function Button({
