@@ -71,7 +71,7 @@ export default function Footer() {
         <div className="pb-10 pt-[97px]">
           {/* CTA */}
           <div className="flex items-center justify-between gap-10">
-            <h2 className="whitespace-nowrap font-heading text-[61px] font-bold uppercase leading-[1.3] text-bg-subtle">
+            <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-bg-subtle shrink min-w-0">
               Начните жизнь в доме своей мечты
             </h2>
             <Button to="/quote" variant="white" size="lg" className="shrink-0">

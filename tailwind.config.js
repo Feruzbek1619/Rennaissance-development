@@ -16,9 +16,7 @@ export default {
         secondary: '#737476',
       },
       fontFamily: {
-        // Instrument Sans + Poppins are Latin-only; Russian copy falls back to
-        // self-hosted Manrope (full Cyrillic, geometric) so it renders correctly.
-        heading: ['Instrument Sans', 'Manrope', 'sans-serif'],
+        heading: ['MTS Compact', 'Manrope', 'sans-serif'],
         body: ['Poppins', 'Manrope', 'sans-serif'],
         // Vela Sans (Figma) → self-hosted Manrope, its OFL base. Real Vela files
         // can be dropped into public/fonts under the "Vela Sans" family to override.

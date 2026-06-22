@@ -14,12 +14,12 @@ export default function Hero() {
               ALANDALUS
             </h1>
 
-            <div className="flex w-[574px] flex-col gap-12">
+            <div className="flex w-[574px] shrink min-w-0 flex-col gap-12">
               <p className="font-body text-[20px] leading-[1.6] text-primary">
                 Кирпич и монолит, потолки 3 метра, закрытый двор и паркинг под домом - в спокойном
                 зелёном квартале Яшнабада.
               </p>
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <Button to="/projects/alandalus" variant="primary" size="lg" className="!px-8">
                   Выбрать квартиру
                 </Button>

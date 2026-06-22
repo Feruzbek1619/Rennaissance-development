@@ -7,7 +7,7 @@ import { cn } from '@/lib/cn'
 const PHONE = '78-333-33-31'
 
 const linkBase =
-  'flex items-center justify-center rounded-md px-4 py-2 font-body text-body-md text-ink transition-colors'
+  'flex items-center justify-center rounded-md px-4 py-2 font-body text-body-md text-ink transition-colors whitespace-nowrap'
 
 const projects = [
   { label: 'ALANDALUS', to: '/projects/alandalus' },
@@ -32,7 +32,7 @@ export default function Navigation() {
   const catalogActive = pathname.startsWith('/projects')
 
   return (
-    <nav className="bg-white">
+    <nav className="bg-white overflow-x-hidden">
       <Container>
         <div className="flex h-[108px] items-center justify-between gap-8">
           <Link to="/" aria-label="Renaissance Development — на главную">
@@ -97,10 +97,10 @@ export default function Navigation() {
           </ul>
 
           {/* Contact + CTA */}
-          <div className="flex items-center gap-4">
+          <div className="flex shrink-0 items-center gap-4">
             <a href={`tel:${PHONE.replace(/\D/g, '')}`} className="flex items-center gap-4">
               <Phone className="size-6 text-primary" />
-              <span className="font-body text-body-sm text-primary">{PHONE}</span>
+              <span className="font-body text-body-sm text-primary whitespace-nowrap">{PHONE}</span>
             </a>
             <span className="h-[27px] w-px bg-border" />
             <Button to="/quote" variant="accent" size="lg">
