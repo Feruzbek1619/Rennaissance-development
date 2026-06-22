@@ -7,6 +7,8 @@ import Quote from './pages/Quote'
 import About from './pages/About'
 import FAQ from './pages/FAQ'
 import B2B from './pages/B2B'
+import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
 import NotFound from './pages/NotFound'
 
 // Route table grows per build stage (see Build Brief → Page Manifest).
@@ -22,6 +24,8 @@ export const router = createBrowserRouter([
       { path: '/about', element: <About /> },
       { path: '/faq', element: <FAQ /> },
       { path: '/b2b', element: <B2B /> },
+      { path: '/privacy', element: <Privacy /> },
+      { path: '/terms', element: <Terms /> },
       { path: '*', element: <NotFound /> },
     ],
   },
