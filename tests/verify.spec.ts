@@ -6,7 +6,7 @@ test('404 page renders illustration + back button', async ({ browser }) => {
   const errors: string[] = []
   page.on('console', (m) => m.type() === 'error' && errors.push(m.text()))
   page.on('response', (r) => r.status() >= 400 && !r.url().includes('favicon') && errors.push(`${r.status()} ${r.url()}`))
-  await page.goto('/some-missing-page', { waitUntil: 'networkidle' })
+  await page.goto('/some-missing-page', { waitUntil: 'domcontentloaded' })
   await page.evaluate(() => (document as any).fonts.ready)
   await page.waitForTimeout(400)
   await expect(page.getByRole('link', { name: /Вернуться на главную/ })).toBeVisible()
@@ -21,7 +21,7 @@ test('404 page renders illustration + back button', async ({ browser }) => {
 test('contacts route renders the contact page', async ({ browser }) => {
   const ctx = await browser.newContext({ viewport: { width: 1920, height: 1080 } })
   const page = await ctx.newPage()
-  await page.goto('/contacts', { waitUntil: 'networkidle' })
+  await page.goto('/contacts', { waitUntil: 'domcontentloaded' })
   await page.evaluate(() => (document as any).fonts.ready)
   await page.waitForTimeout(300)
   await expect(page.getByRole('heading', { name: /Наши контакты/i })).toBeVisible()
@@ -33,7 +33,7 @@ test('contacts route renders the contact page', async ({ browser }) => {
 test('nav Контакты link points to /contacts and works', async ({ browser }) => {
   const ctx = await browser.newContext({ viewport: { width: 1920, height: 1080 } })
   const page = await ctx.newPage()
-  await page.goto('/', { waitUntil: 'load' })
+  await page.goto('/', { waitUntil: 'domcontentloaded' })
   await page.waitForTimeout(200)
   const link = page.locator('nav').getByRole('link', { name: 'Контакты', exact: true }).first()
   const href = await link.getAttribute('href')

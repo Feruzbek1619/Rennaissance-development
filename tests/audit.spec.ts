@@ -75,9 +75,10 @@ for (const route of ROUTES) {
         } catch {}
       })
 
-      // 'load' (not 'networkidle') — live Instagram embeds keep the network
-      // busy and would otherwise stall networkidle past the timeout.
-      await page.goto(route.path, { waitUntil: 'load' })
+      // 'domcontentloaded' — live Instagram embeds (cross-origin iframes) keep
+      // the page's load/networkidle pending past the timeout; layout is ready
+      // after DOM + the settle wait below, so we don't need them.
+      await page.goto(route.path, { waitUntil: 'domcontentloaded' })
       await page.evaluate(() => (document as any).fonts.ready)
       await page.waitForTimeout(400)
 

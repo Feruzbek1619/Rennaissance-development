@@ -29,22 +29,17 @@ export default function WhyUsSection() {
           <div className="flex flex-col gap-10 w-full">
             <div className="grid grid-cols-4 gap-6 w-full">
               {reels.map((id) => (
-                <div key={id} className="relative h-[560px] overflow-hidden rounded-[10px] bg-black">
+                <div key={id} className="relative h-[480px] overflow-hidden rounded-[10px] bg-black">
+                  {/* iframe is taller than the tile and pulled up so the IG header
+                      (top) and the likes/comments footer (bottom) are clipped —
+                      only the video stays. Play works via the embed's own button. */}
                   <iframe
                     src={`https://www.instagram.com/reel/${id}/embed/`}
                     title={`Renaissance Development — reel ${id}`}
-                    className="absolute left-1/2 -translate-x-1/2 top-[-62px] w-full h-[820px] border-0"
+                    className="absolute left-1/2 -translate-x-1/2 top-[-58px] w-full h-[760px] border-0"
                     loading="lazy"
                     scrolling="no"
-                    allow="encrypted-media; clipboard-write; picture-in-picture; web-share"
-                  />
-                  {/* click anywhere on a tile opens the reel on Instagram */}
-                  <a
-                    href={`https://www.instagram.com/reel/${id}/`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Открыть reel в Instagram"
-                    className="absolute inset-0 z-10"
+                    allow="encrypted-media; clipboard-write; picture-in-picture; web-share; autoplay; fullscreen"
                   />
                 </div>
               ))}
