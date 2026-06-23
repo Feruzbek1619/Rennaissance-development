@@ -20,7 +20,8 @@ function PhoneIcon() {
 function MessengerIcon() {
   return (
     <svg viewBox="0 0 48 48" fill="none" className="size-12">
-      <path d="M8 6h32a2 2 0 0 1 2 2v24a2 2 0 0 1-2 2H14l-8 8V8a2 2 0 0 1 2-2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="6" y="10" width="36" height="28" rx="2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M7 12l17 13L41 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -118,44 +119,76 @@ export default function Quote() {
               </div>
             </div>
 
-            {/* Right: building image (Figma 7801:4056 — residential complex) */}
+            {/* Right: building image (Figma 7802:9364) */}
             <div className="flex-1 min-h-[600px] overflow-hidden relative">
               <img
-                src="/assets/project-botanika.png"
+                src="/assets/contacts-form.jpg"
                 alt="Жилой комплекс Renaissance Development"
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-black/50 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-[#00040b]/80 to-transparent" />
             </div>
           </div>
         </Container>
       </section>
 
-      {/* ── Full-width map ────────────────────────────────── */}
-      <section className="h-[667px] relative overflow-hidden bg-[#d9d9d9]">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-secondary">
-            <svg viewBox="0 0 24 24" fill="none" className="size-16 mx-auto mb-3">
-              <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
-              <path d="M20 12c0 8-8 13-8 13S4 20 4 12a8 8 0 0 1 16 0Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <p className="font-vela text-[16px] font-semibold">Ташкент, Мирзо-Улугбекский район</p>
+      {/* ── Map (Figma 7802:8515) — content-width, white frame, chip + zoom ── */}
+      <section className="bg-white pb-[30px]">
+        <Container>
+          <div className="bg-white p-[30px]">
+            <div className="relative h-[607px] overflow-hidden">
+              <img
+                src="/assets/contacts-map.jpg"
+                alt="Карта — г. Ташкент, Махтумкули"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+
+              {/* Address chip */}
+              <div className="absolute bottom-[18px] left-[18px] bg-white rounded-[15px] flex items-center gap-[15px] p-[15px] shadow-[0_12px_15px_rgba(0,0,0,0.12)]">
+                <div className="bg-[#e3eee2] rounded-[10px] p-3 shrink-0">
+                  <svg viewBox="0 0 24 24" fill="none" className="size-[30px]">
+                    <circle cx="12" cy="12" r="3" stroke="#131612" strokeWidth="1.5" />
+                    <path d="M20 12c0 8-8 13-8 13S4 20 4 12a8 8 0 0 1 16 0Z" stroke="#131612" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-vela text-[15px] text-[#8a8c8a] leading-[1.4]">Адрес объекта</p>
+                  <p className="font-vela text-[15px] font-bold text-[#131612] leading-[1.4]">г. Ташкент, Махтумкули, 100116,</p>
+                  <p className="font-vela text-[15px] font-bold text-[#131612] leading-[1.4]">Республика Узбекистан</p>
+                </div>
+              </div>
+
+              {/* Zoom controls */}
+              <div className="absolute bottom-[25px] right-[25px] flex flex-col gap-[15px]">
+                {[
+                  { label: 'Приблизить', path: 'M12 5v14M5 12h14' },
+                  { label: 'Отдалить', path: 'M5 12h14' },
+                ].map((b) => (
+                  <button
+                    key={b.label}
+                    type="button"
+                    aria-label={b.label}
+                    className="size-10 bg-white rounded-[10px] shadow-[0_12px_15px_rgba(0,0,0,0.12)] flex items-center justify-center text-[#131612] hover:bg-bg-subtle transition-colors"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" className="size-[18px]">
+                      <path d={b.path} stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  </button>
+                ))}
+                <button
+                  type="button"
+                  aria-label="Моё местоположение"
+                  className="size-10 bg-white rounded-[10px] shadow-[0_12px_15px_rgba(0,0,0,0.12)] flex items-center justify-center text-[#131612] hover:bg-bg-subtle transition-colors"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" className="size-[18px]">
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
+                    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-        {/* Address chip */}
-        <div className="absolute bottom-6 left-8 bg-white rounded-[15px] flex items-center gap-3 px-4 py-3 shadow-lg">
-          <div className="bg-[#e3eee2] rounded-[10px] p-3">
-            <svg viewBox="0 0 24 24" fill="none" className="size-[30px]">
-              <circle cx="12" cy="12" r="3" stroke="#131612" strokeWidth="1.5" />
-              <path d="M20 12c0 8-8 13-8 13S4 20 4 12a8 8 0 0 1 16 0Z" stroke="#131612" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-          <div>
-            <p className="font-vela text-[12px] text-[#8a8c8a] leading-[1.4]">Адрес объекта</p>
-            <p className="font-vela text-[15px] font-bold text-[#131612] leading-[1.4]">г. Ташкент, Махтумкули, 100116,</p>
-            <p className="font-vela text-[15px] font-bold text-[#131612] leading-[1.4]">Республика Узбекистан</p>
-          </div>
-        </div>
+        </Container>
       </section>
 
       {/* ── Contact cards ─────────────────────────────────── */}
