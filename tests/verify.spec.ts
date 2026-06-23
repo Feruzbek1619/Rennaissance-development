@@ -33,7 +33,7 @@ test('contacts route renders the contact page', async ({ browser }) => {
 test('nav Контакты link points to /contacts and works', async ({ browser }) => {
   const ctx = await browser.newContext({ viewport: { width: 1920, height: 1080 } })
   const page = await ctx.newPage()
-  await page.goto('/', { waitUntil: 'networkidle' })
+  await page.goto('/', { waitUntil: 'load' })
   await page.waitForTimeout(200)
   const link = page.locator('nav').getByRole('link', { name: 'Контакты', exact: true }).first()
   const href = await link.getAttribute('href')

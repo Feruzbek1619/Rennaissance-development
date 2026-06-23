@@ -23,21 +23,48 @@ export default function WhyUsSection() {
           {/* Service cards */}
           <WhyUsCards />
 
-          {/* Instagram reels — 4 across */}
-          <div className="grid grid-cols-4 gap-6 w-full">
-            {reels.map((id) => (
-              <div key={id} className="relative w-full h-[720px] overflow-hidden rounded-[8px] bg-black">
-                <iframe
-                  src={`https://www.instagram.com/reel/${id}/embed/`}
-                  title={`Renaissance Development — reel ${id}`}
-                  className="absolute inset-0 w-full h-full border-0"
-                  loading="lazy"
-                  scrolling="no"
-                  allow="encrypted-media; clipboard-write; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
-            ))}
+          {/* Instagram reels — 4 across. The embed's header/footer chrome is
+              cropped out (offset iframe + overflow-hidden) so only the video
+              shows; one button below opens the IG profile. */}
+          <div className="flex flex-col gap-10 w-full">
+            <div className="grid grid-cols-4 gap-6 w-full">
+              {reels.map((id) => (
+                <div key={id} className="relative h-[560px] overflow-hidden rounded-[10px] bg-black">
+                  <iframe
+                    src={`https://www.instagram.com/reel/${id}/embed/`}
+                    title={`Renaissance Development — reel ${id}`}
+                    className="absolute left-1/2 -translate-x-1/2 top-[-62px] w-full h-[820px] border-0"
+                    loading="lazy"
+                    scrolling="no"
+                    allow="encrypted-media; clipboard-write; picture-in-picture; web-share"
+                  />
+                  {/* click anywhere on a tile opens the reel on Instagram */}
+                  <a
+                    href={`https://www.instagram.com/reel/${id}/`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Открыть reel в Instagram"
+                    className="absolute inset-0 z-10"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className="flex justify-center">
+              <a
+                href="https://www.instagram.com/rbcompany.uz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 h-[56px] px-9 rounded-full bg-accent font-body font-medium text-[18px] text-white hover:bg-[#E85F00] transition-colors"
+              >
+                Открыть Instagram
+                <svg viewBox="0 0 24 24" fill="none" className="size-5">
+                  <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+                </svg>
+              </a>
+            </div>
           </div>
 
         </div>
