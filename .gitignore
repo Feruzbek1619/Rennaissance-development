@@ -17,6 +17,7 @@ test-results
 playwright-report
 tests/audit-out
 tests/shots
+tests/figma
 
 # Editor directories and files
 .vscode/*
