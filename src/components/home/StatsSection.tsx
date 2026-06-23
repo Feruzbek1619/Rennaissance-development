@@ -25,7 +25,7 @@ export default function StatsSection() {
               Мы не просто строим здания - мы создаём надёжное пространство для будущих поколений.{' '}
             </span>
             <span className="text-muted-text">
-              Renaissance development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.
+              Renaissance Development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.
             </span>
           </p>
 

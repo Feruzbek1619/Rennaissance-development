@@ -50,7 +50,7 @@ const contactCards = [
   {
     icon: <MessengerIcon />,
     title: 'Мессенджеры',
-    content: 'Telegram: @rbcompanyuz\nInstagram: @rbcompanyuz',
+    content: 'Telegram: @rbcompanyuz\nInstagram: @rbcompany.uz',
   },
   {
     icon: <ClockIcon />,
@@ -90,16 +90,20 @@ export default function Quote() {
               <div className="flex flex-col gap-[25px]">
                 <div className="flex flex-col gap-[22px]">
                   <div className="flex flex-col gap-[10px]">
-                    <label className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Ваше имя</label>
+                    <label htmlFor="quote-name" className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Ваше имя</label>
                     <input
+                      id="quote-name"
+                      name="name"
                       type="text"
                       placeholder="Введите имя"
                       className="h-[59px] bg-[#ededed] border border-white/10 rounded-[5px] px-5 font-vela text-[18px] text-secondary placeholder:text-secondary/50 outline-none focus:ring-2 focus:ring-accent"
                     />
                   </div>
                   <div className="flex flex-col gap-[10px]">
-                    <label className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Номер телефона</label>
+                    <label htmlFor="quote-phone" className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Номер телефона</label>
                     <input
+                      id="quote-phone"
+                      name="phone"
                       type="tel"
                       placeholder="Введите номер"
                       className="h-[59px] bg-[#ededed] border border-white/10 rounded-[5px] px-5 font-vela text-[18px] text-secondary placeholder:text-secondary/50 outline-none focus:ring-2 focus:ring-accent"
@@ -206,7 +210,7 @@ export default function Quote() {
         <Container>
           <p className="text-center font-heading text-[45px] font-semibold leading-[1.4] mb-10">
             <span className="text-ink">Мы не просто строим здания — мы создаём надёжное пространство для будущих поколений. </span>
-            <span className="text-secondary">Renaissance development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.</span>
+            <span className="text-secondary">Renaissance Development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.</span>
           </p>
           <div className="flex items-center gap-4">
             {[

@@ -44,7 +44,7 @@ export default function About() {
           </h2>
           <div className="flex flex-col gap-[20px] font-body text-[22px] 2xl:text-[26px] leading-[1.6] text-ink">
             <p>
-              Rennaissance development — ташкентская строительная компания полного цикла, основанная в 2019 году
+              Renaissance Development — ташкентская строительная компания полного цикла, основанная в 2019 году
               с одной целью: строить дома, которые остаются надёжными на десятилетия вперёд. За пять лет компания
               прошла путь от одного из заметных застройщиков столицы — с портфелем из 12 реализованных и
               строящихся объектов, собственным производством и полным контролем качества на каждом этапе.
@@ -55,7 +55,7 @@ export default function About() {
               этот принцип лежит в основе каждого решения компании.
             </p>
             <p>
-              Большинство застройщиков зависят от десятков подрядчиков и поставщиков. Rennaissance development
+              Большинство застройщиков зависят от десятков подрядчиков и поставщиков. Renaissance Development
               выбрал другой путь: контроль на каждом шаге. В 2021 году компания запустила собственный завод
               Universal Temir Beton в Янгиабадском районе Ташкента. Завод производит товарный бетон,
               железобетонные изделия, газоблок, вентиляционные шахты и термо-рамки. Строим из своих материалов —
@@ -81,7 +81,7 @@ export default function About() {
               </h2>
             </div>
             <p className="font-body text-[20px] leading-[1.6] text-secondary w-[651px] self-end">
-              За каждым проектом Rennaissance development стоит команда инженеров и строителей с многолетним
+              За каждым проектом Renaissance Development стоит команда инженеров и строителей с многолетним
               опытом на государственных и частных объектах столицы.
             </p>
           </div>
@@ -110,7 +110,7 @@ export default function About() {
         <Container>
           <p className="text-center font-heading text-[40px] font-semibold leading-[1.4] mb-[64px]">
             <span className="text-ink">Мы не просто строим здания — мы создаём надёжное пространство для будущих поколений. </span>
-            <span className="text-secondary">Rennaissance development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.</span>
+            <span className="text-secondary">Renaissance Development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.</span>
           </p>
 
           <div className="flex items-center gap-4 mb-[16px]">

@@ -145,13 +145,13 @@ function InfoChip({ icon, label, sub }: { icon: React.ReactNode; label: string; 
 
 export default function ProjectDetails() {
   const { slug } = useParams<{ slug: string }>()
+  const modal = useLeadModalOptional()
   const project = projects.find((p) => p.slug === slug)
 
   if (!project) return <Navigate to="/projects" replace />
 
   const others = projects.filter((p) => p.slug !== slug).slice(0, 3)
   const details = project.details
-  const modal = useLeadModalOptional()
 
   return (
     <main>
@@ -166,10 +166,10 @@ export default function ProjectDetails() {
 
         {/* Carousel arrows */}
         <div className="absolute inset-x-[116px] top-1/2 -translate-y-1/2 flex items-center justify-between pointer-events-none z-10">
-          <button type="button" className="pointer-events-auto flex size-[53px] items-center justify-center rounded-full bg-white/25 text-white hover:bg-white/40 transition-colors">
+          <button type="button" aria-label="Предыдущее фото" className="pointer-events-auto flex size-[53px] items-center justify-center rounded-full bg-white/25 text-white hover:bg-white/40 transition-colors">
             <ChevronLeft className="size-6" />
           </button>
-          <button type="button" className="pointer-events-auto flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
+          <button type="button" aria-label="Следующее фото" className="pointer-events-auto flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
             <ChevronRight className="size-6" />
           </button>
         </div>
@@ -265,7 +265,7 @@ export default function ProjectDetails() {
         <Container>
           <p className="text-center font-heading text-[45px] font-semibold leading-[1.4] mb-10">
             <span className="text-ink">Мы не просто строим здания — мы создаём надёжное пространство для будущих поколений. </span>
-            <span className="text-accent">Renaissance development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.</span>
+            <span className="text-accent">Renaissance Development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.</span>
           </p>
           <div className="flex items-center gap-4">
             {[

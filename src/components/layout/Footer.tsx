@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { Instagram, MapPin, Phone, Telegram } from '@/components/icons'
+import { Instagram, MapPin, Phone } from '@/components/icons'
 import { cn } from '@/lib/cn'
 
 const PHONE = '78-333-33-31'
 const INSTAGRAM = 'rbcompany.uz'
+const INSTAGRAM_URL = 'https://www.instagram.com/rbcompany.uz/'
 
 const navLinks = [
   { label: 'Главная', to: '/' },
@@ -13,12 +14,12 @@ const navLinks = [
   { label: 'Каталог объектов', to: '/projects' },
   { label: 'Производство (B2B)', to: '/b2b' },
   { label: 'Контакты', to: '/contacts' },
-  { label: 'Privacy Policy', to: '/privacy' },
-  { label: 'Faq', to: '/faq' },
+  { label: 'Политика конфиденциальности', to: '/privacy' },
+  { label: 'Вопросы и ответы', to: '/faq' },
 ]
 
 const projectLinks = [
-  { label: 'ALANDALUSA', to: '/projects/alandalus' },
+  { label: 'ALANDALUS', to: '/projects/alandalus' },
   { label: 'BOTANIKA LUXURY', to: '/projects/botanika-luxury' },
   { label: 'TURON', to: '/projects/turon' },
   { label: 'VATAN VILLAGE', to: '/projects/vatan-village' },
@@ -111,9 +112,9 @@ export default function Footer() {
                   </span>
                 </div>
                 <a
-                  href={`https://${INSTAGRAM}`}
+                  href={INSTAGRAM_URL}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-4 transition-colors hover:text-white"
                 >
                   <Instagram className="size-6 shrink-0" />
@@ -128,19 +129,14 @@ export default function Footer() {
             <hr className="border-t border-white/10" />
             <div className="mt-6 flex items-center justify-between">
               <p className="font-body text-body-sm text-secondary">
-                © "Rennaissance development" Все права защищены, 2026
+                © "Renaissance Development" Все права защищены, 2026
               </p>
 
               <div className="flex items-center gap-4">
                 <a
-                  href={`https://${INSTAGRAM}`}
-                  aria-label="Telegram"
-                  className="flex rounded-full bg-white/[0.08] p-1.5 transition-colors hover:bg-white/20"
-                >
-                  <Telegram className="size-4 text-white" />
-                </a>
-                <a
-                  href={`https://${INSTAGRAM}`}
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Instagram"
                   className="flex rounded-full bg-white/[0.08] p-1.5 transition-colors hover:bg-white/20"
                 >

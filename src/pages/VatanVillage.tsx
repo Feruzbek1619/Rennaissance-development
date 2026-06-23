@@ -302,7 +302,7 @@ export default function VatanVillage() {
               Мы не просто строим здания — мы создаём надёжное пространство для будущих поколений.{' '}
             </span>
             <span className="text-accent">
-              Renaissance development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.
+              Renaissance Development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.
             </span>
           </p>
           <div className="flex items-stretch gap-4">

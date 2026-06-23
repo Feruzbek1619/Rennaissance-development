@@ -64,7 +64,7 @@ function ClockIcon() {
 const contactCards = [
   { icon: <OfficeIcon />, title: 'Офис продаж', content: 'г. Ташкент, Махтумкули, 100116,\nРеспублика Узбекистан' },
   { icon: <PhoneIcon />, title: 'Телефон', content: '78-333-33-31' },
-  { icon: <MessengerIcon />, title: 'Мессенджеры', content: 'Telegram: @rbcompanyuz\nInstagram: @rbcompanyuz' },
+  { icon: <MessengerIcon />, title: 'Мессенджеры', content: 'Telegram: @rbcompanyuz\nInstagram: @rbcompany.uz' },
   { icon: <ClockIcon />, title: 'Часы работы', content: 'Пн-Пт: 9:00–18:00.' },
 ]
 
@@ -112,7 +112,7 @@ export default function B2B() {
             <div className="flex flex-col gap-5 font-vela text-[28px] leading-[1.6] text-ink/80">
               <p>
                 Большинство застройщиков покупают бетон у сторонних поставщиков. Это означает зависимость от чужих
-                сроков, чужих стандартов и чужих ошибок. В 2021 году Rennaissance development выбрал другой путь —
+                сроков, чужих стандартов и чужих ошибок. В 2021 году Renaissance Development выбрал другой путь —
                 и запустил собственный завод Universal Temir Beton в Яшнабадском районе Ташкента.
               </p>
               <p>

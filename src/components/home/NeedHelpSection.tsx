@@ -51,8 +51,10 @@ export default function NeedHelpSection() {
 
             {/* Name field */}
             <div className="flex flex-col gap-[10px]">
-              <label className="font-body font-medium text-[20px] text-bg-subtle leading-[1.6]">ФИО</label>
+              <label htmlFor="needhelp-name" className="font-body font-medium text-[20px] text-bg-subtle leading-[1.6]">ФИО</label>
               <input
+                id="needhelp-name"
+                name="name"
                 type="text"
                 placeholder="Введите имя"
                 className="h-[67px] bg-[#f8f8f8] border border-secondary rounded-[5px] px-6 font-body text-[18px] text-secondary placeholder:text-secondary/50 outline-none focus:border-primary/50"
@@ -61,8 +63,10 @@ export default function NeedHelpSection() {
 
             {/* Phone field */}
             <div className="flex flex-col gap-[10px]">
-              <label className="font-body font-medium text-[20px] text-bg-subtle leading-[1.6]">Номер телефона</label>
+              <label htmlFor="needhelp-phone" className="font-body font-medium text-[20px] text-bg-subtle leading-[1.6]">Номер телефона</label>
               <input
+                id="needhelp-phone"
+                name="phone"
                 type="tel"
                 placeholder="+998"
                 className="h-[67px] bg-[#f8f8f8] border border-border rounded-[5px] px-6 font-body text-[18px] text-secondary/50 placeholder:text-secondary/50 outline-none focus:border-primary/50"

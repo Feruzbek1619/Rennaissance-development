@@ -50,7 +50,7 @@ export default function Projects() {
             {/* Right: description + CTA */}
             <div className="flex flex-col gap-8 w-[460px] 2xl:w-[538px] shrink-0">
               <p className="font-vela text-[20px] leading-[1.6] text-white">
-                Каждый объект Renaissance development — это результат полного производственного цикла: от
+                Каждый объект Renaissance Development — это результат полного производственного цикла: от
                 собственных материалов до финальной отделки. Строим то, за что не стыдно через двадцать лет.
               </p>
               <div>

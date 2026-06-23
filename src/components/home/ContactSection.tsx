@@ -65,7 +65,7 @@ const cards = [
   {
     icon: <MessengerIcon />,
     title: 'Мессенджеры',
-    lines: ['Telegram: @rbcompanyuz', 'Instagram: @rbcompanyuz'],
+    lines: ['Telegram: @rbcompanyuz', 'Instagram: @rbcompany.uz'],
   },
   {
     icon: <ClockIcon />,

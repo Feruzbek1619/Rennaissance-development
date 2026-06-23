@@ -6,7 +6,7 @@ const faqs = [
   {
     question: 'Когда основана компания?',
     answer:
-      'Rennaissance development работает с 2019 года. За это время реализовано и строится 12+ проектов в Ташкенте. С 2021 года работает завод Universal Temir Beton — производим товарный бетон, железобетонные изделия, газоблок, вентиляционные шахты и термо-рамы. Все наши объекты строятся из собственных материалов.',
+      'Renaissance Development работает с 2019 года. За это время реализовано и строится 12+ проектов в Ташкенте. С 2021 года работает завод Universal Temir Beton — производим товарный бетон, железобетонные изделия, газоблок, вентиляционные шахты и термо-рамы. Все наши объекты строятся из собственных материалов.',
   },
   {
     question: 'Как купить квартиру?',
@@ -108,24 +108,30 @@ export default function FAQ() {
 
               <div className="flex flex-col gap-[22px]">
                 <div className="flex flex-col gap-[10px]">
-                  <label className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Ваше имя</label>
+                  <label htmlFor="faq-name" className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Ваше имя</label>
                   <input
+                    id="faq-name"
+                    name="name"
                     type="text"
                     placeholder="Введите имя"
                     className="h-[59px] bg-[#ededed] border border-white/10 rounded-[5px] px-5 font-vela text-[18px] text-secondary placeholder:text-secondary/50 outline-none focus:ring-2 focus:ring-accent"
                   />
                 </div>
                 <div className="flex flex-col gap-[10px]">
-                  <label className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Номер телефона</label>
+                  <label htmlFor="faq-phone" className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Номер телефона</label>
                   <input
+                    id="faq-phone"
+                    name="phone"
                     type="tel"
                     placeholder="Введите номер"
                     className="h-[59px] bg-[#ededed] border border-white/10 rounded-[5px] px-5 font-vela text-[18px] text-secondary placeholder:text-secondary/50 outline-none focus:ring-2 focus:ring-accent"
                   />
                 </div>
                 <div className="flex flex-col gap-[10px]">
-                  <label className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Опишите свой вопрос</label>
+                  <label htmlFor="faq-question" className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Опишите свой вопрос</label>
                   <textarea
+                    id="faq-question"
+                    name="question"
                     placeholder="Введите свой вопрос"
                     rows={4}
                     className="bg-[#ededed] border border-white/10 rounded-[5px] px-5 py-3 font-vela text-[18px] text-secondary placeholder:text-secondary/50 outline-none focus:ring-2 focus:ring-accent resize-none"

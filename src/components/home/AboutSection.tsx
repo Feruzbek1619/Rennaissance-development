@@ -28,12 +28,12 @@ export default function AboutSection() {
             {/* Company content */}
             <div className="flex flex-col gap-8">
               <p className="font-heading text-[50px] font-bold uppercase leading-[1.3] text-ink">
-                Renaissance development
+                Renaissance Development
               </p>
               <div className="flex flex-col gap-0 font-body text-[20px] leading-[1.6] text-ink">
                 <p>
                   Мы не просто строим здания — мы создаём надёжное пространство для будущих поколений.
-                  Каждый проект Renaissance development начинается не с котлована, а с ответа на
+                  Каждый проект Renaissance Development начинается не с котлована, а с ответа на
                   вопрос: каким этот дом будет через тридцать лет.
                 </p>
                 <p className="mt-[1.6em]">

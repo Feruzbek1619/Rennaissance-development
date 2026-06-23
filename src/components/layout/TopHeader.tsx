@@ -1,12 +1,15 @@
 import { Container } from '@/components/Container'
 import { ChevronDown, FlagRU, Instagram, Phone } from '@/components/icons'
+import { useLeadModalOptional } from '@/components/LeadModal'
 
 const PHONE = '78-333-33-31'
 const INSTAGRAM = 'rbcompany.uz'
+const INSTAGRAM_URL = 'https://www.instagram.com/rbcompany.uz/'
 
 // Thin dark utility bar above the main navigation (Figma 7803:24664).
 // Uses the Vela-Sans subsystem (font-vela) + green contact icons.
 export default function TopHeader() {
+  const modal = useLeadModalOptional()
   return (
     <div className="bg-dark text-white">
       <Container>
@@ -18,9 +21,9 @@ export default function TopHeader() {
               <span className="font-vela text-xs font-medium leading-[1.3]">{PHONE}</span>
             </a>
             <a
-              href={`https://${INSTAGRAM}`}
+              href={INSTAGRAM_URL}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="flex items-center gap-2"
             >
               <Instagram className="size-4 text-green" />
@@ -31,12 +34,12 @@ export default function TopHeader() {
           {/* Links + language */}
           <div className="flex items-start gap-[63px]">
             <div className="flex gap-4 font-vela text-xs font-medium leading-[1.3] text-white/60">
-              <a href="#" className="transition-colors hover:text-white">
+              <button type="button" onClick={() => modal?.openLead()} className="transition-colors hover:text-white">
                 Скачать каталог
-              </a>
-              <a href="#" className="transition-colors hover:text-white">
+              </button>
+              <button type="button" onClick={() => modal?.openLead()} className="transition-colors hover:text-white">
                 Обращение к директору
-              </a>
+              </button>
             </div>
             <div className="flex items-center gap-2">
               <FlagRU className="size-[18px]" />
