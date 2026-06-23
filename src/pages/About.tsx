@@ -1,7 +1,10 @@
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { ProjectCard } from '@/components/ProjectCard'
+import { SectionTag } from '@/components/SectionTag'
+import { WhyUsCards } from '@/components/WhyUsCards'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
+import ProductionSection from '@/components/home/ProductionSection'
 import FAQSection from '@/components/home/FAQSection'
 import { projects } from '@/data/projects'
 
@@ -10,29 +13,6 @@ const stats = [
   { value: '5+', label: 'Проекты в строительстве', image: '/assets/stat-2.png' },
   { value: '2021', label: 'Собственный бетонный завод', image: '/assets/stat-3.png' },
   { value: '2019', label: 'Год основания', image: '/assets/stat-4.png' },
-]
-
-const whyCards = [
-  {
-    title: 'Собственное производство',
-    description: 'Собственный завод строительных материалов с 2021 года. Полный контроль качества и сроков.',
-    active: false,
-  },
-  {
-    title: 'Своя спецтехника',
-    description: '9 видов собственной техники на объектах. Строительство идёт без простоев и зависимости от подрядчиков.',
-    active: true,
-  },
-  {
-    title: 'Полный цикл работ',
-    description: 'От проекта до передачи ключей — все этапы реализует одна компания. Единая ответственность и контроль качества.',
-    active: false,
-  },
-  {
-    title: 'Опытное руководство',
-    description: 'Команда выполняет инженерно-строительные работы с 15-летним опытом реализации государственных и частных проектов.',
-    active: false,
-  },
 ]
 
 const partners = [
@@ -95,9 +75,7 @@ export default function About() {
         <Container>
           <div className="flex items-start justify-between mb-[60px]">
             <div className="flex flex-col gap-5 w-[877px] shrink-0">
-              <div className="border border-border px-[24px] py-[16px] self-start">
-                <span className="font-body text-body-sm text-ink">Наша команда</span>
-              </div>
+              <SectionTag>Наша команда</SectionTag>
               <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.2] text-ink">
                 Профессионалы,<br />которые строят Ташкент
               </h2>
@@ -154,59 +132,15 @@ export default function About() {
         </Container>
       </section>
 
-      {/* ── 5. Production section ──────────────────────────── */}
-      <section className="bg-white py-[100px]">
-        <Container>
-          <div className="flex flex-col gap-5 mb-[52px]">
-            <div className="border border-border px-[24px] py-[16px] self-start">
-              <span className="font-body text-body-sm text-ink">Завод</span>
-            </div>
-            <h2 className="font-heading text-[61px] font-bold uppercase leading-none text-ink">
-              Производство
-            </h2>
-          </div>
-
-          <div className="flex gap-8 2xl:gap-[57px] items-start">
-            {/* Left: factory image */}
-            <div className="w-[52%] 2xl:w-[940px] max-w-[940px] shrink-0 h-[667px] overflow-hidden">
-              <img
-                src="/assets/production.png"
-                alt="Завод Universal Temir Beton"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Right: UTB text */}
-            <div className="flex-1 min-w-0 flex flex-col gap-[33px] pt-[40px]">
-              <h3 className="font-heading text-[45px] font-bold uppercase leading-[1.2] text-ink">
-                Universal Temir Beton — наш собственный завод
-              </h3>
-              <p className="font-body text-[18px] leading-[1.75] text-secondary">
-                С 2021 года завод обеспечивает все объекты компании товарным бетоном, железобетонными изделиями,
-                газоблоком, вентиляционными шахтами и термо-рамами. Строим из своих материалов — контролируем
-                качество на каждом этапе.
-              </p>
-              <div className="flex gap-4 flex-wrap">
-                <Button variant="primary" size="lg" to="/b2b">
-                  Подробно
-                </Button>
-                <Button variant="accent" size="lg" to="/quote">
-                  Оставить заявку
-                </Button>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      {/* ── 5. Production — shared carousel (same slides as Home) ── */}
+      <ProductionSection />
 
       {/* ── 6. Partners section ────────────────────────────── */}
       <section className="bg-white py-[100px] border-t border-border">
         <Container>
           <div className="flex items-start justify-between mb-[60px]">
             <div className="flex flex-col gap-5 w-[700px] shrink-0">
-              <div className="border border-border px-[24px] py-[16px] self-start">
-                <span className="font-body text-body-sm text-ink">Наши клиенты</span>
-              </div>
+              <SectionTag>Наши клиенты</SectionTag>
               <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.2] text-ink">
                 Партнёры в архитектурном совершенстве.
               </h2>
@@ -231,35 +165,14 @@ export default function About() {
       <section className="bg-white py-[100px]">
         <Container>
           <div className="flex flex-col items-center gap-5 mb-[60px]">
-            <div className="border border-border px-[24px] py-[16px]">
-              <span className="font-body text-body-sm text-ink">Почему мы</span>
-            </div>
+            <SectionTag>Почему мы</SectionTag>
             <h2 className="font-heading text-[61px] font-bold uppercase leading-none text-ink text-center">
               Почему выбирают нас
             </h2>
           </div>
 
-          <div className="flex gap-0 mb-[16px] border border-border">
-            {whyCards.map((card) => (
-              <div
-                key={card.title}
-                className="group flex-1 flex flex-col gap-12 px-[26px] py-[47px] border-r border-border last:border-r-0 bg-white hover:bg-primary transition-colors duration-300"
-              >
-                {/* icon: dark on white, swaps to white on hover */}
-                <div className="relative size-12">
-                  <img src="/assets/why-us-icon-dark.svg" alt="" className="size-12 transition-opacity duration-300 group-hover:opacity-0" />
-                  <img src="/assets/why-us-icon-light.svg" alt="" className="size-12 absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </div>
-                <div className="flex flex-col gap-4">
-                  <h3 className="font-heading text-[24px] font-bold uppercase leading-[1.3] text-ink transition-colors group-hover:text-white">
-                    {card.title}
-                  </h3>
-                  <p className="font-body text-[16px] leading-[1.6] text-secondary transition-colors group-hover:text-white/70">
-                    {card.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+          <div className="mb-[16px]">
+            <WhyUsCards />
           </div>
 
           {/* Video / big image */}
@@ -292,9 +205,7 @@ export default function About() {
         <Container>
           <div className="flex items-end justify-between gap-8 mb-[52px]">
             <div className="flex flex-col gap-5 min-w-0">
-              <div className="border border-border px-[24px] py-[16px] self-start">
-                <span className="font-body text-body-sm text-ink">Проекты</span>
-              </div>
+              <SectionTag>Проекты</SectionTag>
               <h2 className="font-heading text-[61px] font-bold uppercase leading-none text-ink max-w-[764px]">
                 Наши проекты
               </h2>

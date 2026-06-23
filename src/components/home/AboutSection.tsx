@@ -14,7 +14,7 @@ export default function AboutSection() {
           <div className="w-[782px] shrink-0 flex flex-col">
             {/* Header: badge + heading */}
             <div className="flex flex-col gap-5">
-              <div className="border border-border px-6 py-[6px] self-start">
+              <div className="border border-border px-[24px] py-[16px] self-start">
                 <span className="font-body text-body-sm text-ink">О нас</span>
               </div>
               <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">

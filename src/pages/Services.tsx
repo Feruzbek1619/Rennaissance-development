@@ -120,7 +120,7 @@ export default function Services() {
           <div className="flex flex-col gap-[60px]">
             <div className="flex items-end justify-between gap-8">
               <div className="flex flex-col gap-4">
-                <div className="border border-border px-[18px] py-[6px] self-start">
+                <div className="border border-border px-[24px] py-[16px] self-start">
                   <span className="font-body text-body-sm text-ink">УСЛУГИ</span>
                 </div>
                 <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.2] text-ink">
@@ -142,7 +142,7 @@ export default function Services() {
           <div className="flex flex-col gap-[60px]">
             <div className="flex items-center justify-between gap-8">
               <div className="flex flex-col gap-4">
-                <div className="border border-border px-[18px] py-[6px] self-start">
+                <div className="border border-border px-[24px] py-[16px] self-start">
                   <span className="font-body text-body-sm text-ink">ПРОЦЕСС</span>
                 </div>
                 <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.2] text-ink">

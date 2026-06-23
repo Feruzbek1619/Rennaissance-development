@@ -17,7 +17,7 @@ export default function ProjectsSection() {
           {/* Header */}
           <div className="flex items-center justify-between w-full">
             <div className="flex flex-col gap-5 w-[764px]">
-              <div className="border border-border px-[18px] py-[6px] self-start">
+              <div className="border border-border px-[24px] py-[16px] self-start">
                 <span className="font-body text-body-sm text-ink">ПРОЕКТЫ</span>
               </div>
               <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">

@@ -57,7 +57,7 @@ export default function ProductionSection() {
 
           {/* Header */}
           <div className="flex flex-col gap-5">
-            <div className="border border-border px-[18px] py-[6px] self-start">
+            <div className="border border-border px-[24px] py-[16px] self-start">
               <span className="font-body text-body-sm text-ink">Завод</span>
             </div>
             <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">

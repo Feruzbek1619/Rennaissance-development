@@ -36,7 +36,7 @@ export default function Navigation() {
   const catalogActive = pathname.startsWith('/projects')
 
   return (
-    <nav className="bg-white">
+    <nav className="bg-white sticky top-0 z-40 border-b border-border/60">
       <Container>
         <div className="flex h-[108px] items-center justify-between gap-4 2xl:gap-8">
           <Link to="/" aria-label="Renaissance Development — на главную" className="shrink-0">
