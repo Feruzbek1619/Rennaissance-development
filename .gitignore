@@ -18,6 +18,9 @@ playwright-report
 tests/audit-out
 tests/shots
 tests/figma
+tests/live
+tests/crop
+.vercel
 
 # Editor directories and files
 .vscode/*
