@@ -1,6 +1,5 @@
 'use client'
 import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
@@ -46,16 +45,10 @@ const slides = [
 // «Производство» (Figma 7769:3522 + 7827:2226-2307).
 export default function ProductionSection() {
   const [current, setCurrent] = useState(0)
-  const [dir, setDir] = useState(1)
 
-  const go = (next: number) => {
-    setDir(next > current ? 1 : -1)
-    setCurrent(next)
-  }
+  const go = (next: number) => setCurrent(next)
   const prev = () => go((current - 1 + slides.length) % slides.length)
   const next = () => go((current + 1) % slides.length)
-
-  const slide = slides[current]
 
   return (
     <section className="bg-bg-subtle pt-[76px] pb-[60px]">
@@ -72,61 +65,52 @@ export default function ProductionSection() {
             </h2>
           </div>
 
-          {/* White card with animated slide */}
-          <div className="bg-white h-[759px] w-full overflow-hidden flex items-center relative">
-            <AnimatePresence mode="wait" initial={false} custom={dir}>
-              <motion.div
-                key={current}
-                custom={dir}
-                variants={{
-                  enter: (d: number) => ({ x: d * 60, opacity: 0 }),
-                  center: { x: 0, opacity: 1 },
-                  exit: (d: number) => ({ x: d * -60, opacity: 0 }),
-                }}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.35, ease: 'easeInOut' }}
-                className="flex items-center w-full h-full absolute inset-0"
-              >
-                {/* Photo */}
-                <div className="ml-9 w-[940px] h-[667px] shrink min-w-0">
-                  <img
-                    src={slide.image}
-                    alt={slide.title}
-                    className="size-full object-cover"
-                  />
-                </div>
+          {/* Slider viewport — the whole white panel slides as one unit */}
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${current * 100}%)` }}
+            >
+              {slides.map((slide) => (
+                <div
+                  key={slide.title}
+                  className="w-full shrink-0 bg-white min-h-[759px] flex items-center gap-8 2xl:gap-[57px] px-9 py-[46px]"
+                >
+                  {/* Photo */}
+                  <div className="w-[52%] max-w-[940px] h-[667px] shrink-0 min-w-0 overflow-hidden">
+                    <img src={slide.image} alt={slide.title} className="size-full object-cover" />
+                  </div>
 
-                {/* Text */}
-                <div className="ml-[57px] w-[640px] shrink min-w-0 flex flex-col gap-[60px]">
-                  <div className="flex flex-col gap-5">
-                    <div className="flex flex-col gap-[5px]">
-                      <p className="font-heading text-[51px] font-bold uppercase leading-[1.3] text-ink">
-                        {slide.title}
-                      </p>
-                      <p className="font-heading text-[20px] font-bold uppercase leading-[1.3] text-ink">
-                        {slide.subtitle}
+                  {/* Text */}
+                  <div className="flex-1 min-w-0 flex flex-col gap-[60px]">
+                    <div className="flex flex-col gap-5">
+                      <div className="flex flex-col gap-[5px]">
+                        <p className="font-heading text-[51px] font-bold uppercase leading-[1.3] text-ink">
+                          {slide.title}
+                        </p>
+                        <p className="font-heading text-[20px] font-bold uppercase leading-[1.3] text-ink">
+                          {slide.subtitle}
+                        </p>
+                      </div>
+                      <p className="font-body text-[22px] leading-[1.6] text-secondary">
+                        {slide.desc}
                       </p>
                     </div>
-                    <p className="font-body text-[22px] leading-[1.6] text-secondary">
-                      {slide.desc}
-                    </p>
-                  </div>
 
-                  <div className="flex items-center gap-6">
-                    {slide.primary && (
-                      <Button to={slide.primary.to} variant="primary" size="lg">
-                        {slide.primary.label}
+                    <div className="flex items-center gap-6 flex-wrap">
+                      {slide.primary && (
+                        <Button to={slide.primary.to} variant="primary" size="lg">
+                          {slide.primary.label}
+                        </Button>
+                      )}
+                      <Button to="/quote" variant="outlineLight" size="lg">
+                        Оставить заявку
                       </Button>
-                    )}
-                    <Button to="/quote" variant="outlineLight" size="lg">
-                      Оставить заявку
-                    </Button>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            </AnimatePresence>
+              ))}
+            </div>
           </div>
 
           {/* Carousel navigation */}

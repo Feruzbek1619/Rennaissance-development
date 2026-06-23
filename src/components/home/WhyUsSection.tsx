@@ -67,33 +67,31 @@ export default function WhyUsSection() {
             </h2>
           </div>
 
-          {/* Service cards row */}
-          <div className="flex gap-4 w-full">
+          {/* Service cards row — flex + even padding so the bottom always breathes */}
+          <div className="flex gap-4 w-full items-stretch">
             {services.map((s) => (
               <div
                 key={s.title}
-                className={`flex-1 h-[286px] border border-border overflow-hidden relative ${
+                className={`flex-1 min-w-0 min-h-[286px] border border-border px-[26px] py-[46px] flex flex-col gap-12 ${
                   s.dark ? 'bg-primary' : 'bg-white'
                 }`}
               >
-                <div className="flex flex-col gap-12 items-start absolute top-[46px] left-[26px] right-[26px]">
-                  <BuildingIcon light={s.dark} />
-                  <div className="flex flex-col gap-[11px]">
-                    <p
-                      className={`font-heading text-[22px] font-bold uppercase leading-[1.17] ${
-                        s.dark ? 'text-bg-subtle' : 'text-ink'
-                      }`}
-                    >
-                      {s.title}
-                    </p>
-                    <p
-                      className={`font-body text-[18px] leading-[1.37] ${
-                        s.dark ? 'text-border' : 'text-secondary'
-                      }`}
-                    >
-                      {s.description}
-                    </p>
-                  </div>
+                <BuildingIcon light={s.dark} />
+                <div className="flex flex-col gap-[11px]">
+                  <p
+                    className={`font-heading text-[22px] font-bold uppercase leading-[1.17] ${
+                      s.dark ? 'text-bg-subtle' : 'text-ink'
+                    }`}
+                  >
+                    {s.title}
+                  </p>
+                  <p
+                    className={`font-body text-[18px] leading-[1.37] ${
+                      s.dark ? 'text-border' : 'text-secondary'
+                    }`}
+                  >
+                    {s.description}
+                  </p>
                 </div>
               </div>
             ))}
