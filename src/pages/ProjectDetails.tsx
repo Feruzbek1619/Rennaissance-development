@@ -5,6 +5,7 @@ import NeedHelpSection from '@/components/home/NeedHelpSection'
 import FAQSection from '@/components/home/FAQSection'
 import { projects } from '@/data/projects'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
+import { useLeadModalOptional } from '@/components/LeadModal'
 
 /* ─── Icon helpers ───────────────────────────────────── */
 function ArrowIcon({ light = false }: { light?: boolean }) {
@@ -150,6 +151,7 @@ export default function ProjectDetails() {
 
   const others = projects.filter((p) => p.slug !== slug).slice(0, 3)
   const details = project.details
+  const modal = useLeadModalOptional()
 
   return (
     <main>
@@ -367,6 +369,46 @@ export default function ProjectDetails() {
           </div>
         </Container>
       </section>
+
+      {/* ── 7.5 Floor plans (ПЛАН ЭТАЖА НА ОТМ.) ─────────── */}
+      {details?.floorPlans && (
+        <section className="bg-primary py-[80px]">
+          <Container>
+            <h2 className="font-heading text-[49px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-bg-subtle text-center mb-[48px]">
+              План этажа на отм.
+            </h2>
+            <div className="grid grid-cols-3 gap-6">
+              {details.floorPlans.map((plan) => (
+                <div key={plan.title} className="bg-white rounded-[5px] shadow-[0_27px_40px_rgba(10,15,40,0.12)] p-[24px] flex flex-col gap-5">
+                  <div className="h-[300px] overflow-hidden flex items-center justify-center">
+                    <img src={plan.image} alt={plan.title} className="w-full h-full object-contain" />
+                  </div>
+                  <h3 className="font-heading text-[24px] font-bold leading-[1.4] text-ink text-center">{plan.title}</h3>
+                  <div className="flex flex-col gap-3">
+                    {plan.rooms.map((room, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <span className="font-vela text-[16px] text-[#8694b1] whitespace-nowrap">{room.name}</span>
+                        <span className="flex-1 border-b border-dashed border-[#cdd5e3] min-w-2" />
+                        <span className="font-vela text-[16px] text-[#344162] whitespace-nowrap">{room.area}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => modal?.openLead()}
+                    className="mt-auto h-[56px] w-full bg-accent rounded-full flex items-center justify-center gap-3 font-body font-medium text-[20px] text-white hover:bg-[#E85F00] transition-colors"
+                  >
+                    Заказать звонок
+                    <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
+                      <ArrowIcon />
+                    </span>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* ── 8. Address / Map ─────────────────────────────── */}
       {details && (

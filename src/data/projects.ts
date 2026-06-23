@@ -10,6 +10,12 @@ export type ProjectNearby = {
   description: string
 }
 
+export type FloorPlan = {
+  title: string
+  image: string
+  rooms: { name: string; area: string }[]
+}
+
 export type ProjectDetails = {
   description: string[]
   specs: {
@@ -23,6 +29,7 @@ export type ProjectDetails = {
   features: ProjectFeature[]
   nearby: ProjectNearby[]
   advantage: string
+  floorPlans?: FloorPlan[]
 }
 
 export type Project = {
@@ -68,6 +75,77 @@ const alandalusDetails: ProjectDetails = {
   ],
 }
 
+const vatanDetails: ProjectDetails = {
+  description: [
+    'VATAN VILLAGE — жилой комплекс Renaissance development в Мирзо-Улугбекском районе Ташкента, на улице Янги Узбекистон. Малоэтажная застройка с собственным двором, охраняемой территорией и продуманными планировками — пространство для комфортной жизни большой семьи.',
+    'Дома возведены по монолитно-кирпичной технологии: прочный каркас, тёплый фасад и материалы собственного производства. Закрытая территория, зоны отдыха, барбекю-зона и парковка — всё для спокойной жизни в зелёном квартале рядом с центром.',
+  ],
+  specs: {
+    address: 'Ташкент, Мирзо-Улугбекский район, ул. Янги Узбекистон',
+    area: 'от 26 м²',
+    floors: '2 этажа + подвал',
+    category: 'Комфорт+',
+    year: '2026',
+    status: 'В продаже',
+  },
+  advantage: 'Дом для большой семьи',
+  features: [
+    { icon: 'home', title: 'Кирпичный дом', description: 'Надёжные кирпичные стены: прочность на десятилетия, хорошая тепло- и звукоизоляция в любое время года.' },
+    { icon: 'tree', title: 'Закрытая охраняемая территория', description: 'Огороженный двор с круглосуточной охраной и видеонаблюдением — спокойствие и безопасность для всей семьи.' },
+    { icon: 'ceiling', title: 'Монолитный каркас', description: 'Монолитно-бетонный каркас из материалов собственного завода — устойчивость конструкции и свобода планировок.' },
+    { icon: 'sun', title: 'Близость к центру', description: 'Удобное расположение в Мирзо-Улугбекском районе: до центра города и основных дорог — считанные минуты.' },
+    { icon: 'leaf', title: 'Барбекю-зона', description: 'Собственное пространство для семейных ужинов и отдыха на свежем воздухе во дворе комплекса.' },
+    { icon: 'car', title: 'Парковка для автомобиля', description: 'Удобное парковочное место на территории участка — для жителей и их гостей.' },
+  ],
+  nearby: [
+    { icon: 'sparkles', title: 'ПАРКИ', description: 'Ашхабад парк, Eco Park, Янги Узбекистон парк' },
+    { icon: 'graduation', title: 'ОБРАЗОВАНИЕ', description: 'Детские сады, учебные центры, частные школы, школа №340' },
+    { icon: 'bus', title: 'ТРАНСПОРТ', description: 'Близость к центру города, метро и остановки в доступности, удобный выезд на основные дороги' },
+    { icon: 'cart', title: 'ТОРГОВЫЕ ЦЕНТРЫ', description: 'Магазины у дома, супермаркеты, торговые зоны (Янгиабад базар, РАБАД базар, КАРАСУ базар)' },
+    { icon: 'moon', title: 'МЕЧЕТИ', description: 'Абдурахмон ибн Авф жоме масжиди' },
+    { icon: 'star', title: 'КОМФОРТ ЖИЗНИ', description: 'Зелёная зона, тихий район, удобно для семьи' },
+  ],
+  floorPlans: [
+    {
+      title: 'План подвального этажа на отм',
+      image: '/assets/vatan-plan-1.png',
+      rooms: [
+        { name: 'Подсобное помещение', area: '76.5 м2' },
+        { name: 'Холл', area: '19.6 м2' },
+        { name: 'Коридор', area: '4.7 м2' },
+        { name: 'Комната', area: '23.5 м2' },
+        { name: 'Комната', area: '10.2 м2' },
+        { name: 'Тамбур', area: '4.8 м2' },
+      ],
+    },
+    {
+      title: 'План 1-го этажа на отм.',
+      image: '/assets/vatan-plan-2.png',
+      rooms: [
+        { name: 'Коридор', area: '24.0 м2' },
+        { name: 'Кухня', area: '34.7 м2' },
+        { name: 'Общий санузел', area: '4.5 м2' },
+        { name: 'С/у', area: '4.0 м2' },
+        { name: 'Спальня', area: '27.0 м2' },
+        { name: 'Гостиная', area: '41.4 м2' },
+      ],
+    },
+    {
+      title: 'План 2-го этажа на отм.',
+      image: '/assets/vatan-plan-3.png',
+      rooms: [
+        { name: 'Холл', area: '24.0 м2' },
+        { name: 'Спальня', area: '34.7 м2' },
+        { name: 'Общий санузел', area: '4.5 м2' },
+        { name: 'С/у', area: '4.0 м2' },
+        { name: 'Гостиная', area: '27.0 м2' },
+        { name: 'Спальня', area: '24.0 м2' },
+        { name: 'Спальня', area: '16.7 м2' },
+      ],
+    },
+  ],
+}
+
 export const projects: Project[] = [
   {
     slug: 'alandalus',
@@ -96,6 +174,7 @@ export const projects: Project[] = [
     location: 'Мирзо-Улугбекский район, улица Янги Узбекистон',
     image: '/assets/project-vatan.png',
     status: 'active',
+    details: vatanDetails,
   },
   {
     slug: 'turon',
