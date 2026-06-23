@@ -23,7 +23,7 @@ const services = [
   },
 ]
 
-function BuildingIcon({ light = false }: { light?: boolean }) {
+function BuildingIcon() {
   return (
     <svg
       viewBox="0 0 45 37.5"
@@ -33,7 +33,7 @@ function BuildingIcon({ light = false }: { light?: boolean }) {
     >
       <path
         d="M1.5 36H43.5M40.4989 36V15C40.4989 14.6022 40.3409 14.2206 40.0596 13.9393C39.7783 13.658 39.3967 13.5 38.9989 13.5H25.4989M31.4989 28.5H34.4989M25.4989 36V3C25.4989 2.60217 25.3409 2.22064 25.0596 1.93934C24.7783 1.65804 24.3967 1.5 23.9989 1.5H5.9989C5.60108 1.5 5.21955 1.65804 4.93824 1.93934C4.65694 2.22064 4.4989 2.60217 4.4989 3V36M10.4989 28.5H16.4989M31.4989 21H34.4989M13.4989 21H19.4989M10.4989 9H16.4989"
-        stroke={light ? '#F0F3F5' : 'currentColor'}
+        stroke="currentColor"
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -72,24 +72,16 @@ export default function WhyUsSection() {
             {services.map((s) => (
               <div
                 key={s.title}
-                className={`flex-1 min-w-0 min-h-[286px] border border-border px-[26px] py-[46px] flex flex-col gap-12 ${
-                  s.dark ? 'bg-primary' : 'bg-white'
-                }`}
+                className="group flex-1 min-w-0 min-h-[286px] border border-border px-[26px] py-[46px] flex flex-col gap-12 bg-white hover:bg-primary transition-colors duration-300"
               >
-                <BuildingIcon light={s.dark} />
+                <div className="text-ink transition-colors duration-300 group-hover:text-bg-subtle">
+                  <BuildingIcon />
+                </div>
                 <div className="flex flex-col gap-[11px]">
-                  <p
-                    className={`font-heading text-[22px] font-bold uppercase leading-[1.17] ${
-                      s.dark ? 'text-bg-subtle' : 'text-ink'
-                    }`}
-                  >
+                  <p className="font-heading text-[22px] font-bold uppercase leading-[1.17] text-ink transition-colors duration-300 group-hover:text-bg-subtle">
                     {s.title}
                   </p>
-                  <p
-                    className={`font-body text-[18px] leading-[1.37] ${
-                      s.dark ? 'text-border' : 'text-secondary'
-                    }`}
-                  >
+                  <p className="font-body text-[18px] leading-[1.37] text-secondary transition-colors duration-300 group-hover:text-border">
                     {s.description}
                   </p>
                 </div>

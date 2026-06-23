@@ -137,7 +137,7 @@ export default function FAQ() {
                 <button
                   type="button"
                   onClick={() => modal?.openSuccess()}
-                  className="w-full h-[79px] bg-accent rounded-[5px] font-vela text-[34px] font-semibold text-white hover:bg-[#E85F00] transition-colors"
+                  className="w-full h-[62px] bg-accent rounded-[5px] font-vela text-[22px] font-semibold text-white hover:bg-[#E85F00] transition-colors"
                 >
                   Оставить заявку
                 </button>

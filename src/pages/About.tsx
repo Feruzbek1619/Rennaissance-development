@@ -57,12 +57,12 @@ export default function About() {
       </section>
 
       {/* ── 2. Company description ──────────────────────────── */}
-      <section className="bg-primary py-[84px]">
+      <section className="bg-bg-subtle py-[84px]">
         <Container>
-          <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.1] text-bg-subtle mb-[27px]">
+          <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.1] text-ink mb-[32px]">
             Renaissance Development
           </h2>
-          <div className="flex flex-col gap-[20px] font-body text-[18px] leading-[1.75] text-white/80 max-w-[1200px]">
+          <div className="flex flex-col gap-[20px] font-body text-[22px] 2xl:text-[26px] leading-[1.6] text-ink">
             <p>
               Rennaissance development — ташкентская строительная компания полного цикла, основанная в 2019 году
               с одной целью: строить дома, которые остаются надёжными на десятилетия вперёд. За пять лет компания
@@ -243,22 +243,18 @@ export default function About() {
             {whyCards.map((card) => (
               <div
                 key={card.title}
-                className={`flex-1 flex flex-col gap-12 px-[26px] py-[47px] border-r border-border last:border-r-0 ${
-                  card.active ? 'bg-primary text-white' : 'bg-white text-ink'
-                }`}
+                className="group flex-1 flex flex-col gap-12 px-[26px] py-[47px] border-r border-border last:border-r-0 bg-white hover:bg-primary transition-colors duration-300"
               >
-                <div className={`size-12 ${card.active ? 'text-white' : 'text-ink'}`}>
-                  <img
-                    src={card.active ? '/assets/why-us-icon-dark.svg' : '/assets/why-us-icon-light.svg'}
-                    alt=""
-                    className="size-12"
-                  />
+                {/* icon: dark on white, swaps to white on hover */}
+                <div className="relative size-12">
+                  <img src="/assets/why-us-icon-dark.svg" alt="" className="size-12 transition-opacity duration-300 group-hover:opacity-0" />
+                  <img src="/assets/why-us-icon-light.svg" alt="" className="size-12 absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <h3 className={`font-heading text-[24px] font-bold uppercase leading-[1.3] ${card.active ? 'text-white' : 'text-ink'}`}>
+                  <h3 className="font-heading text-[24px] font-bold uppercase leading-[1.3] text-ink transition-colors group-hover:text-white">
                     {card.title}
                   </h3>
-                  <p className={`font-body text-[16px] leading-[1.6] ${card.active ? 'text-white/70' : 'text-secondary'}`}>
+                  <p className="font-body text-[16px] leading-[1.6] text-secondary transition-colors group-hover:text-white/70">
                     {card.description}
                   </p>
                 </div>

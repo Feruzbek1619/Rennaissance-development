@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import type { Project } from '@/data/projects'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
 import { useLeadModalOptional } from '@/components/LeadModal'
@@ -81,12 +82,12 @@ export function ProjectCard({ project }: { project: Project }) {
 
         {project.status === 'active' && (
           <div className="flex items-center gap-4 flex-wrap">
-            <button type="button" onClick={() => modal?.openLead()} className="flex flex-auto items-center justify-between bg-primary text-white rounded-full px-7 py-4 min-w-0">
+            <Link to={`/projects/${project.slug}`} className="flex flex-auto items-center justify-between bg-primary text-white rounded-full px-7 py-4 min-w-0 hover:bg-[#0A2236] transition-colors">
               <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">Выбрать квартиру</span>
               <span className="flex size-[37px] items-center justify-center rounded-full bg-white shrink-0 ml-2">
                 <ArrowUpRightIcon light={false} />
               </span>
-            </button>
+            </Link>
             <button type="button" onClick={() => modal?.openLead()} className="flex flex-auto items-center justify-between border border-primary text-primary rounded-full px-7 py-4 min-w-0">
               <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">Заказать звонок</span>
               <span className="flex size-[37px] items-center justify-center rounded-full bg-primary shrink-0 ml-2">
