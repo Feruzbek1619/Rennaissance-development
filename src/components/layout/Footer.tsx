@@ -85,7 +85,7 @@ export default function Footer() {
           <div className="mt-[74px] flex items-start justify-between">
             {/* Brand + tagline */}
             <div className="flex w-[523px] flex-col items-center gap-[57px]">
-              <img src="/logo-stacked.svg" alt="Renaissance Development" className="h-[253px] w-[256px]" />
+              <img loading="lazy" decoding="async" src="/logo-stacked.svg" alt="Renaissance Development" className="h-[253px] w-[256px]" />
               <p className="w-[469px] text-center font-body text-body-md text-secondary">
                 Создаём дома, в которых растут семьи, рождаются воспоминания и остаются поколения.
               </p>
@@ -151,8 +151,8 @@ export default function Footer() {
               <div className="flex items-center gap-[26px]">
                 <span className="font-body text-body-sm text-white/60">Created by “Dasta Creative”</span>
                 <span className="flex items-center gap-2">
-                  <img src="/assets/dasta-icon.svg" alt="" className="h-[35px] w-[35px]" />
-                  <img src="/assets/dasta-word.svg" alt="Dasta Creative" className="h-4 w-[58px]" />
+                  <img loading="lazy" decoding="async" src="/assets/dasta-icon.svg" alt="" className="h-[35px] w-[35px]" />
+                  <img loading="lazy" decoding="async" src="/assets/dasta-word.svg" alt="Dasta Creative" className="h-4 w-[58px]" />
                 </span>
               </div>
             </div>

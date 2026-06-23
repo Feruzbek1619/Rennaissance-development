@@ -119,7 +119,7 @@ export default function ServiceDetails() {
               </div>
             </div>
             <div className="w-[520px] shrink-0 overflow-hidden">
-              <img
+              <img loading="lazy" decoding="async"
                 src={service.image}
                 alt={service.title}
                 className="w-full aspect-[520/420] object-cover"

@@ -56,8 +56,8 @@ export default function AboutSection() {
           {/* Right column: photo offset 194px from column top */}
           <div className="mt-[194px] flex-1">
             <div className="h-[754px] rounded-[5px] overflow-hidden">
-              <img
-                src="/assets/about-company.png"
+              <img loading="lazy" decoding="async"
+                src="/assets/about-company.webp"
                 alt="Renaissance Development — строительство"
                 className="size-full object-cover"
               />

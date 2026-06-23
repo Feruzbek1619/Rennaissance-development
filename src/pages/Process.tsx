@@ -85,8 +85,8 @@ export default function Process() {
               >
                 {/* Image side */}
                 <div className="w-[620px] shrink-0 overflow-hidden">
-                  <img
-                    src="/assets/about-company.png"
+                  <img loading="lazy" decoding="async"
+                    src="/assets/about-company.webp"
                     alt={stage.title}
                     className="w-full aspect-[620/440] object-cover"
                   />

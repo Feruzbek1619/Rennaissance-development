@@ -8,10 +8,10 @@ const stats = [
 ]
 
 const images = [
-  { src: '/assets/stat-1.png', alt: 'Жилой комплекс' },
-  { src: '/assets/stat-2.png', alt: 'Малоэтажный квартал' },
-  { src: '/assets/stat-3.png', alt: 'Бетонный завод' },
-  { src: '/assets/stat-4.png', alt: 'Производство бетона' },
+  { src: '/assets/stat-1.webp', alt: 'Жилой комплекс' },
+  { src: '/assets/stat-2.webp', alt: 'Малоэтажный квартал' },
+  { src: '/assets/stat-3.webp', alt: 'Бетонный завод' },
+  { src: '/assets/stat-4.webp', alt: 'Производство бетона' },
 ]
 
 // Stats / intro section (Figma 7778:4882).
@@ -43,7 +43,7 @@ export default function StatsSection() {
           <div className="flex items-center gap-4">
             {images.map((img) => (
               <div key={img.src} className="h-[432px] flex-1">
-                <img src={img.src} alt={img.alt} className="size-full object-cover" />
+                <img loading="lazy" decoding="async" src={img.src} alt={img.alt} className="size-full object-cover" />
               </div>
             ))}
           </div>

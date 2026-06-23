@@ -75,7 +75,7 @@ function ServiceAccordion() {
                 </Link>
               </div>
               <div className="w-[360px] shrink-0 aspect-[4/3] overflow-hidden">
-                <img src={s.image} alt={s.title} className="w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" src={s.image} alt={s.title} className="w-full h-full object-cover" />
               </div>
             </div>
           )}

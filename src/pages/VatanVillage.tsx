@@ -15,46 +15,46 @@ import { projects } from '@/data/projects'
 const SUPPORT_TEL = 'tel:+998783333331'
 
 /* Render gallery (О проекте) carousel images */
-const renderSlides = ['/assets/vatan-render.jpg']
+const renderSlides = ['/assets/vatan-render.webp']
 
 /* Photo strip below the render (Figma 7872:4228) */
 const stripPhotos = [
-  '/assets/vatan-strip-1.jpg',
-  '/assets/vatan-strip-2.jpg',
-  '/assets/vatan-strip-3.jpg',
-  '/assets/vatan-strip-4.jpg',
-  '/assets/vatan-strip-5.jpg',
+  '/assets/vatan-strip-1.webp',
+  '/assets/vatan-strip-2.webp',
+  '/assets/vatan-strip-3.webp',
+  '/assets/vatan-strip-4.webp',
+  '/assets/vatan-strip-5.webp',
 ]
 
 /* ПРЕИМУЩЕСТВА mosaic (Figma 7875:6378) — image + text card per cell */
 const advantages = [
   {
-    image: '/assets/vatan-adv-1.jpg',
+    image: '/assets/vatan-adv-1.webp',
     title: 'Кирпичный дом',
     desc: 'Натуральный и долговечный материал, который обеспечивает хорошую теплоизоляцию, прочность и комфортный микроклимат в доме.',
   },
   {
-    image: '/assets/vatan-adv-2.jpg',
+    image: '/assets/vatan-adv-2.webp',
     title: 'Закрытая охраняемая территория',
     desc: 'Контролируемый въезд, видеонаблюдение и благоустроенная территория создают спокойную и безопасную среду для всей семьи.',
   },
   {
-    image: '/assets/vatan-adv-3.jpg',
+    image: '/assets/vatan-adv-3.webp',
     title: 'Железобетонные межэтажные перекрытия',
     desc: 'Надежные плиты перекрытия обеспечивают прочность конструкции и дополнительную шумоизоляцию между этажами.',
   },
   {
-    image: '/assets/vatan-adv-4.jpg',
+    image: '/assets/vatan-adv-4.webp',
     title: 'Близость к аэропорту',
     desc: 'Удобное расположение позволяет быстро добраться до аэропорта, экономя ваше время и обеспечивая комфорт для частых поездок.',
   },
   {
-    image: '/assets/vatan-adv-5.jpg',
+    image: '/assets/vatan-adv-5.webp',
     title: 'Барбекю-зона',
     desc: 'Собственное пространство для семейных ужинов и отдыха на свежем воздухе.',
   },
   {
-    image: '/assets/vatan-adv-6.jpg',
+    image: '/assets/vatan-adv-6.webp',
     title: 'Парковка для автомобиля',
     desc: 'Удобное парковочное место на территории вашего участка.',
   },
@@ -100,10 +100,10 @@ export default function VatanVillage() {
     <main>
       {/* ── 1. Hero (Figma 7872:3278) ───────────────────── */}
       <section className="relative h-[720px] 2xl:h-[888px] overflow-hidden bg-primary">
-        <img src="/assets/vatan-hero.jpg" alt="VATAN VILLAGE" className="absolute inset-0 size-full object-cover" />
+        <img loading="lazy" decoding="async" src="/assets/vatan-hero.webp" alt="VATAN VILLAGE" className="absolute inset-0 size-full object-cover" />
         {/* fog haze */}
-        <img
-          src="/assets/vatan-fog.png"
+        <img loading="lazy" decoding="async"
+          src="/assets/vatan-fog.webp"
           alt=""
           aria-hidden
           className="absolute inset-x-0 bottom-0 h-[75%] w-full object-cover opacity-70 mix-blend-screen pointer-events-none"
@@ -180,7 +180,7 @@ export default function VatanVillage() {
         <Container>
           {/* Big render with bottom gradient + arrows */}
           <div className="relative h-[460px] 2xl:h-[700px] w-full overflow-hidden rounded-[5px]">
-            <img src={renderSlides[render]} alt="VATAN VILLAGE — общий вид" className="size-full object-cover" />
+            <img loading="lazy" decoding="async" src={renderSlides[render]} alt="VATAN VILLAGE — общий вид" className="size-full object-cover" />
             <div className="absolute inset-x-0 bottom-0 h-[224px] bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
             <div className="absolute bottom-[40px] right-[40px] flex items-center gap-3">
               <button
@@ -206,7 +206,7 @@ export default function VatanVillage() {
           <div className="mt-[17px] grid grid-cols-5 gap-[12px] 2xl:gap-[17px]">
             {stripPhotos.map((src, i) => (
               <div key={i} className="h-[120px] 2xl:h-[171px] overflow-hidden rounded-[1px] bg-white">
-                <img src={src} alt="" className="size-full object-cover" />
+                <img loading="lazy" decoding="async" src={src} alt="" className="size-full object-cover" />
               </div>
             ))}
           </div>
@@ -268,7 +268,7 @@ export default function VatanVillage() {
             {advantages.map((a) => (
               <div key={a.title} className="flex flex-col">
                 <div className="h-[340px] 2xl:h-[498px] w-full overflow-hidden">
-                  <img src={a.image} alt={a.title} className="size-full object-cover" />
+                  <img loading="lazy" decoding="async" src={a.image} alt={a.title} className="size-full object-cover" />
                 </div>
                 <div className="flex min-h-[200px] 2xl:h-[241px] items-center gap-6 border border-[#c4c4c4] bg-[#f8f8f8] px-[32px] py-[28px] 2xl:px-[48px]">
                   <h3 className="font-heading text-[24px] 2xl:text-[31px] font-bold leading-[1.4] text-black w-[230px] 2xl:w-[275px] shrink-0">
@@ -323,7 +323,7 @@ export default function VatanVillage() {
                   className="bg-white rounded-[5px] shadow-[0_27px_40px_rgba(10,15,40,0.12)] p-[24px] flex flex-col gap-5"
                 >
                   <div className="h-[300px] overflow-hidden flex items-center justify-center">
-                    <img src={plan.image} alt={plan.title} className="w-full h-full object-contain" />
+                    <img loading="lazy" decoding="async" src={plan.image} alt={plan.title} className="w-full h-full object-contain" />
                   </div>
                   <h3 className="font-heading text-[24px] font-bold leading-[1.4] text-ink text-center">{plan.title}</h3>
                   <div className="flex flex-col gap-3">
@@ -383,7 +383,7 @@ export default function VatanVillage() {
               <div key={p.slug} className="w-[520px] shrink-0">
                 <Link to={`/projects/${p.slug}`}>
                   <div className="relative h-[320px] rounded-[5px] overflow-hidden">
-                    <img src={p.image} alt={p.title} className="size-full object-cover transition-transform hover:scale-105" />
+                    <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="size-full object-cover transition-transform hover:scale-105" />
                     <div className="absolute top-4 left-4 bg-[#FF9500] px-6 py-2 rounded-full">
                       <span className="font-vela text-[16px] font-medium text-white">
                         {p.status === 'active' ? 'Идут продажи' : 'Распродан'}

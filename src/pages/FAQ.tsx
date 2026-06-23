@@ -38,7 +38,7 @@ const faqs = [
 function PlusIcon({ open }: { open: boolean }) {
   return (
     <div className={`relative size-8 shrink-0 transition-transform duration-200 ${open ? 'rotate-45' : ''}`}>
-      <img src="/assets/faq-plus.svg" alt="" className="size-8" />
+      <img loading="lazy" decoding="async" src="/assets/faq-plus.svg" alt="" className="size-8" />
     </div>
   )
 }
@@ -150,8 +150,8 @@ export default function FAQ() {
 
             {/* Right: image */}
             <div className="flex-1 min-h-[500px] overflow-hidden relative">
-              <img
-                src="/assets/project-alandalus.png"
+              <img loading="lazy" decoding="async"
+                src="/assets/project-alandalus.webp"
                 alt="Жилой комплекс Renaissance Development"
                 className="w-full h-full object-cover"
               />

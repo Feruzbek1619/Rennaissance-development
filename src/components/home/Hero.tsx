@@ -11,25 +11,25 @@ const slides = [
     slug: 'alandalus',
     title: 'ALANDALUS',
     desc: 'Кирпич и монолит, потолки 3 метра, закрытый двор и паркинг под домом — в спокойном зелёном квартале Яшнабада.',
-    image: '/assets/hero-alandalus.png',
+    image: '/assets/hero-alandalus.webp',
   },
   {
     slug: 'botanika-luxury',
     title: 'BOTANIKA LUXURY',
     desc: 'Монолитный комплекс комфорт-класса в Мирзо-Улугбекском районе: закрытая территория, подземный паркинг и развитая инфраструктура рядом.',
-    image: '/assets/project-botanika.png',
+    image: '/assets/project-botanika.webp',
   },
   {
     slug: 'vatan-village',
     title: 'VATAN VILLAGE',
     desc: 'Просторные квартиры в тихом зелёном квартале Мирзо-Улугбекского района — собственный двор и всё необходимое в шаговой доступности.',
-    image: '/assets/project-vatan.png',
+    image: '/assets/project-vatan.webp',
   },
   {
     slug: 'turon',
     title: 'TURON',
     desc: 'Современный жилой комплекс на улице Янги Узбекистон: монолитный каркас, благоустроенная территория и продуманные планировки.',
-    image: '/assets/project-turon.png',
+    image: '/assets/project-turon.webp',
   },
 ]
 
@@ -68,7 +68,7 @@ export default function Hero() {
 
                 {/* Photo with carousel controls */}
                 <div className="relative h-[800px] w-full overflow-hidden rounded-[5px]">
-                  <img src={slide.image} alt={`ЖК ${slide.title}`} className="size-full object-cover" />
+                  <img loading="lazy" decoding="async" src={slide.image} alt={`ЖК ${slide.title}`} className="size-full object-cover" />
                   <div className="absolute bottom-9 right-9 flex items-center gap-[13.333px]">
                     <button
                       type="button"

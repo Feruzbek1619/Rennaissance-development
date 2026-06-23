@@ -45,7 +45,7 @@ export function ServiceCard({ title, description, features, image, imageAlt = ''
 
       {image && (
         <div className="pointer-events-none absolute left-[52%] top-1/2 -translate-y-1/2 -rotate-6">
-          <img src={image} alt={imageAlt} className="h-[223px] w-[392px] rounded-[8px] object-cover" />
+          <img loading="lazy" decoding="async" src={image} alt={imageAlt} className="h-[223px] w-[392px] rounded-[8px] object-cover" />
         </div>
       )}
     </div>

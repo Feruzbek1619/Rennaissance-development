@@ -48,8 +48,8 @@ export default function ProcessStepsSection() {
 
             {/* Left: photo */}
             <div className="w-[698px] h-[678px] shrink-0 rounded-[5px] overflow-hidden">
-              <img
-                src="/assets/home-process.png"
+              <img loading="lazy" decoding="async"
+                src="/assets/home-process.webp"
                 alt="Команда Renaissance Development за работой"
                 className="size-full object-cover"
               />

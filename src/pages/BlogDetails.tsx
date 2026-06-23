@@ -17,7 +17,7 @@ export default function BlogDetails() {
       {/* ── Article hero ─────────────────────────────────── */}
       <section className="bg-primary relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={post.image} alt="" className="w-full h-full object-cover opacity-30" />
+          <img loading="lazy" decoding="async" src={post.image} alt="" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/30" />
         </div>
         <div className="relative py-[100px]">
@@ -56,7 +56,7 @@ export default function BlogDetails() {
             {/* Main content */}
             <article className="flex-1 min-w-0">
               <div className="overflow-hidden mb-[48px]">
-                <img
+                <img loading="lazy" decoding="async"
                   src={post.image}
                   alt={post.title}
                   className="w-full aspect-[820/480] object-cover"
@@ -180,7 +180,7 @@ export default function BlogDetails() {
                   className="group bg-white overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
                 >
                   <div className="overflow-hidden aspect-[400/260]">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={p.image}
                       alt={p.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

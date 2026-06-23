@@ -108,7 +108,7 @@ const vatanDetails: ProjectDetails = {
   floorPlans: [
     {
       title: 'План подвального этажа на отм',
-      image: '/assets/vatan-plan-1.png',
+      image: '/assets/vatan-plan-1.webp',
       rooms: [
         { name: 'Подсобное помещение', area: '76.5 м2' },
         { name: 'Холл', area: '19.6 м2' },
@@ -120,7 +120,7 @@ const vatanDetails: ProjectDetails = {
     },
     {
       title: 'План 1-го этажа на отм.',
-      image: '/assets/vatan-plan-2.png',
+      image: '/assets/vatan-plan-2.webp',
       rooms: [
         { name: 'Коридор', area: '24.0 м2' },
         { name: 'Кухня', area: '34.7 м2' },
@@ -132,7 +132,7 @@ const vatanDetails: ProjectDetails = {
     },
     {
       title: 'План 2-го этажа на отм.',
-      image: '/assets/vatan-plan-3.png',
+      image: '/assets/vatan-plan-3.webp',
       rooms: [
         { name: 'Холл', area: '24.0 м2' },
         { name: 'Спальня', area: '34.7 м2' },
@@ -153,7 +153,7 @@ export const projects: Project[] = [
     category: 'Жилой комплекс · Комфорт+',
     area: 'от 26.44 до 30,81 м²',
     location: 'Юкоричирчикский район, улица Янги Узбекистон',
-    image: '/assets/project-alandalus.png',
+    image: '/assets/project-alandalus.webp',
     status: 'active',
     details: alandalusDetails,
   },
@@ -163,7 +163,7 @@ export const projects: Project[] = [
     category: 'Жилой комплекс · Комфорт+',
     area: 'от 26.44 до 30,81 м²',
     location: 'Мирзо-Улугбекский район, тупик Немат, 197, Ташкент',
-    image: '/assets/project-botanika.png',
+    image: '/assets/project-botanika.webp',
     status: 'active',
   },
   {
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     category: 'Жилой комплекс · Комфорт+',
     area: 'от 26.44 до 30,81 м²',
     location: 'Мирзо-Улугбекский район, улица Янги Узбекистон',
-    image: '/assets/project-vatan.png',
+    image: '/assets/project-vatan.webp',
     status: 'active',
     details: vatanDetails,
   },
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     category: 'Жилой комплекс · Комфорт+',
     area: 'от 26.44 до 30,81 м²',
     location: 'Мирзо-Улугбекский район, улица Янги Узбекистон',
-    image: '/assets/project-turon.png',
+    image: '/assets/project-turon.webp',
     status: 'active',
   },
   {
@@ -191,7 +191,7 @@ export const projects: Project[] = [
     category: 'Жилой комплекс · Комфорт',
     area: 'от 26.44 до 30,81 м²',
     location: 'Юсуфхона, 60 минут от Ташкента',
-    image: '/assets/project-chalet.png',
+    image: '/assets/project-chalet.webp',
     status: 'sold',
   },
   {
@@ -200,7 +200,7 @@ export const projects: Project[] = [
     category: 'Жилой комплекс · Комфорт',
     area: 'от 26.44 до 30,81 м²',
     location: 'г. Ташкент, Сергелийский р-н, м-в Куйлюк-5, махалля Халкабод',
-    image: '/assets/project-western.png',
+    image: '/assets/project-western.webp',
     status: 'sold',
   },
 ]

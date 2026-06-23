@@ -7,7 +7,7 @@ function BlogCard({ post }: { post: typeof posts[0] }) {
   return (
     <Link to={`/blog/${post.slug}`} className="group flex flex-col gap-0 bg-white overflow-hidden hover:shadow-lg transition-shadow">
       <div className="overflow-hidden aspect-[556/360]">
-        <img
+        <img loading="lazy" decoding="async"
           src={post.image}
           alt={post.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

@@ -124,8 +124,8 @@ export default function Quote() {
 
             {/* Right: building image (Figma 7802:9364) */}
             <div className="flex-1 min-w-0 min-h-[600px] overflow-hidden relative">
-              <img
-                src="/assets/contacts-form.jpg"
+              <img loading="lazy" decoding="async"
+                src="/assets/contacts-form.webp"
                 alt="Жилой комплекс Renaissance Development"
                 className="absolute inset-0 w-full h-full object-cover"
               />

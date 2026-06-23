@@ -9,8 +9,8 @@ export default function NotFound() {
     <main className="bg-white">
       <Container>
         <div className="flex flex-col items-center justify-center gap-[40px] pt-[90px] pb-[120px] text-center">
-          <img
-            src="/assets/error-illustration.png"
+          <img loading="lazy" decoding="async"
+            src="/assets/error-illustration.webp"
             alt="Страница в разработке"
             className="w-full max-w-[620px] h-auto select-none"
           />

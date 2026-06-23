@@ -38,7 +38,7 @@ export default function PartnersSection() {
                 key={i}
                 className="flex items-center justify-center h-[112px] flex-1 min-w-0"
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={logo.src}
                   alt={logo.alt}
                   style={{ width: logo.width, height: 48 }}

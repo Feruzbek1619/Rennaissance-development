@@ -37,7 +37,7 @@ export function ProjectCard({ project }: { project: Project }) {
     <div className="flex flex-col gap-5 flex-1 min-w-0">
       {/* Image */}
       <div className="relative h-[418px] rounded-[5px] overflow-hidden">
-        <img src={project.image} alt={project.title} className="absolute inset-0 size-full object-cover" />
+        <img loading="lazy" decoding="async" src={project.image} alt={project.title} className="absolute inset-0 size-full object-cover" />
         <div className={`absolute top-6 left-6 ${badgeClass} flex items-center justify-center px-[35px] h-[48px] rounded-full`}>
           <span className="font-vela text-[20px] font-medium text-white whitespace-nowrap leading-[1.6]">
             {badgeLabel}

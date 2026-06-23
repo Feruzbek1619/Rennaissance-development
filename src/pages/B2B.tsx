@@ -73,8 +73,8 @@ export default function B2B() {
     <main>
       {/* ── 1. Hero ─────────────────────────────────────────── */}
       <section className="relative h-[888px] overflow-hidden">
-        <img
-          src="/assets/production.png"
+        <img loading="lazy" decoding="async"
+          src="/assets/production.webp"
           alt="Universal Temir Beton"
           className="w-full h-full object-cover"
         />
@@ -151,8 +151,8 @@ export default function B2B() {
           <div className="flex gap-8 2xl:gap-[72px] items-start">
             {/* Left: factory image */}
             <div className="w-[40%] max-w-[698px] shrink-0 h-[840px] overflow-hidden">
-              <img
-                src="/assets/production.png"
+              <img loading="lazy" decoding="async"
+                src="/assets/production.webp"
                 alt="UTB Factory"
                 className="w-full h-full object-cover"
               />

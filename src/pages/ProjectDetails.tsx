@@ -157,7 +157,7 @@ export default function ProjectDetails() {
     <main>
       {/* ── 1. Hero ─────────────────────────────────────── */}
       <section className="relative h-[888px] overflow-hidden bg-primary">
-        <img
+        <img loading="lazy" decoding="async"
           src={project.image}
           alt={project.title}
           className="absolute inset-0 size-full object-cover"
@@ -255,7 +255,7 @@ export default function ProjectDetails() {
       <section className="bg-white py-8">
         <Container>
           <div className="h-[600px] rounded-[5px] overflow-hidden">
-            <img src={project.image} alt={project.title} className="size-full object-cover" />
+            <img loading="lazy" decoding="async" src={project.image} alt={project.title} className="size-full object-cover" />
           </div>
         </Container>
       </section>
@@ -291,7 +291,7 @@ export default function ProjectDetails() {
               {/* Left: photo + text */}
               <div className="flex flex-col gap-8 w-[698px] shrink-0">
                 <div className="h-[450px] rounded-[5px] overflow-hidden">
-                  <img src={project.image} alt="" className="size-full object-cover" />
+                  <img loading="lazy" decoding="async" src={project.image} alt="" className="size-full object-cover" />
                 </div>
                 <div>
                   <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink mb-4">ПРЕИМУЩЕСТВА</h2>
@@ -326,7 +326,7 @@ export default function ProjectDetails() {
           <div className="flex items-stretch gap-0 rounded-[5px] overflow-hidden">
             {/* Left: photo */}
             <div className="w-[698px] shrink-0 min-h-[500px]">
-              <img src={project.image} alt="" className="size-full object-cover" />
+              <img loading="lazy" decoding="async" src={project.image} alt="" className="size-full object-cover" />
             </div>
             {/* Right: dark panel */}
             <div className="flex-1 bg-primary p-[60px] flex flex-col gap-8">
@@ -363,7 +363,7 @@ export default function ProjectDetails() {
           <div className="flex gap-4 h-[300px]">
             {[project.image, project.image, project.image].map((src, i) => (
               <div key={i} className="flex-1 rounded-[5px] overflow-hidden">
-                <img src={src} alt="" className="size-full object-cover" />
+                <img loading="lazy" decoding="async" src={src} alt="" className="size-full object-cover" />
               </div>
             ))}
           </div>
@@ -381,7 +381,7 @@ export default function ProjectDetails() {
               {details.floorPlans.map((plan) => (
                 <div key={plan.title} className="bg-white rounded-[5px] shadow-[0_27px_40px_rgba(10,15,40,0.12)] p-[24px] flex flex-col gap-5">
                   <div className="h-[300px] overflow-hidden flex items-center justify-center">
-                    <img src={plan.image} alt={plan.title} className="w-full h-full object-contain" />
+                    <img loading="lazy" decoding="async" src={plan.image} alt={plan.title} className="w-full h-full object-contain" />
                   </div>
                   <h3 className="font-heading text-[24px] font-bold leading-[1.4] text-ink text-center">{plan.title}</h3>
                   <div className="flex flex-col gap-3">
@@ -483,7 +483,7 @@ export default function ProjectDetails() {
               <div key={p.slug} className="w-[520px] shrink-0">
                 <Link to={`/projects/${p.slug}`}>
                   <div className="relative h-[320px] rounded-[5px] overflow-hidden">
-                    <img src={p.image} alt={p.title} className="size-full object-cover transition-transform hover:scale-105" />
+                    <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="size-full object-cover transition-transform hover:scale-105" />
                     <div className="absolute top-4 left-4 bg-[#FF9500] px-6 py-2 rounded-full">
                       <span className="font-vela text-[16px] font-medium text-white">Идут продажи</span>
                     </div>
@@ -544,7 +544,7 @@ export default function ProjectDetails() {
           </div>
           <div className="flex items-center gap-[60px]">
             <div className="w-[698px] h-[420px] shrink-0 rounded-[5px] overflow-hidden">
-              <img src="/assets/production.png" alt="Universal Temir Beton" className="size-full object-cover" />
+              <img loading="lazy" decoding="async" src="/assets/production.webp" alt="Universal Temir Beton" className="size-full object-cover" />
             </div>
             <div className="flex flex-col gap-6 flex-1">
               <h3 className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink">UNIVERSAL TEMIR BETON</h3>

@@ -6,35 +6,35 @@ import { ChevronLeft, ChevronRight } from '@/components/icons'
 
 const slides = [
   {
-    image: '/assets/production.png',
+    image: '/assets/production.webp',
     title: 'Universal Temir Beton',
     subtitle: 'Бетонный завод — основа каждого нашего объекта',
     desc: 'Завод основан в 2021 году и входит в число современных и ведущих предприятий республики по производству железобетонных изделий и товарного бетона. Обеспечивает все объекты компании качественным материалом в сжатые сроки — без посредников и задержек.',
     primary: { label: 'Подробно', to: '/production' },
   },
   {
-    image: '/assets/production-spectehnika.png',
+    image: '/assets/production-spectehnika.webp',
     title: 'Спецтехника',
     subtitle: 'Собственный парк техники — стройка без простоев',
     desc: 'На каждой площадке Renaissance Building работает собственная техника: башенные краны, экскаваторы, бульдозеры, самосвалы, гидравлические молоты, грузовые машины, бетоносмесители, бетононасосы, подъёмные краны и автовышки. Стройка идёт по графику — независимо от внешних подрядчиков.',
     primary: null,
   },
   {
-    image: '/assets/production-ventilation.png',
+    image: '/assets/production-ventilation.webp',
     title: 'Вентиляционные шахты',
     subtitle: 'Производим по современным строительным стандартам',
     desc: 'Производим вентиляционные блоки и шахты для жилых и коммерческих объектов. Продукция изготавливается по проектной документации с соблюдением современных строительных норм. Используется на всех объектах компании — и доступна для внешних заказчиков.',
     primary: null,
   },
   {
-    image: '/assets/production-gazoblok.png',
+    image: '/assets/production-gazoblok.webp',
     title: 'Газоблок',
     subtitle: 'Лёгкий, тёплый, экологичный',
     desc: 'Производим газобетонные блоки для внутренних перегородок и несущих конструкций. Снижает нагрузку на фундамент, сохраняет тепло зимой и прохладу летом, не горит и не выделяет вредных веществ. Применяется во всех жилых комплексах Renaissance Building.',
     primary: null,
   },
   {
-    image: '/assets/production-termo.png',
+    image: '/assets/production-termo.webp',
     title: 'Термо-рамы',
     subtitle: 'Энергосберегающие окна и двери собственного производства',
     desc: 'Производим оконные и дверные рамы с улучшенными теплоизоляционными характеристиками. Современное оборудование, контроль качества на каждом этапе. Устанавливаются во всех объектах компании — снижают расходы на отопление и кондиционирование с первого дня заселения.',
@@ -78,7 +78,7 @@ export default function ProductionSection() {
                 >
                   {/* Photo */}
                   <div className="w-[52%] max-w-[940px] h-[667px] shrink-0 min-w-0 overflow-hidden">
-                    <img src={slide.image} alt={slide.title} className="size-full object-cover" />
+                    <img loading="lazy" decoding="async" src={slide.image} alt={slide.title} className="size-full object-cover" />
                   </div>
 
                   {/* Text */}

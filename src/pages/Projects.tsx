@@ -35,7 +35,7 @@ export default function Projects() {
     <main>
       {/* Hero */}
       <section className="bg-primary overflow-hidden relative">
-        <img
+        <img loading="lazy" decoding="async"
           src="/assets/projects-hero-bg.svg"
           alt=""
           aria-hidden

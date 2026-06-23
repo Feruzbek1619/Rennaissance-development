@@ -9,10 +9,10 @@ import FAQSection from '@/components/home/FAQSection'
 import { projects } from '@/data/projects'
 
 const stats = [
-  { value: '12+', label: 'Реализованные проекты', image: '/assets/stat-1.png' },
-  { value: '5+', label: 'Проекты в строительстве', image: '/assets/stat-2.png' },
-  { value: '2021', label: 'Собственный бетонный завод', image: '/assets/stat-3.png' },
-  { value: '2019', label: 'Год основания', image: '/assets/stat-4.png' },
+  { value: '12+', label: 'Реализованные проекты', image: '/assets/stat-1.webp' },
+  { value: '5+', label: 'Проекты в строительстве', image: '/assets/stat-2.webp' },
+  { value: '2021', label: 'Собственный бетонный завод', image: '/assets/stat-3.webp' },
+  { value: '2019', label: 'Год основания', image: '/assets/stat-4.webp' },
 ]
 
 const partners = [
@@ -90,8 +90,8 @@ export default function About() {
           <div className="flex justify-center">
             <div className="relative w-[406px]">
               <div className="h-[495px] overflow-hidden">
-                <img
-                  src="/assets/director-photo.png"
+                <img loading="lazy" decoding="async"
+                  src="/assets/director-photo.webp"
                   alt="Джабборов Руфат Узакович — основатель и CEO"
                   className="w-full h-full object-cover object-top"
                 />
@@ -125,7 +125,7 @@ export default function About() {
           <div className="flex gap-4">
             {stats.map((s) => (
               <div key={s.label} className="flex-1 h-[432px] overflow-hidden rounded-[4px]">
-                <img src={s.image} alt={s.label} className="w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" src={s.image} alt={s.label} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
@@ -154,7 +154,7 @@ export default function About() {
           <div className="flex items-center justify-between border-t border-border pt-10">
             {partners.map((src, i) => (
               <div key={i} className="flex items-center justify-center w-[344px] h-[112px]">
-                <img src={src} alt={`Партнёр ${i + 1}`} className="max-h-[48px] object-contain" />
+                <img loading="lazy" decoding="async" src={src} alt={`Партнёр ${i + 1}`} className="max-h-[48px] object-contain" />
               </div>
             ))}
           </div>
@@ -177,8 +177,8 @@ export default function About() {
 
           {/* Video / big image */}
           <div className="relative w-full h-[740px] overflow-hidden">
-            <img
-              src="/assets/why-us-video.png"
+            <img loading="lazy" decoding="async"
+              src="/assets/why-us-video.webp"
               alt="Наши проекты"
               className="w-full h-full object-cover"
             />
