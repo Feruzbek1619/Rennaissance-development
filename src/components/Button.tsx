@@ -2,6 +2,7 @@ import type { MouseEventHandler, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { cn } from '@/lib/cn'
 import { ArrowUpRight, Spinner } from '@/components/icons'
+import { useLeadModalOptional } from '@/components/LeadModal'
 
 type Variant = 'accent' | 'primary' | 'outline' | 'outlineLight' | 'white'
 type Size = 'md' | 'lg'
@@ -65,6 +66,7 @@ export function Button({
   ...rest
 }: ButtonProps) {
   const classes = cn(base, sizeClasses[size], variantClasses[variant], className)
+  const modal = useLeadModalOptional()
 
   const content = (
     <>
@@ -81,6 +83,15 @@ export function Button({
       )}
     </>
   )
+
+  // CTAs pointing at /quote open the global lead modal instead of navigating.
+  if (to === '/quote' && modal) {
+    return (
+      <button type="button" onClick={() => modal.openLead()} className={classes} {...rest}>
+        {content}
+      </button>
+    )
+  }
 
   if (to) {
     return (

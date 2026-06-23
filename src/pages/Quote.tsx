@@ -1,5 +1,6 @@
 import { Container } from '@/components/Container'
 import FAQSection from '@/components/home/FAQSection'
+import { useLeadModalOptional } from '@/components/LeadModal'
 
 function OfficeIcon() {
   return (
@@ -59,6 +60,7 @@ const contactCards = [
 ]
 
 export default function Quote() {
+  const modal = useLeadModalOptional()
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────── */}
@@ -107,6 +109,7 @@ export default function Quote() {
                 <div className="flex flex-col gap-[13px]">
                   <button
                     type="button"
+                    onClick={() => modal?.openSuccess()}
                     className="w-full h-[79px] bg-accent rounded-[5px] font-vela text-[34px] font-semibold text-white hover:bg-[#E85F00] transition-colors"
                   >
                     Оставить заявку

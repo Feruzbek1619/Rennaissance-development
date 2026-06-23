@@ -1,4 +1,5 @@
 import { Container } from '@/components/Container'
+import { useLeadModalOptional } from '@/components/LeadModal'
 
 function PhoneIcon() {
   return (
@@ -16,6 +17,7 @@ function PhoneIcon() {
 
 // «Вам нужна помощь?» CTA + form (Figma 7828:3982).
 export default function NeedHelpSection() {
+  const modal = useLeadModalOptional()
   return (
     <section className="bg-primary py-[80px]">
       <Container>
@@ -70,6 +72,7 @@ export default function NeedHelpSection() {
             {/* Submit */}
             <button
               type="button"
+              onClick={() => modal?.openSuccess()}
               className="h-[56px] w-full bg-accent rounded-[5px] font-body font-medium text-[20px] text-white text-center leading-[1.6] hover:bg-[#E85F00] transition-colors"
             >
               Заказать звонок

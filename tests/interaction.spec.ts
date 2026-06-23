@@ -35,11 +35,28 @@ test('FAQ accordion toggles', async ({ page }) => {
 test('keyboard focus visibility on nav CTA', async ({ page }) => {
   await page.goto('/')
   await page.waitForTimeout(200)
-  const cta = page.getByRole('link', { name: 'Заказать звонок' }).first()
+  // CTA is now a <button> (opens the lead modal) rather than a link.
+  const cta = page.locator('nav').getByRole('button', { name: 'Заказать звонок' }).first()
   await cta.focus()
   const fx = await cta.evaluate((el) => {
     const s = getComputedStyle(el)
     return { outlineWidth: s.outlineWidth, outlineStyle: s.outlineStyle, boxShadow: s.boxShadow }
   })
   console.log('CTA focus styles:', JSON.stringify(fx))
+})
+
+test('lead modal opens from CTA, closes on Esc and backdrop', async ({ page }) => {
+  await page.goto('/')
+  await page.waitForTimeout(200)
+  const open = () => page.locator('nav').getByRole('button', { name: 'Заказать звонок' }).first().click()
+  // Esc closes
+  await open()
+  await expect(page.getByRole('dialog')).toBeVisible()
+  await page.keyboard.press('Escape')
+  await expect(page.getByRole('dialog')).toHaveCount(0)
+  // X close button closes (it's the last "Закрыть" — backdrop is first)
+  await open()
+  await expect(page.getByRole('dialog')).toBeVisible()
+  await page.getByRole('dialog').getByRole('button', { name: 'Закрыть' }).last().click()
+  await expect(page.getByRole('dialog')).toHaveCount(0)
 })

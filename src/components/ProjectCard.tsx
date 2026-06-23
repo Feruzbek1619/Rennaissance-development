@@ -1,5 +1,6 @@
 import type { Project } from '@/data/projects'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
+import { useLeadModalOptional } from '@/components/LeadModal'
 
 function AreaIcon() {
   return (
@@ -29,6 +30,7 @@ function ArrowUpRightIcon({ light = false }: { light?: boolean }) {
 export function ProjectCard({ project }: { project: Project }) {
   const badgeClass = project.status === 'active' ? 'bg-[#FF9500]' : 'bg-[#FF3B30]'
   const badgeLabel = project.status === 'active' ? 'Идут продажи' : 'Распродано'
+  const modal = useLeadModalOptional()
 
   return (
     <div className="flex flex-col gap-5 flex-1 min-w-0">
@@ -79,13 +81,13 @@ export function ProjectCard({ project }: { project: Project }) {
 
         {project.status === 'active' && (
           <div className="flex items-center gap-4 flex-wrap">
-            <button type="button" className="flex flex-auto items-center justify-between bg-primary text-white rounded-full px-7 py-4 min-w-0">
+            <button type="button" onClick={() => modal?.openLead()} className="flex flex-auto items-center justify-between bg-primary text-white rounded-full px-7 py-4 min-w-0">
               <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">Выбрать квартиру</span>
               <span className="flex size-[37px] items-center justify-center rounded-full bg-white shrink-0 ml-2">
                 <ArrowUpRightIcon light={false} />
               </span>
             </button>
-            <button type="button" className="flex flex-auto items-center justify-between border border-primary text-primary rounded-full px-7 py-4 min-w-0">
+            <button type="button" onClick={() => modal?.openLead()} className="flex flex-auto items-center justify-between border border-primary text-primary rounded-full px-7 py-4 min-w-0">
               <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">Заказать звонок</span>
               <span className="flex size-[37px] items-center justify-center rounded-full bg-primary shrink-0 ml-2">
                 <ArrowUpRightIcon light={true} />
