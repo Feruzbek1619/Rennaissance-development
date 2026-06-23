@@ -1,0 +1,46 @@
+import { test, expect } from '@playwright/test'
+
+test('404 page renders illustration + back button', async ({ browser }) => {
+  const ctx = await browser.newContext({ viewport: { width: 1920, height: 1080 } })
+  const page = await ctx.newPage()
+  const errors: string[] = []
+  page.on('console', (m) => m.type() === 'error' && errors.push(m.text()))
+  page.on('response', (r) => r.status() >= 400 && !r.url().includes('favicon') && errors.push(`${r.status()} ${r.url()}`))
+  await page.goto('/some-missing-page', { waitUntil: 'networkidle' })
+  await page.evaluate(() => (document as any).fonts.ready)
+  await page.waitForTimeout(400)
+  await expect(page.getByRole('link', { name: /Вернуться на главную/ })).toBeVisible()
+  const img = page.locator('img[alt="Страница в разработке"]')
+  await expect(img).toBeVisible()
+  const ok = await img.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)
+  console.log('404 illustration loaded:', ok, '| console/404 errors:', JSON.stringify(errors))
+  await page.screenshot({ path: 'tests/shots/notfound-1920.png', fullPage: true })
+  await ctx.close()
+})
+
+test('contacts route renders the contact page', async ({ browser }) => {
+  const ctx = await browser.newContext({ viewport: { width: 1920, height: 1080 } })
+  const page = await ctx.newPage()
+  await page.goto('/contacts', { waitUntil: 'networkidle' })
+  await page.evaluate(() => (document as any).fonts.ready)
+  await page.waitForTimeout(300)
+  await expect(page.getByRole('heading', { name: /Наши контакты/i })).toBeVisible()
+  await page.screenshot({ path: 'tests/shots/contacts-1920.png', fullPage: true })
+  console.log('contacts OK')
+  await ctx.close()
+})
+
+test('nav Контакты link points to /contacts and works', async ({ browser }) => {
+  const ctx = await browser.newContext({ viewport: { width: 1920, height: 1080 } })
+  const page = await ctx.newPage()
+  await page.goto('/', { waitUntil: 'networkidle' })
+  await page.waitForTimeout(200)
+  const link = page.locator('nav').getByRole('link', { name: 'Контакты', exact: true }).first()
+  const href = await link.getAttribute('href')
+  console.log('nav Контакты href:', href)
+  await link.click()
+  await page.waitForTimeout(400)
+  await expect(page.getByRole('heading', { name: /Наши контакты/i })).toBeVisible()
+  console.log('nav -> contacts navigation OK, url:', page.url())
+  await ctx.close()
+})
