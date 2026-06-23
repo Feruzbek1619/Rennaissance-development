@@ -62,3 +62,49 @@
   from { opacity: 0; transform: translateY(12px) scale(0.98); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
+
+/* ──────────────────────────────────────────────────────────
+   Scroll-reveal animations (progressive enhancement).
+   Elements are only hidden once JS adds `.reveal-ready` to <html>,
+   so without JS (or with reduced-motion) everything stays visible.
+   ────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  html.reveal-ready [data-reveal] {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  html.reveal-ready [data-reveal='left'] { transform: translateX(-40px); }
+  html.reveal-ready [data-reveal='right'] { transform: translateX(40px); }
+  html.reveal-ready [data-reveal='scale'] { transform: scale(0.93); }
+  html.reveal-ready [data-reveal='fade'] { transform: none; }
+
+  html.reveal-ready [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Gentle continuous float — for accent/decorative elements. */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-floaty { animation: floaty 6s ease-in-out infinite; }
+}
+
+/* Reusable hover-lift for cards. */
+.card-lift {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(13, 43, 69, 0.14);
+}

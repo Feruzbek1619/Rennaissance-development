@@ -13,7 +13,7 @@ export default function WhyUsSection() {
         <div className="flex flex-col gap-16 items-center">
 
           {/* Header */}
-          <div className="flex flex-col items-center gap-4 w-[1295px] max-w-full">
+          <div data-reveal className="flex flex-col items-center gap-4 w-[1295px] max-w-full">
             <SectionTag>ПОЧЕМУ МЫ</SectionTag>
             <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink text-center">
               Почему выбирают нас
@@ -24,15 +24,21 @@ export default function WhyUsSection() {
           <WhyUsCards />
 
           {/* Instagram reels — 4 across. The embed's header/footer chrome is
-              cropped out (offset iframe + overflow-hidden) so only the video
+              cropped out (oversized iframe + overflow-hidden) so only the video
               shows; one button below opens the IG profile. */}
           <div className="flex flex-col gap-10 w-full">
             <div className="grid grid-cols-4 gap-6 w-full">
-              {reels.map((id) => (
-                <div key={id} className="relative h-[480px] overflow-hidden rounded-[10px] bg-black">
-                  {/* iframe is taller than the tile and pulled up so the IG header
-                      (top) and the likes/comments footer (bottom) are clipped —
-                      only the video stays. Play works via the embed's own button. */}
+              {reels.map((id, i) => (
+                <div
+                  key={id}
+                  data-reveal
+                  style={{ transitionDelay: `${i * 90}ms` }}
+                  className="relative h-[520px] 2xl:h-[580px] overflow-hidden rounded-[12px] bg-black"
+                >
+                  {/* iframe is taller than the tile and pulled up so the IG
+                      header (top) and the likes/comments footer (bottom) are
+                      clipped — only the portrait video stays. Play works via the
+                      embed's own button. */}
                   <iframe
                     src={`https://www.instagram.com/reel/${id}/embed/`}
                     title={`Renaissance Development — reel ${id}`}
@@ -45,7 +51,7 @@ export default function WhyUsSection() {
               ))}
             </div>
 
-            <div className="flex justify-center">
+            <div data-reveal className="flex justify-center">
               <a
                 href="https://www.instagram.com/rbcompany.uz/"
                 target="_blank"

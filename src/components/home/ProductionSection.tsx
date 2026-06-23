@@ -56,7 +56,7 @@ export default function ProductionSection() {
         <div className="flex flex-col gap-8">
 
           {/* Header */}
-          <div className="flex flex-col gap-5">
+          <div data-reveal className="flex flex-col gap-5">
             <div className="border border-border px-[24px] py-[16px] self-start">
               <span className="font-body text-body-sm text-ink">Завод</span>
             </div>

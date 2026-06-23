@@ -160,7 +160,7 @@ export default function VatanVillage() {
       {/* ── 2. О проекте VATAN VILLAGE (Figma 7872:3581) ── */}
       <section className="bg-white pt-[80px] pb-[40px]">
         <Container>
-          <div className="flex flex-col gap-8">
+          <div data-reveal className="flex flex-col gap-8">
             <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
               О проекте VATAN VILLAGE
             </h2>
@@ -179,7 +179,7 @@ export default function VatanVillage() {
       <section className="bg-white py-[24px]">
         <Container>
           {/* Big render with bottom gradient + arrows */}
-          <div className="relative h-[460px] 2xl:h-[700px] w-full overflow-hidden rounded-[5px]">
+          <div data-reveal="scale" className="relative h-[460px] 2xl:h-[700px] w-full overflow-hidden rounded-[5px]">
             <img loading="lazy" decoding="async" src={renderSlides[render]} alt="VATAN VILLAGE — общий вид" className="size-full object-cover" />
             <div className="absolute inset-x-0 bottom-0 h-[224px] bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
             <div className="absolute bottom-[40px] right-[40px] flex items-center gap-3">
@@ -205,8 +205,13 @@ export default function VatanVillage() {
           {/* 5-photo strip */}
           <div className="mt-[17px] grid grid-cols-5 gap-[12px] 2xl:gap-[17px]">
             {stripPhotos.map((src, i) => (
-              <div key={i} className="h-[120px] 2xl:h-[171px] overflow-hidden rounded-[1px] bg-white">
-                <img loading="lazy" decoding="async" src={src} alt="" className="size-full object-cover" />
+              <div
+                key={i}
+                data-reveal
+                style={{ transitionDelay: `${i * 70}ms` }}
+                className="h-[120px] 2xl:h-[171px] overflow-hidden rounded-[1px] bg-white"
+              >
+                <img loading="lazy" decoding="async" src={src} alt="" className="size-full object-cover transition-transform duration-500 hover:scale-105" />
               </div>
             ))}
           </div>
@@ -226,7 +231,7 @@ export default function VatanVillage() {
               />
             </div>
             {/* Navy specs card overlapping the lower part of the map */}
-            <div className="relative z-10 mx-auto -mt-[96px] w-[92%] max-w-[1312px] rounded-[5px] border border-primary/30 bg-primary px-[40px] py-[44px] 2xl:px-[80px] 2xl:py-[56px] shadow-[0_30px_60px_rgba(10,15,40,0.25)]">
+            <div data-reveal className="relative z-10 mx-auto -mt-[96px] w-[92%] max-w-[1312px] rounded-[5px] border border-primary/30 bg-primary px-[40px] py-[44px] 2xl:px-[80px] 2xl:py-[56px] shadow-[0_30px_60px_rgba(10,15,40,0.25)]">
               <div className="grid grid-cols-1 gap-x-[60px] gap-y-[24px] md:grid-cols-2">
                 {specRows.map((row) => (
                   <div key={row.label} className="flex items-start gap-3">
@@ -249,7 +254,7 @@ export default function VatanVillage() {
       <section className="bg-white py-[71px]">
         <Container>
           {/* Header: tag + heading (left) · description (right) */}
-          <div className="flex flex-col gap-10 2xl:flex-row 2xl:items-start 2xl:justify-between">
+          <div data-reveal className="flex flex-col gap-10 2xl:flex-row 2xl:items-start 2xl:justify-between">
             <div className="flex flex-col gap-5">
               <SectionTag>Почему Vatan Village</SectionTag>
               <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
@@ -265,10 +270,15 @@ export default function VatanVillage() {
 
           {/* Grid of 6 cells */}
           <div className="mt-[40px] grid grid-cols-2 gap-[20px] 2xl:gap-[32px]">
-            {advantages.map((a) => (
-              <div key={a.title} className="flex flex-col">
+            {advantages.map((a, i) => (
+              <div
+                key={a.title}
+                data-reveal
+                style={{ transitionDelay: `${(i % 2) * 90}ms` }}
+                className="group flex flex-col overflow-hidden"
+              >
                 <div className="h-[340px] 2xl:h-[498px] w-full overflow-hidden">
-                  <img loading="lazy" decoding="async" src={a.image} alt={a.title} className="size-full object-cover" />
+                  <img loading="lazy" decoding="async" src={a.image} alt={a.title} className="size-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-105" />
                 </div>
                 <div className="flex min-h-[200px] 2xl:h-[241px] items-center gap-6 border border-[#c4c4c4] bg-[#f8f8f8] px-[32px] py-[28px] 2xl:px-[48px]">
                   <h3 className="font-heading text-[24px] 2xl:text-[31px] font-bold leading-[1.4] text-black w-[230px] 2xl:w-[275px] shrink-0">
@@ -287,7 +297,7 @@ export default function VatanVillage() {
       {/* ── 6. Statement + stats (Figma 7872:3631) ───────── */}
       <section className="bg-bg-subtle py-[64px]">
         <Container>
-          <p className="text-center font-heading text-[34px] 2xl:text-[45px] font-semibold leading-[1.4] mb-[40px] 2xl:mb-[64px]">
+          <p data-reveal className="text-center font-heading text-[34px] 2xl:text-[45px] font-semibold leading-[1.4] mb-[40px] 2xl:mb-[64px]">
             <span className="text-black">
               Мы не просто строим здания — мы создаём надёжное пространство для будущих поколений.{' '}
             </span>
@@ -296,10 +306,12 @@ export default function VatanVillage() {
             </span>
           </p>
           <div className="flex items-stretch gap-4">
-            {stats.map((s) => (
+            {stats.map((s, i) => (
               <div
                 key={s.label}
-                className="flex flex-1 flex-col items-center justify-center gap-2 bg-white px-[26px] py-[24px] text-center"
+                data-reveal
+                style={{ transitionDelay: `${i * 90}ms` }}
+                className="card-lift flex flex-1 flex-col items-center justify-center gap-2 bg-white px-[26px] py-[24px] text-center"
               >
                 <p className="font-heading text-[56px] 2xl:text-[75px] font-bold uppercase leading-none text-black">{s.value}</p>
                 <p className="font-body text-[16px] leading-[1.6] font-medium text-secondary">{s.label}</p>
@@ -313,14 +325,16 @@ export default function VatanVillage() {
       {details.floorPlans && (
         <section className="bg-primary py-[80px]">
           <Container>
-            <h2 className="font-heading text-[49px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-bg-subtle text-center mb-[48px]">
+            <h2 data-reveal className="font-heading text-[49px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-bg-subtle text-center mb-[48px]">
               План этажа на отм.
             </h2>
             <div className="grid grid-cols-3 gap-6">
-              {details.floorPlans.map((plan) => (
+              {details.floorPlans.map((plan, i) => (
                 <div
                   key={plan.title}
-                  className="bg-white rounded-[5px] shadow-[0_27px_40px_rgba(10,15,40,0.12)] p-[24px] flex flex-col gap-5"
+                  data-reveal
+                  style={{ transitionDelay: `${i * 110}ms` }}
+                  className="card-lift bg-white rounded-[5px] shadow-[0_27px_40px_rgba(10,15,40,0.12)] p-[24px] flex flex-col gap-5"
                 >
                   <div className="h-[300px] overflow-hidden flex items-center justify-center">
                     <img loading="lazy" decoding="async" src={plan.image} alt={plan.title} className="w-full h-full object-contain" />
@@ -355,12 +369,17 @@ export default function VatanVillage() {
       {/* ── 8. Места поблизости ──────────────────────────── */}
       <section className="bg-white py-[100px]">
         <Container>
-          <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink mb-[60px]">
+          <h2 data-reveal className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink mb-[60px]">
             Места поблизости
           </h2>
           <div className="grid grid-cols-3 gap-4">
-            {details.nearby.map((place) => (
-              <div key={place.title} className="flex flex-col gap-4 p-8 bg-bg-subtle rounded-[5px]">
+            {details.nearby.map((place, i) => (
+              <div
+                key={place.title}
+                data-reveal
+                style={{ transitionDelay: `${(i % 3) * 90}ms` }}
+                className="card-lift flex flex-col gap-4 p-8 bg-bg-subtle rounded-[5px]"
+              >
                 <div className="text-ink">
                   <NearbyIcon icon={place.icon} />
                 </div>
@@ -375,12 +394,17 @@ export default function VatanVillage() {
       {/* ── 9. Смотрите также наши другие проекты ────────── */}
       <section className="bg-bg-subtle py-[100px]">
         <Container>
-          <h2 className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink mb-[40px]">
+          <h2 data-reveal className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink mb-[40px]">
             Смотрите также наши другие проекты
           </h2>
           <div className="flex gap-8 overflow-hidden">
-            {others.map((p) => (
-              <div key={p.slug} className="w-[520px] shrink-0">
+            {others.map((p, i) => (
+              <div
+                key={p.slug}
+                data-reveal
+                style={{ transitionDelay: `${i * 100}ms` }}
+                className="w-[520px] shrink-0"
+              >
                 <Link to={`/projects/${p.slug}`}>
                   <div className="relative h-[320px] rounded-[5px] overflow-hidden">
                     <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="size-full object-cover transition-transform hover:scale-105" />

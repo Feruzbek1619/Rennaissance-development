@@ -34,10 +34,10 @@ export function ProjectCard({ project }: { project: Project }) {
   const modal = useLeadModalOptional()
 
   return (
-    <div className="flex flex-col gap-5 flex-1 min-w-0">
+    <div data-reveal className="group flex flex-col gap-5 flex-1 min-w-0">
       {/* Image */}
       <div className="relative h-[418px] rounded-[5px] overflow-hidden">
-        <img loading="lazy" decoding="async" src={project.image} alt={project.title} className="absolute inset-0 size-full object-cover" />
+        <img loading="lazy" decoding="async" src={project.image} alt={project.title} className="absolute inset-0 size-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-105" />
         <div className={`absolute top-6 left-6 ${badgeClass} flex items-center justify-center px-[35px] h-[48px] rounded-full`}>
           <span className="font-vela text-[20px] font-medium text-white whitespace-nowrap leading-[1.6]">
             {badgeLabel}

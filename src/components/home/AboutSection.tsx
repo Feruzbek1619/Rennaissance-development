@@ -11,7 +11,7 @@ export default function AboutSection() {
         <div className="flex items-start gap-[69px]">
 
           {/* Left column */}
-          <div className="w-[782px] shrink-0 flex flex-col">
+          <div data-reveal className="w-[782px] shrink-0 flex flex-col">
             {/* Header: badge + heading */}
             <div className="flex flex-col gap-5">
               <div className="border border-border px-[24px] py-[16px] self-start">
@@ -54,7 +54,7 @@ export default function AboutSection() {
           </div>
 
           {/* Right column: photo offset 194px from column top */}
-          <div className="mt-[194px] flex-1">
+          <div data-reveal="right" className="mt-[194px] flex-1">
             <div className="h-[754px] rounded-[5px] overflow-hidden">
               <img loading="lazy" decoding="async"
                 src="/assets/about-company.webp"

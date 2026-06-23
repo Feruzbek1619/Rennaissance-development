@@ -20,7 +20,7 @@ export default function StatsSection() {
     <section className="bg-bg-subtle pb-[145px] pt-[90px]">
       <Container>
         <div className="flex flex-col gap-16">
-          <p className="text-center font-heading text-[45px] font-semibold leading-[1.4]">
+          <p data-reveal className="text-center font-heading text-[45px] font-semibold leading-[1.4]">
             <span className="text-ink">
               Мы не просто строим здания - мы создаём надёжное пространство для будущих поколений.{' '}
             </span>
@@ -30,8 +30,8 @@ export default function StatsSection() {
           </p>
 
           <div className="flex items-center gap-4">
-            {stats.map((s) => (
-              <div key={s.label} className="flex flex-1 items-center justify-center bg-white px-[26px] py-6 backdrop-blur-[7px]">
+            {stats.map((s, i) => (
+              <div key={s.label} data-reveal style={{ transitionDelay: `${i * 90}ms` }} className="card-lift flex flex-1 items-center justify-center bg-white px-[26px] py-6 backdrop-blur-[7px]">
                 <div className="flex flex-col items-center gap-2">
                   <p className="font-heading text-[75px] font-bold uppercase leading-none text-ink">{s.value}</p>
                   <p className="text-center font-body text-body-sm font-medium text-secondary">{s.label}</p>
@@ -41,9 +41,9 @@ export default function StatsSection() {
           </div>
 
           <div className="flex items-center gap-4">
-            {images.map((img) => (
-              <div key={img.src} className="h-[432px] flex-1">
-                <img loading="lazy" decoding="async" src={img.src} alt={img.alt} className="size-full object-cover" />
+            {images.map((img, i) => (
+              <div key={img.src} data-reveal style={{ transitionDelay: `${i * 90}ms` }} className="h-[432px] flex-1 overflow-hidden">
+                <img loading="lazy" decoding="async" src={img.src} alt={img.alt} className="size-full object-cover transition-transform duration-[600ms] ease-out hover:scale-105" />
               </div>
             ))}
           </div>

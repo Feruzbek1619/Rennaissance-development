@@ -46,7 +46,7 @@ export default function FAQSection() {
         <div className="flex items-start gap-[105px]">
 
           {/* Left column */}
-          <div className="flex flex-col gap-5 w-[665px] shrink-0">
+          <div data-reveal="left" className="flex flex-col gap-5 w-[665px] shrink-0">
             <div className="border border-border px-[24px] py-[16px] self-start">
               <span className="font-body text-body-sm text-ink">FAQ</span>
             </div>
@@ -59,7 +59,7 @@ export default function FAQSection() {
           </div>
 
           {/* Right column: accordion (w-950px implied by flex-1 in 1720px container) */}
-          <div className="flex-1 min-w-0 flex flex-col">
+          <div data-reveal="right" className="flex-1 min-w-0 flex flex-col">
             {faqs.map((faq, i) => (
               <div key={i}>
                 {/* Item header */}
