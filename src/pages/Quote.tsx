@@ -70,12 +70,12 @@ export default function Quote() {
         </Container>
       </section>
 
-      {/* ── Quote form + map image ────────────────────────── */}
-      <section className="bg-primary">
+      {/* ── Quote form + image (Figma 7802:9343 — inset navy card on white) ── */}
+      <section className="bg-white py-[60px]">
         <Container>
-          <div className="flex items-stretch gap-[57px]">
+          <div className="bg-primary p-8 2xl:p-[52px] flex items-stretch gap-8 2xl:gap-[56px]">
             {/* Left: form */}
-            <div className="flex flex-col gap-[59px] w-[730px] shrink-0 py-[52px]">
+            <div className="flex flex-col gap-[40px] 2xl:gap-[59px] flex-1 min-w-0 2xl:max-w-[730px]">
               <div className="flex flex-col gap-[15px]">
                 <h2 className="font-heading text-[61px] font-bold uppercase leading-none text-bg-subtle">
                   Оставить заявку
@@ -120,7 +120,7 @@ export default function Quote() {
             </div>
 
             {/* Right: building image (Figma 7802:9364) */}
-            <div className="flex-1 min-h-[600px] overflow-hidden relative">
+            <div className="flex-1 min-w-0 min-h-[600px] overflow-hidden relative">
               <img
                 src="/assets/contacts-form.jpg"
                 alt="Жилой комплекс Renaissance Development"
