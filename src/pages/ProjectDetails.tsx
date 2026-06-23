@@ -44,7 +44,8 @@ function ResizeIcon() {
 function SparklesIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" className="size-6 text-ink">
-      <path d="M12 3v1M12 20v1M3 12H2M22 12h-1M5.636 5.636l-.707-.707M19.071 19.071l-.707-.707M5.636 18.364l-.707.707M19.071 4.929l-.707.707M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7Z" stroke="currentColor" strokeLinecap="round" />
+      <path d="M12 3l1.7 4.8L18.5 9.5l-4.8 1.7L12 16l-1.7-4.8L5.5 9.5l4.8-1.7L12 3Z" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M18.5 14l.9 2.4 2.6.9-2.6.9-.9 2.4-.9-2.4-2.6-.9 2.6-.9.9-2.4Z" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -52,18 +53,9 @@ function SparklesIcon() {
 function GradCapIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" className="size-6 text-ink">
-      <path d="M12 2L2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
-function BusIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="size-6 text-ink">
-      <rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" strokeLinecap="round" />
-      <path d="M3 10h18M7 17v2M17 17v2" stroke="currentColor" strokeLinecap="round" />
-      <circle cx="7.5" cy="13.5" r="1" fill="currentColor" />
-      <circle cx="16.5" cy="13.5" r="1" fill="currentColor" />
+      <path d="M22 9.5L12 5 2 9.5l10 4.5 10-4.5Z" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6 11.5V17c0 1.2 2.7 3 6 3s6-1.8 6-3v-5.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M22 9.5v5.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
     </svg>
   )
 }
@@ -71,7 +63,9 @@ function BusIcon() {
 function CartIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" className="size-6 text-ink">
-      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4ZM3 6h18M16 10a4 4 0 0 1-8 0" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M2.5 3h2l2.2 11.4a1.2 1.2 0 0 0 1.2 1h9a1.2 1.2 0 0 0 1.2-1L21 6.5H6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="9" cy="20" r="1.3" stroke="currentColor" strokeWidth="1.4" />
+      <circle cx="17.5" cy="20" r="1.3" stroke="currentColor" strokeWidth="1.4" />
     </svg>
   )
 }
@@ -113,7 +107,7 @@ function NearbyIconFor({ icon }: { icon: string }) {
   const map: Record<string, JSX.Element> = {
     sparkles: <SparklesIcon />,
     graduation: <GradCapIcon />,
-    bus: <BusIcon />,
+    bus: <CarIcon />,
     cart: <CartIcon />,
     moon: <MoonIcon />,
     star: <StarIcon />,
@@ -423,8 +417,8 @@ export default function ProjectDetails() {
             </h2>
             <div className="grid grid-cols-3 gap-4">
               {details.nearby.map((place) => (
-                <div key={place.title} className="flex flex-col gap-4 p-8 border border-border rounded-[5px]">
-                  <div className="size-10 flex items-center justify-center rounded-full bg-bg-subtle text-ink">
+                <div key={place.title} className="flex flex-col gap-4 p-8 bg-bg-subtle rounded-[5px]">
+                  <div className="text-ink">
                     <NearbyIconFor icon={place.icon} />
                   </div>
                   <h3 className="font-heading text-[22px] font-bold uppercase leading-[1.3] text-ink">{place.title}</h3>
@@ -452,16 +446,39 @@ export default function ProjectDetails() {
                       <span className="font-vela text-[16px] font-medium text-white">Идут продажи</span>
                     </div>
                   </div>
-                  <div className="mt-4">
-                    <p className="font-heading text-[14px] font-semibold text-ink">{p.category}</p>
-                    <p className="font-heading text-[34px] font-bold uppercase leading-none text-ink mt-1">{p.title}</p>
-                    <div className="flex gap-4 mt-4">
-                      <button type="button" className="flex-1 flex items-center justify-between bg-primary text-white rounded-full px-5 py-3">
-                        <span className="font-vela text-[16px] font-medium">Выбрать квартиру</span>
+                  <div className="mt-4 flex flex-col gap-4">
+                    <div>
+                      <p className="font-heading text-[14px] font-semibold text-ink">{p.category}</p>
+                      <p className="font-heading text-[34px] font-bold uppercase leading-none text-ink mt-1">{p.title}</p>
+                    </div>
+                    {/* spec rows */}
+                    <div className="flex flex-col gap-2">
+                      <div className="h-px bg-border" />
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="font-vela text-[14px] text-secondary">Площадь</span>
+                        <span className="font-vela text-[14px] font-semibold text-secondary text-right">{p.area}</span>
+                      </div>
+                      <div className="h-px bg-border" />
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="font-vela text-[14px] text-secondary shrink-0">Локация</span>
+                        <span className="font-vela text-[14px] font-semibold text-secondary text-right">{p.location}</span>
+                      </div>
+                      <div className="h-px bg-border" />
+                    </div>
+                    {/* two actions */}
+                    <div className="flex gap-3 flex-wrap">
+                      <span className="flex-auto flex items-center justify-between bg-primary text-white rounded-full px-5 py-3">
+                        <span className="font-vela text-[16px] font-medium whitespace-nowrap">Выбрать квартиру</span>
                         <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
                           <ArrowIcon />
                         </span>
-                      </button>
+                      </span>
+                      <span className="flex-auto flex items-center justify-between border border-primary text-primary rounded-full px-5 py-3">
+                        <span className="font-vela text-[16px] font-medium whitespace-nowrap">Заказать звонок</span>
+                        <span className="flex size-7 items-center justify-center rounded-full bg-primary shrink-0">
+                          <ArrowIcon light />
+                        </span>
+                      </span>
                     </div>
                   </div>
                 </Link>
