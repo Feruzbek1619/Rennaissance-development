@@ -148,8 +148,8 @@ export default function FAQ() {
             {/* Right: image */}
             <div className="flex-1 min-h-[500px] overflow-hidden relative">
               <img
-                src="/assets/about-company.png"
-                alt=""
+                src="/assets/project-alandalus.png"
+                alt="Жилой комплекс Renaissance Development"
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-black/80 to-transparent" />

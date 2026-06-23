@@ -6,7 +6,7 @@ import NeedHelpSection from '@/components/home/NeedHelpSection'
 import FAQSection from '@/components/home/FAQSection'
 import { projects } from '@/data/projects'
 
-const ITEMS_PER_PAGE = 2
+const ITEMS_PER_PAGE = 6
 const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE)
 
 function ChevronLeftIcon() {
@@ -45,7 +45,7 @@ export default function Projects() {
           <div className="flex items-center justify-between gap-10 pt-[110px] pb-[90px]">
             {/* Left: heading */}
             <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.3] text-bg-subtle flex-1 min-w-0">
-              Все проекты
+              Наши реализованные и текущие проекты
             </h1>
             {/* Right: description + CTA */}
             <div className="flex flex-col gap-8 w-[460px] 2xl:w-[538px] shrink-0">
@@ -66,12 +66,10 @@ export default function Projects() {
       {/* Projects grid */}
       <section className="bg-white py-[100px]">
         <Container>
-          <div className="flex flex-col gap-16">
-            <div className="flex gap-16">
-              {pageProjects.map((project) => (
-                <ProjectCard key={project.slug} project={project} />
-              ))}
-            </div>
+          <div className="grid grid-cols-2 gap-x-16 gap-y-[80px]">
+            {pageProjects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
           </div>
         </Container>
       </section>

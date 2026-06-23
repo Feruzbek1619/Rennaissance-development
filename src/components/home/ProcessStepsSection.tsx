@@ -2,19 +2,19 @@ import { Container } from '@/components/Container'
 
 const steps = [
   {
-    num: '01',
-    title: 'Консультация',
-    desc: 'Менеджер выслушает ваши пожелания, подберёт подходящие варианты квартир и ответит на все вопросы по условиям покупки и рассрочки.',
+    num: 'Шаг 01',
+    title: 'Выбираете квартиру',
+    desc: 'Подбираете на сайте или звоните менеджеру — покажем свободные квартиры, планировки и цены по этажам. Приезжайте на объект или смотрите онлайн.',
   },
   {
-    num: '02',
-    title: 'Оформление договора',
-    desc: 'Подписываем договор купли-продажи или рассрочки, помогаем с оформлением документов и согласуем удобный для вас график платежей.',
+    num: 'Шаг 02',
+    title: 'Подписываете договор',
+    desc: 'Фиксируем цену и условия рассрочки. Вносите первый взнос от 30% — квартира ваша. Без банка, без скрытых комиссий.',
   },
   {
-    num: '03',
-    title: 'Передача ключей',
-    desc: 'После завершения строительства и ввода в эксплуатацию вы получаете ключи от квартиры и всю необходимую документацию.',
+    num: 'Шаг 03',
+    title: 'Получаете ключи',
+    desc: 'Выплачиваете остаток по графику и принимаете готовую квартиру. Мы сдаём в срок — потому что строим своими материалами и своей техникой.',
   },
 ]
 
@@ -38,41 +38,39 @@ export default function ProcessStepsSection() {
               </h2>
             </div>
             <p className="font-body text-[24px] leading-[1.6] text-secondary w-[692px] shrink min-w-0 pt-2">
-              Мы сделали процесс покупки квартиры максимально простым: без лишней бюрократии,
-              с поддержкой на каждом этапе.
+              Покупка квартиры не должна быть сложной. Мы выстроили процесс так, чтобы вы тратили
+              минимум времени и получали максимум ясности на каждом этапе.
             </p>
           </div>
 
           {/* Content */}
-          <div className="flex items-start justify-between">
+          <div className="flex items-center gap-[72px]">
 
             {/* Left: photo */}
             <div className="w-[698px] h-[678px] shrink-0 rounded-[5px] overflow-hidden">
               <img
-                src="/assets/about-company.png"
-                alt="Как мы работаем"
+                src="/assets/home-process.png"
+                alt="Команда Renaissance Development за работой"
                 className="size-full object-cover"
               />
             </div>
 
-            {/* Right: 3 steps — flex-1 with left offset matching Figma gap */}
-            <div className="flex-1 min-w-0 flex flex-col ml-[57px]">
+            {/* Right: 3 steps — «Шаг 0X» + title stacked left, description right */}
+            <div className="flex-1 min-w-0 flex flex-col">
               {steps.map((step, i) => (
                 <div key={i}>
-                  <div className="py-[40px] flex items-start gap-10">
-                    {/* Step number */}
-                    <span className="font-heading text-[22px] leading-[1.3] text-secondary shrink-0 mt-1">
-                      {step.num}
-                    </span>
-                    {/* Step content */}
-                    <div className="flex flex-col gap-4 min-w-0">
-                      <p className="font-heading font-bold text-[34px] leading-[1.3] text-ink max-w-[256px]">
+                  <div className="py-[40px] flex items-center gap-[53px]">
+                    {/* Step number + title */}
+                    <div className="flex flex-col gap-[26px] shrink-0 w-[256px]">
+                      <span className="font-body text-[22px] leading-[1.4] text-ink">{step.num}</span>
+                      <p className="font-heading font-bold text-[34px] leading-[1.4] text-ink">
                         {step.title}
                       </p>
-                      <p className="font-body text-[20px] leading-[1.6] text-secondary max-w-[651px]">
-                        {step.desc}
-                      </p>
                     </div>
+                    {/* Step description */}
+                    <p className="font-body text-[20px] leading-[1.6] text-secondary flex-1 min-w-0">
+                      {step.desc}
+                    </p>
                   </div>
                   {i < steps.length - 1 && <div className="h-px bg-border" />}
                 </div>

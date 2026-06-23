@@ -118,20 +118,14 @@ export default function Quote() {
               </div>
             </div>
 
-            {/* Right: map image */}
+            {/* Right: building image (Figma 7801:4056 — residential complex) */}
             <div className="flex-1 min-h-[600px] overflow-hidden relative">
-              <div className="absolute inset-0 bg-[#d9d9d9]" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-secondary">
-                  <svg viewBox="0 0 24 24" fill="none" className="size-12 mx-auto mb-2">
-                    <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
-                    <path d="M20 12c0 8-8 13-8 13S4 20 4 12a8 8 0 0 1 16 0Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <p className="font-vela text-[14px]">г. Ташкент, Махтумкули, 100116</p>
-                </div>
-              </div>
-              {/* Gradient overlay at bottom */}
-              <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-black/80 to-transparent" />
+              <img
+                src="/assets/project-botanika.png"
+                alt="Жилой комплекс Renaissance Development"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-black/50 to-transparent" />
             </div>
           </div>
         </Container>
