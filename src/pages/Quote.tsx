@@ -139,15 +139,18 @@ export default function Quote() {
       <section className="bg-white pb-[30px]">
         <Container>
           <div className="bg-white p-[30px]">
-            <div className="relative h-[607px] overflow-hidden">
-              <img
-                src="/assets/contacts-map.jpg"
-                alt="Карта — г. Ташкент, Махтумкули"
-                className="absolute inset-0 w-full h-full object-cover"
+            <div className="relative h-[607px] overflow-hidden rounded-[5px]">
+              <iframe
+                title="Renaissance Development на карте — г. Ташкент"
+                src="https://yandex.ru/map-widget/v1/?ll=69.310180%2C41.304621&z=16&pt=69.310180%2C41.304621%2Cpm2rdm"
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
               />
 
-              {/* Address chip */}
-              <div className="absolute bottom-[18px] left-[18px] bg-white rounded-[15px] flex items-center gap-[15px] p-[15px] shadow-[0_12px_15px_rgba(0,0,0,0.12)]">
+              {/* Address chip — overlay (pointer-events-none keeps the map interactive) */}
+              <div className="pointer-events-none absolute top-[18px] left-[18px] bg-white rounded-[15px] flex items-center gap-[15px] p-[15px] shadow-[0_12px_15px_rgba(0,0,0,0.12)]">
                 <div className="bg-[#e3eee2] rounded-[10px] p-3 shrink-0">
                   <svg viewBox="0 0 24 24" fill="none" className="size-[30px]">
                     <circle cx="12" cy="12" r="3" stroke="#131612" strokeWidth="1.5" />
@@ -159,35 +162,6 @@ export default function Quote() {
                   <p className="font-vela text-[15px] font-bold text-[#131612] leading-[1.4]">г. Ташкент, Махтумкули, 100116,</p>
                   <p className="font-vela text-[15px] font-bold text-[#131612] leading-[1.4]">Республика Узбекистан</p>
                 </div>
-              </div>
-
-              {/* Zoom controls */}
-              <div className="absolute bottom-[25px] right-[25px] flex flex-col gap-[15px]">
-                {[
-                  { label: 'Приблизить', path: 'M12 5v14M5 12h14' },
-                  { label: 'Отдалить', path: 'M5 12h14' },
-                ].map((b) => (
-                  <button
-                    key={b.label}
-                    type="button"
-                    aria-label={b.label}
-                    className="size-10 bg-white rounded-[10px] shadow-[0_12px_15px_rgba(0,0,0,0.12)] flex items-center justify-center text-[#131612] hover:bg-bg-subtle transition-colors"
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" className="size-[18px]">
-                      <path d={b.path} stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  </button>
-                ))}
-                <button
-                  type="button"
-                  aria-label="Моё местоположение"
-                  className="size-10 bg-white rounded-[10px] shadow-[0_12px_15px_rgba(0,0,0,0.12)] flex items-center justify-center text-[#131612] hover:bg-bg-subtle transition-colors"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" className="size-[18px]">
-                    <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
-                    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                </button>
               </div>
             </div>
           </div>
