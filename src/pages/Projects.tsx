@@ -42,13 +42,13 @@ export default function Projects() {
           className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
         />
         <Container className="relative">
-          <div className="flex items-center justify-between pt-[110px] pb-[90px]">
+          <div className="flex items-center justify-between gap-10 pt-[110px] pb-[90px]">
             {/* Left: heading */}
-            <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.3] text-bg-subtle w-[1031px] shrink-0">
+            <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.3] text-bg-subtle flex-1 min-w-0">
               Все проекты
             </h1>
             {/* Right: description + CTA */}
-            <div className="flex flex-col gap-8 w-[538px] shrink-0">
+            <div className="flex flex-col gap-8 w-[460px] 2xl:w-[538px] shrink-0">
               <p className="font-vela text-[20px] leading-[1.6] text-white">
                 Каждый объект Renaissance development — это результат полного производственного цикла: от
                 собственных материалов до финальной отделки. Строим то, за что не стыдно через двадцать лет.

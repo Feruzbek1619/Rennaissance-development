@@ -99,7 +99,7 @@ Node-id для `get_design_context`.
 
 ## Build Progress
 
-**Текущий этап:** Stage 8 COMPLETE — все страницы манифеста собраны.
+**Текущий этап:** Stage 8 COMPLETE + Responsive QA pass (desktop) COMPLETE.
 
 - [x] Stage 0 — Scaffold + tokens + fonts
 - [x] Stage 1 — Base components (Navigation, TopHeader, Button, Footer, ServiceCard, Form)
@@ -110,6 +110,7 @@ Node-id для `get_design_context`.
 - [x] Stage 6 — B2B (`/b2b`) — hero + UTB description + products + FAQ + contact cards + NeedHelp
 - [x] Stage 7 — NotFound (404) + Privacy (`/privacy`) + Terms (`/terms`)
 - [x] Stage 8 — Services (`/services`) + ServiceDetails (`/services/:slug`) + Process (`/process`) + Blog (`/blog`) + BlogDetails (`/blog/:slug`) + data files (`services.ts`, `blog.ts`)
+- [x] QA — Responsive/browser-truth pass (desktop strategy): honest gates green @1280/1440/1920 via Playwright
 - [ ] Stage 9 — Animations pass (Framer Motion)
 
 ---
@@ -198,6 +199,24 @@ Node-id для `get_design_context`.
 - Services accordion: нумерация 01–04, категория как подзаголовок, expand показывает longDescription + features grid.
 
 **Проверено (preview):** все 5 страниц рендерятся, навигация работает, 404 для неизвестных slug работает.
+
+### QA — Responsive / browser-truth pass (desktop strategy)
+**Решение Feruz (2026-06-23):** сайт **desktop-only**. Pixel-perfect на 1920, плавно держим 1440→1280; ниже 1280 — честный горизонтальный скролл. Мобайл/планшет ВНЕ scope (в Figma их нет). См. memory [[responsive-strategy]].
+
+**Источник правды — реальный Chromium (Playwright), не превью.** Аудит-харнесс:
+- `tests/audit.spec.ts` + `playwright.audit.config.ts` (bundled chromium, viewports 1280/1440/1920). Гейты: scrollWidth ≤ clientWidth, ноль console-ошибок, ноль 404, ноль битых картинок, fonts incl. Cyrillic loaded (`document.fonts.check`), CLS, childOverflow. Артефакты → `tests/audit-out/*.json` (gitignored).
+- `tests/interaction.spec.ts` — состояния в браузере: дропдаун навигации (hover), FAQ-аккордеон (клик), видимый focus.
+
+**Найдено и починено ПО КОРНЮ:**
+- ❌ `overflow-x: hidden` на `html/body` + `<nav>` **маскировал** полный слом фикс-1920 вёрстки на <1500px. → Снято. `body { min-width: 1280px }` + `scrollbar-gutter: stable` (`src/index.css`) — ниже 1280 честный скролл, не обрезка.
+- **Container** (`Container.tsx`): гаттеры `xl:px-[60px] 2xl:px-[100px]` — на 1280–1440 +80px ширины контента; на 2xl (≥1536, вкл. 1920) ровно 100px → 1720-колонка pixel-perfect.
+- **Navigation**: компактный режим на 1280–1535 (логотип 208, ссылки 14px/px-2.5, номер телефона скрыт — иконка-звонилка остаётся, номер виден в TopHeader), полный размер на 2xl. Контент nav: 1366→1121px, влезает в 1080 (1280) и 1240 (1440).
+- **Паттерн «две фикс-колонки рядом»** (About projects-header, About production, B2B products, Projects hero): фикс `w-[Npx]` → `flex-1 min-w-0` / `w-[%] max-w-[Npx]`, responsive gap `gap-8 2xl:gap-[...]`, на 2xl возврат к Figma-размеру.
+- **ProjectCard** кнопки: `flex-1` (basis 0) обманывал `flex-wrap` → `flex-auto` (basis=контент) + `flex-wrap` → в узких 3-кол сетках кнопки переносятся, не вылезают.
+- Удалены 3 пре-существующих unused-import (ломали `tsc -b`/`npm run build`): ProjectCard←Button, About←Link, ProjectDetails←ProjectCard.
+
+**Гейты (все зелёные):** `npm run build` ✓; 48 Playwright-тестов ✓; 0 console/404/broken-img; Cyrillic — MTS Compact (заголовки) + Manrope (body-fallback, Poppins кириллицу не покрывает); CLS ≤ 0.04.
+**⚠️ JIT-staleness подтверждён снова:** новые responsive-утилиты не подхватывались на лету — перед замерами/аудитом перезапускать dev-сервер (`pkill -f vite`).
 
 ---
 

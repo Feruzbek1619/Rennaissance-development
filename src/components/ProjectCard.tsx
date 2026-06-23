@@ -1,5 +1,4 @@
 import type { Project } from '@/data/projects'
-import { Button } from '@/components/Button'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
 
 function AreaIcon() {
@@ -79,14 +78,14 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
 
         {project.status === 'active' && (
-          <div className="flex items-center gap-4">
-            <button type="button" className="flex flex-1 items-center justify-between bg-primary text-white rounded-full px-7 py-4 min-w-0">
+          <div className="flex items-center gap-4 flex-wrap">
+            <button type="button" className="flex flex-auto items-center justify-between bg-primary text-white rounded-full px-7 py-4 min-w-0">
               <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">Выбрать квартиру</span>
               <span className="flex size-[37px] items-center justify-center rounded-full bg-white shrink-0 ml-2">
                 <ArrowUpRightIcon light={false} />
               </span>
             </button>
-            <button type="button" className="flex flex-1 items-center justify-between border border-primary text-primary rounded-full px-7 py-4 min-w-0">
+            <button type="button" className="flex flex-auto items-center justify-between border border-primary text-primary rounded-full px-7 py-4 min-w-0">
               <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">Заказать звонок</span>
               <span className="flex size-[37px] items-center justify-center rounded-full bg-primary shrink-0 ml-2">
                 <ArrowUpRightIcon light={true} />

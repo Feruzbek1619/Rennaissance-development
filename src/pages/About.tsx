@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { ProjectCard } from '@/components/ProjectCard'
@@ -165,9 +164,9 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="flex gap-[57px] items-start">
+          <div className="flex gap-8 2xl:gap-[57px] items-start">
             {/* Left: factory image */}
-            <div className="w-[940px] shrink-0 h-[667px] overflow-hidden">
+            <div className="w-[52%] 2xl:w-[940px] max-w-[940px] shrink-0 h-[667px] overflow-hidden">
               <img
                 src="/assets/production.png"
                 alt="Завод Universal Temir Beton"
@@ -176,7 +175,7 @@ export default function About() {
             </div>
 
             {/* Right: UTB text */}
-            <div className="flex-1 flex flex-col gap-[33px] pt-[40px]">
+            <div className="flex-1 min-w-0 flex flex-col gap-[33px] pt-[40px]">
               <h3 className="font-heading text-[45px] font-bold uppercase leading-[1.2] text-ink">
                 Universal Temir Beton — наш собственный завод
               </h3>
@@ -185,7 +184,7 @@ export default function About() {
                 газоблоком, вентиляционными шахтами и термо-рамами. Строим из своих материалов — контролируем
                 качество на каждом этапе.
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-4 flex-wrap">
                 <Button variant="primary" size="lg" to="/b2b">
                   Подробно
                 </Button>
@@ -293,20 +292,20 @@ export default function About() {
       {/* ── 10. Projects section ───────────────────────────── */}
       <section className="bg-bg-subtle py-[100px]">
         <Container>
-          <div className="flex items-end justify-between mb-[52px]">
-            <div className="flex flex-col gap-5">
+          <div className="flex items-end justify-between gap-8 mb-[52px]">
+            <div className="flex flex-col gap-5 min-w-0">
               <div className="border border-border px-[24px] py-[16px] self-start">
                 <span className="font-body text-body-sm text-ink">Проекты</span>
               </div>
-              <h2 className="font-heading text-[61px] font-bold uppercase leading-none text-ink w-[764px]">
+              <h2 className="font-heading text-[61px] font-bold uppercase leading-none text-ink max-w-[764px]">
                 Наши проекты
               </h2>
             </div>
-            <div className="flex flex-col items-end gap-6">
-              <p className="font-body text-[20px] leading-[1.6] text-secondary w-[698px] text-right">
+            <div className="flex flex-col items-end gap-6 min-w-0 shrink">
+              <p className="font-body text-[20px] leading-[1.6] text-secondary max-w-[698px] text-right">
                 5 объектов в продаже — от квартир в рассрочку до загородных вилл
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-4 flex-wrap justify-end">
                 <Button variant="primary" size="lg" to="/projects">
                   Все проекты
                 </Button>

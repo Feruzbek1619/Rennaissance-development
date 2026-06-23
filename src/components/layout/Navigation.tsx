@@ -6,8 +6,12 @@ import { cn } from '@/lib/cn'
 
 const PHONE = '78-333-33-31'
 
+// Compact below 2xl (1280–1535) so the bar fits the 1080 content floor at 1280;
+// full size at 2xl (≥1536, incl. 1920) keeps the Figma look pixel-perfect.
+// Compact below 2xl (1280–1535) so the bar fits the content floor at 1280;
+// full size at 2xl (≥1536, incl. 1920) keeps the Figma look pixel-perfect.
 const linkBase =
-  'flex items-center justify-center rounded-md px-4 py-2 font-body text-body-md text-ink transition-colors whitespace-nowrap'
+  'flex items-center justify-center rounded-md px-2.5 2xl:px-4 py-2 font-body text-[14px] 2xl:text-body-md text-ink transition-colors whitespace-nowrap'
 
 const projects = [
   { label: 'ALANDALUS', to: '/projects/alandalus' },
@@ -32,15 +36,15 @@ export default function Navigation() {
   const catalogActive = pathname.startsWith('/projects')
 
   return (
-    <nav className="bg-white overflow-x-hidden">
+    <nav className="bg-white">
       <Container>
-        <div className="flex h-[108px] items-center justify-between gap-8">
-          <Link to="/" aria-label="Renaissance Development — на главную">
-            <img src="/logo.svg" alt="Renaissance Development" className="h-[76px] w-[303.922px]" />
+        <div className="flex h-[108px] items-center justify-between gap-4 2xl:gap-8">
+          <Link to="/" aria-label="Renaissance Development — на главную" className="shrink-0">
+            <img src="/logo.svg" alt="Renaissance Development" className="h-[52px] w-[208px] 2xl:h-[76px] 2xl:w-[303.922px]" />
           </Link>
 
           {/* Link pill */}
-          <ul className="flex items-center gap-2 rounded-lg bg-white/30 p-1.5">
+          <ul className="flex items-center gap-1 2xl:gap-2 rounded-lg bg-white/30 p-1.5">
             {simpleLinks.map((l) => (
               <li key={l.to}>
                 <NavLink
@@ -97,12 +101,13 @@ export default function Navigation() {
           </ul>
 
           {/* Contact + CTA */}
-          <div className="flex shrink-0 items-center gap-4">
-            <a href={`tel:${PHONE.replace(/\D/g, '')}`} className="flex items-center gap-4">
-              <Phone className="size-6 text-primary" />
-              <span className="font-body text-body-sm text-primary whitespace-nowrap">{PHONE}</span>
+          <div className="flex shrink-0 items-center gap-3 2xl:gap-4">
+            <a href={`tel:${PHONE.replace(/\D/g, '')}`} className="flex items-center gap-2 2xl:gap-4" aria-label={`Позвонить ${PHONE}`}>
+              <Phone className="size-6 text-primary shrink-0" />
+              {/* Number hidden 1280–1535 to fit the bar; icon stays callable. */}
+              <span className="hidden 2xl:inline font-body text-body-sm text-primary whitespace-nowrap">{PHONE}</span>
             </a>
-            <span className="h-[27px] w-px bg-border" />
+            <span className="hidden 2xl:block h-[27px] w-px bg-border" />
             <Button to="/quote" variant="accent" size="lg">
               Заказать звонок
             </Button>

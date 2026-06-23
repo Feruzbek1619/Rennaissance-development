@@ -1,7 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
-import { ProjectCard } from '@/components/ProjectCard'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
 import FAQSection from '@/components/home/FAQSection'
 import { projects } from '@/data/projects'

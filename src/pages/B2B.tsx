@@ -148,9 +148,9 @@ export default function B2B() {
             </p>
           </div>
 
-          <div className="flex gap-[72px] items-start">
+          <div className="flex gap-8 2xl:gap-[72px] items-start">
             {/* Left: factory image */}
-            <div className="w-[698px] shrink-0 h-[840px] overflow-hidden">
+            <div className="w-[40%] max-w-[698px] shrink-0 h-[840px] overflow-hidden">
               <img
                 src="/assets/production.png"
                 alt="UTB Factory"
@@ -159,14 +159,14 @@ export default function B2B() {
             </div>
 
             {/* Right: product list */}
-            <div className="flex-1 flex flex-col">
+            <div className="flex-1 min-w-0 flex flex-col">
               {products.map((p, i) => (
                 <div key={p.title}>
-                  <div className="flex gap-[53px] items-start py-[35px]">
-                    <h3 className="font-heading text-[31px] font-bold leading-[1.3] text-ink w-[280px] shrink-0">
+                  <div className="flex gap-6 2xl:gap-[53px] items-start py-[35px]">
+                    <h3 className="font-heading text-[31px] font-bold leading-[1.3] text-ink w-[200px] 2xl:w-[280px] shrink-0">
                       {p.title}
                     </h3>
-                    <p className="font-body text-[18px] leading-[1.6] text-secondary flex-1">
+                    <p className="font-body text-[18px] leading-[1.6] text-secondary flex-1 min-w-0">
                       {p.description}
                     </p>
                   </div>

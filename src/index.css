@@ -30,12 +30,16 @@
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    /* Reserve scrollbar space so vertical scrollbar never shifts layout. */
+    scrollbar-gutter: stable;
   }
 
   body {
     @apply bg-bg font-body text-ink;
-    overflow-x: hidden;
+    /* Desktop-only target (Figma = 1920 only). Layout is fluid 1280→1920;
+       below 1280 the page scrolls horizontally honestly instead of clipping
+       content behind overflow:hidden. No mobile/tablet design exists yet. */
+    min-width: 1280px;
   }
 
   h1,
