@@ -3,6 +3,7 @@ import RootLayout from './layouts/RootLayout'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import ProjectDetails from './pages/ProjectDetails'
+import VatanVillage from './pages/VatanVillage'
 import Quote from './pages/Quote'
 import About from './pages/About'
 import FAQ from './pages/FAQ'
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
     children: [
       { path: '/', element: <Home /> },
       { path: '/projects', element: <Projects /> },
+      { path: '/projects/vatan-village', element: <VatanVillage /> },
       { path: '/projects/:slug', element: <ProjectDetails /> },
       { path: '/quote', element: <Quote /> },
       { path: '/contacts', element: <Quote /> },
