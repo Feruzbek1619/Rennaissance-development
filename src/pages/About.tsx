@@ -108,16 +108,18 @@ export default function About() {
             </p>
           </div>
 
-          {/* CEO photo — centered */}
+          {/* CEO photo — centered, with name card overlapping bottom (Figma 7801:3087) */}
           <div className="flex justify-center">
             <div className="relative w-[406px]">
-              <img
-                src="/assets/director-illustration.png"
-                alt="Джаббаров Руфат Узакович"
-                className="w-full object-cover"
-              />
-              <div className="bg-white px-[24px] py-[16px]">
-                <p className="font-heading text-[20px] font-bold text-ink">Джаббаров Руфат Узакович</p>
+              <div className="h-[495px] overflow-hidden">
+                <img
+                  src="/assets/director-photo.png"
+                  alt="Джабборов Руфат Узакович — основатель и CEO"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div className="absolute left-4 right-4 bottom-4 bg-white/95 backdrop-blur-md px-[24px] py-[16px]">
+                <p className="font-heading text-[20px] font-bold text-ink">Джабборов Руфат Узакович</p>
                 <p className="font-body text-[16px] text-secondary mt-1">Основатель и CEO</p>
               </div>
             </div>
