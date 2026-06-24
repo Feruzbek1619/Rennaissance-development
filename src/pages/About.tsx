@@ -8,6 +8,7 @@ import ProductionSection from '@/components/home/ProductionSection'
 import FAQSection from '@/components/home/FAQSection'
 import StatsSection from '@/components/home/StatsSection'
 import PartnersSection from '@/components/home/PartnersSection'
+import ProjectsMap from '@/components/ProjectsMap'
 import { projects } from '@/data/projects'
 
 const activeProjects = projects.filter((p) => p.status === 'active').slice(0, 4)
@@ -140,6 +141,28 @@ export default function About() {
 
       {/* ── 9. FAQ ─────────────────────────────────────────── */}
       <FAQSection />
+
+      {/* ── 9.5. Projects map — geography of our objects ───── */}
+      <section className="bg-white py-[100px]">
+        <Container>
+          <div className="flex items-end justify-between gap-8 mb-[52px]">
+            <div className="flex flex-col gap-5 min-w-0" data-reveal="left">
+              <SectionTag>География проектов</SectionTag>
+              <h2 className="font-heading text-[61px] font-bold uppercase leading-none text-ink max-w-[764px]">
+                Наши объекты на карте
+              </h2>
+            </div>
+            <p className="font-body text-[20px] leading-[1.6] text-secondary max-w-[560px] text-right self-end" data-reveal="right">
+              Все проекты Renaissance Development — на карте Ташкента и области.
+              Нажмите на метку, чтобы перейти к объекту.
+            </p>
+          </div>
+
+          <div data-reveal="fade">
+            <ProjectsMap />
+          </div>
+        </Container>
+      </section>
 
       {/* ── 10. Projects section ───────────────────────────── */}
       <section className="bg-bg-subtle py-[100px]">

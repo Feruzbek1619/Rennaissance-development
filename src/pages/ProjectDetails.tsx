@@ -213,49 +213,52 @@ export default function ProjectDetails() {
                 {project.title}
               </p>
 
-              {/* Info chips: 2 rows × 2 cols */}
-              <div className="flex flex-col gap-[10px]">
-                <div className="flex gap-[10px]">
-                  <InfoChip
-                    icon={<MapPinIcon />}
-                    label={details?.specs.address ?? project.location}
-                    sub="Адрес объекта"
-                  />
-                  <InfoChip
-                    icon={<ResizeIcon />}
-                    label={details?.specs.area ?? project.area}
-                    sub="Площадь квартир"
-                  />
+              {/* Chips (left) + CTAs (right) — per Figma 94:4873 */}
+              <div className="flex items-end justify-between gap-8 flex-wrap">
+                {/* Info chips: 2 rows × 2 cols */}
+                <div className="flex flex-col gap-[10px]">
+                  <div className="flex gap-[10px]">
+                    <InfoChip
+                      icon={<MapPinIcon />}
+                      label={details?.specs.address ?? project.location}
+                      sub="Адрес объекта"
+                    />
+                    <InfoChip
+                      icon={<ResizeIcon />}
+                      label={details?.specs.area ?? project.area}
+                      sub="Площадь квартир"
+                    />
+                  </div>
+                  <div className="flex gap-[10px]">
+                    <InfoChip
+                      icon={<CraneIcon />}
+                      label={project.category}
+                      sub="Тип объекта"
+                    />
+                    <InfoChip
+                      icon={<SparklesIcon />}
+                      label={details?.advantage ?? 'Современный комплекс'}
+                      sub="Преимущество"
+                    />
+                  </div>
                 </div>
-                <div className="flex gap-[10px]">
-                  <InfoChip
-                    icon={<CraneIcon />}
-                    label={project.category}
-                    sub="Тип объекта"
-                  />
-                  <InfoChip
-                    icon={<SparklesIcon />}
-                    label={details?.advantage ?? 'Современный комплекс'}
-                    sub="Преимущество"
-                  />
-                </div>
-              </div>
 
-              {/* CTAs */}
-              <div className="flex items-center gap-4 mt-[20px]">
-                <button
-                  type="button"
-                  onClick={() => modal?.openLead()}
-                  className="flex items-center gap-3 bg-primary text-white rounded-full px-[21px] py-[16px] font-vela text-[20px] font-medium leading-[1.6] hover:bg-primary/80 transition-colors"
-                >
-                  Заказать звонок
-                  <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
-                    <ArrowIcon />
-                  </span>
-                </button>
-                <Button variant="accent" size="lg" to="/quote">
-                  Позвонить
-                </Button>
+                {/* CTAs — right side */}
+                <div className="flex items-center gap-4 shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => modal?.openLead()}
+                    className="flex items-center gap-3 bg-primary text-white rounded-full px-[21px] py-[16px] font-vela text-[20px] font-medium leading-[1.6] hover:bg-[#2F3A45] transition-colors"
+                  >
+                    Заказать звонок
+                    <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
+                      <ArrowIcon />
+                    </span>
+                  </button>
+                  <Button variant="accent" size="lg" href="tel:+998783333331">
+                    Позвонить
+                  </Button>
+                </div>
               </div>
             </div>
           </Container>

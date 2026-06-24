@@ -245,6 +245,51 @@
   .preloader { transition: none; }
 }
 
+/* ── Projects map (Leaflet) pins + popup ── */
+.proj-pin {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.proj-pin i {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #b0925e;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  flex: none;
+}
+.proj-pin b {
+  background: #b0925e;
+  color: #fff;
+  font: 600 12px/1 'Manrope', sans-serif;
+  letter-spacing: 0.02em;
+  padding: 5px 9px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+  transition: background 0.2s;
+}
+.proj-pin:hover b {
+  background: #3a4754;
+}
+.proj-pop {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: 'Manrope', sans-serif;
+}
+.proj-pop strong {
+  font-size: 15px;
+  color: #232a33;
+}
+.proj-pop span {
+  font-size: 12px;
+  color: #7e7a72;
+}
+
 /* ── Lenis smooth scroll (iframes intentionally left interactive) ── */
 html.lenis,
 html.lenis body {

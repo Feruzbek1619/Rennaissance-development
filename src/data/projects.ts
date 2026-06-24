@@ -41,6 +41,8 @@ export type Project = {
   image: string
   /** Photo gallery (big view + thumbnails). Falls back to [image]. */
   gallery?: string[]
+  /** Map position [lat, lng] for the projects map. */
+  coords?: [number, number]
   status: 'active' | 'sold'
   details?: ProjectDetails
 }
@@ -156,6 +158,7 @@ export const projects: Project[] = [
     area: 'от 26,44 до 30,81 м²',
     location: 'Юкоричирчикский район, улица Янги Узбекистон',
     image: '/assets/project-alandalus.webp',
+    coords: [41.325, 69.345],
     gallery: [
       '/assets/alandalus-render.webp',
       '/assets/alandalus-1.webp',
@@ -172,6 +175,7 @@ export const projects: Project[] = [
     area: 'от 26,44 до 30,81 м²',
     location: 'Мирзо-Улугбекский район, тупик Немат, 197, Ташкент',
     image: '/assets/project-botanika.webp',
+    coords: [41.346, 69.283],
     status: 'active',
   },
   {
@@ -181,6 +185,7 @@ export const projects: Project[] = [
     area: 'участки от 3 до 7 соток',
     location: 'Мирзо-Улугбекский район, улица Янги Узбекистон',
     image: '/assets/project-vatan.webp',
+    coords: [41.332, 69.335],
     status: 'active',
     details: vatanDetails,
   },
@@ -191,6 +196,7 @@ export const projects: Project[] = [
     area: 'от 26,44 до 30,81 м²',
     location: 'Мирзо-Улугбекский район, улица Янги Узбекистон',
     image: '/assets/project-turon.webp',
+    coords: [41.337, 69.312],
     status: 'active',
   },
   {
@@ -200,6 +206,7 @@ export const projects: Project[] = [
     area: 'от 26,44 до 30,81 м²',
     location: 'Юсуфхона, 60 минут от Ташкента',
     image: '/assets/project-chalet.webp',
+    coords: [41.215, 69.42],
     status: 'sold',
   },
   {
@@ -209,6 +216,7 @@ export const projects: Project[] = [
     area: 'от 26,44 до 30,81 м²',
     location: 'г. Ташкент, Сергелийский р-н, м-в Куйлюк-5, махалля Халкабод',
     image: '/assets/project-western.webp',
+    coords: [41.245, 69.228],
     status: 'sold',
   },
 ]
