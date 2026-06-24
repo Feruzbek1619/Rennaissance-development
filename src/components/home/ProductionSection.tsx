@@ -131,23 +131,6 @@ export default function ProductionSection() {
             >
               <ChevronRight className="size-6" />
             </button>
-
-            {/* Dot indicators */}
-            <div className="flex items-center gap-2 ml-2">
-              {slides.map((_, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => go(i)}
-                  aria-label={`Слайд ${i + 1}`}
-                  className={`rounded-full transition-all duration-300 ${
-                    i === current
-                      ? 'w-6 h-2 bg-primary'
-                      : 'size-2 bg-primary/30 hover:bg-primary/60'
-                  }`}
-                />
-              ))}
-            </div>
           </div>
 
         </div>

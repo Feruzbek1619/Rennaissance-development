@@ -40,7 +40,7 @@ export default function Navigation() {
       <Container>
         <div className="flex h-[108px] items-center justify-between gap-4 2xl:gap-8">
           <Link to="/" aria-label="Renaissance Development — на главную" className="shrink-0">
-            <img loading="lazy" decoding="async" src="/logo.svg" alt="Renaissance Development" className="h-[52px] w-[208px] 2xl:h-[76px] 2xl:w-[303.922px]" />
+            <img loading="lazy" decoding="async" src="/logo.svg" alt="Renaissance Development" className="h-[36.4px] w-[145.6px] 2xl:h-[53.2px] 2xl:w-[212.7px]" />
           </Link>
 
           {/* Link pill */}
