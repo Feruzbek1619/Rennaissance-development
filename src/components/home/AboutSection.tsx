@@ -11,7 +11,7 @@ export default function AboutSection() {
         <div className="flex items-start gap-[69px]">
 
           {/* Left column */}
-          <div data-reveal className="w-[782px] shrink-0 flex flex-col">
+          <div data-reveal="left" className="w-[782px] shrink-0 flex flex-col">
             {/* Header: badge + heading */}
             <div className="flex flex-col gap-5">
               <div className="border border-border px-[24px] py-[16px] self-start">

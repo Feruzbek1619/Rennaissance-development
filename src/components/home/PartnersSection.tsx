@@ -16,7 +16,7 @@ export default function PartnersSection() {
         <div className="flex flex-col gap-16">
 
           {/* Header: badge+heading left, description right */}
-          <div data-reveal className="flex items-start justify-between">
+          <div data-reveal="left" className="flex items-start justify-between">
             <div className="flex flex-col gap-5 w-[961px] shrink min-w-0">
               <div className="border border-border px-[24px] py-[16px] self-start">
                 <span className="font-body text-body-sm text-ink">НАШИ КЛИЕНТЫ</span>

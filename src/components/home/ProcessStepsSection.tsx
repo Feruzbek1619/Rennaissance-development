@@ -28,7 +28,7 @@ export default function ProcessStepsSection() {
         <div className="flex flex-col gap-[64px]">
 
           {/* Header */}
-          <div data-reveal className="flex items-start justify-between">
+          <div data-reveal="left" className="flex items-start justify-between">
             <div className="flex flex-col gap-5 w-[850px] shrink min-w-0">
               <div className="border border-border px-[24px] py-[16px] self-start">
                 <span className="font-body text-body-sm text-ink">Как мы работаем</span>
@@ -44,7 +44,7 @@ export default function ProcessStepsSection() {
           </div>
 
           {/* Content */}
-          <div data-reveal className="flex items-center gap-[72px]">
+          <div data-reveal="right" className="flex items-center gap-[72px]">
 
             {/* Left: photo */}
             <div className="w-[698px] h-[678px] shrink-0 rounded-[5px] overflow-hidden">

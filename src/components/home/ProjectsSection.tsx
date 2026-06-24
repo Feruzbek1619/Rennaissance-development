@@ -15,7 +15,7 @@ export default function ProjectsSection() {
         <div className="flex flex-col gap-16 items-center">
 
           {/* Header */}
-          <div data-reveal className="flex items-center justify-between w-full">
+          <div data-reveal="left" className="flex items-center justify-between w-full">
             <div className="flex flex-col gap-5 w-[764px]">
               <div className="border border-border px-[24px] py-[16px] self-start">
                 <span className="font-body text-body-sm text-ink">ПРОЕКТЫ</span>
@@ -41,7 +41,7 @@ export default function ProjectsSection() {
 
           {/* Project grid */}
           {rows.map((row, ri) => (
-            <div key={ri} data-reveal className="flex gap-16 w-full">
+            <div key={ri} data-reveal={ri === 0 ? 'left' : 'right'} className="flex gap-16 w-full">
               {row.map((project) => (
                 <ProjectCard key={project.slug} project={project} />
               ))}
