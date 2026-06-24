@@ -31,21 +31,30 @@ export default function PartnersSection() {
             </p>
           </div>
 
-          {/* Logo row */}
-          <div data-reveal-stagger className="flex items-center justify-center">
-            {logos.map((logo, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-center h-[112px] flex-1 min-w-0"
-              >
-                <img loading="lazy" decoding="async"
-                  src={logo.src}
-                  alt={logo.alt}
-                  style={{ width: logo.width, height: 48 }}
-                  className="object-contain"
-                />
-              </div>
-            ))}
+          {/* Logo marquee — scrolls in an infinite loop (two identical groups,
+              shifted by exactly one group width). Pauses on hover; edges fade. */}
+          <div
+            data-reveal
+            className="relative w-full overflow-hidden [-webkit-mask-image:linear-gradient(to_right,transparent,#000_7%,#000_93%,transparent)] [mask-image:linear-gradient(to_right,transparent,#000_7%,#000_93%,transparent)]"
+          >
+            <div className="flex w-max animate-marquee">
+              {[0, 1].map((group) => (
+                <div key={group} className="flex shrink-0 items-center" aria-hidden={group === 1}>
+                  {logos.map((logo, i) => (
+                    <div key={i} className="flex h-[112px] items-center justify-center px-[36px] 2xl:px-[56px]">
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src={logo.src}
+                        alt={group === 0 ? logo.alt : ''}
+                        style={{ width: logo.width, height: 48 }}
+                        className="object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>
