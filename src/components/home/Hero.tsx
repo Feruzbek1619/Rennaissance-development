@@ -39,17 +39,17 @@ export default function Hero() {
   const next = () => setCurrent((c) => (c + 1) % slides.length)
 
   return (
-    <section className="bg-bg pt-[82px] overflow-hidden">
-      <Container>
-        <div className="overflow-hidden">
+    <section className="bg-bg overflow-hidden h-[calc(100vh_-_151px)] min-h-[600px]">
+      <Container className="h-full">
+        <div className="overflow-hidden h-full">
           <div
-            className="flex transition-transform duration-500 ease-out"
+            className="flex h-full transition-transform duration-500 ease-out"
             style={{ transform: `translateX(-${current * 100}%)` }}
           >
             {slides.map((slide, i) => (
-              <div key={slide.slug} className="w-full shrink-0 flex flex-col gap-20">
+              <div key={slide.slug} className="w-full shrink-0 h-full flex flex-col gap-6 2xl:gap-10 py-6 2xl:py-8">
                 {/* Title row */}
-                <div data-reveal className="flex w-full items-start justify-between gap-10">
+                <div data-reveal className="flex w-full items-start justify-between gap-10 shrink-0">
                   <h1 className="font-heading text-[64px] 2xl:text-[110px] font-bold uppercase leading-[1.1] text-ink whitespace-nowrap shrink-0">
                     {slide.title}
                   </h1>
@@ -66,9 +66,10 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* Photo with carousel controls */}
-                <div data-reveal="scale" className="relative h-[800px] w-full overflow-hidden rounded-[5px]">
-                  <img loading="lazy" decoding="async" src={slide.image} alt={`ЖК ${slide.title}`} className="reveal-zoom size-full object-cover" />
+                {/* Photo with carousel controls — fills the rest of the hero so
+                    the title + photo always fit one screen (no cut-off). */}
+                <div data-reveal="scale" className="relative flex-1 min-h-0 w-full overflow-hidden rounded-[5px]">
+                  <img loading="eager" decoding="async" src={slide.image} alt={`ЖК ${slide.title}`} className="reveal-zoom size-full object-cover" />
                   <div className="absolute bottom-9 right-9 flex items-center gap-[13.333px]">
                     <button
                       type="button"
