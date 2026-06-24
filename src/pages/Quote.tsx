@@ -1,5 +1,6 @@
 import { Container } from '@/components/Container'
 import FAQSection from '@/components/home/FAQSection'
+import StatsSection from '@/components/home/StatsSection'
 import { useLeadModalOptional } from '@/components/LeadModal'
 
 function OfficeIcon() {
@@ -205,30 +206,8 @@ export default function Quote() {
         </Container>
       </section>
 
-      {/* ── Stats tagline ─────────────────────────────────── */}
-      <section className="bg-bg-subtle py-[80px]">
-        <Container>
-          <p className="text-center font-heading text-[45px] font-semibold leading-[1.4] mb-10">
-            <span className="text-ink">Мы не просто строим здания — мы создаём надёжное пространство для будущих поколений. </span>
-            <span className="text-secondary">Renaissance Development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.</span>
-          </p>
-          <div className="flex items-center gap-4">
-            {[
-              { value: '12+', label: 'Реализованные проекты' },
-              { value: '5+', label: 'Проекты в строительстве' },
-              { value: '2021', label: 'Собственный бетонный завод' },
-              { value: '2019', label: 'год основания' },
-            ].map((s) => (
-              <div key={s.label} className="flex flex-1 items-center justify-center bg-white px-[26px] py-6 backdrop-blur-[7px]">
-                <div className="flex flex-col items-center gap-2">
-                  <p className="font-heading text-[75px] font-bold uppercase leading-none text-ink">{s.value}</p>
-                  <p className="text-center font-body text-body-sm font-medium text-secondary">{s.label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      {/* ── Stats — shared section (animated count-up) ── */}
+      <StatsSection />
 
       {/* ── FAQ ───────────────────────────────────────────── */}
       <FAQSection />

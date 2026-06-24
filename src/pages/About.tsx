@@ -6,21 +6,9 @@ import { WhyUsCards } from '@/components/WhyUsCards'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
 import ProductionSection from '@/components/home/ProductionSection'
 import FAQSection from '@/components/home/FAQSection'
+import StatsSection from '@/components/home/StatsSection'
+import PartnersSection from '@/components/home/PartnersSection'
 import { projects } from '@/data/projects'
-
-const stats = [
-  { value: '12+', label: 'Реализованные проекты', image: '/assets/stat-1.webp' },
-  { value: '5+', label: 'Проекты в строительстве', image: '/assets/stat-2.webp' },
-  { value: '2021', label: 'Собственный бетонный завод', image: '/assets/stat-3.webp' },
-  { value: '2019', label: 'Год основания', image: '/assets/stat-4.webp' },
-]
-
-const partners = [
-  '/assets/partner-1.svg',
-  '/assets/partner-2.svg',
-  '/assets/partner-3.svg',
-  '/assets/partner-4.svg',
-]
 
 const activeProjects = projects.filter((p) => p.status === 'active').slice(0, 4)
 
@@ -105,61 +93,14 @@ export default function About() {
         </Container>
       </section>
 
-      {/* ── 4. Stats + photos ──────────────────────────────── */}
-      <section className="bg-bg-subtle py-[90px]">
-        <Container>
-          <p className="text-center font-heading text-[40px] font-semibold leading-[1.4] mb-[64px]">
-            <span className="text-ink">Мы не просто строим здания — мы создаём надёжное пространство для будущих поколений. </span>
-            <span className="text-secondary">Renaissance Development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.</span>
-          </p>
-
-          <div className="flex items-center gap-4 mb-[16px]">
-            {stats.map((s) => (
-              <div key={s.label} className="flex-1 flex flex-col items-center justify-center bg-white px-[26px] py-6">
-                <p className="font-heading text-[75px] font-bold uppercase leading-none text-ink">{s.value}</p>
-                <p className="text-center font-body text-body-sm font-medium text-secondary mt-2">{s.label}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex gap-4">
-            {stats.map((s) => (
-              <div key={s.label} className="flex-1 h-[432px] overflow-hidden rounded-[4px]">
-                <img loading="lazy" decoding="async" src={s.image} alt={s.label} className="w-full h-full object-cover" />
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      {/* ── 4. Stats — shared section (animated count-up) ── */}
+      <StatsSection />
 
       {/* ── 5. Production — shared carousel (same slides as Home) ── */}
       <ProductionSection />
 
-      {/* ── 6. Partners section ────────────────────────────── */}
-      <section className="bg-white py-[100px] border-t border-border">
-        <Container>
-          <div className="flex items-start justify-between mb-[60px]">
-            <div className="flex flex-col gap-5 w-[700px] shrink-0">
-              <SectionTag>Наши клиенты</SectionTag>
-              <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.2] text-ink">
-                Партнёры в архитектурном совершенстве.
-              </h2>
-            </div>
-            <p className="font-body text-[20px] leading-[1.6] text-secondary w-[651px] self-end">
-              Наша команда экспертов гарантирует, что каждый проект будет реализован точно в срок, в рамках
-              бюджета и с бескомпромиссным качеством.
-            </p>
-          </div>
-
-          <div className="flex items-center justify-between border-t border-border pt-10">
-            {partners.map((src, i) => (
-              <div key={i} className="flex items-center justify-center w-[344px] h-[112px]">
-                <img loading="lazy" decoding="async" src={src} alt={`Партнёр ${i + 1}`} className="max-h-[48px] object-contain" />
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      {/* ── 6. Partners — shared section (looping logo marquee) ── */}
+      <PartnersSection />
 
       {/* ── 7. Why us section ──────────────────────────────── */}
       <section className="bg-white py-[100px]">
