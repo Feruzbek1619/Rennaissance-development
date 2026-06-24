@@ -106,7 +106,7 @@ export default function BlogDetails() {
                 </p>
                 <Link
                   to="/about"
-                  className="inline-flex items-center justify-center h-[48px] px-6 bg-accent rounded-[5px] font-body font-medium text-[16px] text-white hover:bg-[#E85F00] transition-colors"
+                  className="inline-flex items-center justify-center h-[48px] px-6 bg-accent rounded-[5px] font-body font-medium text-[16px] text-white hover:bg-[#9C8050] transition-colors"
                 >
                   О компании →
                 </Link>

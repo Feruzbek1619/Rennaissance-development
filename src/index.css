@@ -221,7 +221,7 @@
   display: block;
   height: 100%;
   border-radius: 3px;
-  background: #ff6701;
+  background: #B0925E;
   transition: width 0.12s linear;
 }
 .preloader__pct {
@@ -231,7 +231,7 @@
   font-family: 'MTS Compact', 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 20px;
-  color: #0d2b45;
+  color: #3A4754;
   font-variant-numeric: tabular-nums;
 }
 @keyframes preloaderLogoIn {

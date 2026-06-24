@@ -77,7 +77,7 @@ export default function NeedHelpSection() {
             <button
               type="button"
               onClick={() => modal?.openSuccess()}
-              className="h-[56px] w-full bg-accent rounded-[5px] font-body font-medium text-[20px] text-white text-center leading-[1.6] hover:bg-[#E85F00] transition-colors"
+              className="h-[56px] w-full bg-accent rounded-[5px] font-body font-medium text-[20px] text-white text-center leading-[1.6] hover:bg-[#9C8050] transition-colors"
             >
               Заказать звонок
             </button>

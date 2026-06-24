@@ -22,13 +22,13 @@ function LocationIconSmall() {
 function ArrowUpRightIcon({ light = false }: { light?: boolean }) {
   return (
     <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-[18px]">
-      <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke={light ? 'white' : '#0D2B45'} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke={light ? 'white' : '#3A4754'} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
 
 export function ProjectCard({ project }: { project: Project }) {
-  const badgeClass = project.status === 'active' ? 'bg-[#FF9500]' : 'bg-[#FF3B30]'
+  const badgeClass = project.status === 'active' ? 'bg-[#B0925E]' : 'bg-[#8C8275]'
   const badgeLabel = project.status === 'active' ? 'Идут продажи' : 'Распродано'
   const modal = useLeadModalOptional()
 
@@ -73,7 +73,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
         {project.status === 'active' && (
           <div className="flex items-center gap-4 flex-wrap">
-            <Link to={`/projects/${project.slug}`} className="flex flex-auto items-center justify-between bg-primary text-white rounded-full px-7 py-4 min-w-0 hover:bg-[#0A2236] transition-colors">
+            <Link to={`/projects/${project.slug}`} className="flex flex-auto items-center justify-between bg-primary text-white rounded-full px-7 py-4 min-w-0 hover:bg-[#2F3A45] transition-colors">
               <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">Выбрать квартиру</span>
               <span className="flex size-[37px] items-center justify-center rounded-full bg-white shrink-0 ml-2">
                 <ArrowUpRightIcon light={false} />

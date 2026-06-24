@@ -4,16 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        accent: '#FF6701',
-        primary: '#0D2B45',
-        ink: '#000000',
-        dark: '#131612', // Main/Dark — top header + dark form bg (distinct from pure black)
-        green: '#62AD5A', // Main/Green — contact icons + director-form action color
+        // Brand palette (Pedro-Araújo-style): slate + warm gold + cream + a
+        // stone bridge tone. Keep token NAMES so the whole UI re-themes at once.
+        accent: '#B0925E', // warm gold (CTAs / highlights) — was orange
+        primary: '#3A4754', // slate (dark panels / buttons) — was navy
+        stone: '#8C8275', // complementary warm taupe (subtle accents)
+        ink: '#232A33', // near-black warm slate (headings / body)
+        dark: '#2A323B', // deep slate — top header + dark form bg
+        green: '#9A8A63', // repurposed to muted gold-olive (contact / success)
         white: '#FFFFFF',
-        bg: { DEFAULT: '#FFFFFF', subtle: '#F0F3F5', grey: '#F2F2F7', active: '#E3EBF1' },
-        border: '#E5E6E8',
-        muted: { DEFAULT: '#C4C4C4', text: '#6C757D', field: '#959695', soft: '#8A8C8A' }, // field=Main/Grey placeholder, soft=Text/Secondary (dark form)
-        secondary: '#737476',
+        bg: { DEFAULT: '#FFFFFF', subtle: '#EEEBE4', grey: '#F1EFEA', active: '#E7E2D8' },
+        border: '#E4E1DB',
+        muted: { DEFAULT: '#C9C5BD', text: '#7E7A72', field: '#9A968E', soft: '#8C887F' },
+        secondary: '#7E7A72',
       },
       fontFamily: {
         heading: ['MTS Compact', 'Manrope', 'sans-serif'],

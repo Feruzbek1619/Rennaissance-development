@@ -127,7 +127,7 @@ export default function ProductionSection() {
               type="button"
               onClick={next}
               aria-label="Следующий"
-              className="flex size-[65px] items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-[#0A2236]"
+              className="flex size-[65px] items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-[#2F3A45]"
             >
               <ChevronRight className="size-6" />
             </button>

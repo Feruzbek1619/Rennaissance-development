@@ -91,7 +91,7 @@ export default function B2B() {
                 </Button>
                 <a
                   href="tel:+998783333331"
-                  className="flex items-center justify-center h-[56px] px-8 bg-accent rounded-full font-body text-[20px] font-medium text-white hover:bg-[#E85F00] transition-colors"
+                  className="flex items-center justify-center h-[56px] px-8 bg-accent rounded-full font-body text-[20px] font-medium text-white hover:bg-[#9C8050] transition-colors"
                 >
                   Позвонить
                 </a>

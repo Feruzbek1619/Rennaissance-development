@@ -3,12 +3,12 @@ import { Container } from '@/components/Container'
 function OfficeIcon() {
   return (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-12">
-      <rect x="6" y="8" width="24" height="34" rx="1" stroke="#0D2B45" strokeWidth="2" />
-      <rect x="30" y="20" width="12" height="22" rx="1" stroke="#0D2B45" strokeWidth="2" />
-      <line x1="12" y1="16" x2="18" y2="16" stroke="#0D2B45" strokeWidth="2" strokeLinecap="round" />
-      <line x1="12" y1="22" x2="18" y2="22" stroke="#0D2B45" strokeWidth="2" strokeLinecap="round" />
-      <line x1="12" y1="28" x2="18" y2="28" stroke="#0D2B45" strokeWidth="2" strokeLinecap="round" />
-      <rect x="14" y="34" width="8" height="8" rx="1" stroke="#0D2B45" strokeWidth="2" />
+      <rect x="6" y="8" width="24" height="34" rx="1" stroke="#3A4754" strokeWidth="2" />
+      <rect x="30" y="20" width="12" height="22" rx="1" stroke="#3A4754" strokeWidth="2" />
+      <line x1="12" y1="16" x2="18" y2="16" stroke="#3A4754" strokeWidth="2" strokeLinecap="round" />
+      <line x1="12" y1="22" x2="18" y2="22" stroke="#3A4754" strokeWidth="2" strokeLinecap="round" />
+      <line x1="12" y1="28" x2="18" y2="28" stroke="#3A4754" strokeWidth="2" strokeLinecap="round" />
+      <rect x="14" y="34" width="8" height="8" rx="1" stroke="#3A4754" strokeWidth="2" />
     </svg>
   )
 }
@@ -18,14 +18,14 @@ function PhoneIcon() {
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-12">
       <path
         d="M9 6h7.5l3.5 9-4.5 2.5A24 24 0 0 0 24 27l2.5-4.5 9 3.5V34a2 2 0 0 1-2 2C16.5 36 12 19.5 12 8a2 2 0 0 1-3-2Z"
-        stroke="#0D2B45"
+        stroke="#3A4754"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M9.19 7.88A28 28 0 0 0 9 10c0 15.46 12.54 28 28 28h2.12"
-        stroke="#0D2B45"
+        stroke="#3A4754"
         strokeWidth="2"
         strokeLinecap="round"
       />
@@ -36,8 +36,8 @@ function PhoneIcon() {
 function MessengerIcon() {
   return (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-12">
-      <rect x="6" y="10" width="36" height="28" rx="3" stroke="#0D2B45" strokeWidth="2" />
-      <polyline points="6,10 24,26 42,10" stroke="#0D2B45" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="6" y="10" width="36" height="28" rx="3" stroke="#3A4754" strokeWidth="2" />
+      <polyline points="6,10 24,26 42,10" stroke="#3A4754" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -45,8 +45,8 @@ function MessengerIcon() {
 function ClockIcon() {
   return (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-12">
-      <circle cx="24" cy="24" r="18" stroke="#0D2B45" strokeWidth="2" />
-      <polyline points="24,12 24,24 32,28" stroke="#0D2B45" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="24" cy="24" r="18" stroke="#3A4754" strokeWidth="2" />
+      <polyline points="24,12 24,24 32,28" stroke="#3A4754" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }

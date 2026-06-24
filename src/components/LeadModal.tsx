@@ -35,7 +35,7 @@ export function useLeadModal() {
 function CheckIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" className="size-[64px]" aria-hidden>
-      <rect x="2" y="2" width="20" height="20" rx="5" fill="#FF6701" />
+      <rect x="2" y="2" width="20" height="20" rx="5" fill="#B0925E" />
       <path d="M7 12.5l3.2 3.2L17 9" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
@@ -120,7 +120,7 @@ function LeadForm({ onSubmit }: { onSubmit: () => void }) {
         <div className="flex flex-col gap-2.5">
           <button
             type="submit"
-            className="h-[52px] w-full rounded-[6px] bg-accent font-vela text-[19px] font-semibold text-white hover:bg-[#E85F00] transition-colors"
+            className="h-[52px] w-full rounded-[6px] bg-accent font-vela text-[19px] font-semibold text-white hover:bg-[#9C8050] transition-colors"
           >
             Оставить заявку
           </button>
@@ -149,7 +149,7 @@ function SuccessBody({ onClose }: { onClose: () => void }) {
       <button
         type="button"
         onClick={onClose}
-        className="mt-1 h-[52px] w-full max-w-[360px] rounded-[6px] bg-accent font-vela text-[19px] font-semibold text-white hover:bg-[#E85F00] transition-colors"
+        className="mt-1 h-[52px] w-full max-w-[360px] rounded-[6px] bg-accent font-vela text-[19px] font-semibold text-white hover:bg-[#9C8050] transition-colors"
       >
         Хорошо
       </button>

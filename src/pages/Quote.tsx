@@ -115,7 +115,7 @@ export default function Quote() {
                   <button
                     type="button"
                     onClick={() => modal?.openSuccess()}
-                    className="w-full h-[62px] bg-accent rounded-[5px] font-vela text-[22px] font-semibold text-white hover:bg-[#E85F00] transition-colors"
+                    className="w-full h-[62px] bg-accent rounded-[5px] font-vela text-[22px] font-semibold text-white hover:bg-[#9C8050] transition-colors"
                   >
                     Оставить заявку
                   </button>
@@ -158,14 +158,14 @@ export default function Quote() {
               <div className="pointer-events-none absolute top-[18px] left-[18px] bg-white rounded-[15px] flex items-center gap-[15px] p-[15px] shadow-[0_12px_15px_rgba(0,0,0,0.12)]">
                 <div className="bg-[#e3eee2] rounded-[10px] p-3 shrink-0">
                   <svg viewBox="0 0 24 24" fill="none" className="size-[30px]">
-                    <circle cx="12" cy="12" r="3" stroke="#131612" strokeWidth="1.5" />
-                    <path d="M20 12c0 8-8 13-8 13S4 20 4 12a8 8 0 0 1 16 0Z" stroke="#131612" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <circle cx="12" cy="12" r="3" stroke="#2A323B" strokeWidth="1.5" />
+                    <path d="M20 12c0 8-8 13-8 13S4 20 4 12a8 8 0 0 1 16 0Z" stroke="#2A323B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 <div>
                   <p className="font-vela text-[15px] text-[#8a8c8a] leading-[1.4]">Адрес объекта</p>
-                  <p className="font-vela text-[15px] font-bold text-[#131612] leading-[1.4]">г. Ташкент, Махтумкули, 100116,</p>
-                  <p className="font-vela text-[15px] font-bold text-[#131612] leading-[1.4]">Республика Узбекистан</p>
+                  <p className="font-vela text-[15px] font-bold text-[#2A323B] leading-[1.4]">г. Ташкент, Махтумкули, 100116,</p>
+                  <p className="font-vela text-[15px] font-bold text-[#2A323B] leading-[1.4]">Республика Узбекистан</p>
                 </div>
               </div>
             </div>

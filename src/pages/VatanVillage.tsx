@@ -140,7 +140,7 @@ export default function VatanVillage() {
             <button
               type="button"
               onClick={() => modal?.openLead()}
-              className="flex w-[268px] items-center justify-between gap-3 rounded-[90px] bg-primary px-[21px] py-[16px] font-body text-[20px] font-medium leading-[1.6] text-white hover:bg-[#0A2236] transition-colors"
+              className="flex w-[268px] items-center justify-between gap-3 rounded-[90px] bg-primary px-[21px] py-[16px] font-body text-[20px] font-medium leading-[1.6] text-white hover:bg-[#2F3A45] transition-colors"
             >
               Заказать звонок
               <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
@@ -149,7 +149,7 @@ export default function VatanVillage() {
             </button>
             <a
               href={SUPPORT_TEL}
-              className="flex items-center justify-center rounded-[90px] bg-accent px-[32px] py-[16px] font-body text-[20px] font-medium leading-[1.6] text-bg-subtle hover:bg-[#E85F00] transition-colors"
+              className="flex items-center justify-center rounded-[90px] bg-accent px-[32px] py-[16px] font-body text-[20px] font-medium leading-[1.6] text-bg-subtle hover:bg-[#9C8050] transition-colors"
             >
               Позвонить
             </a>
@@ -356,7 +356,7 @@ export default function VatanVillage() {
                   <button
                     type="button"
                     onClick={() => modal?.openLead()}
-                    className="mt-auto h-[56px] w-full bg-accent rounded-full flex items-center justify-center gap-3 font-body font-medium text-[20px] text-white hover:bg-[#E85F00] transition-colors"
+                    className="mt-auto h-[56px] w-full bg-accent rounded-full flex items-center justify-center gap-3 font-body font-medium text-[20px] text-white hover:bg-[#9C8050] transition-colors"
                   >
                     Заказать звонок
                     <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
@@ -412,7 +412,7 @@ export default function VatanVillage() {
                 <Link to={`/projects/${p.slug}`}>
                   <div className="relative h-[320px] rounded-[5px] overflow-hidden">
                     <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="size-full object-cover transition-transform hover:scale-105" />
-                    <div className="absolute top-4 left-4 bg-[#FF9500] px-6 py-2 rounded-full">
+                    <div className="absolute top-4 left-4 bg-[#B0925E] px-6 py-2 rounded-full">
                       <span className="font-vela text-[16px] font-medium text-white">
                         {p.status === 'active' ? 'Идут продажи' : 'Распродан'}
                       </span>
@@ -476,7 +476,7 @@ function ArrowIcon({ light = false }: { light?: boolean }) {
     <svg viewBox="0 0 18 18" fill="none" className="size-[18px]">
       <path
         d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25"
-        stroke={light ? 'white' : '#0D2B45'}
+        stroke={light ? 'white' : '#3A4754'}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
