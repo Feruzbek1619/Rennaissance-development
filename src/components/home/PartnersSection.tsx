@@ -21,7 +21,7 @@ export default function PartnersSection() {
               <div className="border border-border px-[24px] py-[16px] self-start">
                 <span className="font-body text-body-sm text-ink">НАШИ КЛИЕНТЫ</span>
               </div>
-              <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
+              <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
                 Партнеры в архитектурном совершенстве.
               </h2>
             </div>

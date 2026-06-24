@@ -76,7 +76,8 @@
     transition:
       opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
       transform 0.95s cubic-bezier(0.22, 1, 0.36, 1),
-      filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      filter 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      clip-path 1.05s cubic-bezier(0.76, 0, 0.24, 1);
     will-change: opacity, transform;
   }
   html.reveal-ready [data-reveal='left'] { transform: translateX(-60px); }
@@ -84,6 +85,18 @@
   html.reveal-ready [data-reveal='scale'] { transform: scale(0.9); }
   html.reveal-ready [data-reveal='blur'] { transform: translateY(28px); filter: blur(12px); }
   html.reveal-ready [data-reveal='fade'] { transform: none; }
+
+  /* Cinematic heading "wipe" — text is unveiled behind a clip mask while it
+     rises (à la newport.uz / apexdev.uz). */
+  html.reveal-ready [data-reveal='clip'] {
+    opacity: 1;
+    clip-path: inset(0 0 110% 0);
+    transform: translateY(0.42em);
+  }
+  html.reveal-ready [data-reveal='clip'].is-visible {
+    clip-path: inset(0 0 -10% 0);
+    transform: none;
+  }
 
   html.reveal-ready [data-reveal].is-visible {
     opacity: 1;

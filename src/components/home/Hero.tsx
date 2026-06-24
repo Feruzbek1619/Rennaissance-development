@@ -47,13 +47,13 @@ export default function Hero() {
             style={{ transform: `translateX(-${current * 100}%)` }}
           >
             {slides.map((slide, i) => (
-              <div key={slide.slug} className="w-full shrink-0 h-full flex flex-col gap-6 2xl:gap-10 py-6 2xl:py-8">
+              <div key={slide.slug} className="w-full shrink-0 h-full flex flex-col gap-4 2xl:gap-6 py-4 2xl:py-5">
                 {/* Title row */}
-                <div data-reveal className="flex w-full items-start justify-between gap-10 shrink-0">
-                  <h1 className="font-heading text-[64px] 2xl:text-[110px] font-bold uppercase leading-[1.1] text-ink whitespace-nowrap shrink-0">
+                <div className="flex w-full items-start justify-between gap-10 shrink-0">
+                  <h1 data-reveal="clip" className="font-heading text-[64px] 2xl:text-[110px] font-bold uppercase leading-[1.05] text-ink whitespace-nowrap shrink-0">
                     {slide.title}
                   </h1>
-                  <div className="flex w-[460px] 2xl:w-[574px] shrink min-w-0 flex-col gap-12">
+                  <div data-reveal style={{ transitionDelay: '120ms' }} className="flex w-[460px] 2xl:w-[574px] shrink min-w-0 flex-col gap-6 2xl:gap-8">
                     <p className="font-body text-[20px] leading-[1.6] text-primary">{slide.desc}</p>
                     <div className="flex flex-wrap items-center gap-4">
                       <Button to={`/projects/${slide.slug}`} variant="primary" size="lg" className="!px-8">

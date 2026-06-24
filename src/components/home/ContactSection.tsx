@@ -88,7 +88,7 @@ export default function ContactSection() {
               <div className="border border-border px-[24px] py-[16px] self-start">
                 <span className="font-body text-body-sm text-ink">Контакты</span>
               </div>
-              <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
+              <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
                 Свяжитесь с нами
               </h2>
             </div>

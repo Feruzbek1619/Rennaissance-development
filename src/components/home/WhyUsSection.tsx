@@ -15,7 +15,7 @@ export default function WhyUsSection() {
           {/* Header */}
           <div data-reveal className="flex flex-col items-center gap-4 w-[1295px] max-w-full">
             <SectionTag>ПОЧЕМУ МЫ</SectionTag>
-            <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink text-center">
+            <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink text-center">
               Почему выбирают нас
             </h2>
           </div>
