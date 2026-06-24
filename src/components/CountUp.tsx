@@ -2,14 +2,17 @@ import { useEffect, useRef, useState } from 'react'
 
 /**
  * Animated number that counts up from 0 to its target the first time it scrolls
- * into view. Accepts a display string like "12+", "5+", "2021" — it animates the
- * leading number and keeps any suffix ("+"). Falls back to the raw string for
- * non-numeric values. Uses setInterval (not rAF) so it also runs in throttled
- * environments; a safety timer guarantees the final value is shown.
+ * into view (like a timer). Accepts a display string like "12+", "5+", "2021" —
+ * it animates the leading number and keeps any suffix ("+"). Falls back to the
+ * raw string for non-numeric values.
+ *
+ * Triggers via IntersectionObserver (so it fires exactly when the number enters
+ * the viewport, never early), with a viewport-aware scroll backup. Uses
+ * setInterval so it runs even where rAF is throttled.
  */
 export function CountUp({
   value,
-  duration = 1700,
+  duration = 1800,
   className,
 }: {
   value: string
@@ -48,31 +51,41 @@ export function CountUp({
       }, 30)
     }
 
+    // Primary trigger: fire only when the number actually enters the viewport.
+    const io =
+      'IntersectionObserver' in window
+        ? new IntersectionObserver(
+            (entries, obs) => {
+              if (entries.some((e) => e.isIntersecting)) {
+                run()
+                obs.disconnect()
+              }
+            },
+            { threshold: 0.4 },
+          )
+        : null
+    io?.observe(el)
+
+    // Backup: viewport-aware scroll/resize check (only when at/above the fold).
     const check = () => {
       const vh = window.innerHeight || document.documentElement.clientHeight || 800
-      if (el.getBoundingClientRect().top < vh * 0.9) {
+      if (el.getBoundingClientRect().top < vh * 0.85) {
         run()
-        cleanup()
+        teardown()
       }
     }
-    const cleanup = () => {
+    const teardown = () => {
       window.removeEventListener('scroll', check)
       window.removeEventListener('resize', check)
     }
-
     window.addEventListener('scroll', check, { passive: true })
     window.addEventListener('resize', check)
-    const t1 = window.setTimeout(check, 200)
-    // Safety: count anyway so the value is never stuck at 0.
-    const t2 = window.setTimeout(() => {
-      run()
-      cleanup()
-    }, 2600)
+    const t1 = window.setTimeout(check, 250) // catch already-visible (above-fold) numbers
 
     return () => {
-      cleanup()
+      teardown()
+      io?.disconnect()
       window.clearTimeout(t1)
-      window.clearTimeout(t2)
       window.clearInterval(intervalId)
     }
   }, [value, target, suffix, duration])
