@@ -4,7 +4,7 @@ import { defineConfig } from '@playwright/test'
 // single project — the audit spec loops viewports itself.
 export default defineConfig({
   testDir: './tests',
-  testMatch: ['audit.spec.ts', 'interaction.spec.ts', 'verify.spec.ts'],
+  testMatch: ['audit.spec.ts', 'interaction.spec.ts', 'verify.spec.ts', 'anim.spec.ts'],
   timeout: 60_000,
   fullyParallel: true,
   workers: 4,
