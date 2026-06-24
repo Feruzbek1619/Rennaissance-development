@@ -69,7 +69,7 @@ export default function Hero() {
                 {/* Photo with carousel controls — fills the rest of the hero so
                     the title + photo always fit one screen (no cut-off). */}
                 <div data-reveal="scale" className="relative flex-1 min-h-0 w-full overflow-hidden rounded-[5px]">
-                  <img loading="eager" decoding="async" src={slide.image} alt={`ЖК ${slide.title}`} className="reveal-zoom size-full object-cover" />
+                  <img loading={i === 0 ? 'eager' : 'lazy'} decoding="async" src={slide.image} alt={`ЖК ${slide.title}`} className="reveal-zoom size-full object-cover" />
                   <div className="absolute bottom-9 right-9 flex items-center gap-[13.333px]">
                     <button
                       type="button"

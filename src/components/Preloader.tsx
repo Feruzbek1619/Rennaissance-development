@@ -17,8 +17,8 @@ export default function Preloader() {
       typeof window.matchMedia === 'function' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    const HOLD = reduce ? 350 : 1600
-    const EXIT = reduce ? 0 : 850
+    const HOLD = reduce ? 250 : 750
+    const EXIT = reduce ? 0 : 550
 
     const prevOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
