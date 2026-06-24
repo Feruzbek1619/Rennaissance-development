@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import type { Project } from '@/data/projects'
-import { ChevronLeft, ChevronRight } from '@/components/icons'
 import { useLeadModalOptional } from '@/components/LeadModal'
 
 function AreaIcon() {
@@ -42,14 +41,6 @@ export function ProjectCard({ project }: { project: Project }) {
           <span className="font-vela text-[20px] font-medium text-white whitespace-nowrap leading-[1.6]">
             {badgeLabel}
           </span>
-        </div>
-        <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
-          <button type="button" aria-label="Предыдущий" className="flex size-[53px] items-center justify-center rounded-full bg-white/50 text-ink transition-colors hover:bg-white">
-            <ChevronLeft className="size-6" />
-          </button>
-          <button type="button" aria-label="Следующий" className="flex size-[53px] items-center justify-center rounded-full bg-white text-ink transition-colors hover:bg-bg-subtle">
-            <ChevronRight className="size-6" />
-          </button>
         </div>
       </div>
 

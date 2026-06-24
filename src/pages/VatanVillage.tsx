@@ -15,11 +15,10 @@ import { projects } from '@/data/projects'
 
 const SUPPORT_TEL = 'tel:+998783333331'
 
-/* Render gallery (О проекте) carousel images */
-const renderSlides = ['/assets/vatan-render.webp']
-
-/* Photo strip below the render (Figma 7872:4228) */
-const stripPhotos = [
+/* Gallery — big view + thumbnail strip (Figma 7872:3655 / 4228). Arrows and
+   thumbnails switch the main image. */
+const gallery = [
+  '/assets/vatan-render.webp',
   '/assets/vatan-strip-1.webp',
   '/assets/vatan-strip-2.webp',
   '/assets/vatan-strip-3.webp',
@@ -93,9 +92,9 @@ export default function VatanVillage() {
   const prevProject = projects[(idx - 1 + projects.length) % projects.length]
   const nextProject = projects[(idx + 1) % projects.length]
 
-  const [render, setRender] = useState(0)
-  const renderPrev = () => setRender((c) => (c - 1 + renderSlides.length) % renderSlides.length)
-  const renderNext = () => setRender((c) => (c + 1) % renderSlides.length)
+  const [active, setActive] = useState(0)
+  const galleryPrev = () => setActive((c) => (c - 1 + gallery.length) % gallery.length)
+  const galleryNext = () => setActive((c) => (c + 1) % gallery.length)
 
   return (
     <main>
@@ -179,14 +178,14 @@ export default function VatanVillage() {
       {/* ── 3. Render gallery + photo strip (Figma 7872:3655 / 4228) ── */}
       <section className="bg-white py-[24px]">
         <Container>
-          {/* Big render with bottom gradient + arrows */}
-          <div data-reveal="scale" className="relative h-[460px] 2xl:h-[700px] w-full overflow-hidden rounded-[5px]">
-            <img loading="lazy" decoding="async" src={renderSlides[render]} alt="VATAN VILLAGE — общий вид" className="reveal-zoom size-full object-cover" />
+          {/* Big view with bottom gradient + arrows (switches the main image) */}
+          <div data-reveal="scale" className="relative h-[460px] 2xl:h-[700px] w-full overflow-hidden rounded-[5px] bg-black">
+            <img loading="lazy" decoding="async" src={gallery[active]} alt="VATAN VILLAGE — общий вид" className="size-full object-cover" />
             <div className="absolute inset-x-0 bottom-0 h-[224px] bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
             <div className="absolute bottom-[40px] right-[40px] flex items-center gap-3">
               <button
                 type="button"
-                onClick={renderPrev}
+                onClick={galleryPrev}
                 aria-label="Предыдущее фото"
                 className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors"
               >
@@ -194,7 +193,7 @@ export default function VatanVillage() {
               </button>
               <button
                 type="button"
-                onClick={renderNext}
+                onClick={galleryNext}
                 aria-label="Следующее фото"
                 className="flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors"
               >
@@ -203,17 +202,21 @@ export default function VatanVillage() {
             </div>
           </div>
 
-          {/* 5-photo strip */}
-          <div className="mt-[17px] grid grid-cols-5 gap-[12px] 2xl:gap-[17px]">
-            {stripPhotos.map((src, i) => (
-              <div
+          {/* Thumbnail strip — click to switch the big view; active is ringed */}
+          <div className="mt-[17px] grid grid-cols-6 gap-[12px] 2xl:gap-[17px]">
+            {gallery.map((src, i) => (
+              <button
                 key={i}
-                data-reveal
-                style={{ transitionDelay: `${i * 70}ms` }}
-                className="h-[120px] 2xl:h-[171px] overflow-hidden rounded-[1px] bg-white"
+                type="button"
+                onClick={() => setActive(i)}
+                aria-label={`Фото ${i + 1}`}
+                aria-current={i === active}
+                className={`h-[100px] 2xl:h-[140px] overflow-hidden rounded-[4px] bg-white transition-all duration-300 ${
+                  i === active ? 'ring-2 ring-accent ring-offset-2' : 'opacity-70 hover:opacity-100'
+                }`}
               >
-                <img loading="lazy" decoding="async" src={src} alt="" className="size-full object-cover transition-transform duration-500 hover:scale-105" />
-              </div>
+                <img loading="lazy" decoding="async" src={src} alt="" className="size-full object-cover" />
+              </button>
             ))}
           </div>
         </Container>

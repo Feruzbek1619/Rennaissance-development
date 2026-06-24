@@ -4,7 +4,6 @@ import { Button } from '@/components/Button'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
 import FAQSection from '@/components/home/FAQSection'
 import { projects } from '@/data/projects'
-import { ChevronLeft, ChevronRight } from '@/components/icons'
 import { useLeadModalOptional } from '@/components/LeadModal'
 import { CountUp } from '@/components/CountUp'
 
@@ -164,16 +163,6 @@ export default function ProjectDetails() {
           className="absolute inset-0 size-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80" />
-
-        {/* Carousel arrows */}
-        <div className="absolute inset-x-[116px] top-1/2 -translate-y-1/2 flex items-center justify-between pointer-events-none z-10">
-          <button type="button" aria-label="Предыдущее фото" className="pointer-events-auto flex size-[53px] items-center justify-center rounded-full bg-white/25 text-white hover:bg-white/40 transition-colors">
-            <ChevronLeft className="size-6" />
-          </button>
-          <button type="button" aria-label="Следующее фото" className="pointer-events-auto flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
-            <ChevronRight className="size-6" />
-          </button>
-        </div>
 
         {/* Content overlay */}
         <div className="absolute bottom-0 left-0 right-0">
