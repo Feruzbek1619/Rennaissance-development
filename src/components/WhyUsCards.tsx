@@ -59,11 +59,11 @@ const cards = [
 
 export function WhyUsCards() {
   return (
-    <div className="flex gap-4 w-full items-stretch">
+    <div data-reveal-stagger className="flex gap-4 w-full items-stretch">
       {cards.map(({ title, description, Icon }) => (
         <div
           key={title}
-          className="group flex-1 min-w-0 min-h-[286px] border border-border px-[26px] py-[46px] flex flex-col gap-12 bg-white hover:bg-primary transition-colors duration-300"
+          className="card-lift group flex-1 min-w-0 min-h-[286px] border border-border px-[26px] py-[46px] flex flex-col gap-12 bg-white hover:bg-primary transition-colors duration-300"
         >
           <div className="text-ink transition-colors duration-300 group-hover:text-bg-subtle">
             <Icon />

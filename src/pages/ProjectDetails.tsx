@@ -6,6 +6,7 @@ import FAQSection from '@/components/home/FAQSection'
 import { projects } from '@/data/projects'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
 import { useLeadModalOptional } from '@/components/LeadModal'
+import { CountUp } from '@/components/CountUp'
 
 /* ─── Icon helpers ───────────────────────────────────── */
 function ArrowIcon({ light = false }: { light?: boolean }) {
@@ -275,7 +276,7 @@ export default function ProjectDetails() {
               { value: '2019', label: 'год основания' },
             ].map((s) => (
               <div key={s.label} className="flex flex-1 flex-col items-start gap-2 bg-white px-8 py-6">
-                <p className="font-heading text-[75px] font-bold uppercase leading-none text-ink">{s.value}</p>
+                <p className="font-heading text-[75px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>
                 <p className="font-body text-body-sm font-medium text-secondary">{s.label}</p>
               </div>
             ))}

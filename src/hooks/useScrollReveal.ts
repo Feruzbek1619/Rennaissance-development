@@ -18,13 +18,13 @@ export function useScrollReveal() {
     const root = document.documentElement
     root.classList.add('reveal-ready')
 
+    const SELECTOR = '[data-reveal]:not(.is-visible), [data-reveal-stagger]:not(.is-visible)'
+
     const reveal = () => {
       const vh = window.innerHeight || root.clientHeight || 800
-      document
-        .querySelectorAll<HTMLElement>('[data-reveal]:not(.is-visible)')
-        .forEach((el) => {
-          if (el.getBoundingClientRect().top < vh * 0.92) el.classList.add('is-visible')
-        })
+      document.querySelectorAll<HTMLElement>(SELECTOR).forEach((el) => {
+        if (el.getBoundingClientRect().top < vh * 0.92) el.classList.add('is-visible')
+      })
     }
 
     // Time-based throttle (no rAF, so it also runs in throttled/headless envs).
@@ -53,7 +53,7 @@ export function useScrollReveal() {
     // events, etc.), never leave content stuck hidden — reveal everything.
     const safety = window.setTimeout(() => {
       document
-        .querySelectorAll<HTMLElement>('[data-reveal]:not(.is-visible)')
+        .querySelectorAll<HTMLElement>(SELECTOR)
         .forEach((el) => el.classList.add('is-visible'))
     }, 2500)
 

@@ -59,7 +59,7 @@ export default function AboutSection() {
               <img loading="lazy" decoding="async"
                 src="/assets/about-company.webp"
                 alt="Renaissance Development — строительство"
-                className="size-full object-cover"
+                className="reveal-zoom size-full object-cover"
               />
             </div>
           </div>

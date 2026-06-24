@@ -49,7 +49,7 @@ export default function Hero() {
             {slides.map((slide, i) => (
               <div key={slide.slug} className="w-full shrink-0 flex flex-col gap-20">
                 {/* Title row */}
-                <div className="flex w-full items-start justify-between gap-10">
+                <div data-reveal className="flex w-full items-start justify-between gap-10">
                   <h1 className="font-heading text-[64px] 2xl:text-[110px] font-bold uppercase leading-[1.1] text-ink whitespace-nowrap shrink-0">
                     {slide.title}
                   </h1>
@@ -67,8 +67,8 @@ export default function Hero() {
                 </div>
 
                 {/* Photo with carousel controls */}
-                <div className="relative h-[800px] w-full overflow-hidden rounded-[5px]">
-                  <img loading="lazy" decoding="async" src={slide.image} alt={`ЖК ${slide.title}`} className="size-full object-cover" />
+                <div data-reveal="scale" className="relative h-[800px] w-full overflow-hidden rounded-[5px]">
+                  <img loading="lazy" decoding="async" src={slide.image} alt={`ЖК ${slide.title}`} className="reveal-zoom size-full object-cover" />
                   <div className="absolute bottom-9 right-9 flex items-center gap-[13.333px]">
                     <button
                       type="button"

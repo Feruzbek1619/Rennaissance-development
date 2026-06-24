@@ -8,6 +8,7 @@ import ProductionSection from '@/components/home/ProductionSection'
 import FAQSection from '@/components/home/FAQSection'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
 import { useLeadModalOptional } from '@/components/LeadModal'
+import { CountUp } from '@/components/CountUp'
 import { projects } from '@/data/projects'
 
 /* ─── VATAN VILLAGE — dedicated page, pixel-perfect per Figma 7872:3250 ─── */
@@ -180,7 +181,7 @@ export default function VatanVillage() {
         <Container>
           {/* Big render with bottom gradient + arrows */}
           <div data-reveal="scale" className="relative h-[460px] 2xl:h-[700px] w-full overflow-hidden rounded-[5px]">
-            <img loading="lazy" decoding="async" src={renderSlides[render]} alt="VATAN VILLAGE — общий вид" className="size-full object-cover" />
+            <img loading="lazy" decoding="async" src={renderSlides[render]} alt="VATAN VILLAGE — общий вид" className="reveal-zoom size-full object-cover" />
             <div className="absolute inset-x-0 bottom-0 h-[224px] bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
             <div className="absolute bottom-[40px] right-[40px] flex items-center gap-3">
               <button
@@ -313,7 +314,7 @@ export default function VatanVillage() {
                 style={{ transitionDelay: `${i * 90}ms` }}
                 className="card-lift flex flex-1 flex-col items-center justify-center gap-2 bg-white px-[26px] py-[24px] text-center"
               >
-                <p className="font-heading text-[56px] 2xl:text-[75px] font-bold uppercase leading-none text-black">{s.value}</p>
+                <p className="font-heading text-[56px] 2xl:text-[75px] font-bold uppercase leading-none text-black"><CountUp value={s.value} /></p>
                 <p className="font-body text-[16px] leading-[1.6] font-medium text-secondary">{s.label}</p>
               </div>
             ))}

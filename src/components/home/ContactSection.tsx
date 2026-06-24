@@ -83,7 +83,7 @@ export default function ContactSection() {
         <div className="flex flex-col gap-[64px]">
 
           {/* Header */}
-          <div className="flex items-start justify-between">
+          <div data-reveal className="flex items-start justify-between">
             <div className="flex flex-col gap-5 w-[850px] shrink min-w-0">
               <div className="border border-border px-[24px] py-[16px] self-start">
                 <span className="font-body text-body-sm text-ink">Контакты</span>
@@ -99,11 +99,11 @@ export default function ContactSection() {
           </div>
 
           {/* 4 contact cards */}
-          <div className="flex gap-4 items-stretch">
+          <div data-reveal-stagger className="flex gap-4 items-stretch">
             {cards.map((card, i) => (
               <div
                 key={i}
-                className="flex-1 border border-[#c4c4c4] h-[323px] overflow-hidden"
+                className="card-lift flex-1 border border-[#c4c4c4] h-[323px] overflow-hidden"
               >
                 <div className="px-[26px] pt-[39px] flex flex-col gap-12">
                   {/* Icon */}

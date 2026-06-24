@@ -1,4 +1,5 @@
 import { Container } from '@/components/Container'
+import { CountUp } from '@/components/CountUp'
 
 const stats = [
   { value: '12+', label: 'Реализованные проекты' },
@@ -33,7 +34,7 @@ export default function StatsSection() {
             {stats.map((s, i) => (
               <div key={s.label} data-reveal style={{ transitionDelay: `${i * 90}ms` }} className="card-lift flex flex-1 items-center justify-center bg-white px-[26px] py-6 backdrop-blur-[7px]">
                 <div className="flex flex-col items-center gap-2">
-                  <p className="font-heading text-[75px] font-bold uppercase leading-none text-ink">{s.value}</p>
+                  <p className="font-heading text-[75px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>
                   <p className="text-center font-body text-body-sm font-medium text-secondary">{s.label}</p>
                 </div>
               </div>
