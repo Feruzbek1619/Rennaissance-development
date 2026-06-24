@@ -39,6 +39,8 @@ export type Project = {
   area: string
   location: string
   image: string
+  /** Photo gallery (big view + thumbnails). Falls back to [image]. */
+  gallery?: string[]
   status: 'active' | 'sold'
   details?: ProjectDetails
 }
@@ -154,6 +156,12 @@ export const projects: Project[] = [
     area: 'от 26,44 до 30,81 м²',
     location: 'Юкоричирчикский район, улица Янги Узбекистон',
     image: '/assets/project-alandalus.webp',
+    gallery: [
+      '/assets/alandalus-render.webp',
+      '/assets/alandalus-1.webp',
+      '/assets/alandalus-2.webp',
+      '/assets/alandalus-3.webp',
+    ],
     status: 'active',
     details: alandalusDetails,
   },

@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
+import { ChevronLeft, ChevronRight } from '@/components/icons'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
 import FAQSection from '@/components/home/FAQSection'
 import { projects } from '@/data/projects'
@@ -128,6 +130,40 @@ function FeatureIconFor({ icon }: { icon: string }) {
   return map[icon] ?? <HomeFeatureIcon />
 }
 
+/* ─── Interior-feature icons (white, on the navy panel) ─── */
+function ElevatorIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="size-5">
+      <rect x="5" y="3" width="14" height="18" rx="1.5" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M9 9l-1.5 2h3L9 9ZM15 15l1.5-2h-3l1.5 2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12 3v18" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  )
+}
+function WindowIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="size-5">
+      <rect x="4" y="3" width="16" height="18" rx="1.5" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M12 3v18M4 12h16" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  )
+}
+function DoorIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="size-5">
+      <path d="M5 21h14M7 21V4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v17" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="14" cy="12" r="1" fill="currentColor" />
+    </svg>
+  )
+}
+function LightIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="size-5">
+      <path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1 1 1.7v.4h5v-.4c0-.7.4-1.3 1-1.7A6 6 0 0 0 12 3Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
 /* ─── InfoChip ───────────────────────────────────────── */
 function InfoChip({ icon, label, sub }: { icon: React.ReactNode; label: string; sub: string }) {
   return (
@@ -146,12 +182,16 @@ function InfoChip({ icon, label, sub }: { icon: React.ReactNode; label: string; 
 export default function ProjectDetails() {
   const { slug } = useParams<{ slug: string }>()
   const modal = useLeadModalOptional()
+  const [active, setActive] = useState(0)
   const project = projects.find((p) => p.slug === slug)
 
   if (!project) return <Navigate to="/projects" replace />
 
   const others = projects.filter((p) => p.slug !== slug).slice(0, 3)
   const details = project.details
+  const gallery = project.gallery ?? [project.image]
+  const galleryPrev = () => setActive((c) => (c - 1 + gallery.length) % gallery.length)
+  const galleryNext = () => setActive((c) => (c + 1) % gallery.length)
 
   return (
     <main>
@@ -205,6 +245,7 @@ export default function ProjectDetails() {
               <div className="flex items-center gap-4 mt-[20px]">
                 <button
                   type="button"
+                  onClick={() => modal?.openLead()}
                   className="flex items-center gap-3 bg-primary text-white rounded-full px-[21px] py-[16px] font-vela text-[20px] font-medium leading-[1.6] hover:bg-primary/80 transition-colors"
                 >
                   Заказать звонок
@@ -241,12 +282,44 @@ export default function ProjectDetails() {
         </section>
       )}
 
-      {/* ── 3. Large gallery photo ───────────────────────── */}
+      {/* ── 3. Gallery (big view + thumbnails) ───────────── */}
       <section className="bg-white py-8">
         <Container>
-          <div className="h-[600px] rounded-[5px] overflow-hidden">
-            <img loading="lazy" decoding="async" src={project.image} alt={project.title} className="size-full object-cover" />
+          <div className="relative h-[460px] 2xl:h-[600px] w-full overflow-hidden rounded-[5px] bg-black">
+            <img loading="lazy" decoding="async" src={gallery[active]} alt={project.title} className="size-full object-cover" />
+            {gallery.length > 1 && (
+              <>
+                <div className="absolute inset-x-0 bottom-0 h-[200px] bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+                <div className="absolute bottom-[32px] right-[32px] flex items-center gap-3">
+                  <button type="button" onClick={galleryPrev} aria-label="Предыдущее фото" className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
+                    <ChevronLeft className="size-6" />
+                  </button>
+                  <button type="button" onClick={galleryNext} aria-label="Следующее фото" className="flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
+                    <ChevronRight className="size-6" />
+                  </button>
+                </div>
+              </>
+            )}
           </div>
+
+          {gallery.length > 1 && (
+            <div className="mt-4 grid grid-cols-4 gap-3 2xl:gap-4">
+              {gallery.map((src, i) => (
+                <button
+                  key={src}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  aria-label={`Фото ${i + 1}`}
+                  aria-current={i === active}
+                  className={`h-[110px] 2xl:h-[150px] overflow-hidden rounded-[4px] bg-white transition-all duration-300 ${
+                    i === active ? 'ring-2 ring-accent ring-offset-2' : 'opacity-70 hover:opacity-100'
+                  }`}
+                >
+                  <img loading="lazy" decoding="async" src={src} alt="" className="size-full object-cover" />
+                </button>
+              ))}
+            </div>
+          )}
         </Container>
       </section>
 
@@ -329,16 +402,16 @@ export default function ProjectDetails() {
               </p>
               <div className="grid grid-cols-2 gap-4 mt-4">
                 {[
-                  { label: 'Скоростные лифты' },
-                  { label: 'Витражные окна' },
-                  { label: 'Металлические двери' },
-                  { label: 'Мягкое освещение' },
-                ].map((item) => (
-                  <div key={item.label} className="flex items-center gap-3 bg-white/10 rounded-[5px] px-4 py-3">
-                    <div className="size-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
-                      <SparklesIcon />
+                  { label: 'Скоростные лифты', Icon: ElevatorIcon },
+                  { label: 'Витражные окна', Icon: WindowIcon },
+                  { label: 'Металлические двери', Icon: DoorIcon },
+                  { label: 'Мягкое освещение', Icon: LightIcon },
+                ].map(({ label, Icon }) => (
+                  <div key={label} className="flex items-center gap-3 bg-white/10 rounded-[5px] px-4 py-3">
+                    <div className="size-9 rounded-full bg-white/15 flex items-center justify-center shrink-0 text-white">
+                      <Icon />
                     </div>
-                    <span className="font-vela text-[16px] font-medium text-white">{item.label}</span>
+                    <span className="font-vela text-[16px] font-medium text-white">{label}</span>
                   </div>
                 ))}
               </div>
@@ -347,20 +420,7 @@ export default function ProjectDetails() {
         </Container>
       </section>
 
-      {/* ── 7. Photo strip ───────────────────────────────── */}
-      <section className="bg-white pb-[80px]">
-        <Container>
-          <div className="flex gap-4 h-[300px]">
-            {[project.image, project.image, project.image].map((src, i) => (
-              <div key={i} className="flex-1 rounded-[5px] overflow-hidden">
-                <img loading="lazy" decoding="async" src={src} alt="" className="size-full object-cover" />
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ── 7.5 Floor plans (ПЛАН ЭТАЖА НА ОТМ.) ─────────── */}
+      {/* ── 7. Floor plans (ПЛАН ЭТАЖА НА ОТМ.) ─────────── */}
       {details?.floorPlans && (
         <section className="bg-primary py-[80px]">
           <Container>
@@ -426,14 +486,14 @@ export default function ProjectDetails() {
                 </div>
               </div>
 
-              {/* Right: map placeholder */}
-              <div className="flex-1 rounded-[5px] overflow-hidden bg-[#e8eaec] min-h-[400px] relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPinIcon />
-                    <p className="font-vela text-[14px] text-secondary mt-2">{details.specs.address}</p>
-                  </div>
-                </div>
+              {/* Right: live map */}
+              <div className="flex-1 rounded-[5px] overflow-hidden min-h-[400px]">
+                <iframe
+                  title={`${project.title} на карте`}
+                  src="https://yandex.ru/map-widget/v1/?ll=69.310180%2C41.304621&z=13&pt=69.310180%2C41.304621%2Cpm2rdm"
+                  className="size-full border-0"
+                  loading="lazy"
+                />
               </div>
             </div>
           </Container>
