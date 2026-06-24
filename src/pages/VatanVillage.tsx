@@ -65,12 +65,12 @@ const advantages = [
 const specRows: { label: string; value: string; icon: JSX.Element }[] = [
   { label: 'Название', value: 'VATAN VILLAGE', icon: <HomeIcon /> },
   { label: 'Адрес', value: 'Ташкент, Мирзо-Улугбекский район', icon: <PinIcon /> },
-  { label: 'Площадь', value: '4,7 гектар', icon: <RulerIcon /> },
-  { label: 'Этажность', value: '3 этажей', icon: <LayersIcon /> },
   { label: 'Категория', value: 'Комфорт+', icon: <TagIcon /> },
-  { label: 'Площадь квартир', value: 'от 63,0 до 106,0 м²', icon: <RulerIcon /> },
-  { label: 'Год', value: '2027', icon: <CalendarIcon /> },
-  { label: 'Статус', value: 'Строится', icon: <CheckIcon /> },
+  { label: 'Территория', value: '460 соток', icon: <RulerIcon /> },
+  { label: 'Коттеджей', value: 'около 90', icon: <LayersIcon /> },
+  { label: 'Участки', value: 'от 3 до 7 соток', icon: <RulerIcon /> },
+  { label: 'Застройка', value: '24 375 м²', icon: <LayersIcon /> },
+  { label: 'Парковка', value: '1 100 м²', icon: <CarIcon /> },
 ]
 
 const stats = [
@@ -519,22 +519,6 @@ function TagIcon() {
     <svg viewBox="0 0 24 24" fill="none" className="size-5">
       <path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9-9-9Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       <circle cx="7.5" cy="7.5" r="1.3" fill="currentColor" />
-    </svg>
-  )
-}
-function CalendarIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="size-5">
-      <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  )
-}
-function CheckIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="size-5">
-      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
-      <path d="m8.5 12 2.5 2.5 4.5-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
