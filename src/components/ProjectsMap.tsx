@@ -5,12 +5,30 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { projects } from '@/data/projects'
 
+export type MapPoint = {
+  coords: [number, number]
+  title: string
+  location?: string
+  /** If set, clicking the pin navigates to /projects/<slug>. */
+  slug?: string
+}
+
+type Props = {
+  /** Markers to render. Defaults to every project that has coords. */
+  points?: MapPoint[]
+  /** Zoom used when there is a single marker (default 15). */
+  zoom?: number
+  /** Wrapper className (height / rounding / border). */
+  className?: string
+}
+
 /**
- * Interactive map of all projects across Tashkent (Leaflet + OpenStreetMap,
- * no API key). Each project is a gold pin with its name; clicking opens the
- * project page. Page scroll is not hijacked (wheel-zoom off).
+ * Interactive Leaflet map (OpenStreetMap/CARTO tiles, no API key). By default
+ * it plots every project across Tashkent; pass `points` to show a custom set
+ * (e.g. a single office marker). Each pin is a gold label; project pins link to
+ * their page. Page scroll is not hijacked (wheel-zoom off).
  */
-export default function ProjectsMap() {
+export default function ProjectsMap({ points, zoom = 15, className }: Props = {}) {
   const ref = useRef<HTMLDivElement>(null)
   const navigate = useNavigate()
 
@@ -18,8 +36,19 @@ export default function ProjectsMap() {
     const el = ref.current
     if (!el) return
 
-    const pts = projects.filter((p) => Array.isArray(p.coords))
-    const map = L.map(el, { scrollWheelZoom: false, zoomControl: true })
+    const pts: MapPoint[] =
+      points ??
+      projects
+        .filter((p) => Array.isArray(p.coords))
+        .map((p) => ({
+          coords: p.coords as [number, number],
+          title: p.title,
+          location: p.location,
+          slug: p.slug,
+        }))
+
+    const map = L.map(el, { scrollWheelZoom: false, zoomControl: false })
+    L.control.zoom({ position: 'topright' }).addTo(map)
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       maxZoom: 19,
       attribution: '&copy; OpenStreetMap &copy; CARTO',
@@ -33,17 +62,18 @@ export default function ProjectsMap() {
         iconSize: [14, 14],
         iconAnchor: [7, 7],
       })
-      const m = L.marker(p.coords as [number, number], { icon, riseOnHover: true })
-        .addTo(map)
-        .bindPopup(
-          `<div class="proj-pop"><strong>${p.title}</strong><span>${p.location}</span></div>`,
-        )
-      m.on('click', () => navigate(`/projects/${p.slug}`))
+      const m = L.marker(p.coords, { icon, riseOnHover: true }).addTo(map)
+      if (p.location) {
+        m.bindPopup(`<div class="proj-pop"><strong>${p.title}</strong><span>${p.location}</span></div>`)
+      }
+      if (p.slug) m.on('click', () => navigate(`/projects/${p.slug}`))
       markers.push(m)
     })
 
-    if (markers.length) {
+    if (markers.length > 1) {
       map.fitBounds(L.featureGroup(markers).getBounds().pad(0.25))
+    } else if (markers.length === 1) {
+      map.setView(pts[0].coords, zoom)
     } else {
       map.setView([41.31, 69.28], 11)
     }
@@ -51,7 +81,12 @@ export default function ProjectsMap() {
     return () => {
       map.remove()
     }
-  }, [navigate])
+  }, [navigate, points, zoom])
 
-  return <div ref={ref} className="h-[520px] w-full rounded-[8px] overflow-hidden border border-border" />
+  return (
+    <div
+      ref={ref}
+      className={className ?? 'h-[520px] w-full rounded-[8px] overflow-hidden border border-border'}
+    />
+  )
 }

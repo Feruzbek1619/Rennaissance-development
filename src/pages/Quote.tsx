@@ -1,7 +1,17 @@
 import { Container } from '@/components/Container'
 import FAQSection from '@/components/home/FAQSection'
 import StatsSection from '@/components/home/StatsSection'
+import ProjectsMap, { type MapPoint } from '@/components/ProjectsMap'
 import { useLeadModalOptional } from '@/components/LeadModal'
+
+/** Single office marker for the contacts map (changes to come later). */
+const officePoint: MapPoint[] = [
+  {
+    coords: [41.304621, 69.31018],
+    title: 'RENAISSANCE DEVELOPMENT',
+    location: 'г. Ташкент, Махтумкули, 100116',
+  },
+]
 
 function OfficeIcon() {
   return (
@@ -145,17 +155,14 @@ export default function Quote() {
         <Container>
           <div className="bg-white p-[30px]">
             <div className="relative h-[607px] overflow-hidden rounded-[5px]">
-              <iframe
-                title="Renaissance Development на карте — г. Ташкент"
-                src="https://yandex.ru/map-widget/v1/?ll=69.310180%2C41.304621&z=16&pt=69.310180%2C41.304621%2Cpm2rdm"
-                className="absolute inset-0 w-full h-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
+              <ProjectsMap
+                points={officePoint}
+                zoom={15}
+                className="absolute inset-0 h-full w-full"
               />
 
-              {/* Address chip — overlay (pointer-events-none keeps the map interactive) */}
-              <div className="pointer-events-none absolute top-[18px] left-[18px] bg-white rounded-[15px] flex items-center gap-[15px] p-[15px] shadow-[0_12px_15px_rgba(0,0,0,0.12)]">
+              {/* Address chip — overlay (z above Leaflet panes; pointer-events-none keeps the map interactive) */}
+              <div className="pointer-events-none absolute top-[18px] left-[18px] z-[1100] bg-white rounded-[15px] flex items-center gap-[15px] p-[15px] shadow-[0_12px_15px_rgba(0,0,0,0.12)]">
                 <div className="bg-[#e3eee2] rounded-[10px] p-3 shrink-0">
                   <svg viewBox="0 0 24 24" fill="none" className="size-[30px]">
                     <circle cx="12" cy="12" r="3" stroke="#2A323B" strokeWidth="1.5" />
