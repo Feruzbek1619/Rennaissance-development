@@ -2,8 +2,8 @@ import { Container } from '@/components/Container'
 import { SectionTag } from '@/components/SectionTag'
 import { WhyUsCards } from '@/components/WhyUsCards'
 
-// Instagram reels shown under the why-us cards.
-const reels = ['DZpAXTcKF-O', 'DZCCGtOimnV', 'DYWhU01igXe', 'DYHg1XgDbAx']
+// Instagram reels shown under the why-us cards (5 across, reel-sized 9:16).
+const reels = ['DZpAXTcKF-O', 'DZCCGtOimnV', 'DYWhU01igXe', 'DYHg1XgDbAx', 'DX1fZI9o6My']
 
 // «Почему выбирают нас» (Figma 314:2944)
 export default function WhyUsSection() {
@@ -23,26 +23,27 @@ export default function WhyUsSection() {
           {/* Service cards */}
           <WhyUsCards />
 
-          {/* Instagram reels — 4 across. The embed's header/footer chrome is
-              cropped out (oversized iframe + overflow-hidden) so only the video
-              shows; one button below opens the IG profile. */}
+          {/* Instagram reels — 5 across, reel-sized 9:16. The embed renders the
+              vertical video at full width, so a 9:16 tile + a header-height pull-up
+              shows ONLY the video; the IG header (top) and the likes / "View more"
+              / comments footer (bottom) fall outside the tile and are clipped. */}
           <div className="flex flex-col gap-10 w-full">
-            <div className="grid grid-cols-4 gap-6 w-full">
+            <div className="grid grid-cols-5 gap-4 w-full">
               {reels.map((id, i) => (
                 <div
                   key={id}
                   data-reveal
-                  style={{ transitionDelay: `${i * 90}ms` }}
-                  className="relative h-[520px] 2xl:h-[580px] overflow-hidden rounded-[12px] bg-black"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                  className="relative aspect-[9/16] overflow-hidden rounded-[12px] bg-black"
                 >
-                  {/* iframe is taller than the tile and pulled up so the IG
-                      header (top) and the likes/comments footer (bottom) are
-                      clipped — only the portrait video stays. Play works via the
-                      embed's own button. */}
+                  {/* iframe is scaled wider than the tile so the embed's video
+                      fills the full 9:16 frame; the header (top), footer (likes /
+                      View more / comments, bottom) and side gutters all fall
+                      outside the tile and are clipped — only the reel shows. */}
                   <iframe
                     src={`https://www.instagram.com/reel/${id}/embed/`}
                     title={`Renaissance Development — reel ${id}`}
-                    className="absolute left-1/2 -translate-x-1/2 top-[-58px] w-full h-[760px] border-0"
+                    className="absolute left-1/2 -translate-x-1/2 top-[-78px] w-[145%] h-[1300px] border-0"
                     loading="lazy"
                     scrolling="no"
                     allow="encrypted-media; clipboard-write; picture-in-picture; web-share; autoplay; fullscreen"
