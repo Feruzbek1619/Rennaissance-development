@@ -5,6 +5,7 @@ import Projects from './pages/Projects'
 import ProjectDetails from './pages/ProjectDetails'
 import VatanVillage from './pages/VatanVillage'
 import BotanikaLuxury from './pages/BotanikaLuxury'
+import CompletedProject from './pages/CompletedProject'
 import Quote from './pages/Quote'
 import About from './pages/About'
 import FAQ from './pages/FAQ'
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
       { path: '/projects/vatan-village', element: <VatanVillage /> },
       { path: '/projects/botanika-luxury', element: <BotanikaLuxury /> },
       { path: '/projects/:slug', element: <ProjectDetails /> },
+      { path: '/completed/:slug', element: <CompletedProject /> },
       { path: '/quote', element: <Quote /> },
       { path: '/contacts', element: <Quote /> },
       { path: '/about', element: <About /> },
