@@ -247,30 +247,55 @@
 
 /* ── Projects map (Leaflet) pins + popup ── */
 .proj-pin {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  white-space: nowrap;
+  position: relative;
+  width: 18px;
+  height: 18px;
   cursor: pointer;
 }
 .proj-pin i {
-  width: 14px;
-  height: 14px;
+  position: absolute;
+  inset: 0;
   border-radius: 50%;
   background: #b0925e;
-  border: 2px solid #fff;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-  flex: none;
+  border: 3px solid #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
 .proj-pin b {
+  position: absolute;
+  left: 27px;
+  top: 50%;
+  transform: translateY(-50%);
   background: #b0925e;
   color: #fff;
-  font: 600 12px/1 'Manrope', sans-serif;
+  font: 600 15px/1 'Manrope', sans-serif;
   letter-spacing: 0.02em;
-  padding: 5px 9px;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+  padding: 8px 13px;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   transition: background 0.2s;
+}
+/* Label fans out from the dot so clustered pins stay readable. */
+.proj-pin--left b {
+  left: auto;
+  right: 27px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.proj-pin--up b {
+  left: 50%;
+  top: auto;
+  bottom: 27px;
+  transform: translateX(-50%);
+}
+.proj-pin--down b {
+  left: 50%;
+  top: 27px;
+  bottom: auto;
+  transform: translateX(-50%);
+}
+.proj-pin:hover {
+  z-index: 1000;
 }
 .proj-pin:hover b {
   background: #3a4754;

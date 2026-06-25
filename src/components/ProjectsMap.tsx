@@ -11,6 +11,19 @@ export type MapPoint = {
   location?: string
   /** If set, clicking the pin navigates to /projects/<slug>. */
   slug?: string
+  /** Label direction so clustered pins fan out (default: right). */
+  labelDir?: 'right' | 'left' | 'up' | 'down'
+}
+
+/* Per-project label direction — the four central projects sit on a diagonal,
+   so their labels radiate to different sides to avoid overlapping. */
+const LABEL_DIR: Record<string, MapPoint['labelDir']> = {
+  'botanika-luxury': 'up',
+  turon: 'left',
+  'vatan-village': 'right',
+  alandalus: 'down',
+  'challet-resort': 'right',
+  'western-housing': 'right',
 }
 
 type Props = {
@@ -45,6 +58,7 @@ export default function ProjectsMap({ points, zoom = 15, className }: Props = {}
           title: p.title,
           location: p.location,
           slug: p.slug,
+          labelDir: LABEL_DIR[p.slug] ?? 'right',
         }))
 
     const map = L.map(el, { scrollWheelZoom: false, zoomControl: false })
@@ -56,11 +70,12 @@ export default function ProjectsMap({ points, zoom = 15, className }: Props = {}
 
     const markers: L.Marker[] = []
     pts.forEach((p) => {
+      const dirClass = p.labelDir && p.labelDir !== 'right' ? ` proj-pin--${p.labelDir}` : ''
       const icon = L.divIcon({
         className: '',
-        html: `<div class="proj-pin" role="link" aria-label="${p.title}"><i></i><b>${p.title}</b></div>`,
-        iconSize: [14, 14],
-        iconAnchor: [7, 7],
+        html: `<div class="proj-pin${dirClass}" role="link" aria-label="${p.title}"><i></i><b>${p.title}</b></div>`,
+        iconSize: [18, 18],
+        iconAnchor: [9, 9],
       })
       const m = L.marker(p.coords, { icon, riseOnHover: true }).addTo(map)
       if (p.location) {
@@ -71,7 +86,7 @@ export default function ProjectsMap({ points, zoom = 15, className }: Props = {}
     })
 
     if (markers.length > 1) {
-      map.fitBounds(L.featureGroup(markers).getBounds().pad(0.25))
+      map.fitBounds(L.featureGroup(markers).getBounds().pad(0.08), { maxZoom: 14 })
     } else if (markers.length === 1) {
       map.setView(pts[0].coords, zoom)
     } else {
@@ -86,7 +101,7 @@ export default function ProjectsMap({ points, zoom = 15, className }: Props = {}
   return (
     <div
       ref={ref}
-      className={className ?? 'h-[520px] w-full rounded-[8px] overflow-hidden border border-border'}
+      className={className ?? 'h-[600px] w-full rounded-[8px] overflow-hidden border border-border'}
     />
   )
 }
