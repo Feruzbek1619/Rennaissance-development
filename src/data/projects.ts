@@ -45,6 +45,8 @@ export type Project = {
   coords?: [number, number]
   status: 'active' | 'sold'
   details?: ProjectDetails
+  /** Detail-page link override (e.g. completed projects → /completed/<slug>). */
+  href?: string
 }
 
 const alandalusDetails: ProjectDetails = {

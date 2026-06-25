@@ -2,14 +2,26 @@ import { useState } from 'react'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { ProjectCard } from '@/components/ProjectCard'
-import { CompletedCard } from '@/components/CompletedCard'
 import { SectionTag } from '@/components/SectionTag'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
 import FAQSection from '@/components/home/FAQSection'
-import { projects } from '@/data/projects'
+import { projects, type Project } from '@/data/projects'
 import { completedProjects } from '@/data/completed'
 
 const activeProjects = projects.filter((p) => p.status === 'active')
+
+// Completed projects rendered with the SAME ProjectCard (identical size) — only
+// the bottom button differs ("Подробно" → /completed/<slug>).
+const completedCards: Project[] = completedProjects.map((c) => ({
+  slug: c.slug,
+  title: c.title,
+  category: c.eyebrow,
+  area: 'от 26,44 до 30,81 м²',
+  location: c.location,
+  image: c.hero,
+  status: 'sold',
+  href: `/completed/${c.slug}`,
+}))
 const ITEMS_PER_PAGE = 6
 const totalPages = Math.ceil(activeProjects.length / ITEMS_PER_PAGE)
 
@@ -138,9 +150,9 @@ export default function Projects() {
                 Дома, которые уже построены и заселены. Квартиры в этих комплексах распроданы — нажмите «Подробно», чтобы посмотреть проект.
               </p>
             </div>
-            <div className="grid grid-cols-3 gap-x-10 gap-y-[64px]">
-              {completedProjects.map((project) => (
-                <CompletedCard key={project.slug} project={project} />
+            <div className="grid grid-cols-2 gap-x-16 gap-y-[80px]">
+              {completedCards.map((project) => (
+                <ProjectCard key={project.slug} project={project} />
               ))}
             </div>
           </Container>

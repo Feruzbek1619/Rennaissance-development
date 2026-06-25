@@ -77,7 +77,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <div className="h-px bg-border" />
         </div>
 
-        {project.status === 'active' && (
+        {project.status === 'active' ? (
           <div className="flex items-center gap-4 flex-wrap">
             <Link to={`/projects/${project.slug}`} className="flex flex-auto items-center justify-between bg-primary text-white rounded-full px-7 py-4 min-w-0 hover:bg-[#2F3A45] transition-colors">
               <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">Выбрать квартиру</span>
@@ -92,6 +92,13 @@ export function ProjectCard({ project }: { project: Project }) {
               </span>
             </button>
           </div>
+        ) : (
+          <Link to={project.href ?? `/projects/${project.slug}`} className="flex items-center justify-between bg-primary text-white rounded-full px-7 py-4 hover:bg-[#2F3A45] transition-colors">
+            <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">Подробно</span>
+            <span className="flex size-[37px] items-center justify-center rounded-full bg-white shrink-0 ml-2">
+              <ArrowUpRightIcon light={false} />
+            </span>
+          </Link>
         )}
       </div>
     </div>
