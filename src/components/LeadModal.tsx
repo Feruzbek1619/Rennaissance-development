@@ -7,14 +7,18 @@ import {
   useState,
   type ReactNode,
 } from 'react'
+import { sendLead, objectFromPath } from '@/lib/lead'
 
 // ── Global lead-capture modal (Figma 7810:4938 form + 7807:2027 success) ──
 // Opened by every "Заказать звонок" / "Оставить заявку" CTA across the site.
+// On submit the lead is sent to the Telegram group with the project (object) it
+// came from, so the team knows which object the client is interested in.
 
 type Mode = 'closed' | 'form' | 'success'
 
 type LeadModalCtx = {
-  openLead: () => void
+  /** Open the form. Pass an object/project name, or omit to derive from the URL. */
+  openLead: (object?: string) => void
   openSuccess: () => void
   close: () => void
 }
@@ -83,19 +87,36 @@ function ModalShell({ children, onClose }: { children: ReactNode; onClose: () =>
   )
 }
 
-function LeadForm({ onSubmit }: { onSubmit: () => void }) {
+function LeadForm({ object, onSuccess }: { object?: string; onSuccess: () => void }) {
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(false)
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if (sending) return
+    const fd = new FormData(e.currentTarget)
+    const name = String(fd.get('name') ?? '')
+    const phone = String(fd.get('phone') ?? '')
+    const question = String(fd.get('question') ?? '')
+    setError(false)
+    setSending(true)
+    const ok = await sendLead({ name, phone, question, object })
+    setSending(false)
+    if (ok) onSuccess()
+    else setError(true)
+  }
+
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        onSubmit()
-      }}
-      className="flex flex-col gap-6"
-    >
+    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
       <div className="flex flex-col gap-2.5 pr-8">
         <h2 className="font-heading text-[30px] sm:text-[34px] font-bold uppercase leading-none text-bg-subtle">
           Оставить заявку
         </h2>
+        {object ? (
+          <p className="font-vela text-[15px] leading-[1.4] text-[#c7c7c7]">
+            Объект: <span className="font-semibold text-accent">{object}</span>
+          </p>
+        ) : null}
         <p className="font-vela text-[15px] leading-[1.4] text-[#c7c7c7]">
           Мы свяжемся с вами через 5 минут. Сообщите нам свой номер телефона, чтобы мы могли вам перезвонить
         </p>
@@ -109,7 +130,7 @@ function LeadForm({ onSubmit }: { onSubmit: () => void }) {
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="lead-phone" className={labelCls}>Номер телефона</label>
-            <input id="lead-phone" name="phone" type="tel" placeholder="Введите номер" className={`${fieldCls} h-[48px]`} />
+            <input id="lead-phone" name="phone" type="tel" required placeholder="Введите номер" className={`${fieldCls} h-[48px]`} />
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="lead-q" className={labelCls}>Опишите свой вопрос</label>
@@ -120,10 +141,16 @@ function LeadForm({ onSubmit }: { onSubmit: () => void }) {
         <div className="flex flex-col gap-2.5">
           <button
             type="submit"
-            className="h-[52px] w-full rounded-[6px] bg-accent font-vela text-[19px] font-semibold text-white hover:bg-[#9C8050] transition-colors"
+            disabled={sending}
+            className="h-[52px] w-full rounded-[6px] bg-accent font-vela text-[19px] font-semibold text-white hover:bg-[#9C8050] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Оставить заявку
+            {sending ? 'Отправка…' : 'Оставить заявку'}
           </button>
+          {error ? (
+            <p className="font-vela text-[13px] text-[#ff9b9b] leading-[1.3]">
+              Не удалось отправить. Попробуйте ещё раз или позвоните нам.
+            </p>
+          ) : null}
           <p className="font-vela text-[13px] text-secondary leading-[1.3]">
             Отправляя этот запрос, вы соглашаетесь с{' '}
             <span className="font-semibold">условиями обработки данных</span>
@@ -159,8 +186,12 @@ function SuccessBody({ onClose }: { onClose: () => void }) {
 
 export function LeadModalProvider({ children }: { children: ReactNode }) {
   const [mode, setMode] = useState<Mode>('closed')
+  const [object, setObject] = useState<string>('')
 
-  const openLead = useCallback(() => setMode('form'), [])
+  const openLead = useCallback((obj?: string) => {
+    setObject(obj ?? objectFromPath())
+    setMode('form')
+  }, [])
   const openSuccess = useCallback(() => setMode('success'), [])
   const close = useCallback(() => setMode('closed'), [])
 
@@ -182,7 +213,7 @@ export function LeadModalProvider({ children }: { children: ReactNode }) {
       {children}
       {mode !== 'closed' && (
         <ModalShell onClose={close}>
-          {mode === 'form' ? <LeadForm onSubmit={openSuccess} /> : <SuccessBody onClose={close} />}
+          {mode === 'form' ? <LeadForm object={object} onSuccess={openSuccess} /> : <SuccessBody onClose={close} />}
         </ModalShell>
       )}
     </Ctx.Provider>

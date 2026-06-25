@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import { Container } from '@/components/Container'
 import FAQSection from '@/components/home/FAQSection'
 import StatsSection from '@/components/home/StatsSection'
 import ProjectsMap, { type MapPoint } from '@/components/ProjectsMap'
 import { useLeadModalOptional } from '@/components/LeadModal'
+import { sendLead } from '@/lib/lead'
 
 /** Single office marker for the contacts map (changes to come later). */
 const officePoint: MapPoint[] = [
@@ -72,6 +74,29 @@ const contactCards = [
 
 export default function Quote() {
   const modal = useLeadModalOptional()
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(false)
+
+  async function handleQuoteSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if (sending) return
+    const fd = new FormData(e.currentTarget)
+    setError(false)
+    setSending(true)
+    const ok = await sendLead({
+      name: String(fd.get('name') ?? ''),
+      phone: String(fd.get('phone') ?? ''),
+      object: '', // contacts page = general lead, no specific object
+    })
+    setSending(false)
+    if (ok) {
+      e.currentTarget.reset()
+      modal?.openSuccess()
+    } else {
+      setError(true)
+    }
+  }
+
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────── */}
@@ -98,7 +123,7 @@ export default function Quote() {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-[25px]">
+              <form onSubmit={handleQuoteSubmit} className="flex flex-col gap-[25px]">
                 <div className="flex flex-col gap-[22px]">
                   <div className="flex flex-col gap-[10px]">
                     <label htmlFor="quote-name" className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Ваше имя</label>
@@ -116,6 +141,7 @@ export default function Quote() {
                       id="quote-phone"
                       name="phone"
                       type="tel"
+                      required
                       placeholder="Введите номер"
                       className="h-[59px] bg-[#ededed] border border-white/10 rounded-[5px] px-5 font-vela text-[18px] text-secondary placeholder:text-secondary/50 outline-none focus:ring-2 focus:ring-accent"
                     />
@@ -123,18 +149,23 @@ export default function Quote() {
                 </div>
                 <div className="flex flex-col gap-[13px]">
                   <button
-                    type="button"
-                    onClick={() => modal?.openSuccess()}
-                    className="w-full h-[62px] bg-accent rounded-[5px] font-vela text-[22px] font-semibold text-white hover:bg-[#9C8050] transition-colors"
+                    type="submit"
+                    disabled={sending}
+                    className="w-full h-[62px] bg-accent rounded-[5px] font-vela text-[22px] font-semibold text-white hover:bg-[#9C8050] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Оставить заявку
+                    {sending ? 'Отправка…' : 'Оставить заявку'}
                   </button>
+                  {error ? (
+                    <p className="font-vela text-[17px] text-[#ffb4b4] leading-[1.3]">
+                      Не удалось отправить. Попробуйте ещё раз или позвоните нам.
+                    </p>
+                  ) : null}
                   <p className="font-vela text-[17px] text-secondary leading-[1.3]">
                     Отправляя этот запрос, вы соглашаетесь с{' '}
                     <span className="font-semibold text-secondary">условиями обработки данных</span>
                   </p>
                 </div>
-              </div>
+              </form>
             </div>
 
             {/* Right: building image (Figma 7802:9364) */}
