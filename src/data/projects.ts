@@ -44,6 +44,8 @@ export type Project = {
   /** Map position [lat, lng] for the projects map. */
   coords?: [number, number]
   status: 'active' | 'sold'
+  /** Active project not yet on sale — shows a "Скоро в продаже" badge. */
+  comingSoon?: boolean
   details?: ProjectDetails
   /** Detail-page link override (e.g. completed projects → /completed/<slug>). */
   href?: string
@@ -242,6 +244,7 @@ export const projects: Project[] = [
     location: 'Мирзо-Улугбекский район, тупик Немат, 197, Ташкент',
     image: '/assets/project-botanika.webp',
     coords: [41.346, 69.283],
+    comingSoon: true,
     gallery: [
       '/assets/botanika-1.webp',
       '/assets/botanika-2.webp',
@@ -287,7 +290,7 @@ export const projects: Project[] = [
     location: 'Юсуфхона, 60 минут от Ташкента',
     image: '/assets/project-chalet.webp',
     coords: [41.215, 69.42],
-    status: 'sold',
+    status: 'active',
   },
   {
     slug: 'western-housing',

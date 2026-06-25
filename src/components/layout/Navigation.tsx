@@ -3,8 +3,14 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { ChevronDown, Phone } from '@/components/icons'
 import { cn } from '@/lib/cn'
+import { projects as allProjects } from '@/data/projects'
+import { completedProjects } from '@/data/completed'
 
 const PHONE = '78-333-33-31'
+
+// Derived from data so the menu stays in sync with the catalog.
+const activeNav = allProjects.filter((p) => p.status === 'active').map((p) => ({ label: p.title, to: `/projects/${p.slug}` }))
+const completedNav = completedProjects.map((c) => ({ label: c.title, to: `/completed/${c.slug}` }))
 
 // Compact below 2xl (1280–1535) so the bar fits the 1080 content floor at 1280;
 // full size at 2xl (≥1536, incl. 1920) keeps the Figma look pixel-perfect.
@@ -12,13 +18,6 @@ const PHONE = '78-333-33-31'
 // full size at 2xl (≥1536, incl. 1920) keeps the Figma look pixel-perfect.
 const linkBase =
   'flex items-center justify-center rounded-md px-2.5 2xl:px-4 py-2 font-body text-[14px] 2xl:text-body-md text-ink transition-colors whitespace-nowrap'
-
-const projects = [
-  { label: 'ALANDALUS', to: '/projects/alandalus' },
-  { label: 'BOTANIKA LUXURY', to: '/projects/botanika-luxury' },
-  { label: 'VATAN VILLAGE', to: '/projects/vatan-village' },
-  { label: 'TURON', to: '/projects/turon' },
-]
 
 const simpleLinks = [
   { label: 'Главная', to: '/' },
@@ -33,7 +32,7 @@ const trailingLinks = [
 // Main navigation bar (Figma 129:4743).
 export default function Navigation() {
   const { pathname } = useLocation()
-  const catalogActive = pathname.startsWith('/projects')
+  const catalogActive = pathname.startsWith('/projects') || pathname.startsWith('/completed')
 
   return (
     <nav className="bg-white sticky top-0 z-40 border-b border-border/60">
@@ -68,8 +67,19 @@ export default function Navigation() {
                 <ChevronDown className="size-3 transition-transform duration-200 group-hover:rotate-180" />
               </button>
               <div className="invisible absolute left-0 top-full z-50 pt-3 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                <div className="w-[264px] overflow-hidden rounded-xl border border-border bg-white py-2 shadow-xl">
-                  {projects.map((p) => (
+                <div className="max-h-[70vh] w-[280px] overflow-y-auto rounded-xl border border-border bg-white py-2 shadow-xl">
+                  <p className="px-5 pb-1 pt-2 font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-secondary">В продаже</p>
+                  {activeNav.map((p) => (
+                    <NavLink
+                      key={p.to}
+                      to={p.to}
+                      className="block px-5 py-2.5 font-body text-body-sm text-ink transition-colors hover:bg-bg-subtle"
+                    >
+                      {p.label}
+                    </NavLink>
+                  ))}
+                  <p className="mt-1 border-t border-border px-5 pb-1 pt-3 font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-secondary">Реализованные</p>
+                  {completedNav.map((p) => (
                     <NavLink
                       key={p.to}
                       to={p.to}

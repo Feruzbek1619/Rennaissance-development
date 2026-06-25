@@ -29,8 +29,8 @@ function ArrowUpRightIcon({ light = false }: { light?: boolean }) {
 }
 
 export function ProjectCard({ project }: { project: Project }) {
-  const badgeClass = project.status === 'active' ? 'bg-[#BE9C68]' : 'bg-[#8C8275]'
-  const badgeLabel = project.status === 'active' ? 'Идут продажи' : 'Распродано'
+  const badgeClass = project.comingSoon ? 'bg-primary' : project.status === 'active' ? 'bg-[#BE9C68]' : 'bg-[#8C8275]'
+  const badgeLabel = project.comingSoon ? 'Скоро в продаже' : project.status === 'active' ? 'Идут продажи' : 'Распродано'
   const modal = useLeadModalOptional()
 
   return (
