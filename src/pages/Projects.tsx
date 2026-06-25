@@ -2,12 +2,16 @@ import { useState } from 'react'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { ProjectCard } from '@/components/ProjectCard'
+import { CompletedCard } from '@/components/CompletedCard'
+import { SectionTag } from '@/components/SectionTag'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
 import FAQSection from '@/components/home/FAQSection'
 import { projects } from '@/data/projects'
+import { completedProjects } from '@/data/completed'
 
+const activeProjects = projects.filter((p) => p.status === 'active')
 const ITEMS_PER_PAGE = 6
-const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE)
+const totalPages = Math.ceil(activeProjects.length / ITEMS_PER_PAGE)
 
 function ChevronLeftIcon() {
   return (
@@ -29,7 +33,7 @@ export default function Projects() {
   const [page, setPage] = useState(1)
 
   const start = (page - 1) * ITEMS_PER_PAGE
-  const pageProjects = projects.slice(start, start + ITEMS_PER_PAGE)
+  const pageProjects = activeProjects.slice(start, start + ITEMS_PER_PAGE)
 
   return (
     <main>
@@ -116,6 +120,28 @@ export default function Projects() {
                 Далее
                 <ChevronRightIcon />
               </button>
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {/* Completed / sold-out projects — showcase, "Подробно" only */}
+      {completedProjects.length > 0 && (
+        <section className="bg-bg-subtle py-[100px]">
+          <Container>
+            <div data-reveal className="mb-[56px] flex flex-col gap-5">
+              <SectionTag>Реализованные проекты</SectionTag>
+              <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-ink">
+                Сданные объекты
+              </h2>
+              <p className="font-body text-[20px] leading-[1.6] text-secondary max-w-[760px]">
+                Дома, которые уже построены и заселены. Квартиры в этих комплексах распроданы — нажмите «Подробно», чтобы посмотреть проект.
+              </p>
+            </div>
+            <div className="grid grid-cols-3 gap-x-10 gap-y-[64px]">
+              {completedProjects.map((project) => (
+                <CompletedCard key={project.slug} project={project} />
+              ))}
             </div>
           </Container>
         </section>
