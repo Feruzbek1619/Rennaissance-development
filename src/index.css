@@ -53,30 +53,35 @@
   }
 }
 
-/* ── Skeleton image loader (shimmer until the image paints) ── */
-.skel {
-  position: relative;
-  overflow: hidden;
-  background: #ece6da;
-}
-.skel::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  transform: translateX(-100%);
-  background: linear-gradient(
-    100deg,
-    transparent 20%,
-    rgba(255, 255, 255, 0.6) 50%,
-    transparent 80%
-  );
-  animation: skelShimmer 1.5s ease-in-out infinite;
-}
-.skel--done {
-  background: transparent;
-}
-.skel--done::after {
-  display: none;
+/* ── Skeleton image loader (shimmer until the image paints) ──
+   In @layer components so Tailwind utilities (e.g. `absolute`) still win when
+   passed in className — otherwise `.skel { position: relative }` would override
+   `absolute inset-0` and the wrapper wouldn't fill its fixed-size parent. */
+@layer components {
+  .skel {
+    position: relative;
+    overflow: hidden;
+    background: #ece6da;
+  }
+  .skel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      100deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.6) 50%,
+      transparent 80%
+    );
+    animation: skelShimmer 1.5s ease-in-out infinite;
+  }
+  .skel--done {
+    background: transparent;
+  }
+  .skel--done::after {
+    display: none;
+  }
 }
 @keyframes skelShimmer {
   100% {
