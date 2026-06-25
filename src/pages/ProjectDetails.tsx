@@ -193,6 +193,10 @@ export default function ProjectDetails() {
   const galleryPrev = () => setActive((c) => (c - 1 + gallery.length) % gallery.length)
   const galleryNext = () => setActive((c) => (c + 1) % gallery.length)
 
+  // Live map centred on this project (falls back to city centre if no coords).
+  const [mLat, mLng] = project.coords ?? [41.304621, 69.31018]
+  const mapSrc = `https://yandex.ru/map-widget/v1/?ll=${mLng}%2C${mLat}&z=15&pt=${mLng}%2C${mLat}%2Cpm2rdm`
+
   return (
     <main>
       {/* ── 1. Hero ─────────────────────────────────────── */}
@@ -493,7 +497,7 @@ export default function ProjectDetails() {
               <div className="flex-1 rounded-[5px] overflow-hidden min-h-[400px]">
                 <iframe
                   title={`${project.title} на карте`}
-                  src="https://yandex.ru/map-widget/v1/?ll=69.310180%2C41.304621&z=13&pt=69.310180%2C41.304621%2Cpm2rdm"
+                  src={mapSrc}
                   className="size-full border-0"
                   loading="lazy"
                 />
