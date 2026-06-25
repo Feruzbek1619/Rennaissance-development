@@ -9,6 +9,7 @@ import FAQSection from '@/components/home/FAQSection'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
 import { useLeadModalOptional } from '@/components/LeadModal'
 import { CountUp } from '@/components/CountUp'
+import { SkeletonImage } from '@/components/SkeletonImage'
 import { projects } from '@/data/projects'
 
 /* ─── BOTANIKA LUXURY — dedicated page, built on the VATAN VILLAGE template ─── */
@@ -171,7 +172,7 @@ export default function BotanikaLuxury() {
         <Container>
           {/* Big view with bottom gradient + arrows (switches the main image) */}
           <div data-reveal="scale" className="relative h-[460px] 2xl:h-[700px] w-full overflow-hidden rounded-[5px] bg-black">
-            <img loading="lazy" decoding="async" src={gallery[active]} alt="BOTANIKA LUXURY — общий вид" className="size-full object-cover" />
+            <SkeletonImage key={gallery[active]} src={gallery[active]} alt="BOTANIKA LUXURY — общий вид" className="absolute inset-0" imgClassName="size-full object-cover" />
             <div className="absolute inset-x-0 bottom-0 h-[224px] bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
             <div className="absolute bottom-[40px] right-[40px] flex items-center gap-3">
               <button

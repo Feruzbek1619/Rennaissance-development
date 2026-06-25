@@ -8,6 +8,7 @@ import FAQSection from '@/components/home/FAQSection'
 import { projects } from '@/data/projects'
 import { useLeadModalOptional } from '@/components/LeadModal'
 import { CountUp } from '@/components/CountUp'
+import { SkeletonImage } from '@/components/SkeletonImage'
 
 /* ─── Icon helpers ───────────────────────────────────── */
 function ArrowIcon({ light = false }: { light?: boolean }) {
@@ -293,7 +294,7 @@ export default function ProjectDetails() {
       <section className="bg-white py-8">
         <Container>
           <div className="relative h-[460px] 2xl:h-[600px] w-full overflow-hidden rounded-[5px] bg-black">
-            <img loading="lazy" decoding="async" src={gallery[active]} alt={project.title} className="size-full object-cover" />
+            <SkeletonImage key={gallery[active]} src={gallery[active]} alt={project.title} className="absolute inset-0" imgClassName="size-full object-cover" />
             {gallery.length > 1 && (
               <>
                 <div className="absolute inset-x-0 bottom-0 h-[200px] bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />

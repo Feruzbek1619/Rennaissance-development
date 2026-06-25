@@ -53,6 +53,42 @@
   }
 }
 
+/* ── Skeleton image loader (shimmer until the image paints) ── */
+.skel {
+  position: relative;
+  overflow: hidden;
+  background: #ece6da;
+}
+.skel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    100deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 80%
+  );
+  animation: skelShimmer 1.5s ease-in-out infinite;
+}
+.skel--done {
+  background: transparent;
+}
+.skel--done::after {
+  display: none;
+}
+@keyframes skelShimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skel::after {
+    animation: none;
+  }
+}
+
 /* ── Luxury accents: champagne-gold metallic + hairline rules ── */
 .text-gold {
   background: linear-gradient(105deg, #e7d2a6 0%, #c2a06b 38%, #a2814e 70%, #d8bd8f 100%);
