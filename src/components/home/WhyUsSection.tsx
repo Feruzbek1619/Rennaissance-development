@@ -57,7 +57,7 @@ export default function WhyUsSection() {
                 href="https://www.instagram.com/rbcompany.uz/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 h-[56px] px-9 rounded-full bg-accent font-body font-medium text-[18px] text-white hover:bg-[#9C8050] transition-colors"
+                className="inline-flex items-center gap-3 h-[56px] px-9 rounded-full bg-accent font-body font-medium text-[18px] text-white hover:bg-[#A2814E] transition-colors"
               >
                 Открыть Instagram
                 <svg viewBox="0 0 24 24" fill="none" className="size-5">

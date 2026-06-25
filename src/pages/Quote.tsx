@@ -151,7 +151,7 @@ export default function Quote() {
                   <button
                     type="submit"
                     disabled={sending}
-                    className="w-full h-[62px] bg-accent rounded-[5px] font-vela text-[22px] font-semibold text-white hover:bg-[#9C8050] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full h-[62px] bg-accent rounded-[5px] font-vela text-[22px] font-semibold text-white hover:bg-[#A2814E] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {sending ? 'Отправка…' : 'Оставить заявку'}
                   </button>
@@ -216,9 +216,10 @@ export default function Quote() {
         <Container>
           <div className="flex items-start justify-between mb-[64px]">
             <div className="flex flex-col gap-5">
-              <div className="border border-border px-[24px] py-[16px] self-start">
-                <span className="font-body text-body-sm text-ink">Контакты</span>
-              </div>
+              <div className="flex w-fit items-center gap-3 self-start">
+              <span className="rule-gold shrink-0" aria-hidden></span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">Контакты</span>
+            </div>
               <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink w-[850px]">
                 Свяжитесь с нами
               </h2>

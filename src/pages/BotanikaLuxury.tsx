@@ -140,7 +140,7 @@ export default function BotanikaLuxury() {
             </button>
             <a
               href={SUPPORT_TEL}
-              className="flex items-center justify-center rounded-[90px] bg-accent px-[32px] py-[16px] font-body text-[20px] font-medium leading-[1.6] text-bg-subtle hover:bg-[#9C8050] transition-colors"
+              className="flex items-center justify-center rounded-[90px] bg-accent px-[32px] py-[16px] font-body text-[20px] font-medium leading-[1.6] text-bg-subtle hover:bg-[#A2814E] transition-colors"
             >
               Позвонить
             </a>
@@ -350,7 +350,7 @@ export default function BotanikaLuxury() {
                   <button
                     type="button"
                     onClick={() => modal?.openLead()}
-                    className="mt-auto h-[56px] w-full bg-accent rounded-full flex items-center justify-center gap-3 font-body font-medium text-[20px] text-white hover:bg-[#9C8050] transition-colors"
+                    className="mt-auto h-[56px] w-full bg-accent rounded-full flex items-center justify-center gap-3 font-body font-medium text-[20px] text-white hover:bg-[#A2814E] transition-colors"
                   >
                     Заказать звонок
                     <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
@@ -406,7 +406,7 @@ export default function BotanikaLuxury() {
                 <Link to={`/projects/${p.slug}`}>
                   <div className="relative h-[320px] rounded-[5px] overflow-hidden">
                     <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="size-full object-cover transition-transform hover:scale-105" />
-                    <div className="absolute top-4 left-4 bg-[#B0925E] px-6 py-2 rounded-full">
+                    <div className="absolute top-4 left-4 bg-[#BE9C68] px-6 py-2 rounded-full">
                       <span className="font-vela text-[16px] font-medium text-white">
                         {p.status === 'active' ? 'Идут продажи' : 'Распродан'}
                       </span>

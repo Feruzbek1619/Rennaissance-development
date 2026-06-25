@@ -453,7 +453,7 @@ export default function ProjectDetails() {
                   <button
                     type="button"
                     onClick={() => modal?.openLead()}
-                    className="mt-auto h-[56px] w-full bg-accent rounded-full flex items-center justify-center gap-3 font-body font-medium text-[20px] text-white hover:bg-[#9C8050] transition-colors"
+                    className="mt-auto h-[56px] w-full bg-accent rounded-full flex items-center justify-center gap-3 font-body font-medium text-[20px] text-white hover:bg-[#A2814E] transition-colors"
                   >
                     Заказать звонок
                     <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
@@ -541,7 +541,7 @@ export default function ProjectDetails() {
                 <Link to={`/projects/${p.slug}`}>
                   <div className="relative h-[320px] rounded-[5px] overflow-hidden">
                     <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="size-full object-cover transition-transform hover:scale-105" />
-                    <div className="absolute top-4 left-4 bg-[#B0925E] px-6 py-2 rounded-full">
+                    <div className="absolute top-4 left-4 bg-[#BE9C68] px-6 py-2 rounded-full">
                       <span className="font-vela text-[16px] font-medium text-white">Идут продажи</span>
                     </div>
                   </div>
@@ -594,8 +594,9 @@ export default function ProjectDetails() {
       <section className="bg-white py-[100px]">
         <Container>
           <div className="flex flex-col gap-5 mb-8">
-            <div className="border border-border px-[24px] py-[16px] self-start">
-              <span className="font-body text-body-sm text-ink">Завод</span>
+            <div className="flex w-fit items-center gap-3 self-start">
+              <span className="rule-gold shrink-0" aria-hidden></span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">Завод</span>
             </div>
             <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">ПРОИЗВОДСТВО</h2>
           </div>

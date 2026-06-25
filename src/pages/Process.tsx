@@ -64,7 +64,7 @@ export default function Process() {
               </p>
               <Link
                 to="/quote"
-                className="inline-flex items-center justify-center h-[56px] px-10 bg-accent rounded-[5px] font-body font-medium text-[18px] text-white hover:bg-[#9C8050] transition-colors"
+                className="inline-flex items-center justify-center h-[56px] px-10 bg-accent rounded-[5px] font-body font-medium text-[18px] text-white hover:bg-[#A2814E] transition-colors"
               >
                 Обсудить проект
               </Link>

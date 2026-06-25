@@ -1,12 +1,16 @@
 import type { ReactNode } from 'react'
 import { cn } from '@/lib/cn'
 
-// Consistent bordered section label chip (Figma: ~px24 / py16, 56px tall).
-// w-fit so it left-aligns in items-start columns and centers in items-center.
+// Elegant section label: a hairline gold rule + letter-spaced caps (no boxy
+// border). w-fit so it left-aligns in items-start columns and centers in
+// items-center.
 export function SectionTag({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <div className={cn('w-fit border border-border px-[24px] py-[16px]', className)}>
-      <span className="font-body text-body-sm text-ink leading-none">{children}</span>
+    <div className={cn('flex w-fit items-center gap-3', className)}>
+      <span className="rule-gold shrink-0" aria-hidden />
+      <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">
+        {children}
+      </span>
     </div>
   )
 }

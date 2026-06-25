@@ -14,9 +14,10 @@ export default function AboutSection() {
           <div data-reveal="left" className="w-[782px] shrink-0 flex flex-col">
             {/* Header: badge + heading */}
             <div className="flex flex-col gap-5">
-              <div className="border border-border px-[24px] py-[16px] self-start">
-                <span className="font-body text-body-sm text-ink">О нас</span>
-              </div>
+              <div className="flex w-fit items-center gap-3 self-start">
+              <span className="rule-gold shrink-0" aria-hidden></span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">О нас</span>
+            </div>
               <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
                 О компании
               </h2>

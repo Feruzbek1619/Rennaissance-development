@@ -47,8 +47,9 @@ export default function FAQSection() {
 
           {/* Left column */}
           <div data-reveal="left" className="flex flex-col gap-5 w-[665px] shrink-0">
-            <div className="border border-border px-[24px] py-[16px] self-start">
-              <span className="font-body text-body-sm text-ink">FAQ</span>
+            <div className="flex w-fit items-center gap-3 self-start">
+              <span className="rule-gold shrink-0" aria-hidden></span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">FAQ</span>
             </div>
             <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
               Часто задаваемые вопросы

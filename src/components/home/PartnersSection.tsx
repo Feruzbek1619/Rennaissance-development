@@ -18,9 +18,10 @@ export default function PartnersSection() {
           {/* Header: badge+heading left, description right */}
           <div data-reveal="left" className="flex items-start justify-between">
             <div className="flex flex-col gap-5 w-[961px] shrink min-w-0">
-              <div className="border border-border px-[24px] py-[16px] self-start">
-                <span className="font-body text-body-sm text-ink">НАШИ КЛИЕНТЫ</span>
-              </div>
+              <div className="flex w-fit items-center gap-3 self-start">
+              <span className="rule-gold shrink-0" aria-hidden></span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">НАШИ КЛИЕНТЫ</span>
+            </div>
               <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
                 Партнеры в архитектурном совершенстве.
               </h2>

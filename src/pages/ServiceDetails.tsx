@@ -91,9 +91,10 @@ export default function ServiceDetails() {
           <div className="flex items-start gap-[80px]">
             <div className="flex-1 min-w-0">
               <div className="flex flex-col gap-8">
-                <div className="border border-border px-[24px] py-[16px] self-start">
-                  <span className="font-body text-body-sm text-ink">ОБ УСЛУГЕ</span>
-                </div>
+                <div className="flex w-fit items-center gap-3 self-start">
+              <span className="rule-gold shrink-0" aria-hidden></span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">ОБ УСЛУГЕ</span>
+            </div>
                 <h2 className="font-heading text-[49px] font-bold uppercase leading-[1.2] text-ink">
                   Что входит в услугу
                 </h2>
@@ -134,9 +135,10 @@ export default function ServiceDetails() {
         <Container>
           <div className="flex flex-col gap-[60px]">
             <div className="flex flex-col gap-4">
-              <div className="border border-border px-[24px] py-[16px] self-start">
-                <span className="font-body text-body-sm text-ink">ПРОЦЕСС</span>
-              </div>
+              <div className="flex w-fit items-center gap-3 self-start">
+              <span className="rule-gold shrink-0" aria-hidden></span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">ПРОЦЕСС</span>
+            </div>
               <h2 className="font-heading text-[49px] font-bold uppercase leading-[1.2] text-ink">
                 Как мы работаем
               </h2>

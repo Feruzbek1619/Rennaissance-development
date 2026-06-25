@@ -104,7 +104,7 @@ export default function Services() {
                 </p>
                 <Link
                   to="/quote"
-                  className="inline-flex items-center justify-center h-[56px] px-10 bg-accent rounded-[5px] font-body font-medium text-[18px] text-white hover:bg-[#9C8050] transition-colors"
+                  className="inline-flex items-center justify-center h-[56px] px-10 bg-accent rounded-[5px] font-body font-medium text-[18px] text-white hover:bg-[#A2814E] transition-colors"
                 >
                   Получить консультацию
                 </Link>
@@ -120,9 +120,10 @@ export default function Services() {
           <div className="flex flex-col gap-[60px]">
             <div className="flex items-end justify-between gap-8">
               <div className="flex flex-col gap-4">
-                <div className="border border-border px-[24px] py-[16px] self-start">
-                  <span className="font-body text-body-sm text-ink">УСЛУГИ</span>
-                </div>
+                <div className="flex w-fit items-center gap-3 self-start">
+              <span className="rule-gold shrink-0" aria-hidden></span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">УСЛУГИ</span>
+            </div>
                 <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.2] text-ink">
                   Что мы делаем
                 </h2>
@@ -142,9 +143,10 @@ export default function Services() {
           <div className="flex flex-col gap-[60px]">
             <div className="flex items-center justify-between gap-8">
               <div className="flex flex-col gap-4">
-                <div className="border border-border px-[24px] py-[16px] self-start">
-                  <span className="font-body text-body-sm text-ink">ПРОЦЕСС</span>
-                </div>
+                <div className="flex w-fit items-center gap-3 self-start">
+              <span className="rule-gold shrink-0" aria-hidden></span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">ПРОЦЕСС</span>
+            </div>
                 <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.2] text-ink">
                   Как мы работаем
                 </h2>

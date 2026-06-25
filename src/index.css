@@ -49,7 +49,29 @@
   h5,
   h6 {
     @apply font-heading;
+    letter-spacing: 0.005em;
   }
+}
+
+/* ── Luxury accents: champagne-gold metallic + hairline rules ── */
+.text-gold {
+  background: linear-gradient(105deg, #e7d2a6 0%, #c2a06b 38%, #a2814e 70%, #d8bd8f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.bg-gold {
+  background: linear-gradient(120deg, #d2b582 0%, #be9c68 45%, #a8854f 100%);
+}
+.bg-gold:hover {
+  background: linear-gradient(120deg, #c9a974 0%, #b08f5b 45%, #95743f 100%);
+}
+/* Hairline gold divider (replaces boxy "frame" tags). */
+.rule-gold {
+  height: 1px;
+  width: 56px;
+  background: linear-gradient(90deg, #be9c68, rgba(190, 156, 104, 0));
 }
 
 /* Lead modal enter animations */
@@ -221,7 +243,7 @@
   display: block;
   height: 100%;
   border-radius: 3px;
-  background: #B0925E;
+  background: #BE9C68;
   transition: width 0.12s linear;
 }
 .preloader__pct {
@@ -256,7 +278,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: #b0925e;
+  background: #be9c68;
   border: 3px solid #fff;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
@@ -265,7 +287,7 @@
   left: 27px;
   top: 50%;
   transform: translateY(-50%);
-  background: #b0925e;
+  background: #be9c68;
   color: #fff;
   font: 600 15px/1 'Manrope', sans-serif;
   letter-spacing: 0.02em;

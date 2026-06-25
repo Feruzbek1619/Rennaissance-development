@@ -35,7 +35,7 @@ const sizeClasses: Record<Size, string> = {
 }
 
 const variantClasses: Record<Variant, string> = {
-  accent: 'bg-accent text-white hover:bg-[#9C8050] active:bg-[#8A7144]',
+  accent: 'bg-gold text-white shadow-[0_8px_24px_rgba(168,133,79,0.28)]',
   primary: 'bg-primary text-white hover:bg-[#2F3A45] active:bg-[#28313B]',
   white: 'bg-white text-ink hover:bg-bg-subtle active:bg-border',
   outline: 'border border-white text-white hover:bg-white hover:text-primary active:bg-bg-subtle',
