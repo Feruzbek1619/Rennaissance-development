@@ -83,7 +83,7 @@ export const completedProjects: CompletedProject[] = [
       { label: 'Мечеть', time: '6 минут' },
       { label: 'Парк Янги Узбекистон', time: '15 минут' },
     ],
-    coords: [41.338, 69.334],
+    coords: [41.323675, 69.441727],
   },
   {
     slug: 'yakkasaroy',
@@ -113,7 +113,7 @@ export const completedProjects: CompletedProject[] = [
       { label: 'Агентство госуслуг', time: '5 минут' },
       { label: 'Продуктовый магазин', time: '5 минут' },
     ],
-    coords: [41.293, 69.262],
+    coords: [41.270028, 69.2585],
   },
   {
     slug: 'botanika',
@@ -144,7 +144,7 @@ export const completedProjects: CompletedProject[] = [
       { label: 'Школа', time: '3 минуты' },
       { label: 'Детский сад', time: '3 минуты' },
     ],
-    coords: [41.343, 69.29],
+    coords: [41.338694, 69.317611],
   },
   {
     slug: 'poytaxt',
@@ -174,6 +174,6 @@ export const completedProjects: CompletedProject[] = [
       { label: 'Школа', time: '15 минут' },
       { label: 'Детский сад', time: '7 минут' },
     ],
-    coords: [41.304, 69.31],
+    coords: [41.304667, 69.322444],
   },
 ]
