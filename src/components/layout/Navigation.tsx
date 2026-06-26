@@ -17,7 +17,11 @@ const completedNav = completedProjects.map((c) => ({ label: c.title, to: `/compl
 // Compact below 2xl (1280–1535) so the bar fits the content floor at 1280;
 // full size at 2xl (≥1536, incl. 1920) keeps the Figma look pixel-perfect.
 const linkBase =
-  'flex items-center justify-center rounded-md px-2.5 2xl:px-4 py-2 font-body text-[14px] 2xl:text-body-md text-ink transition-colors whitespace-nowrap'
+  'flex items-center justify-center rounded-lg px-2.5 2xl:px-4 py-2 font-body text-[14px] 2xl:text-body-md transition-all duration-300 whitespace-nowrap'
+// Refined active pill: translucent champagne tint + hairline gold ring (instead
+// of a flat beige block). Inactive: soft gold-tinted hover.
+const linkActive = 'bg-accent/[0.12] text-accent-dark font-medium ring-1 ring-inset ring-accent/30 shadow-[0_1px_6px_rgba(190,156,104,0.15)]'
+const linkIdle = 'text-ink hover:bg-accent/[0.07]'
 
 const simpleLinks = [
   { label: 'Главная', to: '/' },
@@ -49,7 +53,7 @@ export default function Navigation() {
                 <NavLink
                   to={l.to}
                   end={l.to === '/'}
-                  className={({ isActive }) => cn(linkBase, isActive ? 'bg-bg-active' : 'hover:bg-bg-subtle')}
+                  className={({ isActive }) => cn(linkBase, isActive ? linkActive : linkIdle)}
                 >
                   {l.label}
                 </NavLink>
@@ -61,7 +65,7 @@ export default function Navigation() {
               <button
                 type="button"
                 aria-haspopup="menu"
-                className={cn(linkBase, 'gap-2', catalogActive ? 'bg-bg-active' : 'hover:bg-bg-subtle')}
+                className={cn(linkBase, 'gap-2', catalogActive ? linkActive : linkIdle)}
               >
                 Каталог объектов
                 <ChevronDown className="size-3 transition-transform duration-200 group-hover:rotate-180" />
@@ -102,7 +106,7 @@ export default function Navigation() {
               <li key={l.to}>
                 <NavLink
                   to={l.to}
-                  className={({ isActive }) => cn(linkBase, isActive ? 'bg-bg-active' : 'hover:bg-bg-subtle')}
+                  className={({ isActive }) => cn(linkBase, isActive ? linkActive : linkIdle)}
                 >
                   {l.label}
                 </NavLink>
