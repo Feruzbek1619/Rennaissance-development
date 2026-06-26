@@ -1,17 +1,13 @@
 import { Container } from '@/components/Container'
-import { Button } from '@/components/Button'
-import { ProjectCard } from '@/components/ProjectCard'
 import { SectionTag } from '@/components/SectionTag'
 import WhyUsSection from '@/components/home/WhyUsSection'
+import ProjectsSection from '@/components/home/ProjectsSection'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
 import ProductionSection from '@/components/home/ProductionSection'
 import FAQSection from '@/components/home/FAQSection'
 import StatsSection from '@/components/home/StatsSection'
 import PartnersSection from '@/components/home/PartnersSection'
 import ProjectsMap from '@/components/ProjectsMap'
-import { projects } from '@/data/projects'
-
-const activeProjects = projects.filter((p) => p.status === 'active').slice(0, 4)
 
 export default function About() {
   return (
@@ -134,44 +130,8 @@ export default function About() {
         </Container>
       </section>
 
-      {/* ── 10. Projects section ───────────────────────────── */}
-      <section className="bg-bg-subtle py-[100px]">
-        <Container>
-          <div className="flex items-end justify-between gap-8 mb-[52px]">
-            <div className="flex flex-col gap-5 min-w-0">
-              <SectionTag>Проекты</SectionTag>
-              <h2 className="font-heading text-[61px] font-bold uppercase leading-none text-ink max-w-[764px]">
-                Наши проекты
-              </h2>
-            </div>
-            <div className="flex flex-col items-end gap-6 min-w-0 shrink">
-              <p className="font-body text-[20px] leading-[1.6] text-secondary max-w-[698px] text-right">
-                5 объектов в продаже — от квартир в рассрочку до загородных вилл
-              </p>
-              <div className="flex gap-4 flex-wrap justify-end">
-                <Button variant="primary" size="lg" to="/projects">
-                  Все проекты
-                </Button>
-                <Button variant="accent" size="lg" to="/quote">
-                  Заказать звонок
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            {activeProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
-          </div>
-
-          <div className="flex justify-center mt-[52px]">
-            <Button variant="primary" size="lg" to="/projects">
-              Все проекты
-            </Button>
-          </div>
-        </Container>
-      </section>
+      {/* ── 10. Projects — shared section (filter: жилые / бизнес-центры) ── */}
+      <ProjectsSection />
     </main>
   )
 }

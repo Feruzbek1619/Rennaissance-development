@@ -10,6 +10,14 @@ import { completedProjects } from '@/data/completed'
 
 const activeProjects = projects.filter((p) => p.status === 'active')
 
+const FILTERS = [
+  { key: 'all', label: 'Все' },
+  { key: 'residential', label: 'Жилые комплексы' },
+  { key: 'business', label: 'Бизнес-центры' },
+] as const
+type FilterKey = (typeof FILTERS)[number]['key']
+const kindOf = (p: Project) => p.kind ?? 'residential'
+
 // Completed projects rendered with the SAME ProjectCard (identical size) — only
 // the bottom button differs ("Подробно" → /completed/<slug>).
 const completedCards: Project[] = completedProjects.map((c) => ({
@@ -23,7 +31,6 @@ const completedCards: Project[] = completedProjects.map((c) => ({
   href: `/completed/${c.slug}`,
 }))
 const ITEMS_PER_PAGE = 6
-const totalPages = Math.ceil(activeProjects.length / ITEMS_PER_PAGE)
 
 function ChevronLeftIcon() {
   return (
@@ -43,9 +50,17 @@ function ChevronRightIcon() {
 
 export default function Projects() {
   const [page, setPage] = useState(1)
+  const [tab, setTab] = useState<FilterKey>('all')
 
+  const selectTab = (key: FilterKey) => {
+    setTab(key)
+    setPage(1)
+  }
+
+  const filtered = activeProjects.filter((p) => tab === 'all' || kindOf(p) === tab)
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE)
   const start = (page - 1) * ITEMS_PER_PAGE
-  const pageProjects = activeProjects.slice(start, start + ITEMS_PER_PAGE)
+  const pageProjects = filtered.slice(start, start + ITEMS_PER_PAGE)
 
   return (
     <main>
@@ -82,6 +97,24 @@ export default function Projects() {
       {/* Projects grid */}
       <section className="bg-white py-[100px]">
         <Container>
+          {/* Category filter */}
+          <div className="mb-[56px] flex flex-wrap justify-center gap-3">
+            {FILTERS.map((f) => (
+              <button
+                key={f.key}
+                type="button"
+                onClick={() => selectTab(f.key)}
+                className={`h-[52px] px-8 rounded-full font-vela text-[18px] font-medium transition-colors ${
+                  tab === f.key
+                    ? 'bg-primary text-white'
+                    : 'bg-white border border-border text-ink hover:border-accent hover:text-accent-dark'
+                }`}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+
           <div className="grid grid-cols-2 gap-x-16 gap-y-[80px]">
             {pageProjects.map((project) => (
               <ProjectCard key={project.slug} project={project} />

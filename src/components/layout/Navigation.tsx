@@ -9,7 +9,7 @@ import { completedProjects } from '@/data/completed'
 const PHONE = '78-333-33-31'
 
 // Derived from data so the menu stays in sync with the catalog.
-const activeNav = allProjects.filter((p) => p.status === 'active').map((p) => ({ label: p.title, to: `/projects/${p.slug}` }))
+const activeNav = allProjects.filter((p) => p.status === 'active' && !p.cardOnly).map((p) => ({ label: p.title, to: `/projects/${p.slug}` }))
 const completedNav = completedProjects.map((c) => ({ label: c.title, to: `/completed/${c.slug}` }))
 
 // Compact below 2xl (1280–1535) so the bar fits the 1080 content floor at 1280;

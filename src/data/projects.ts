@@ -44,6 +44,10 @@ export type Project = {
   /** Map position [lat, lng] for the projects map. */
   coords?: [number, number]
   status: 'active' | 'sold'
+  /** Project family for catalog filtering. Defaults to 'residential'. */
+  kind?: 'residential' | 'business'
+  /** Business-center cards have no detail page — only an "Оставить заявку" CTA. */
+  cardOnly?: boolean
   /** Active project not yet on sale — shows a "Скоро в продаже" badge. */
   comingSoon?: boolean
   details?: ProjectDetails
@@ -432,5 +436,51 @@ export const projects: Project[] = [
     image: '/assets/project-western.webp',
     coords: [41.245, 69.228],
     status: 'sold',
+  },
+
+  /* ─── Бизнес-центры (карточка + «Оставить заявку», без отдельной страницы) ─── */
+  {
+    slug: 'chulpon',
+    title: 'CHULPON',
+    category: 'Бизнес-центр',
+    area: '625 м² · 5 этажей',
+    location: 'г. Ташкент, Юнусабадский район',
+    image: '/assets/bc-chulpon.webp',
+    status: 'active',
+    kind: 'business',
+    cardOnly: true,
+  },
+  {
+    slug: 'aviasozlar',
+    title: 'AVIASOZLAR',
+    category: 'Бизнес-центр',
+    area: '5 этажей',
+    location: 'г. Ташкент',
+    image: '/assets/bc-aviasozlar.webp',
+    status: 'active',
+    kind: 'business',
+    cardOnly: true,
+  },
+  {
+    slug: 'bogi-shamol',
+    title: "BOG'I SHAMOL",
+    category: 'Бизнес-центр',
+    area: '625 м² · 5 этажей',
+    location: 'г. Ташкент, Юнусабадский район',
+    image: '/assets/bc-bogi-shamol.webp',
+    status: 'active',
+    kind: 'business',
+    cardOnly: true,
+  },
+  {
+    slug: 'yakkasaroy-bc',
+    title: 'YAKKASAROY',
+    category: 'Бизнес-центр',
+    area: '5 этажей',
+    location: 'г. Ташкент',
+    image: '/assets/bc-yakkasaroy.webp',
+    status: 'active',
+    kind: 'business',
+    cardOnly: true,
   },
 ]
