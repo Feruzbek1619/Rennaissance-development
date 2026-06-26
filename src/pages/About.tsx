@@ -2,7 +2,7 @@ import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { ProjectCard } from '@/components/ProjectCard'
 import { SectionTag } from '@/components/SectionTag'
-import { WhyUsCards } from '@/components/WhyUsCards'
+import WhyUsSection from '@/components/home/WhyUsSection'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
 import ProductionSection from '@/components/home/ProductionSection'
 import FAQSection from '@/components/home/FAQSection'
@@ -103,38 +103,8 @@ export default function About() {
       {/* ── 6. Partners — shared section (looping logo marquee) ── */}
       <PartnersSection />
 
-      {/* ── 7. Why us section ──────────────────────────────── */}
-      <section className="bg-white py-[100px]">
-        <Container>
-          <div className="flex flex-col items-center gap-5 mb-[60px]">
-            <SectionTag>Почему мы</SectionTag>
-            <h2 className="font-heading text-[61px] font-bold uppercase leading-none text-ink text-center">
-              Почему выбирают нас
-            </h2>
-          </div>
-
-          <div className="mb-[16px]">
-            <WhyUsCards />
-          </div>
-
-          {/* Video / big image */}
-          <div className="relative w-full h-[740px] overflow-hidden">
-            <img loading="lazy" decoding="async"
-              src="/assets/why-us-video.webp"
-              alt="Наши проекты"
-              className="w-full h-full object-cover"
-            />
-            {/* play button overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="size-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                <svg viewBox="0 0 24 24" fill="white" className="size-8 ml-1">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      {/* ── 7. Why us — shared section (identical to Home) ──── */}
+      <WhyUsSection />
 
       {/* ── 8. Need Help ───────────────────────────────────── */}
       <NeedHelpSection />

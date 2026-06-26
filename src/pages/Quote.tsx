@@ -26,7 +26,7 @@ function OfficeIcon() {
 function PhoneIcon() {
   return (
     <svg viewBox="0 0 48 48" fill="none" className="size-12">
-      <path d="M9 4.5h10l4 10-5 3a22 22 0 0 0 12.5 12.5l3-5 10 4V39a5 5 0 0 1-5.5 5C11.5 42 6.5 16.5 9 4.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M40 33.5v4.2a3 3 0 0 1-3.27 3 30 30 0 0 1-13-4.62 29.5 29.5 0 0 1-9-9 30 30 0 0 1-4.62-13.05A3 3 0 0 1 13.1 10.5h4.2a3 3 0 0 1 3 2.58c.19 1.4.54 2.78 1.05 4.1a3 3 0 0 1-.68 3.16l-1.78 1.78a24 24 0 0 0 9 9l1.78-1.78a3 3 0 0 1 3.16-.68c1.32.51 2.7.86 4.1 1.05a3 3 0 0 1 2.58 3.04Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
