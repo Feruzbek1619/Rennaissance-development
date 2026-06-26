@@ -218,18 +218,21 @@ export default function B2B() {
 
   return (
     <main>
-      {/* ── 1. Hero ─────────────────────────────────────────── */}
-      <section className="relative h-[720px] 2xl:h-[820px] overflow-hidden bg-primary">
-        <img loading="eager" decoding="async" src="/assets/production.webp" alt="Производство Renaissance" className="absolute inset-0 size-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/85" />
+      {/* ── 1. Hero — premium dark gradient (no stock photo) ──── */}
+      <section className="relative h-[660px] 2xl:h-[760px] overflow-hidden bg-[#0e1013]">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#262b32] via-[#181b20] to-[#0d0f12]" />
+        <div className="absolute inset-0 bg-[radial-gradient(130%_100%_at_80%_6%,rgba(198,163,108,0.32),transparent_56%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(80%_62%_at_36%_30%,rgba(225,210,185,0.10),transparent_60%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+
         <div className="absolute inset-0 flex items-center">
           <Container>
             <div className="flex max-w-[1100px] flex-col gap-7">
               <SectionTag className="[&_span:last-child]:text-accent">Renaissance Building Company</SectionTag>
-              <h1 className="font-heading text-[64px] 2xl:text-[88px] font-bold uppercase leading-[1.02] text-bg-subtle">
+              <h1 className="font-heading text-[64px] 2xl:text-[92px] font-bold uppercase leading-[1.02] text-bg-subtle">
                 Производство
               </h1>
-              <p className="font-vela text-[22px] 2xl:text-[26px] leading-[1.5] text-white/85 max-w-[820px]">
+              <p className="font-vela text-[22px] 2xl:text-[26px] leading-[1.5] text-white/80 max-w-[840px]">
                 Собственная производственная база — от бетона и газоблока до жидкого травертина, вентиляции,
                 алюминиевых профилей и спецтехники. Пять направлений, которые держат качество и сроки под нашим
                 контролем.
@@ -240,10 +243,22 @@ export default function B2B() {
                 </Button>
                 <a
                   href="#concrete"
-                  className="flex items-center justify-center h-[56px] px-8 rounded-full border border-white/50 font-body text-[20px] font-medium text-white hover:bg-white/10 transition-colors"
+                  className="flex items-center justify-center h-[56px] px-8 rounded-full border border-white/40 font-body text-[20px] font-medium text-white hover:bg-white/10 transition-colors"
                 >
                   Направления
                 </a>
+              </div>
+              <div className="mt-6 flex flex-wrap items-center gap-x-10 2xl:gap-x-14 gap-y-3 border-t border-white/10 pt-6">
+                {[
+                  ['5', 'направлений производства'],
+                  ['2021', 'собственный завод'],
+                  ['100%', 'контроль качества'],
+                ].map(([v, l]) => (
+                  <div key={l} className="flex items-baseline gap-2.5">
+                    <span className="font-heading text-[30px] 2xl:text-[34px] font-bold leading-none text-accent">{v}</span>
+                    <span className="font-vela text-[15px] 2xl:text-[16px] text-white/60">{l}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </Container>
