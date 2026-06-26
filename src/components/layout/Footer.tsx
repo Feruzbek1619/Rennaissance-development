@@ -12,7 +12,7 @@ const navLinks = [
   { label: 'Главная', to: '/' },
   { label: 'О компании', to: '/about' },
   { label: 'Каталог объектов', to: '/projects' },
-  { label: 'Производство (B2B)', to: '/b2b' },
+  { label: 'Производство', to: '/b2b' },
   { label: 'Контакты', to: '/contacts' },
   { label: 'Политика конфиденциальности', to: '/privacy' },
   { label: 'Вопросы и ответы', to: '/faq' },

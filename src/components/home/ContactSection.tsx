@@ -65,12 +65,12 @@ const cards = [
   {
     icon: <MessengerIcon />,
     title: 'Мессенджеры',
-    lines: ['Telegram: @rbcompanyuz', 'Instagram: @rbcompany.uz'],
+    lines: ['Telegram: @rbcompanyuzchat', 'Instagram: @rbcompany.uz'],
   },
   {
     icon: <ClockIcon />,
     title: 'Часы работы',
-    lines: ['Пн-Пт: 9:00–18:00.'],
+    lines: ['Пн-Пт: 9:00–21:00.'],
   },
 ]
 

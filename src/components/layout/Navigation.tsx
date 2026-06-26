@@ -29,7 +29,7 @@ const simpleLinks = [
 ] as const
 
 const trailingLinks = [
-  { label: 'Производство (B2B)', to: '/b2b' },
+  { label: 'Производство', to: '/b2b' },
   { label: 'Контакты', to: '/contacts' },
 ] as const
 

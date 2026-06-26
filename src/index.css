@@ -114,9 +114,10 @@
   width: 56px;
   background: linear-gradient(90deg, #be9c68, rgba(190, 156, 104, 0));
 }
-/* Light champagne gradient surface — stat-number cards (was flat white). */
+/* Uniform warm light surface — stat-number cards (no white, no harsh gradient). */
 .stat-card {
-  background-image: linear-gradient(125deg, #ffffff 0%, #f7efe0 52%, #efe2cb 100%);
+  background-color: #f6eedc;
+  box-shadow: 0 10px 30px rgba(40, 48, 59, 0.05);
 }
 
 /* Lead modal enter animations */

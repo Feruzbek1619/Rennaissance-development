@@ -63,12 +63,12 @@ const contactCards = [
   {
     icon: <MessengerIcon />,
     title: 'Мессенджеры',
-    content: 'Telegram: @rbcompanyuz\nInstagram: @rbcompany.uz',
+    content: 'Telegram: @rbcompanyuzchat\nInstagram: @rbcompany.uz',
   },
   {
     icon: <ClockIcon />,
     title: 'Часы работы',
-    content: 'Пн-Пт: 9:00–18:00.',
+    content: 'Пн-Пт: 9:00–21:00.',
   },
 ]
 

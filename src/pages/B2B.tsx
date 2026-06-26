@@ -64,8 +64,8 @@ function ClockIcon() {
 const contactCards = [
   { icon: <OfficeIcon />, title: 'Офис продаж', content: 'г. Ташкент, Махтумкули, 100116,\nРеспублика Узбекистан' },
   { icon: <PhoneIcon />, title: 'Телефон', content: '78-333-33-31' },
-  { icon: <MessengerIcon />, title: 'Мессенджеры', content: 'Telegram: @rbcompanyuz\nInstagram: @rbcompany.uz' },
-  { icon: <ClockIcon />, title: 'Часы работы', content: 'Пн-Пт: 9:00–18:00.' },
+  { icon: <MessengerIcon />, title: 'Мессенджеры', content: 'Telegram: @rbcompanyuzchat\nInstagram: @rbcompany.uz' },
+  { icon: <ClockIcon />, title: 'Часы работы', content: 'Пн-Пт: 9:00–21:00.' },
 ]
 
 export default function B2B() {
