@@ -9,10 +9,10 @@ import { ArrowUpRight } from '@/components/icons'
 type Tile = { label: string; to: string; image: string }
 
 const tiles: Tile[] = [
-  { label: 'О компании', to: '/about', image: '/assets/about-company.webp' },
-  { label: 'Проекты', to: '/projects', image: '/assets/project-vatan.webp' },
-  { label: 'Производство', to: '/b2b', image: '/assets/production.webp' },
-  { label: 'Контакты', to: '/contacts', image: '/assets/project-botanika.webp' },
+  { label: 'О компании', to: '/about', image: '/assets/tile-about.webp' },
+  { label: 'Проекты', to: '/projects', image: '/assets/tile-projects.webp' },
+  { label: 'Производство', to: '/b2b', image: '/assets/tile-production.webp' },
+  { label: 'Контакты', to: '/contacts', image: '/assets/tile-contacts.webp' },
 ]
 
 export default function ExploreTiles() {
