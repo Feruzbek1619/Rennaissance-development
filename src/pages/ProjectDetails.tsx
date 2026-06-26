@@ -345,7 +345,7 @@ export default function ProjectDetails() {
               { value: '2021', label: 'собственный бетонный завод' },
               { value: '2019', label: 'год основания' },
             ].map((s) => (
-              <div key={s.label} className="flex flex-1 flex-col items-start gap-2 bg-white px-8 py-6">
+              <div key={s.label} className="stat-card flex flex-1 flex-col items-start gap-2 px-8 py-6">
                 <p className="font-heading text-[75px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>
                 <p className="font-body text-body-sm font-medium text-secondary">{s.label}</p>
               </div>

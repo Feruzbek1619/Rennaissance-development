@@ -192,7 +192,7 @@ export default function CompletedProject() {
           </p>
           <div className="flex items-stretch gap-4">
             {stats.map((s, i) => (
-              <div key={s.label} data-reveal style={{ transitionDelay: `${i * 90}ms` }} className="card-lift flex flex-1 flex-col items-center justify-center gap-2 bg-bg-subtle px-[26px] py-[24px] text-center">
+              <div key={s.label} data-reveal style={{ transitionDelay: `${i * 90}ms` }} className="stat-card card-lift flex flex-1 flex-col items-center justify-center gap-2 px-[26px] py-[24px] text-center">
                 <p className="font-heading text-[56px] 2xl:text-[75px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>
                 <p className="font-body text-[16px] font-medium leading-[1.6] text-secondary">{s.label}</p>
               </div>

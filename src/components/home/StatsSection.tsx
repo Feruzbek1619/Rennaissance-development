@@ -32,7 +32,7 @@ export default function StatsSection() {
 
           <div className="flex items-center gap-4">
             {stats.map((s, i) => (
-              <div key={s.label} data-reveal style={{ transitionDelay: `${i * 90}ms` }} className="card-lift flex flex-1 items-center justify-center bg-white px-[26px] py-6 backdrop-blur-[7px]">
+              <div key={s.label} data-reveal style={{ transitionDelay: `${i * 90}ms` }} className="stat-card card-lift flex flex-1 items-center justify-center px-[26px] py-6">
                 <div className="flex flex-col items-center gap-2">
                   <p className="font-heading text-[75px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>
                   <p className="text-center font-body text-body-sm font-medium text-secondary">{s.label}</p>

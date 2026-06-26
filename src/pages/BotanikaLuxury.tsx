@@ -310,7 +310,7 @@ export default function BotanikaLuxury() {
                 key={s.label}
                 data-reveal
                 style={{ transitionDelay: `${i * 90}ms` }}
-                className="card-lift flex flex-1 flex-col items-center justify-center gap-2 bg-white px-[26px] py-[24px] text-center"
+                className="stat-card card-lift flex flex-1 flex-col items-center justify-center gap-2 px-[26px] py-[24px] text-center"
               >
                 <p className="font-heading text-[56px] 2xl:text-[75px] font-bold uppercase leading-none text-black"><CountUp value={s.value} /></p>
                 <p className="font-body text-[16px] leading-[1.6] font-medium text-secondary">{s.label}</p>
