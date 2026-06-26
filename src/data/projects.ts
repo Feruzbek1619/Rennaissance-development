@@ -292,10 +292,12 @@ export const projects: Project[] = [
     image: '/assets/project-alandalus.webp',
     coords: [41.325, 69.345],
     gallery: [
-      '/assets/alandalus-render.webp',
       '/assets/alandalus-1.webp',
       '/assets/alandalus-2.webp',
       '/assets/alandalus-3.webp',
+      '/assets/alandalus-4.webp',
+      '/assets/alandalus-5.webp',
+      '/assets/alandalus-6.webp',
     ],
     status: 'active',
     details: alandalusDetails,
