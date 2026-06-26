@@ -5,6 +5,7 @@ import Projects from './pages/Projects'
 import ProjectDetails from './pages/ProjectDetails'
 import VatanVillage from './pages/VatanVillage'
 import BotanikaLuxury from './pages/BotanikaLuxury'
+import SharqAvenue from './pages/SharqAvenue'
 import CompletedProject from './pages/CompletedProject'
 import Quote from './pages/Quote'
 import About from './pages/About'
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
       { path: '/projects', element: <Projects /> },
       { path: '/projects/vatan-village', element: <VatanVillage /> },
       { path: '/projects/botanika-luxury', element: <BotanikaLuxury /> },
+      { path: '/projects/sharq-avenue', element: <SharqAvenue /> },
       { path: '/projects/:slug', element: <ProjectDetails /> },
       { path: '/completed/:slug', element: <CompletedProject /> },
       { path: '/quote', element: <Quote /> },
