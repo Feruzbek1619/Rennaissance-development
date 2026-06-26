@@ -9,6 +9,7 @@ import ProcessStepsSection from '@/components/home/ProcessStepsSection'
 import FAQSection from '@/components/home/FAQSection'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
 import ContactSection from '@/components/home/ContactSection'
+import ExploreTiles from '@/components/ExploreTiles'
 
 // Home (Figma 314:2857) — built section by section.
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <WhyUsSection />
       <ProjectsSection />
       <AboutSection />
+      <ExploreTiles />
       <NeedHelpSection />
       <PartnersSection />
       <ProductionSection />
