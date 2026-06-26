@@ -5,24 +5,31 @@ import { Container } from '@/components/Container'
 import { SkeletonImage } from '@/components/SkeletonImage'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
 
-// Home hero — project showcase carousel. Each slide: gold eyebrow + serif name +
-// description + CTAs, then the building photo. Arrows slide the whole panel.
-const slides = [
+// Home hero carousel. First slide = company intro; the rest = featured projects.
+// Each slide: gold eyebrow + serif name + description + CTAs, then the photo.
+type Slide = {
+  id: string
+  title: string
+  eyebrow: string
+  desc: string
+  image: string
+  /** Project slug → "Выбрать квартиру" CTA. */
+  slug?: string
+  /** Custom primary CTA (non-project slides). */
+  cta?: { label: string; to: string }
+}
+
+const slides: Slide[] = [
   {
-    slug: 'alandalus',
-    title: 'ALANDALUS',
-    eyebrow: 'Жилой комплекс · Комфорт+',
-    desc: 'Кирпич и монолит, потолки 3 метра, закрытый двор и паркинг под домом — в спокойном зелёном квартале Яшнабада.',
+    id: 'about',
+    title: 'О КОМПАНИИ',
+    eyebrow: 'Renaissance Development',
+    desc: 'Ташкентский застройщик полного цикла с 2019 года: собственный бетонный завод, парк спецтехники и контроль качества на каждом этапе — 12 проектов в столице.',
     image: '/assets/hero-alandalus.webp',
+    cta: { label: 'О компании', to: '/about' },
   },
   {
-    slug: 'botanika-luxury',
-    title: 'BOTANIKA LUXURY',
-    eyebrow: 'Жилой комплекс · Комфорт',
-    desc: 'Монолитный комплекс комфорт-класса в Мирзо-Улугбекском районе: закрытая территория, подземный паркинг и развитая инфраструктура рядом.',
-    image: '/assets/project-botanika.webp',
-  },
-  {
+    id: 'vatan-village',
     slug: 'vatan-village',
     title: 'VATAN VILLAGE',
     eyebrow: 'Коттеджный городок · Комфорт+',
@@ -30,11 +37,20 @@ const slides = [
     image: '/assets/project-vatan.webp',
   },
   {
-    slug: 'turon',
-    title: 'TURON',
+    id: 'challet-resort',
+    slug: 'challet-resort',
+    title: 'CHALLET RESORT',
+    eyebrow: 'Загородный комплекс · Комфорт',
+    desc: 'Загородный комплекс в Юсуфхоне, в часе от Ташкента: чистый воздух, приватная территория и атмосфера курорта круглый год.',
+    image: '/assets/project-chalet.webp',
+  },
+  {
+    id: 'botanika-luxury',
+    slug: 'botanika-luxury',
+    title: 'BOTANIKA LUXURY',
     eyebrow: 'Жилой комплекс · Комфорт',
-    desc: 'Современный жилой комплекс на улице Янги Узбекистон: монолитный каркас, благоустроенная территория и продуманные планировки.',
-    image: '/assets/project-turon.webp',
+    desc: 'Монолитный комплекс комфорт-класса в Мирзо-Улугбекском районе: закрытая территория, подземный паркинг и развитая инфраструктура рядом.',
+    image: '/assets/project-botanika.webp',
   },
 ]
 
@@ -52,7 +68,7 @@ export default function Hero() {
             style={{ transform: `translateX(-${current * 100}%)` }}
           >
             {slides.map((slide, i) => (
-              <div key={slide.slug} className="w-full shrink-0 h-full flex flex-col gap-5 2xl:gap-7 py-4 2xl:py-5">
+              <div key={slide.id} className="w-full shrink-0 h-full flex flex-col gap-5 2xl:gap-7 py-4 2xl:py-5">
                 {/* Title row — eyebrow + serif name (left), description + CTAs (right) */}
                 <div className="flex w-full items-end justify-between gap-10 shrink-0">
                   <div className="flex shrink-0 flex-col gap-3">
@@ -69,9 +85,15 @@ export default function Hero() {
                   <div data-reveal style={{ transitionDelay: '120ms' }} className="flex w-[460px] 2xl:w-[574px] shrink min-w-0 flex-col gap-6 2xl:gap-7 pb-1">
                     <p className="font-body text-[19px] 2xl:text-[20px] leading-[1.6] text-primary">{slide.desc}</p>
                     <div className="flex flex-wrap items-center gap-4">
-                      <Button to={`/projects/${slide.slug}`} variant="accent" size="lg" className="!px-8">
-                        Выбрать квартиру
-                      </Button>
+                      {slide.slug ? (
+                        <Button to={`/projects/${slide.slug}`} variant="accent" size="lg" className="!px-8">
+                          Выбрать квартиру
+                        </Button>
+                      ) : (
+                        <Button to={slide.cta?.to ?? '/about'} variant="accent" size="lg" className="!px-8">
+                          {slide.cta?.label ?? 'О компании'}
+                        </Button>
+                      )}
                       <Button to="/quote" variant="outlineLight" size="lg" className="!px-8">
                         Заказать звонок
                       </Button>
@@ -85,7 +107,7 @@ export default function Hero() {
                   <SkeletonImage
                     eager={i === 0}
                     src={slide.image}
-                    alt={`ЖК ${slide.title}`}
+                    alt={slide.title}
                     className="size-full"
                     imgClassName="size-full object-cover"
                   />
