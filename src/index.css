@@ -116,12 +116,13 @@
 }
 /* Champagne-gold surface — stat-number cards (matches the gold CTA). */
 .stat-card {
-  background-image: linear-gradient(120deg, #d2b582 0%, #be9c68 46%, #a8854f 100%);
+  background-image: linear-gradient(120deg, #c6a570 0%, #b18f57 50%, #997a42 100%);
   box-shadow: 0 14px 34px rgba(120, 95, 50, 0.22);
 }
-/* Dark, readable text on the gold cards. */
+/* White text on the gold cards, with a soft shadow so it stays legible. */
 .stat-card p {
-  color: #2b2316;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(60, 40, 12, 0.4);
 }
 
 /* Lead modal enter animations */
