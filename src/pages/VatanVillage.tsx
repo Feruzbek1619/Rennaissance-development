@@ -23,7 +23,6 @@ const gallery = [
   '/assets/vatan-7.webp',
   '/assets/vatan-8.webp',
   '/assets/vatan-9.webp',
-  '/assets/vatan-3.webp',
   '/assets/vatan-5.webp',
 ]
 
@@ -45,7 +44,7 @@ const advantages = [
     desc: 'Надежные плиты перекрытия обеспечивают прочность конструкции и дополнительную шумоизоляцию между этажами.',
   },
   {
-    image: '/assets/vatan-3.webp',
+    image: '/assets/vatan-1.webp',
     title: 'Близость к аэропорту',
     desc: 'Удобное расположение позволяет быстро добраться до аэропорта, экономя ваше время и обеспечивая комфорт для частых поездок.',
   },
