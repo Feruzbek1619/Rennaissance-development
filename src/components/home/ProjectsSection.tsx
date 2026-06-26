@@ -38,33 +38,24 @@ export default function ProjectsSection() {
               <p className="font-body text-[20px] leading-[1.6] text-ink text-right">
                 Жилые комплексы и бизнес-центры Renaissance Development — от квартир в рассрочку до коммерческих объектов
               </p>
-              <div className="flex gap-6 items-center">
-                <Button to="/projects" variant="primary" size="lg">
-                  Все проекты
-                </Button>
-                <Button to="/quote" variant="outlineLight" size="lg">
-                  Заказать звонок
-                </Button>
+              {/* Category filter — in place of the old CTA buttons */}
+              <div className="flex gap-3 items-center">
+                {FILTERS.map((f) => (
+                  <button
+                    key={f.key}
+                    type="button"
+                    onClick={() => setTab(f.key)}
+                    className={`h-[56px] px-8 rounded-full font-vela text-[18px] font-medium transition-colors ${
+                      tab === f.key
+                        ? 'bg-primary text-white'
+                        : 'bg-white border border-border text-ink hover:border-accent hover:text-accent-dark'
+                    }`}
+                  >
+                    {f.label}
+                  </button>
+                ))}
               </div>
             </div>
-          </div>
-
-          {/* Category filter */}
-          <div className="flex w-full justify-center gap-3">
-            {FILTERS.map((f) => (
-              <button
-                key={f.key}
-                type="button"
-                onClick={() => setTab(f.key)}
-                className={`h-[52px] px-8 rounded-full font-vela text-[18px] font-medium transition-colors ${
-                  tab === f.key
-                    ? 'bg-primary text-white'
-                    : 'bg-white border border-border text-ink hover:border-accent hover:text-accent-dark'
-                }`}
-              >
-                {f.label}
-              </button>
-            ))}
           </div>
 
           {/* Project grid */}

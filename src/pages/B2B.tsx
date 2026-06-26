@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
@@ -205,16 +205,30 @@ export default function B2B() {
   const modal = useLeadModalOptional()
   const { hash } = useLocation()
 
-  // Deep-link support: /b2b#concrete scrolls to that direction.
+  // Scroll to a direction block. Uses instant scrollIntoView (respects the
+  // block's scroll-mt offset) — reliable across browsers, where smooth is not.
+  const scrollToId = useCallback((id: string) => {
+    document.getElementById(id)?.scrollIntoView({ block: 'start' })
+  }, [])
+
+  // Deep-link support: /b2b#concrete scrolls to that direction. Retries while the
+  // page is still laying out after a cross-page navigation (images shifting it).
   useEffect(() => {
-    if (hash) {
-      const el = document.getElementById(hash.slice(1))
-      if (el) {
-        const t = setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80)
-        return () => clearTimeout(t)
+    if (!hash) return
+    const id = hash.slice(1)
+    let tries = 0
+    let timer = 0
+    const tick = () => {
+      if (document.getElementById(id)) {
+        scrollToId(id)
+        if (++tries < 3) timer = window.setTimeout(tick, 260)
+      } else if (++tries < 8) {
+        timer = window.setTimeout(tick, 120)
       }
     }
-  }, [hash])
+    timer = window.setTimeout(tick, 80)
+    return () => window.clearTimeout(timer)
+  }, [hash, scrollToId])
 
   return (
     <main>
@@ -241,12 +255,13 @@ export default function B2B() {
                 <Button variant="accent" size="lg" onClick={() => modal?.openLead('Производство')}>
                   Оставить заявку
                 </Button>
-                <a
-                  href="#concrete"
+                <button
+                  type="button"
+                  onClick={() => scrollToId('concrete')}
                   className="flex items-center justify-center h-[56px] px-8 rounded-full border border-white/40 font-body text-[20px] font-medium text-white hover:bg-white/10 transition-colors"
                 >
                   Направления
-                </a>
+                </button>
               </div>
               <div className="mt-6 flex flex-wrap items-center gap-x-10 2xl:gap-x-14 gap-y-3 border-t border-white/10 pt-6">
                 {[
@@ -292,14 +307,15 @@ export default function B2B() {
           {/* Direction quick-nav */}
           <div className="mt-[48px] grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3">
             {directions.map((d) => (
-              <a
+              <button
                 key={d.id}
-                href={`#${d.id}`}
-                className="card-lift group flex items-center gap-3 rounded-[6px] border border-border bg-bg-subtle px-5 py-4 transition-colors hover:border-accent"
+                type="button"
+                onClick={() => scrollToId(d.id)}
+                className="card-lift group flex items-center gap-3 rounded-[6px] border border-border bg-bg-subtle px-5 py-4 text-left transition-colors hover:border-accent"
               >
                 <span className="font-heading text-[20px] font-bold text-accent">{d.num}</span>
                 <span className="font-vela text-[16px] font-semibold leading-[1.2] text-ink group-hover:text-accent-dark">{d.title}</span>
-              </a>
+              </button>
             ))}
           </div>
         </Container>

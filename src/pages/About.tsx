@@ -58,16 +58,16 @@ export default function About() {
       {/* ── 3. Team section ────────────────────────────────── */}
       <section className="bg-white py-[100px]">
         <Container>
-          <div className="flex items-start justify-between mb-[60px]">
-            <div className="flex flex-col gap-5 w-[877px] shrink-0">
+          <div className="flex items-end justify-between gap-16 mb-[60px]">
+            <div className="flex flex-col gap-5 max-w-[820px]">
               <SectionTag>Наша команда</SectionTag>
-              <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.2] text-ink">
+              <h2 className="font-heading text-[44px] 2xl:text-[56px] font-bold uppercase leading-[1.15] text-ink">
                 Профессионалы,<br />которые строят Ташкент
               </h2>
             </div>
-            <p className="font-body text-[20px] leading-[1.6] text-secondary w-[651px] self-end">
-              За каждым проектом Renaissance Development стоит команда инженеров и строителей с многолетним
-              опытом на государственных и частных объектах столицы.
+            <p className="font-body text-[20px] leading-[1.6] text-secondary w-[520px] shrink-0">
+              За каждым проектом — команда инженеров и строителей с многолетним опытом на государственных
+              и частных объектах столицы.
             </p>
           </div>
 
