@@ -276,12 +276,10 @@ export const projects: Project[] = [
     gallery: [
       '/assets/turon-1.webp',
       '/assets/turon-2.webp',
-      '/assets/turon-3.webp',
       '/assets/turon-4.webp',
       '/assets/turon-5.webp',
       '/assets/turon-6.webp',
       '/assets/turon-7.webp',
-      '/assets/turon-8.webp',
     ],
     status: 'active',
     details: turonDetails,

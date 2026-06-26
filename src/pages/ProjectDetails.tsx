@@ -311,7 +311,10 @@ export default function ProjectDetails() {
           </div>
 
           {gallery.length > 1 && (
-            <div className="mt-4 grid grid-cols-4 gap-3 2xl:gap-4">
+            <div
+              className="mt-4 grid gap-3 2xl:gap-4"
+              style={{ gridTemplateColumns: `repeat(${gallery.length}, minmax(0, 1fr))` }}
+            >
               {gallery.map((src, i) => (
                 <button
                   key={src}
@@ -319,7 +322,7 @@ export default function ProjectDetails() {
                   onClick={() => setActive(i)}
                   aria-label={`Фото ${i + 1}`}
                   aria-current={i === active}
-                  className={`h-[110px] 2xl:h-[150px] overflow-hidden rounded-[4px] bg-white transition-all duration-300 ${
+                  className={`h-[90px] 2xl:h-[120px] overflow-hidden rounded-[4px] bg-white transition-all duration-300 ${
                     i === active ? 'ring-2 ring-accent ring-offset-2' : 'opacity-70 hover:opacity-100'
                   }`}
                 >
