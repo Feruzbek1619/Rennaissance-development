@@ -292,6 +292,14 @@ export const projects: Project[] = [
     location: 'Юсуфхона, 60 минут от Ташкента',
     image: '/assets/project-chalet.webp',
     coords: [41.215, 69.42],
+    gallery: [
+      '/assets/chalet-1.webp',
+      '/assets/chalet-2.webp',
+      '/assets/chalet-3.webp',
+      '/assets/chalet-4.webp',
+      '/assets/chalet-5.webp',
+      '/assets/chalet-6.webp',
+    ],
     status: 'active',
   },
   {

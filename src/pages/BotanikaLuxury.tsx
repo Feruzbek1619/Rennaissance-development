@@ -18,42 +18,43 @@ const SUPPORT_TEL = 'tel:+998783333331'
 
 /* Gallery — big view + thumbnail strip (coherent green-terrace render set). */
 const gallery = [
-  '/assets/project-botanika.webp',
-  '/assets/botanika-1.webp',
-  '/assets/botanika-2.webp',
-  '/assets/botanika-3.webp',
-  '/assets/botanika-4.webp',
+  '/assets/botl-5.webp',
+  '/assets/botl-1.webp',
+  '/assets/botl-4.webp',
+  '/assets/botl-6.webp',
+  '/assets/botl-2.webp',
+  '/assets/botl-3.webp',
 ]
 
 /* ПРЕИМУЩЕСТВА mosaic — image + text card per cell */
 const advantages = [
   {
-    image: '/assets/botanika-adv-1.webp',
+    image: '/assets/botl-4.webp',
     title: 'Дом из газоблока',
     desc: 'Современный строительный материал с хорошими теплоизоляционными свойствами. Помогает сохранять комфортную температуру в доме круглый год.',
   },
   {
-    image: '/assets/botanika-adv-2.webp',
+    image: '/assets/botl-1.webp',
     title: 'Квартиры с террасой на 10–11 этажах',
     desc: 'Эксклюзивные квартиры с просторной собственной террасой и панорамным видом на город. Идеальное место для отдыха, семейных вечеров и утреннего кофе под открытым небом.',
   },
   {
-    image: '/assets/botanika-adv-3.webp',
+    image: '/assets/botl-6.webp',
     title: 'Высокие потолки 3,10 м',
     desc: 'Все этажи с потолками 3,10 метра — просторные, светлые помещения с большим количеством воздуха и панорамным остеклением.',
   },
   {
-    image: '/assets/botanika-adv-4.webp',
+    image: '/assets/botl-5.webp',
     title: 'Надземная и подземная парковки',
     desc: 'Для жителей предусмотрены удобные парковочные решения, включая современный подземный паркинг площадью 15 968 м² — комфорт и безопасность в любое время года.',
   },
   {
-    image: '/assets/botanika-adv-5.webp',
+    image: '/assets/botl-2.webp',
     title: 'Детская площадка',
     desc: 'Современная и безопасная детская площадка для игр и развития детей разных возрастов. Пространство продумано для активного и интересного отдыха.',
   },
   {
-    image: '/assets/botanika-adv-6.webp',
+    image: '/assets/botl-3.webp',
     title: 'Озеленение и аллеи',
     desc: 'Комплекс возведён в зелёной зоне напротив Ботанического сада. Деревья и прогулочные аллеи создают приятную атмосферу для ежедневных прогулок.',
   },
@@ -99,7 +100,7 @@ export default function BotanikaLuxury() {
     <main>
       {/* ── 1. Hero ─────────────────────────────────────── */}
       <section className="relative h-[720px] 2xl:h-[888px] overflow-hidden bg-primary">
-        <img loading="lazy" decoding="async" src="/assets/botanika-hero.webp" alt="BOTANIKA LUXURY" className="absolute inset-0 size-full object-cover" />
+        <img loading="eager" decoding="async" src="/assets/botl-4.webp" alt="BOTANIKA LUXURY" className="absolute inset-0 size-full object-cover" />
         {/* dark gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/80" />
 
