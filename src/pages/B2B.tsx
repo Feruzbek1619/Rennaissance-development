@@ -314,40 +314,41 @@ export default function B2B() {
             className={`scroll-mt-[110px] border-b border-border ${i % 2 === 1 ? 'bg-white' : 'bg-bg-subtle'}`}
           >
             <Container>
-              <div className={`flex flex-col gap-10 py-[72px] 2xl:py-[96px] xl:flex-row xl:items-center xl:gap-[64px] 2xl:gap-[80px] ${i % 2 === 1 ? 'xl:flex-row-reverse' : ''}`}>
+              <div className={`flex flex-col gap-8 py-[60px] 2xl:py-[84px] xl:flex-row xl:items-stretch xl:gap-[56px] 2xl:gap-[72px] xl:min-h-[560px] ${i % 2 === 1 ? 'xl:flex-row-reverse' : ''}`}>
                 {/* Image */}
-                <div data-reveal="scale" className="xl:w-[46%] xl:shrink-0">
-                  <div className="overflow-hidden rounded-[8px] border border-border shadow-[0_24px_60px_rgba(40,35,28,0.12)]">
-                    <img loading="lazy" decoding="async" src={d.image} alt={d.title} className="aspect-[4/3] w-full object-cover" />
+                <div data-reveal="scale" className="xl:w-1/2 xl:shrink-0">
+                  <div className="h-[320px] xl:h-full overflow-hidden rounded-[10px] border border-border shadow-[0_24px_60px_rgba(40,35,28,0.12)]">
+                    <img loading="lazy" decoding="async" src={d.image} alt={d.title} className="size-full object-cover" />
                   </div>
                 </div>
 
-                {/* Text */}
-                <div data-reveal className="flex flex-1 flex-col gap-6">
+                {/* Text — matched height with the image, calm rhythm */}
+                <div data-reveal className="flex xl:w-1/2 flex-col justify-center gap-6">
                   <div className="flex items-center gap-4">
-                    <span className="font-heading text-[56px] 2xl:text-[72px] font-bold leading-none text-accent/35">{d.num}</span>
+                    <span className="font-heading text-[34px] 2xl:text-[40px] font-bold leading-none text-accent">{d.num}</span>
                     <span className="h-px flex-1 bg-border" />
                   </div>
-                  <div className="flex flex-col gap-3">
-                    <h3 className="font-heading text-[36px] 2xl:text-[50px] font-bold uppercase leading-[1.1] text-ink">{d.title}</h3>
-                    <p className="font-heading text-[18px] 2xl:text-[20px] font-semibold uppercase tracking-wide text-accent-dark">{d.subtitle}</p>
+                  <div className="flex flex-col gap-2.5">
+                    <h3 className="font-heading text-[34px] 2xl:text-[46px] font-bold uppercase leading-[1.1] text-ink">{d.title}</h3>
+                    <p className="font-heading text-[16px] 2xl:text-[19px] font-semibold uppercase tracking-wide text-accent-dark">{d.subtitle}</p>
                   </div>
-                  <p className="font-vela text-[19px] 2xl:text-[22px] leading-[1.55] text-secondary">{d.description}</p>
-                  <ul className="flex flex-wrap gap-2.5 pt-1">
+                  <p className="font-vela text-[18px] 2xl:text-[21px] leading-[1.55] text-secondary">{d.description}</p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 pt-1">
                     {d.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2">
-                        <span className="size-1.5 rounded-full bg-accent" aria-hidden />
-                        <span className="font-vela text-[15px] font-medium text-ink">{f}</span>
+                      <li key={f} className="flex items-center gap-2.5">
+                        <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent-dark">
+                          <svg viewBox="0 0 24 24" fill="none" className="size-3">
+                            <path d="M5 12.5l4 4L19 7" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </span>
+                        <span className="font-vela text-[16px] font-medium text-ink">{f}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="flex flex-wrap items-center gap-4 pt-3">
+                  <div className="pt-3">
                     <Button variant="primary" size="lg" onClick={() => modal?.openLead(`Производство — ${d.title}`)}>
                       Оставить заявку
                     </Button>
-                    <a href="#lead" className="font-vela text-[18px] font-semibold text-accent-dark underline-offset-4 hover:underline">
-                      Запросить расчёт
-                    </a>
                   </div>
                 </div>
               </div>
