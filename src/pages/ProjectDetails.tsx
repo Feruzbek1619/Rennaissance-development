@@ -47,7 +47,7 @@ function ResizeIcon() {
 
 function SparklesIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className="size-6 text-ink">
+    <svg viewBox="0 0 24 24" fill="none" className="size-6">
       <path d="M12 3l1.7 4.8L18.5 9.5l-4.8 1.7L12 16l-1.7-4.8L5.5 9.5l4.8-1.7L12 3Z" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M18.5 14l.9 2.4 2.6.9-2.6.9-.9 2.4-.9-2.4-2.6-.9 2.6-.9.9-2.4Z" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -169,7 +169,7 @@ function LightIcon() {
 function InfoChip({ icon, label, sub }: { icon: React.ReactNode; label: string; sub: string }) {
   return (
     <div className="bg-white/25 border border-white/10 rounded-[5px] h-[72px] w-[379px] flex items-center px-[15px] gap-3 shadow-[0_20px_40px_rgba(19,22,18,0.1)]">
-      <div className="flex items-center justify-center size-10 rounded-[8px] bg-white/10 border border-white/10 shrink-0">
+      <div className="flex items-center justify-center size-10 rounded-[8px] bg-white/10 border border-white/10 shrink-0 text-white">
         {icon}
       </div>
       <div className="flex flex-col gap-[2px]">
