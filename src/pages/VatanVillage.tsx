@@ -19,43 +19,43 @@ const SUPPORT_TEL = 'tel:+998783333331'
 /* Gallery — big view + thumbnail strip (Figma 7872:3655 / 4228). Arrows and
    thumbnails switch the main image. */
 const gallery = [
-  '/assets/vatan-render.webp',
-  '/assets/vatan-strip-1.webp',
-  '/assets/vatan-strip-2.webp',
-  '/assets/vatan-strip-3.webp',
-  '/assets/vatan-strip-4.webp',
-  '/assets/vatan-strip-5.webp',
+  '/assets/vatan-4.webp',
+  '/assets/vatan-7.webp',
+  '/assets/vatan-8.webp',
+  '/assets/vatan-9.webp',
+  '/assets/vatan-3.webp',
+  '/assets/vatan-5.webp',
 ]
 
 /* ПРЕИМУЩЕСТВА mosaic (Figma 7875:6378) — image + text card per cell */
 const advantages = [
   {
-    image: '/assets/vatan-adv-1.webp',
+    image: '/assets/vatan-7.webp',
     title: 'Кирпичный дом',
     desc: 'Натуральный и долговечный материал, который обеспечивает хорошую теплоизоляцию, прочность и комфортный микроклимат в доме.',
   },
   {
-    image: '/assets/vatan-adv-2.webp',
+    image: '/assets/vatan-4.webp',
     title: 'Закрытая охраняемая территория',
     desc: 'Контролируемый въезд, видеонаблюдение и благоустроенная территория создают спокойную и безопасную среду для всей семьи.',
   },
   {
-    image: '/assets/vatan-adv-3.webp',
+    image: '/assets/vatan-9.webp',
     title: 'Железобетонные межэтажные перекрытия',
     desc: 'Надежные плиты перекрытия обеспечивают прочность конструкции и дополнительную шумоизоляцию между этажами.',
   },
   {
-    image: '/assets/vatan-adv-4.webp',
+    image: '/assets/vatan-3.webp',
     title: 'Близость к аэропорту',
     desc: 'Удобное расположение позволяет быстро добраться до аэропорта, экономя ваше время и обеспечивая комфорт для частых поездок.',
   },
   {
-    image: '/assets/vatan-adv-5.webp',
+    image: '/assets/vatan-6.webp',
     title: 'Барбекю-зона',
     desc: 'Собственное пространство для семейных ужинов и отдыха на свежем воздухе.',
   },
   {
-    image: '/assets/vatan-adv-6.webp',
+    image: '/assets/vatan-2.webp',
     title: 'Парковка для автомобиля',
     desc: 'Удобное парковочное место на территории вашего участка.',
   },
@@ -101,16 +101,9 @@ export default function VatanVillage() {
     <main>
       {/* ── 1. Hero (Figma 7872:3278) ───────────────────── */}
       <section className="relative h-[720px] 2xl:h-[888px] overflow-hidden bg-primary">
-        <img loading="lazy" decoding="async" src="/assets/vatan-hero.webp" alt="VATAN VILLAGE" className="absolute inset-0 size-full object-cover" />
-        {/* fog haze */}
-        <img loading="lazy" decoding="async"
-          src="/assets/vatan-fog.webp"
-          alt=""
-          aria-hidden
-          className="absolute inset-x-0 bottom-0 h-[75%] w-full object-cover opacity-70 mix-blend-screen pointer-events-none"
-        />
+        <img loading="eager" decoding="async" src="/assets/vatan-1.webp" alt="VATAN VILLAGE" className="absolute inset-0 size-full object-cover" />
         {/* dark gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 to-black/80" />
 
         {/* Browse arrows */}
         <div className="absolute inset-x-[60px] 2xl:inset-x-[116px] top-[42%] flex items-center justify-between z-10">
