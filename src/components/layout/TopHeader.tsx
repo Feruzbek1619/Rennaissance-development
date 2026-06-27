@@ -34,10 +34,14 @@ export default function TopHeader() {
           {/* Links + language */}
           <div className="flex items-start gap-[63px]">
             <div className="flex gap-4 font-vela text-xs font-medium leading-[1.3] text-white/60">
-              <button type="button" onClick={() => modal?.openLead()} className="transition-colors hover:text-white">
+              <a
+                href="/renaissance-catalog.pdf"
+                download="Renaissance-Development-katalog.pdf"
+                className="transition-colors hover:text-white"
+              >
                 Скачать каталог
-              </button>
-              <button type="button" onClick={() => modal?.openLead()} className="transition-colors hover:text-white">
+              </a>
+              <button type="button" onClick={() => modal?.openLead('Обращение к директору')} className="transition-colors hover:text-white">
                 Обращение к директору
               </button>
             </div>
