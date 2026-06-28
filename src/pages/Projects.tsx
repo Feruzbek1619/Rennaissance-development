@@ -7,13 +7,14 @@ import NeedHelpSection from '@/components/home/NeedHelpSection'
 import FAQSection from '@/components/home/FAQSection'
 import { projects, type Project } from '@/data/projects'
 import { completedProjects } from '@/data/completed'
+import { useTranslation } from '@/i18n'
 
 const activeProjects = projects.filter((p) => p.status === 'active')
 
 const FILTERS = [
-  { key: 'all', label: 'Все' },
-  { key: 'residential', label: 'Жилые комплексы' },
-  { key: 'business', label: 'Бизнес-центры' },
+  { key: 'all', labelKey: 'pages.catalog.filterAll' },
+  { key: 'residential', labelKey: 'home.projects.filterResidential' },
+  { key: 'business', labelKey: 'home.projects.filterBusiness' },
 ] as const
 type FilterKey = (typeof FILTERS)[number]['key']
 const kindOf = (p: Project) => p.kind ?? 'residential'
@@ -49,6 +50,7 @@ function ChevronRightIcon() {
 }
 
 export default function Projects() {
+  const { t } = useTranslation()
   const [page, setPage] = useState(1)
   const [tab, setTab] = useState<FilterKey>('all')
 
@@ -76,17 +78,16 @@ export default function Projects() {
           <div className="flex items-center justify-between gap-10 pt-[110px] pb-[90px]">
             {/* Left: heading */}
             <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.3] text-bg-subtle flex-1 min-w-0">
-              Наши реализованные и текущие проекты
+              {t('pages.catalog.heroTitle')}
             </h1>
             {/* Right: description + CTA */}
             <div className="flex flex-col gap-8 w-[460px] 2xl:w-[538px] shrink-0">
               <p className="font-vela text-[20px] leading-[1.6] text-white">
-                Каждый объект Renaissance Development — это результат полного производственного цикла: от
-                собственных материалов до финальной отделки. Строим то, за что не стыдно через двадцать лет.
+                {t('pages.catalog.heroDesc')}
               </p>
               <div>
                 <Button variant="accent" size="lg" to="/quote">
-                  Заказать звонок
+                  {t('common.orderCall')}
                 </Button>
               </div>
             </div>
@@ -110,7 +111,7 @@ export default function Projects() {
                     : 'bg-white border border-border text-ink hover:border-accent hover:text-accent-dark'
                 }`}
               >
-                {f.label}
+                {t(f.labelKey)}
               </button>
             ))}
           </div>
@@ -136,7 +137,7 @@ export default function Projects() {
                 className="flex items-center gap-2 h-[48px] px-5 bg-white border border-border rounded-full font-vela text-[16px] font-medium text-ink disabled:opacity-40 hover:bg-bg-subtle transition-colors"
               >
                 <ChevronLeftIcon />
-                Назад
+                {t('pages.catalog.back')}
               </button>
 
               {/* Page numbers */}
@@ -162,7 +163,7 @@ export default function Projects() {
                 disabled={page === totalPages}
                 className="flex items-center gap-2 h-[48px] px-5 bg-white border border-border rounded-full font-vela text-[16px] font-medium text-ink disabled:opacity-40 hover:bg-bg-subtle transition-colors"
               >
-                Далее
+                {t('pages.catalog.next')}
                 <ChevronRightIcon />
               </button>
             </div>
@@ -175,12 +176,12 @@ export default function Projects() {
         <section className="bg-bg-subtle py-[100px]">
           <Container>
             <div data-reveal className="mb-[56px] flex flex-col gap-5">
-              <SectionTag>Реализованные проекты</SectionTag>
+              <SectionTag>{t('pages.catalog.completedTag')}</SectionTag>
               <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-ink">
-                Сданные объекты
+                {t('pages.catalog.completedTitle')}
               </h2>
               <p className="font-body text-[20px] leading-[1.6] text-secondary max-w-[760px]">
-                Дома, которые уже построены и заселены. Квартиры в этих комплексах распроданы — нажмите «Подробно», чтобы посмотреть проект.
+                {t('pages.catalog.completedDesc')}
               </p>
             </div>
             <div className="grid grid-cols-2 gap-x-16 gap-y-[80px]">

@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from 'react'
 import { sendLead, objectFromPath } from '@/lib/lead'
+import { useTranslation } from '@/i18n'
 
 // ── Global lead-capture modal (Figma 7810:4938 form + 7807:2027 success) ──
 // Opened by every "Заказать звонок" / "Оставить заявку" CTA across the site.
@@ -88,6 +89,7 @@ function ModalShell({ children, onClose }: { children: ReactNode; onClose: () =>
 }
 
 function LeadForm({ object, onSuccess }: { object?: string; onSuccess: () => void }) {
+  const { t } = useTranslation()
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
 
@@ -110,31 +112,31 @@ function LeadForm({ object, onSuccess }: { object?: string; onSuccess: () => voi
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
       <div className="flex flex-col gap-2.5 pr-8">
         <h2 className="font-heading text-[30px] sm:text-[34px] font-bold uppercase leading-none text-bg-subtle">
-          Оставить заявку
+          {t('common.leaveRequest')}
         </h2>
         {object ? (
           <p className="font-vela text-[15px] leading-[1.4] text-[#c7c7c7]">
-            Объект: <span className="font-semibold text-accent">{object}</span>
+            {t('lead.objectLabel')} <span className="font-semibold text-accent">{object}</span>
           </p>
         ) : null}
         <p className="font-vela text-[15px] leading-[1.4] text-[#c7c7c7]">
-          Мы свяжемся с вами через 5 минут. Сообщите нам свой номер телефона, чтобы мы могли вам перезвонить
+          {t('lead.subtitle')}
         </p>
       </div>
 
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
-            <label htmlFor="lead-name" className={labelCls}>Ваше имя</label>
-            <input id="lead-name" name="name" type="text" placeholder="Введите имя" className={`${fieldCls} h-[48px]`} />
+            <label htmlFor="lead-name" className={labelCls}>{t('lead.name')}</label>
+            <input id="lead-name" name="name" type="text" placeholder={t('lead.namePlaceholder')} className={`${fieldCls} h-[48px]`} />
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="lead-phone" className={labelCls}>Номер телефона</label>
-            <input id="lead-phone" name="phone" type="tel" required placeholder="Введите номер" className={`${fieldCls} h-[48px]`} />
+            <label htmlFor="lead-phone" className={labelCls}>{t('lead.phone')}</label>
+            <input id="lead-phone" name="phone" type="tel" required placeholder={t('lead.phonePlaceholder')} className={`${fieldCls} h-[48px]`} />
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="lead-q" className={labelCls}>Опишите свой вопрос</label>
-            <textarea id="lead-q" name="question" rows={3} placeholder="Введите свой вопрос" className={`${fieldCls} py-3 resize-none`} />
+            <label htmlFor="lead-q" className={labelCls}>{t('lead.question')}</label>
+            <textarea id="lead-q" name="question" rows={3} placeholder={t('lead.questionPlaceholder')} className={`${fieldCls} py-3 resize-none`} />
           </div>
         </div>
 
@@ -144,16 +146,16 @@ function LeadForm({ object, onSuccess }: { object?: string; onSuccess: () => voi
             disabled={sending}
             className="h-[52px] w-full rounded-[6px] bg-accent font-vela text-[19px] font-semibold text-white hover:bg-[#A2814E] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {sending ? 'Отправка…' : 'Оставить заявку'}
+            {sending ? t('lead.sending') : t('common.leaveRequest')}
           </button>
           {error ? (
             <p className="font-vela text-[13px] text-[#ff9b9b] leading-[1.3]">
-              Не удалось отправить. Попробуйте ещё раз или позвоните нам.
+              {t('lead.error')}
             </p>
           ) : null}
           <p className="font-vela text-[13px] text-secondary leading-[1.3]">
-            Отправляя этот запрос, вы соглашаетесь с{' '}
-            <span className="font-semibold">условиями обработки данных</span>
+            {t('lead.privacyPrefix')}
+            <span className="font-semibold">{t('lead.privacyLink')}</span>
           </p>
         </div>
       </div>
@@ -162,15 +164,16 @@ function LeadForm({ object, onSuccess }: { object?: string; onSuccess: () => voi
 }
 
 function SuccessBody({ onClose }: { onClose: () => void }) {
+  const { t } = useTranslation()
   return (
     <div className="flex flex-col items-center text-center gap-5 py-3">
       <CheckIcon />
       <div className="flex flex-col gap-2.5">
         <h2 className="font-heading text-[28px] sm:text-[32px] font-bold uppercase leading-[1.1] text-bg-subtle">
-          Ваша заявка принята
+          {t('lead.successTitle')}
         </h2>
         <p className="font-vela text-[15px] leading-[1.4] text-[#c7c7c7] max-w-[440px]">
-          Наши заботливые администраторы свяжутся с вами в ближайшее время
+          {t('lead.successText')}
         </p>
       </div>
       <button
@@ -178,7 +181,7 @@ function SuccessBody({ onClose }: { onClose: () => void }) {
         onClick={onClose}
         className="mt-1 h-[52px] w-full max-w-[360px] rounded-[6px] bg-accent font-vela text-[19px] font-semibold text-white hover:bg-[#A2814E] transition-colors"
       >
-        Хорошо
+        {t('lead.ok')}
       </button>
     </div>
   )

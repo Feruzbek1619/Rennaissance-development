@@ -5,6 +5,7 @@ import StatsSection from '@/components/home/StatsSection'
 import ProjectsMap, { type MapPoint } from '@/components/ProjectsMap'
 import { useLeadModalOptional } from '@/components/LeadModal'
 import { sendLead } from '@/lib/lead'
+import { useTranslation } from '@/i18n'
 
 /** Single office marker for the contacts map (changes to come later). */
 const officePoint: MapPoint[] = [
@@ -49,31 +50,15 @@ function ClockIcon() {
   )
 }
 
-const contactCards = [
-  {
-    icon: <OfficeIcon />,
-    title: 'Офис продаж',
-    content: 'г. Ташкент, Махтумкули, 100116,\nРеспублика Узбекистан',
-  },
-  {
-    icon: <PhoneIcon />,
-    title: 'Телефон',
-    content: '78-333-33-31',
-  },
-  {
-    icon: <MessengerIcon />,
-    title: 'Мессенджеры',
-    content: 'Telegram: @rbcompanyuzchat\nInstagram: @rbcompany.uz',
-  },
-  {
-    icon: <ClockIcon />,
-    title: 'Часы работы',
-    content: 'Пн-Пт: 9:00–21:00.',
-  },
-]
-
 export default function Quote() {
   const modal = useLeadModalOptional()
+  const { t } = useTranslation()
+  const contactCards = [
+    { icon: <OfficeIcon />, title: t('home.contact.office'), content: `${t('footer.addr1')}\n${t('footer.addr2')}` },
+    { icon: <PhoneIcon />, title: t('home.contact.phone'), content: '78-333-33-31' },
+    { icon: <MessengerIcon />, title: t('home.contact.messengers'), content: 'Telegram: @rbcompanyuzchat\nInstagram: @rbcompany.uz' },
+    { icon: <ClockIcon />, title: t('home.contact.hours'), content: t('home.contact.hoursValue') },
+  ]
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
 
@@ -103,7 +88,7 @@ export default function Quote() {
       <section className="bg-gradient-to-b from-primary to-primary/70 py-[100px]">
         <Container>
           <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.3] text-bg-subtle">
-            Наши контакты
+            {t('pages.contacts.heroTitle')}
           </h1>
         </Container>
       </section>
@@ -116,33 +101,33 @@ export default function Quote() {
             <div className="flex flex-col gap-[40px] 2xl:gap-[59px] flex-1 min-w-0 2xl:max-w-[730px]">
               <div className="flex flex-col gap-[15px]">
                 <h2 className="font-heading text-[61px] font-bold uppercase leading-none text-bg-subtle">
-                  Оставить заявку
+                  {t('common.leaveRequest')}
                 </h2>
                 <p className="font-vela text-[24px] leading-[1.3] text-white/70">
-                  Мы свяжемся с вами через 5 минут. Сообщите нам свой номер телефона, чтобы мы могли вам перезвонить
+                  {t('lead.subtitle')}
                 </p>
               </div>
 
               <form onSubmit={handleQuoteSubmit} className="flex flex-col gap-[25px]">
                 <div className="flex flex-col gap-[22px]">
                   <div className="flex flex-col gap-[10px]">
-                    <label htmlFor="quote-name" className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Ваше имя</label>
+                    <label htmlFor="quote-name" className="font-vela text-[21px] font-semibold text-white leading-[1.3]">{t('lead.name')}</label>
                     <input
                       id="quote-name"
                       name="name"
                       type="text"
-                      placeholder="Введите имя"
+                      placeholder={t('lead.namePlaceholder')}
                       className="h-[59px] bg-[#ededed] border border-white/10 rounded-[5px] px-5 font-vela text-[18px] text-secondary placeholder:text-secondary/50 outline-none focus:ring-2 focus:ring-accent"
                     />
                   </div>
                   <div className="flex flex-col gap-[10px]">
-                    <label htmlFor="quote-phone" className="font-vela text-[21px] font-semibold text-white leading-[1.3]">Номер телефона</label>
+                    <label htmlFor="quote-phone" className="font-vela text-[21px] font-semibold text-white leading-[1.3]">{t('lead.phone')}</label>
                     <input
                       id="quote-phone"
                       name="phone"
                       type="tel"
                       required
-                      placeholder="Введите номер"
+                      placeholder={t('lead.phonePlaceholder')}
                       className="h-[59px] bg-[#ededed] border border-white/10 rounded-[5px] px-5 font-vela text-[18px] text-secondary placeholder:text-secondary/50 outline-none focus:ring-2 focus:ring-accent"
                     />
                   </div>
@@ -153,16 +138,16 @@ export default function Quote() {
                     disabled={sending}
                     className="w-full h-[62px] bg-accent rounded-[5px] font-vela text-[22px] font-semibold text-white hover:bg-[#A2814E] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {sending ? 'Отправка…' : 'Оставить заявку'}
+                    {sending ? t('lead.sending') : t('common.leaveRequest')}
                   </button>
                   {error ? (
                     <p className="font-vela text-[17px] text-[#ffb4b4] leading-[1.3]">
-                      Не удалось отправить. Попробуйте ещё раз или позвоните нам.
+                      {t('lead.error')}
                     </p>
                   ) : null}
                   <p className="font-vela text-[17px] text-secondary leading-[1.3]">
-                    Отправляя этот запрос, вы соглашаетесь с{' '}
-                    <span className="font-semibold text-secondary">условиями обработки данных</span>
+                    {t('lead.privacyPrefix')}
+                    <span className="font-semibold text-secondary">{t('lead.privacyLink')}</span>
                   </p>
                 </div>
               </form>
@@ -201,9 +186,9 @@ export default function Quote() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-vela text-[15px] text-[#8a8c8a] leading-[1.4]">Адрес объекта</p>
-                  <p className="font-vela text-[15px] font-bold text-[#2A323B] leading-[1.4]">г. Ташкент, Махтумкули, 100116,</p>
-                  <p className="font-vela text-[15px] font-bold text-[#2A323B] leading-[1.4]">Республика Узбекистан</p>
+                  <p className="font-vela text-[15px] text-[#8a8c8a] leading-[1.4]">{t('pages.contacts.addressLabel')}</p>
+                  <p className="font-vela text-[15px] font-bold text-[#2A323B] leading-[1.4]">{t('footer.addr1')}</p>
+                  <p className="font-vela text-[15px] font-bold text-[#2A323B] leading-[1.4]">{t('footer.addr2')}</p>
                 </div>
               </div>
             </div>
@@ -218,14 +203,14 @@ export default function Quote() {
             <div className="flex flex-col gap-5">
               <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
-              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">Контакты</span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('nav.contacts')}</span>
             </div>
               <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink w-[850px]">
-                Свяжитесь с нами
+                {t('home.contact.title')}
               </h2>
             </div>
             <p className="font-body text-[24px] leading-[1.6] text-ink w-[692px] self-end">
-              Менеджер ответит на любые вопросы по квартирам, рассрочке и объектам. Работаем без выходных.
+              {t('home.contact.desc')}
             </p>
           </div>
 
