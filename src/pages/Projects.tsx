@@ -8,6 +8,7 @@ import FAQSection from '@/components/home/FAQSection'
 import { projects, type Project } from '@/data/projects'
 import { completedProjects } from '@/data/completed'
 import { useTranslation } from '@/i18n'
+import { useLocalizedCompletedList } from '@/i18n/completedI18n'
 
 const activeProjects = projects.filter((p) => p.status === 'active')
 
@@ -19,18 +20,6 @@ const FILTERS = [
 type FilterKey = (typeof FILTERS)[number]['key']
 const kindOf = (p: Project) => p.kind ?? 'residential'
 
-// Completed projects rendered with the SAME ProjectCard (identical size) — only
-// the bottom button differs ("Подробно" → /completed/<slug>).
-const completedCards: Project[] = completedProjects.map((c) => ({
-  slug: c.slug,
-  title: c.title,
-  category: c.eyebrow,
-  area: 'от 26,44 до 30,81 м²',
-  location: c.location,
-  image: c.hero,
-  status: 'sold',
-  href: `/completed/${c.slug}`,
-}))
 const ITEMS_PER_PAGE = 6
 
 function ChevronLeftIcon() {
@@ -53,6 +42,20 @@ export default function Projects() {
   const { t } = useTranslation()
   const [page, setPage] = useState(1)
   const [tab, setTab] = useState<FilterKey>('all')
+
+  // Completed projects rendered with the SAME ProjectCard — bottom button differs
+  // ("Подробно" → /completed/<slug>). Built from localized completed data; the
+  // card is pre-localized so ProjectCard must not re-localize by slug.
+  const completedCards: Project[] = useLocalizedCompletedList(completedProjects).map((c) => ({
+    slug: c.slug,
+    title: c.title,
+    category: c.eyebrow,
+    area: t('pages.catalog.completedArea'),
+    location: c.location,
+    image: c.hero,
+    status: 'sold',
+    href: `/completed/${c.slug}`,
+  }))
 
   const selectTab = (key: FilterKey) => {
     setTab(key)
@@ -186,7 +189,7 @@ export default function Projects() {
             </div>
             <div className="grid grid-cols-2 gap-x-16 gap-y-[80px]">
               {completedCards.map((project) => (
-                <ProjectCard key={project.slug} project={project} />
+                <ProjectCard key={project.slug} project={project} localize={false} />
               ))}
             </div>
           </Container>

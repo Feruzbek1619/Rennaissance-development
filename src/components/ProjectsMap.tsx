@@ -5,6 +5,9 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { projects } from '@/data/projects'
 import { completedProjects } from '@/data/completed'
+import { useTranslation } from '@/i18n'
+import { localizeProject } from '@/i18n/projectsI18n'
+import { localizeCompleted } from '@/i18n/completedI18n'
 
 export type MapPoint = {
   coords: [number, number]
@@ -55,6 +58,7 @@ type Props = {
 export default function ProjectsMap({ points, zoom = 15, className }: Props = {}) {
   const ref = useRef<HTMLDivElement>(null)
   const navigate = useNavigate()
+  const { t, lang } = useTranslation()
 
   useEffect(() => {
     const el = ref.current
@@ -62,6 +66,7 @@ export default function ProjectsMap({ points, zoom = 15, className }: Props = {}
 
     const activePts: MapPoint[] = projects
       .filter((p) => Array.isArray(p.coords) && p.status === 'active' && !p.cardOnly)
+      .map((p) => localizeProject(p, lang as 'ru' | 'uz' | 'en'))
       .map((p) => ({
         coords: p.coords as [number, number],
         title: p.title,
@@ -72,6 +77,7 @@ export default function ProjectsMap({ points, zoom = 15, className }: Props = {}
 
     const completedPts: MapPoint[] = completedProjects
       .filter((c) => Array.isArray(c.coords))
+      .map((c) => localizeCompleted(c, lang as 'ru' | 'uz' | 'en'))
       .map((c) => ({
         coords: c.coords as [number, number],
         title: c.title,
@@ -82,7 +88,7 @@ export default function ProjectsMap({ points, zoom = 15, className }: Props = {}
 
     // Renaissance Apartment — on the map, no dedicated page yet.
     const extraPts: MapPoint[] = [
-      { coords: [41.304194, 69.308833], title: 'RENAISSANCE APARTMENT', location: 'г. Ташкент', labelDir: 'down' },
+      { coords: [41.304194, 69.308833], title: 'RENAISSANCE APARTMENT', location: t('proj.cityTashkent'), labelDir: 'down' },
     ]
 
     const pts: MapPoint[] = points ?? [...activePts, ...completedPts, ...extraPts]
@@ -131,7 +137,7 @@ export default function ProjectsMap({ points, zoom = 15, className }: Props = {}
     return () => {
       map.remove()
     }
-  }, [navigate, points, zoom])
+  }, [navigate, points, zoom, lang, t])
 
   return (
     <div

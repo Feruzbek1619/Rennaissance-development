@@ -53,7 +53,7 @@ export default function AboutSection() {
             <div className="h-[754px] rounded-[5px] overflow-hidden">
               <img loading="lazy" decoding="async"
                 src="/assets/about-company.webp"
-                alt="Renaissance Development — строительство"
+                alt={t('home.about.imageAlt')}
                 className="reveal-zoom size-full object-cover"
               />
             </div>

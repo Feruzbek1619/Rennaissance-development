@@ -2,11 +2,11 @@ import { Container } from '@/components/Container'
 import { useTranslation } from '@/i18n'
 
 const logos = [
-  { src: '/assets/partner-1.svg', alt: 'Партнёр 1', width: 199 },
-  { src: '/assets/partner-2.svg', alt: 'Партнёр 2', width: 199 },
-  { src: '/assets/partner-3.svg', alt: 'Партнёр 3', width: 202 },
-  { src: '/assets/partner-4.svg', alt: 'Партнёр 4', width: 240 },
-  { src: '/assets/partner-4.svg', alt: 'Партнёр 5', width: 240 },
+  { src: '/assets/partner-1.svg', width: 199 },
+  { src: '/assets/partner-2.svg', width: 199 },
+  { src: '/assets/partner-3.svg', width: 202 },
+  { src: '/assets/partner-4.svg', width: 240 },
+  { src: '/assets/partner-4.svg', width: 240 },
 ]
 
 // «Партнёры в архитектурном совершенстве» (Figma 7778:3869)
@@ -48,7 +48,7 @@ export default function PartnersSection() {
                         loading="lazy"
                         decoding="async"
                         src={logo.src}
-                        alt={group === 0 ? logo.alt : ''}
+                        alt={group === 0 ? `${t('home.partners.alt')} ${i + 1}` : ''}
                         style={{ width: logo.width, height: 48 }}
                         className="object-contain"
                       />

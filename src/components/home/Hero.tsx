@@ -119,7 +119,7 @@ export default function Hero() {
                   <SkeletonImage
                     eager={i === 0}
                     src={slide.image}
-                    alt={slide.title}
+                    alt={slide.titleKey ? t(slide.titleKey) : slide.title}
                     className="size-full"
                     imgClassName="size-full object-cover"
                   />

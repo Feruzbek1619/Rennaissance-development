@@ -7,15 +7,12 @@ import { ChevronLeft, ChevronRight } from '@/components/icons'
 import { CountUp } from '@/components/CountUp'
 import { SkeletonImage } from '@/components/SkeletonImage'
 import { completedProjects } from '@/data/completed'
+import { useTranslation } from '@/i18n'
+import { useLocalizedCompleted, useLocalizedCompletedList } from '@/i18n/completedI18n'
 
 /* ─── Completed / handed-over project — showcase only, no sale CTAs ─── */
 
-const stats = [
-  { value: '12+', label: 'проектов реализовано и строится' },
-  { value: '5+', label: 'проектов в продаже сейчас' },
-  { value: '2021', label: 'собственный бетонный завод' },
-  { value: '2019', label: 'год основания' },
-]
+const statValues = ['12+', '5+', '2021', '2019']
 
 function CheckIcon() {
   return (
@@ -34,9 +31,11 @@ function ClockIcon() {
 }
 
 export default function CompletedProject() {
+  const { t } = useTranslation()
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
-  const project = completedProjects.find((p) => p.slug === slug)
+  const project = useLocalizedCompleted(completedProjects.find((p) => p.slug === slug))
+  const others = useLocalizedCompletedList(completedProjects.filter((p) => p.slug !== slug).slice(0, 3))
   const [active, setActive] = useState(0)
 
   if (!project) return <Navigate to="/projects" replace />
@@ -45,7 +44,12 @@ export default function CompletedProject() {
   const galPrev = () => setActive((c) => (c - 1 + gal.length) % gal.length)
   const galNext = () => setActive((c) => (c + 1) % gal.length)
 
-  const others = completedProjects.filter((p) => p.slug !== slug).slice(0, 3)
+  const stats = [
+    { value: statValues[0], label: t('home.stats.l1') },
+    { value: statValues[1], label: t('home.stats.l2') },
+    { value: statValues[2], label: t('home.stats.l3') },
+    { value: statValues[3], label: t('home.stats.l4') },
+  ]
   const idx = completedProjects.findIndex((p) => p.slug === slug)
   const single = completedProjects.length <= 1
   const prevP = completedProjects[(idx - 1 + completedProjects.length) % completedProjects.length]
@@ -63,10 +67,10 @@ export default function CompletedProject() {
 
         {!single && (
           <div className="absolute inset-x-[60px] 2xl:inset-x-[116px] top-[44%] flex items-center justify-between z-10">
-            <button type="button" aria-label={`Проект ${prevP.title}`} onClick={() => navigate(`/completed/${prevP.slug}`)} className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
+            <button type="button" aria-label={`${t('proj.projectNav')} ${prevP.title}`} onClick={() => navigate(`/completed/${prevP.slug}`)} className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
               <ChevronLeft className="size-6" />
             </button>
-            <button type="button" aria-label={`Проект ${nextP.title}`} onClick={() => navigate(`/completed/${nextP.slug}`)} className="flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
+            <button type="button" aria-label={`${t('proj.projectNav')} ${nextP.title}`} onClick={() => navigate(`/completed/${nextP.slug}`)} className="flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
               <ChevronRight className="size-6" />
             </button>
           </div>
@@ -82,7 +86,7 @@ export default function CompletedProject() {
           <p className="font-body text-[18px] leading-[1.5] text-white/80 max-w-[680px]">{project.location}</p>
           <span className="mt-1 inline-flex items-center gap-2 rounded-full border border-accent/60 bg-accent/15 px-5 py-2 font-vela text-[15px] font-medium uppercase tracking-[0.1em] text-accent backdrop-blur-sm">
             <CheckIcon />
-            Сдан в эксплуатацию
+            {t('proj.handedOver')}
           </span>
         </div>
       </section>
@@ -92,7 +96,7 @@ export default function CompletedProject() {
         <Container>
           <div data-reveal className="flex flex-col gap-8">
             <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
-              О проекте {project.title}
+              {t('proj.aboutPrefix')} {project.title}
             </h2>
             <div className="flex flex-col gap-6 max-w-[1500px]">
               {project.description.map((para, i) => (
@@ -107,14 +111,14 @@ export default function CompletedProject() {
       <section className="bg-white py-[24px]">
         <Container>
           <div data-reveal="scale" className="relative h-[460px] 2xl:h-[700px] w-full overflow-hidden rounded-[8px] bg-black">
-            <SkeletonImage key={gal[active]} src={gal[active]} alt={`${project.title} — фото`} className="absolute inset-0" imgClassName="size-full object-cover" />
+            <SkeletonImage key={gal[active]} src={gal[active]} alt={`${project.title} — ${t('proj.photoSuffix')}`} className="absolute inset-0" imgClassName="size-full object-cover" />
             <div className="absolute inset-x-0 bottom-0 h-[200px] bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
             {gal.length > 1 && (
               <div className="absolute bottom-[36px] right-[36px] flex items-center gap-3">
-                <button type="button" onClick={galPrev} aria-label="Предыдущее фото" className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
+                <button type="button" onClick={galPrev} aria-label={t('proj.photoPrev')} className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
                   <ChevronLeft className="size-6" />
                 </button>
-                <button type="button" onClick={galNext} aria-label="Следующее фото" className="flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
+                <button type="button" onClick={galNext} aria-label={t('proj.photoNext')} className="flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
                   <ChevronRight className="size-6" />
                 </button>
               </div>
@@ -124,7 +128,7 @@ export default function CompletedProject() {
           {gal.length > 1 && (
             <div className="mt-[16px] grid gap-[12px] 2xl:gap-[16px]" style={{ gridTemplateColumns: `repeat(${gal.length}, minmax(0, 1fr))` }}>
               {gal.map((src, i) => (
-                <button key={src} type="button" onClick={() => setActive(i)} aria-label={`Фото ${i + 1}`} aria-current={i === active} className={`h-[88px] 2xl:h-[120px] overflow-hidden rounded-[5px] bg-white transition-all duration-300 ${i === active ? 'ring-2 ring-accent ring-offset-2' : 'opacity-70 hover:opacity-100'}`}>
+                <button key={src} type="button" onClick={() => setActive(i)} aria-label={`${t('proj.photo')} ${i + 1}`} aria-current={i === active} className={`h-[88px] 2xl:h-[120px] overflow-hidden rounded-[5px] bg-white transition-all duration-300 ${i === active ? 'ring-2 ring-accent ring-offset-2' : 'opacity-70 hover:opacity-100'}`}>
                   <SkeletonImage src={src} alt="" className="size-full" imgClassName="size-full object-cover" />
                 </button>
               ))}
@@ -138,13 +142,13 @@ export default function CompletedProject() {
         <Container>
           <div className="relative">
             <div className="h-[440px] 2xl:h-[540px] w-full overflow-hidden rounded-[8px]">
-              <iframe title={`${project.title} на карте`} src={mapSrc} className="size-full border-0" loading="lazy" />
+              <iframe title={`${project.title} ${t('proj.onMap')}`} src={mapSrc} className="size-full border-0" loading="lazy" />
             </div>
             <div data-reveal className="relative z-10 mx-auto -mt-[88px] w-[92%] max-w-[1312px] rounded-[8px] border border-primary/30 bg-primary px-[40px] py-[44px] 2xl:px-[72px] 2xl:py-[52px] shadow-[0_30px_60px_rgba(10,15,40,0.25)]">
               <div className="grid grid-cols-1 gap-x-[60px] gap-y-[22px] md:grid-cols-2">
                 <div className="flex items-start gap-3 md:col-span-2">
                   <span className="mt-[9px] size-[6px] shrink-0 rounded-full bg-accent" />
-                  <span className="font-body text-[16px] leading-[1.6] text-white/60 w-[150px] shrink-0">Название:</span>
+                  <span className="font-body text-[16px] leading-[1.6] text-white/60 w-[150px] shrink-0">{t('proj.spec.name')}:</span>
                   <span className="font-vela text-[18px] 2xl:text-[20px] font-medium leading-[1.4] text-[#cbd2dc]">{project.title}</span>
                 </div>
                 {project.specs.map((row) => (
@@ -164,8 +168,8 @@ export default function CompletedProject() {
       <section className="bg-bg-subtle py-[80px]">
         <Container>
           <div data-reveal className="mb-[48px] flex flex-col gap-5">
-            <SectionTag>Инфраструктура</SectionTag>
-            <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-ink">Места поблизости</h2>
+            <SectionTag>{t('proj.infraTag')}</SectionTag>
+            <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-ink">{t('proj.nearbyTitle')}</h2>
           </div>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
             {project.nearby.map((place, i) => (
@@ -187,8 +191,8 @@ export default function CompletedProject() {
       <section className="bg-white py-[64px]">
         <Container>
           <p data-reveal className="mb-[40px] 2xl:mb-[56px] text-center font-heading text-[34px] 2xl:text-[45px] font-semibold leading-[1.4]">
-            <span className="text-ink">Мы не просто строим здания — мы создаём надёжное пространство для будущих поколений. </span>
-            <span className="text-accent">Renaissance Development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.</span>
+            <span className="text-ink">{t('home.stats.s1')}</span>
+            <span className="text-accent">{t('home.stats.s2')}</span>
           </p>
           <div className="flex items-stretch gap-4">
             {stats.map((s, i) => (
@@ -206,7 +210,7 @@ export default function CompletedProject() {
         <section className="bg-bg-subtle py-[100px]">
           <Container>
             <h2 data-reveal className="mb-[40px] font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink">
-              Другие реализованные проекты
+              {t('proj.otherCompleted')}
             </h2>
             <div className="grid grid-cols-3 gap-8">
               {others.map((p, i) => (
@@ -214,7 +218,7 @@ export default function CompletedProject() {
                   <div className="relative h-[320px] overflow-hidden rounded-[8px]">
                     <SkeletonImage src={p.hero} alt={p.title} className="absolute inset-0" imgClassName="size-full object-cover transition-transform duration-[600ms] group-hover:scale-105" />
                     <div className="absolute left-4 top-4 rounded-full bg-stone px-5 py-2">
-                      <span className="font-vela text-[15px] font-medium text-white">Сдан</span>
+                      <span className="font-vela text-[15px] font-medium text-white">{t('proj.statusDone')}</span>
                     </div>
                   </div>
                   <div>

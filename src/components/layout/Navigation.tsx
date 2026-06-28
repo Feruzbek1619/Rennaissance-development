@@ -44,7 +44,7 @@ export default function Navigation() {
     <nav className="bg-white sticky top-0 z-40 border-b border-border/60">
       <Container>
         <div className="flex h-[108px] items-center justify-between gap-4 2xl:gap-8">
-          <Link to="/" aria-label="Renaissance Development — на главную" className="shrink-0">
+          <Link to="/" aria-label={t('nav.homeAria')} className="shrink-0">
             <img loading="lazy" decoding="async" src="/logo.svg" alt="Renaissance Development" className="h-[36.4px] w-[145.6px] 2xl:h-[53.2px] 2xl:w-[212.7px]" />
           </Link>
 
@@ -118,7 +118,7 @@ export default function Navigation() {
 
           {/* Contact + CTA */}
           <div className="flex shrink-0 items-center gap-3 2xl:gap-4">
-            <a href={`tel:${PHONE.replace(/\D/g, '')}`} className="flex items-center gap-2 2xl:gap-4" aria-label={`Позвонить ${PHONE}`}>
+            <a href={`tel:${PHONE.replace(/\D/g, '')}`} className="flex items-center gap-2 2xl:gap-4" aria-label={`${t('proj.callNow')} ${PHONE}`}>
               <Phone className="size-6 text-primary shrink-0" />
               {/* Number hidden 1280–1535 to fit the bar; icon stays callable. */}
               <span className="hidden 2xl:inline font-body text-body-sm text-primary whitespace-nowrap">{PHONE}</span>

@@ -5,6 +5,7 @@ export default {
     catalog: 'Obyektlar katalogi',
     production: 'Ishlab chiqarish',
     contacts: 'Kontaktlar',
+    homeAria: 'Renaissance Development — bosh sahifa',
   },
   catalog: {
     onSale: 'Sotuvda',
@@ -94,6 +95,7 @@ export default {
       title: 'Kompaniya haqida',
       p1: "Biz shunchaki bino qurmaymiz — biz kelajak avlodlar uchun ishonchli makon yaratamiz. Renaissance Development har bir loyihasi poydevordan emas, balki bitta savolga javobdan boshlanadi: bu uy o‘ttiz yildan keyin qanday bo‘ladi.",
       p2: "Shuning uchun biz hammasini o‘zimiz nazorat qilamiz. Beton — o‘z zavodimizdan. Gazoblok, ventilyatsiya shaxtalari, termo-romkalar — o‘z ishlab chiqarishimiz. Maydondagi texnika — o‘zimizniki. Zanjirda tasodifiy pudratchilar bo‘lmasa, sifatda ham tasodif bo‘lmaydi.",
+      imageAlt: 'Renaissance Development — qurilish',
     },
     production: {
       tag: 'Zavod',
@@ -152,6 +154,7 @@ export default {
       tag: 'Bizning mijozlar',
       title: 'Arxitektura mukammalligida hamkorlar.',
       desc: "Mutaxassislar jamoamiz har bir loyiha aniq muddatda, budjet doirasida va murosasiz sifat bilan amalga oshirilishini kafolatlaydi.",
+      alt: 'Hamkor',
     },
     process: {
       tag: 'Biz qanday ishlaymiz',
@@ -205,6 +208,7 @@ export default {
       completedTag: 'Topshirilgan loyihalar',
       completedTitle: "Topshirilgan ob'ektlar",
       completedDesc: "Allaqachon qurilgan va aholi joylashgan binolar. Ushbu majmualardagi kvartiralar sotilgan — loyihani ko‘rish uchun «Batafsil» tugmasini bosing.",
+      completedArea: "26,44 dan 30,81 m² gacha",
       back: 'Orqaga',
       next: 'Keyingi',
     },
@@ -269,6 +273,12 @@ export default {
     projectNav: "Loyiha",
     modernComplex: "Zamonaviy majmua",
     statusSold: "Sotilgan",
+    handedOver: "Foydalanishga topshirilgan",
+    statusDone: "Topshirilgan",
+    infraTag: "Infratuzilma",
+    otherCompleted: "Boshqa amalga oshirilgan loyihalar",
+    photoSuffix: "rasm",
+    cityTashkent: "Toshkent sh.",
     detail: {
       heroAddressSub: "Obyekt manzili",
       heroAreaSub: "Kvartiralar maydoni",

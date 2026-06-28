@@ -30,9 +30,10 @@ function ArrowUpRightIcon({ light = false }: { light?: boolean }) {
   )
 }
 
-export function ProjectCard({ project: rawProject }: { project: Project }) {
+export function ProjectCard({ project: rawProject, localize = true }: { project: Project; localize?: boolean }) {
   const { t } = useTranslation()
-  const project = useLocalizedProject(rawProject) as Project
+  const localized = useLocalizedProject(rawProject) as Project
+  const project = localize ? localized : rawProject
   const badgeClass = project.comingSoon ? 'bg-primary' : project.status === 'active' ? 'bg-[#BE9C68]' : 'bg-[#8C8275]'
   const badgeLabel = project.comingSoon ? t('common.badgeSoon') : project.status === 'active' ? t('common.badgeOnSale') : t('common.badgeSold')
   const modal = useLeadModalOptional()

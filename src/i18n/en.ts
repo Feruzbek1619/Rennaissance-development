@@ -5,6 +5,7 @@ export default {
     catalog: 'Properties',
     production: 'Production',
     contacts: 'Contacts',
+    homeAria: 'Renaissance Development — home',
   },
   catalog: {
     onSale: 'On sale',
@@ -94,6 +95,7 @@ export default {
       title: 'About the company',
       p1: 'We don’t just build — we create reliable space for future generations. Every Renaissance Development project begins not with a foundation pit, but with one question: what will this home be like in thirty years.',
       p2: 'That is why we control everything ourselves. Concrete — from our own plant. Aerated blocks, ventilation shafts and thermal frames — our own production. The machinery on site is ours. When there are no random contractors in the chain, there is no randomness in quality.',
+      imageAlt: 'Renaissance Development — construction',
     },
     production: {
       tag: 'Plant',
@@ -152,6 +154,7 @@ export default {
       tag: 'Our clients',
       title: 'Partners in architectural excellence.',
       desc: 'Our team of experts ensures that every project is delivered exactly on time, on budget and with uncompromising quality.',
+      alt: 'Partner',
     },
     process: {
       tag: 'How we work',
@@ -205,6 +208,7 @@ export default {
       completedTag: 'Completed projects',
       completedTitle: 'Delivered buildings',
       completedDesc: 'Buildings that are already built and occupied. Apartments in these complexes are sold out — click “Learn more” to view the project.',
+      completedArea: 'from 26.44 to 30.81 m²',
       back: 'Back',
       next: 'Next',
     },
@@ -269,6 +273,12 @@ export default {
     projectNav: "Project",
     modernComplex: "A modern complex",
     statusSold: "Sold out",
+    handedOver: "Handed over",
+    statusDone: "Completed",
+    infraTag: "Infrastructure",
+    otherCompleted: "Other completed projects",
+    photoSuffix: "photo",
+    cityTashkent: "Tashkent",
     detail: {
       heroAddressSub: "Property address",
       heroAreaSub: "Apartment area",
