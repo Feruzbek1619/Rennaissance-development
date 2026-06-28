@@ -208,5 +208,15 @@ export default {
       heroTitle: 'Bizning kontaktlar',
       addressLabel: 'Obyekt manzili',
     },
+    about: {
+      companyP1: "Renaissance Development — to‘liq tsikl kompaniyasi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyihalar portfeliga ega developer. Faoliyati davomida kompaniya yuqori ishonchlilik, sifat va arxitektura nafosatiga ega zamonaviy turar-joy va tijorat binolarini yaratuvchi ishonchli hamkor sifatida obro‘ qozondi.",
+      companyP2: "Kompaniya tarkibiga o‘z qurilish bo‘linmasi — Renaissance Building Company kiradi. Ushbu kompaniya qurilish ishlarining to‘liq tsiklini amalga oshiradi va loyiha har bosqichida sifatni nazorat qiladi. Shu tufayli Renaissance Development har bir ob'ektni yuqori darajada va belgilangan standartlarga qat'iy rioya qilgan holda quradi.",
+      companyP3: "Kompaniyaning asosiy ustunliklaridan biri — o‘z ishlab chiqarish bazasining mavjudligi. Renaissance Development qurilish materiallari, ventilyatsiya tizimlari, alyumin profillar, beton va dekorativ qoplamalarni o‘z quvvatlarida ishlab chiqaradi. Bu doimiy sifat nazorati, qurilish muddatlarini qisqartirish va har bir loyiha ishonchliligini ta'minlaydi.",
+      companyP4: "Renaissance Building Company — tajriba, o‘z qurilish bo‘linmasi va ishlab chiqarish quvvatlarini birlashtirgan, zamonaviy shahar muhitini yaratish va yuqori sifatli loyihalarni amalga oshirishga yo‘naltirilgan kompaniya.",
+      teamTag: 'Bizning jamoa',
+      teamTitle: 'Toshkentni quruvchi mutaxassislar',
+      teamDesc: "Renaissance Development — to‘liq tsikl kompaniyasi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyihalar portfeliga ega developer.",
+      ceoRole: 'Asoschi va CEO',
+    },
   },
 }

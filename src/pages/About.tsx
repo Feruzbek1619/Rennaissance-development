@@ -8,15 +8,17 @@ import FAQSection from '@/components/home/FAQSection'
 import StatsSection from '@/components/home/StatsSection'
 import PartnersSection from '@/components/home/PartnersSection'
 import ProjectsMapSection from '@/components/home/ProjectsMapSection'
+import { useTranslation } from '@/i18n'
 
 export default function About() {
+  const { t } = useTranslation()
   return (
     <main>
       {/* ── 1. Hero ─────────────────────────────────────────── */}
       <section className="bg-gradient-to-b from-primary to-primary/80 py-[72px]">
         <Container>
           <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.3] text-bg-subtle">
-            О компании
+            {t('nav.about')}
           </h1>
         </Container>
       </section>
@@ -28,29 +30,10 @@ export default function About() {
             Renaissance Development
           </h2>
           <div className="flex flex-col gap-[20px] font-body text-[22px] 2xl:text-[26px] leading-[1.6] text-ink">
-            <p>
-              Renaissance Development — компания полного цикла: девелопер с более чем 7-летним опытом работы и
-              портфелем, включающим более 12 реализованных и строящихся проектов. За время своей деятельности
-              компания сформировала репутацию надёжного партнёра, создающего современные жилые и коммерческие
-              здания, отличающиеся высоким уровнем надёжности, качества и архитектурной эстетики.
-            </p>
-            <p>
-              В состав компании входит собственное строительное подразделение — Renaissance Building Company.
-              Данная компания осуществляет полный цикл строительных работ и контролирует качество на каждом этапе
-              реализации проектов. Благодаря этому Renaissance Development обеспечивает строительство каждого
-              объекта на высоком уровне и в строгом соответствии с установленными стандартами.
-            </p>
-            <p>
-              Одним из ключевых преимуществ компании является наличие собственной производственной базы.
-              Renaissance Development производит строительные материалы, вентиляционные системы, алюминиевые
-              профили, бетон и декоративные покрытия на собственных мощностях. Это позволяет осуществлять
-              постоянный контроль качества, сокращать сроки строительства и обеспечивать надёжность каждого проекта.
-            </p>
-            <p>
-              Renaissance Building Company — это компания, объединяющая опыт, собственное строительное
-              подразделение и производственные мощности, направленная на создание современной городской среды и
-              реализацию высококачественных проектов.
-            </p>
+            <p>{t('pages.about.companyP1')}</p>
+            <p>{t('pages.about.companyP2')}</p>
+            <p>{t('pages.about.companyP3')}</p>
+            <p>{t('pages.about.companyP4')}</p>
           </div>
         </Container>
       </section>
@@ -60,14 +43,13 @@ export default function About() {
         <Container>
           <div className="flex items-end justify-between gap-16 mb-[60px]">
             <div className="flex flex-col gap-5 max-w-[820px]">
-              <SectionTag>Наша команда</SectionTag>
+              <SectionTag>{t('pages.about.teamTag')}</SectionTag>
               <h2 className="font-heading text-[44px] 2xl:text-[56px] font-bold uppercase leading-[1.15] text-ink">
-                Профессионалы,<br />которые строят Ташкент
+                {t('pages.about.teamTitle')}
               </h2>
             </div>
             <p className="font-body text-[20px] leading-[1.6] text-secondary w-[520px] shrink-0">
-              Renaissance Development — компания полного цикла: девелопер с более чем 7-летним опытом работы
-              и портфелем, включающим более 12 реализованных и строящихся проектов.
+              {t('pages.about.teamDesc')}
             </p>
           </div>
 
@@ -83,7 +65,7 @@ export default function About() {
               </div>
               <div className="absolute left-4 right-4 bottom-4 bg-white/95 backdrop-blur-md px-[24px] py-[16px]">
                 <p className="font-heading text-[20px] font-bold text-ink">Джабборов Руфат Узакович</p>
-                <p className="font-body text-[16px] text-secondary mt-1">Основатель и CEO</p>
+                <p className="font-body text-[16px] text-secondary mt-1">{t('pages.about.ceoRole')}</p>
               </div>
             </div>
           </div>

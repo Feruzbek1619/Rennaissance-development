@@ -208,5 +208,15 @@ export default {
       heroTitle: 'Our contacts',
       addressLabel: 'Property address',
     },
+    about: {
+      companyP1: 'Renaissance Development is a full-cycle company: a developer with over 7 years of experience and a portfolio of 12+ completed and ongoing projects. Over the years the company has built a reputation as a reliable partner, creating modern residential and commercial buildings of high reliability, quality and architectural elegance.',
+      companyP2: 'The company includes its own construction division — Renaissance Building Company. It carries out the full cycle of construction works and controls quality at every stage of project delivery. This lets Renaissance Development build every project to a high standard, in strict compliance with established norms.',
+      companyP3: 'One of the company’s key advantages is its own production base. Renaissance Development manufactures building materials, ventilation systems, aluminium profiles, concrete and decorative coatings at its own facilities. This enables constant quality control, shorter construction timelines and the reliability of every project.',
+      companyP4: 'Renaissance Building Company is a company that combines experience, its own construction division and production capacity, aimed at creating a modern urban environment and delivering high-quality projects.',
+      teamTag: 'Our team',
+      teamTitle: 'Professionals who build Tashkent',
+      teamDesc: 'Renaissance Development is a full-cycle company: a developer with over 7 years of experience and a portfolio of 12+ completed and ongoing projects.',
+      ceoRole: 'Founder & CEO',
+    },
   },
 }
