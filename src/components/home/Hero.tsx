@@ -15,6 +15,8 @@ type Slide = {
   image: string
   /** Project slug → "Выбрать квартиру" CTA. */
   slug?: string
+  /** Coming-soon project → "Подробнее" instead of "Выбрать квартиру". */
+  comingSoon?: boolean
   /** Custom primary CTA (non-project slides). */
   cta?: { label: string; to: string }
 }
@@ -47,6 +49,7 @@ const slides: Slide[] = [
   {
     id: 'botanika-luxury',
     slug: 'botanika-luxury',
+    comingSoon: true,
     title: 'BOTANIKA LUXURY',
     eyebrow: 'Жилой комплекс · Комфорт',
     desc: 'Монолитный комплекс комфорт-класса в Мирзо-Улугбекском районе: закрытая территория, подземный паркинг и развитая инфраструктура рядом.',
@@ -87,7 +90,7 @@ export default function Hero() {
                     <div className="flex flex-col items-stretch gap-4 2xl:flex-row 2xl:items-center">
                       {slide.slug ? (
                         <Button to={`/projects/${slide.slug}`} variant="accent" size="lg" className="!px-8">
-                          Выбрать квартиру
+                          {slide.comingSoon ? 'Подробнее' : 'Выбрать квартиру'}
                         </Button>
                       ) : (
                         <Button to={slide.cta?.to ?? '/about'} variant="accent" size="lg" className="!px-8">
