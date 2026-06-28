@@ -53,7 +53,7 @@ export default {
   home: {
     hero: {
       aboutDesc:
-        "To‘liq tsikl developeri: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyiha. Biz yuqori ishonchlilik, sifat va arxitektura nafosatiga ega zamonaviy turar-joy va tijorat binolarini yaratamiz.",
+        "To‘liq tsiklli quruvchi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyiha. Biz yuqori ishonchlilik, sifat va arxitektura nafosatiga ega zamonaviy turar-joy va tijorat binolarini yaratamiz.",
       vatanEyebrow: 'Kottej shaharchasi · Komfort+',
       vatanDesc:
         "Mirzo Ulug‘bek tumanining tinch va yashil mahallasida keng kvartiralar — o‘z hovlingiz va barcha zarur narsalar piyoda yetib boradigan masofada.",
@@ -218,13 +218,13 @@ export default {
       imageAlt: 'Renaissance Development turar-joy majmuasi',
     },
     about: {
-      companyP1: "Renaissance Development — to‘liq tsikl kompaniyasi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyihalar portfeliga ega developer. Faoliyati davomida kompaniya yuqori ishonchlilik, sifat va arxitektura nafosatiga ega zamonaviy turar-joy va tijorat binolarini yaratuvchi ishonchli hamkor sifatida obro‘ qozondi.",
+      companyP1: "Renaissance Development — to‘liq tsiklli quruvchi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyihalar portfeliga ega. Faoliyati davomida kompaniya yuqori ishonchlilik, sifat va arxitektura nafosatiga ega zamonaviy turar-joy va tijorat binolarini yaratuvchi ishonchli hamkor sifatida obro‘ qozondi.",
       companyP2: "Kompaniya tarkibiga o‘z qurilish bo‘linmasi — Renaissance Building Company kiradi. Ushbu kompaniya qurilish ishlarining to‘liq tsiklini amalga oshiradi va loyiha har bosqichida sifatni nazorat qiladi. Shu tufayli Renaissance Development har bir ob'ektni yuqori darajada va belgilangan standartlarga qat'iy rioya qilgan holda quradi.",
       companyP3: "Kompaniyaning asosiy ustunliklaridan biri — o‘z ishlab chiqarish bazasining mavjudligi. Renaissance Development qurilish materiallari, ventilyatsiya tizimlari, alyumin profillar, beton va dekorativ qoplamalarni o‘z quvvatlarida ishlab chiqaradi. Bu doimiy sifat nazorati, qurilish muddatlarini qisqartirish va har bir loyiha ishonchliligini ta'minlaydi.",
       companyP4: "Renaissance Building Company — tajriba, o‘z qurilish bo‘linmasi va ishlab chiqarish quvvatlarini birlashtirgan, zamonaviy shahar muhitini yaratish va yuqori sifatli loyihalarni amalga oshirishga yo‘naltirilgan kompaniya.",
       teamTag: 'Bizning jamoa',
       teamTitle: 'Toshkentni quruvchi mutaxassislar',
-      teamDesc: "Renaissance Development — to‘liq tsikl kompaniyasi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyihalar portfeliga ega developer.",
+      teamDesc: "Renaissance Development — to‘liq tsiklli quruvchi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyihalar portfeliga ega.",
       ceoRole: 'Asoschi va CEO',
       ceoName: 'Jabborov Rufat Uzakovich',
       ceoPhotoAlt: 'Jabborov Rufat Uzakovich — asoschi va CEO',
