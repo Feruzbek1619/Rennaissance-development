@@ -28,7 +28,13 @@ function resolve(dict: Record<string, unknown>, key: string): unknown {
   )
 }
 
-type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (key: string) => string }
+type Ctx = {
+  lang: Lang
+  setLang: (l: Lang) => void
+  t: (key: string) => string
+  /** Like t() but returns arrays/objects (for structured content). Falls back RU → []. */
+  tx: <T = unknown>(key: string) => T
+}
 const I18nContext = createContext<Ctx | null>(null)
 
 export function I18nProvider({ children }: { children: ReactNode }) {
@@ -55,11 +61,22 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     [lang],
   )
 
-  return <I18nContext.Provider value={{ lang, setLang, t }}>{children}</I18nContext.Provider>
+  // tx('a.b') → array/object for the active language; falls back to RU, then [].
+  const tx = useCallback(
+    <T,>(key: string): T => {
+      const v = resolve(dicts[lang], key)
+      if (v !== undefined && v !== null) return v as T
+      const fallback = resolve(dicts.ru, key)
+      return (fallback ?? []) as T
+    },
+    [lang],
+  )
+
+  return <I18nContext.Provider value={{ lang, setLang, t, tx }}>{children}</I18nContext.Provider>
 }
 
 export function useTranslation() {
   const ctx = useContext(I18nContext)
-  if (!ctx) return { lang: 'ru' as Lang, setLang: () => {}, t: (k: string) => k }
+  if (!ctx) return { lang: 'ru' as Lang, setLang: () => {}, t: (k: string) => k, tx: <T,>() => [] as T }
   return ctx
 }

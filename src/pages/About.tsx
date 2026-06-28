@@ -59,12 +59,12 @@ export default function About() {
               <div className="h-[495px] overflow-hidden">
                 <img loading="lazy" decoding="async"
                   src="/assets/director-photo.webp"
-                  alt="Джабборов Руфат Узакович — основатель и CEO"
+                  alt={t('pages.about.ceoPhotoAlt')}
                   className="w-full h-full object-cover object-top"
                 />
               </div>
               <div className="absolute left-4 right-4 bottom-4 bg-white/95 backdrop-blur-md px-[24px] py-[16px]">
-                <p className="font-heading text-[20px] font-bold text-ink">Джабборов Руфат Узакович</p>
+                <p className="font-heading text-[20px] font-bold text-ink">{t('pages.about.ceoName')}</p>
                 <p className="font-body text-[16px] text-secondary mt-1">{t('pages.about.ceoRole')}</p>
               </div>
             </div>

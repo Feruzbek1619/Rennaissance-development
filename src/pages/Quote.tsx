@@ -7,15 +7,6 @@ import { useLeadModalOptional } from '@/components/LeadModal'
 import { sendLead } from '@/lib/lead'
 import { useTranslation } from '@/i18n'
 
-/** Single office marker for the contacts map (changes to come later). */
-const officePoint: MapPoint[] = [
-  {
-    coords: [41.304621, 69.31018],
-    title: 'RENAISSANCE DEVELOPMENT',
-    location: 'г. Ташкент, Махтумкули, 100116',
-  },
-]
-
 function OfficeIcon() {
   return (
     <svg viewBox="0 0 48 48" fill="none" className="size-12">
@@ -53,6 +44,13 @@ function ClockIcon() {
 export default function Quote() {
   const modal = useLeadModalOptional()
   const { t } = useTranslation()
+  const officePoint: MapPoint[] = [
+    {
+      coords: [41.304621, 69.31018],
+      title: 'RENAISSANCE DEVELOPMENT',
+      location: `${t('footer.addr1')} ${t('footer.addr2')}`,
+    },
+  ]
   const contactCards = [
     { icon: <OfficeIcon />, title: t('home.contact.office'), content: `${t('footer.addr1')}\n${t('footer.addr2')}` },
     { icon: <PhoneIcon />, title: t('home.contact.phone'), content: '78-333-33-31' },
@@ -157,7 +155,7 @@ export default function Quote() {
             <div className="flex-1 min-w-0 min-h-[600px] overflow-hidden relative">
               <img loading="lazy" decoding="async"
                 src="/assets/contacts-form.webp"
-                alt="Жилой комплекс Renaissance Development"
+                alt={t('pages.contacts.imageAlt')}
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-[#00040b]/80 to-transparent" />

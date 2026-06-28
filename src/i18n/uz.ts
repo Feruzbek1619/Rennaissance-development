@@ -215,6 +215,7 @@ export default {
     contacts: {
       heroTitle: 'Bizning kontaktlar',
       addressLabel: 'Obyekt manzili',
+      imageAlt: 'Renaissance Development turar-joy majmuasi',
     },
     about: {
       companyP1: "Renaissance Development — to‘liq tsikl kompaniyasi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyihalar portfeliga ega developer. Faoliyati davomida kompaniya yuqori ishonchlilik, sifat va arxitektura nafosatiga ega zamonaviy turar-joy va tijorat binolarini yaratuvchi ishonchli hamkor sifatida obro‘ qozondi.",
@@ -225,6 +226,8 @@ export default {
       teamTitle: 'Toshkentni quruvchi mutaxassislar',
       teamDesc: "Renaissance Development — to‘liq tsikl kompaniyasi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyihalar portfeliga ega developer.",
       ceoRole: 'Asoschi va CEO',
+      ceoName: 'Jabborov Rufat Uzakovich',
+      ceoPhotoAlt: 'Jabborov Rufat Uzakovich — asoschi va CEO',
     },
     b2b: {
       heroSubtitle: "Xususiy ishlab chiqarish bazasi — betondan va gazoblokdan suyuq travertin, ventilyatsiya, alyumin profillar va maxsus texnikagacha. Sifat va muddatlarni nazoratda ushlab turuvchi beshta yo‘nalish.",
@@ -256,6 +259,33 @@ export default {
       formSent: 'Ariza yuborildi',
       formSentText: "Rahmat! Ishlab chiqarish bo‘yicha mutaxassisimiz tez orada siz bilan bog‘lanadi.",
       contactsDesc: "Mahsulot, hajm va yetkazib berish shartlari bo‘yicha har qanday savolga javob beramiz. Dam olish kunlarisiz ishlaymiz.",
+    },
+    privacy: {
+      heroTag: "Huquqiy",
+      heroTitle: "Maxfiylik siyosati",
+      heroDesc: "Ushbu siyosat Renaissance Development xizmatlarimiz bilan o‘zaro aloqada bo‘lganingizda shaxsiy ma'lumotlaringizni qanday yig‘ishi, ishlatishi va himoya qilishini tavsiflaydi.",
+      sections: [
+        { title: "Ma'lumot yig‘ish", body: "Biz bilan bog‘langaningizda yoki saytdagi shakllarni to‘ldirganingizda ixtiyoriy ravishda taqdim etadigan shaxsiy ma'lumotlaringizni yig‘amiz:", items: ["Shaxsiy ma'lumotlar: ism, telefon raqami, elektron pochta manzili.", "So‘rov ma'lumotlari: qiziqtirgan obyekt parametrlari, budjet, afzalliklar.", "Texnik ma'lumotlar: saytni yaxshilash uchun cookie orqali yig‘iladigan IP-manzil va brauzer ma'lumotlari."] },
+        { title: "Ma'lumotdan foydalanish", body: "Ma'lumotlaringiz murojaatlarni qayta ishlash va xizmatlarimizni yaxshilash uchun ishlatiladi:", items: ["So‘rovlaringiz va obyektlar bo‘yicha arizalaringizga javob berish uchun.", "Loyihalar, bo‘lib-bo‘lib to‘lash va sotib olish shartlari haqida ma'lumot berish uchun.", "Xizmat ko‘rsatish sifati va sayt ishini yaxshilash uchun."] },
+        { title: "Ma'lumotlarni himoya qilish", body: "Biz shaxsiy ma'lumotlaringizni ruxsatsiz kirish, o‘zgartirish yoki tarqatishdan himoya qilish uchun texnik va tashkiliy choralarni qo‘llaymiz. Ma'lumotlaringiz himoyalangan serverlarda saqlanadi." },
+        { title: "Uchinchi shaxslarga uzatish", body: "Renaissance Development ma'lumotlaringizni uchinchi shaxslarga sotmaydi. Ma'lumot faqat so‘rovingizni amalga oshirishda bevosita ishtirok etadigan ishonchli hamkorlarga va faqat shu uchun zarur hajmda uzatilishi mumkin." },
+        { title: "Sizning huquqlaringiz", body: "Amaldagi qonunchilikka muvofiq siz quyidagi huquqlarga egasiz:", items: ["Bizda saqlanayotgan ma'lumotlaringizga kirish.", "Ma'lumotlaringizni tuzatish yoki o‘chirishni so‘rash.", "Ma'lumotlarni qayta ishlashga rozilikni istalgan vaqtda qaytarib olish."] },
+        { title: "Kontaktlar", body: "Shaxsiy ma'lumotlarni qayta ishlash bilan bog‘liq savollar bo‘yicha murojaat qiling:", items: ["Telefon: 78-333-33-31", "Manzil: Toshkent, Maxtumquli 100116, O‘zbekiston Respublikasi"] },
+      ],
+    },
+    terms: {
+      heroTag: "Huquqiy",
+      heroTitle: "Foydalanish shartlari",
+      heroDesc: "Renaissance Development bilan kelishuvingiz. Iltimos, xizmatlarimizdan foydalanish shartlari bilan tanishing.",
+      sections: [
+        { title: "Shartlarni qabul qilish", body: "Saytimizdan foydalanib va xizmatlarimizga murojaat qilib, siz ushbu shartlarga va barcha amaldagi qonun va me'yoriy hujjatlarga rioya qilishga rozilik bildirasiz." },
+        { title: "Intellektual mulk", body: "Ushbu platformadagi barcha arxitektura loyihalari, rejalar, chizmalar va raqamli materiallar intellektual mulk to‘g‘risidagi qonunchilik bilan himoyalangan. Materiallardan Renaissance Development ning yozma ruxsatisiz foydalanish, ko‘paytirish yoki tarqatish taqiqlanadi." },
+        { title: "Murojaat va to‘lov", body: "Ariza topshirishda yoki shartnoma rasmiylashtirishda quyidagi shartlar amal qiladi:", items: ["Dastlabki shartlar: narx va muddatlar haqidagi ma'lumot dastlabki bo‘lib, muzokaralar natijasida o‘zgarishi mumkin.", "To‘lov: siz tuzilgan shartnoma shartlariga muvofiq tegishli summalarni to‘lashga rozilik bildirasiz."] },
+        { title: "Mijoz majburiyatlari", body: "Mijoz sifatida siz o‘z talablaringiz haqida aniq ma'lumot berish uchun javobgarsiz. Sizga taqdim etilgan hujjatlarning maxfiyligini saqlashingiz va kompaniyaning roziligisiz ularni uchinchi shaxslarga oshkor qilmasligingiz shart." },
+        { title: "Javobgarlikni cheklash", body: "Renaissance Development sayt yoki xizmatlarimizdan foydalanish natijasida yuzaga kelgan bilvosita yoki tasodifiy zararlar uchun javobgar emas. Saytning barcha materiallari hech qanday kafolatsiz «bor holicha» taqdim etiladi." },
+        { title: "Amaldagi huquq", body: "Ushbu shartlar O‘zbekiston Respublikasi qonunchiligi bilan tartibga solinadi. Barcha nizolar muzokaralar yo‘li bilan, imkonsiz bo‘lganda esa kompaniya joylashgan joydagi sud orqali hal etiladi." },
+        { title: "Kontaktlar", body: "Huquqiy savollar bo‘yicha murojaat qiling:", items: ["Telefon: 78-333-33-31", "Manzil: Toshkent, Maxtumquli 100116, O‘zbekiston Respublikasi"] },
+      ],
     },
   },
   proj: {

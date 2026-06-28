@@ -215,6 +215,7 @@ export default {
     contacts: {
       heroTitle: 'Our contacts',
       addressLabel: 'Property address',
+      imageAlt: 'Renaissance Development residential complex',
     },
     about: {
       companyP1: 'Renaissance Development is a full-cycle company: a developer with over 7 years of experience and a portfolio of 12+ completed and ongoing projects. Over the years the company has built a reputation as a reliable partner, creating modern residential and commercial buildings of high reliability, quality and architectural elegance.',
@@ -225,6 +226,8 @@ export default {
       teamTitle: 'Professionals who build Tashkent',
       teamDesc: 'Renaissance Development is a full-cycle company: a developer with over 7 years of experience and a portfolio of 12+ completed and ongoing projects.',
       ceoRole: 'Founder & CEO',
+      ceoName: 'Jabborov Rufat Uzakovich',
+      ceoPhotoAlt: 'Jabborov Rufat Uzakovich — founder & CEO',
     },
     b2b: {
       heroSubtitle: 'An in-house production base — from concrete and aerated blocks to liquid travertine, ventilation, aluminium profiles and machinery. Five directions that keep quality and timelines under our control.',
@@ -256,6 +259,33 @@ export default {
       formSent: 'Request sent',
       formSentText: 'Thank you! Our production specialist will contact you shortly.',
       contactsDesc: 'We’ll answer any questions about products, volumes and supply terms. We work seven days a week.',
+    },
+    privacy: {
+      heroTag: "Legal",
+      heroTitle: "Privacy Policy",
+      heroDesc: "This policy describes how Renaissance Development collects, uses and protects your personal data when you interact with our services.",
+      sections: [
+        { title: "Information collection", body: "We collect the personal data that you voluntarily provide when contacting us or filling in forms on the site:", items: ["Personal data: name, phone number, email address.", "Request data: parameters of the property of interest, budget, preferences.", "Technical data: IP address and browser information, collected via cookies to improve the site."] },
+        { title: "Use of information", body: "Your data is used to process enquiries and improve our services:", items: ["To respond to your enquiries and property requests.", "To provide information about projects, instalment plans and purchase terms.", "To improve the quality of service and the website."] },
+        { title: "Data protection", body: "We apply technical and organisational measures to protect your personal data from unauthorised access, alteration or disclosure. Your data is stored on secure servers." },
+        { title: "Transfer to third parties", body: "Renaissance Development does not sell your data to third parties. Information may be shared only with trusted partners directly involved in fulfilling your request, and only to the extent necessary for this." },
+        { title: "Your rights", body: "In accordance with applicable law, you have the right to:", items: ["Access the data we hold about you.", "Request correction or deletion of your information.", "Withdraw your consent to data processing at any time."] },
+        { title: "Contacts", body: "For questions related to the processing of personal data, please contact:", items: ["Phone: 78-333-33-31", "Address: Tashkent, Makhtumkuli 100116, Republic of Uzbekistan"] },
+      ],
+    },
+    terms: {
+      heroTag: "Legal",
+      heroTitle: "Terms & Conditions",
+      heroDesc: "Your agreement with Renaissance Development. Please review the terms of use of our services.",
+      sections: [
+        { title: "Acceptance of terms", body: "By using our website and requesting our services, you agree to comply with these terms and all applicable laws and regulations." },
+        { title: "Intellectual property", body: "All architectural designs, plans, drawings and digital materials on this platform are protected by intellectual property law. Use, reproduction or distribution of materials without the written permission of Renaissance Development is prohibited." },
+        { title: "Enquiry and payment", body: "The following terms apply when submitting a request or entering into a contract:", items: ["Preliminary terms: information about cost and timelines is preliminary and may change following negotiations.", "Payment: you agree to pay the applicable amounts in accordance with the terms of the concluded contract."] },
+        { title: "Client responsibilities", body: "As a client, you are responsible for providing accurate data about your requirements. You must keep the documents provided to you confidential and not disclose them to third parties without the company’s consent." },
+        { title: "Limitation of liability", body: "Renaissance Development is not liable for indirect or incidental damages arising from the use of the site or our services. All site materials are provided “as is” without any warranties." },
+        { title: "Governing law", body: "These terms are governed by the law of the Republic of Uzbekistan. All disputes are resolved through negotiation and, where this is not possible, in court at the company’s location." },
+        { title: "Contacts", body: "For legal questions, please contact:", items: ["Phone: 78-333-33-31", "Address: Tashkent, Makhtumkuli 100116, Republic of Uzbekistan"] },
+      ],
     },
   },
   proj: {
