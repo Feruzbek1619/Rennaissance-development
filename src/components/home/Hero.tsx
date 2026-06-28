@@ -84,7 +84,7 @@ export default function Hero() {
                   </div>
                   <div data-reveal style={{ transitionDelay: '120ms' }} className="flex w-[460px] 2xl:w-[574px] shrink min-w-0 flex-col gap-6 2xl:gap-7 pb-1">
                     <p className="font-body text-[19px] 2xl:text-[20px] leading-[1.6] text-primary">{slide.desc}</p>
-                    <div className="flex flex-wrap items-center gap-4">
+                    <div className="flex flex-col items-stretch gap-4 2xl:flex-row 2xl:items-center">
                       {slide.slug ? (
                         <Button to={`/projects/${slide.slug}`} variant="accent" size="lg" className="!px-8">
                           Выбрать квартиру
