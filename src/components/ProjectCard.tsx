@@ -3,6 +3,7 @@ import type { Project } from '@/data/projects'
 import { useLeadModalOptional } from '@/components/LeadModal'
 import { SkeletonImage } from '@/components/SkeletonImage'
 import { useTranslation } from '@/i18n'
+import { useLocalizedProject } from '@/i18n/projectsI18n'
 
 function AreaIcon() {
   return (
@@ -29,8 +30,9 @@ function ArrowUpRightIcon({ light = false }: { light?: boolean }) {
   )
 }
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project: rawProject }: { project: Project }) {
   const { t } = useTranslation()
+  const project = useLocalizedProject(rawProject) as Project
   const badgeClass = project.comingSoon ? 'bg-primary' : project.status === 'active' ? 'bg-[#BE9C68]' : 'bg-[#8C8275]'
   const badgeLabel = project.comingSoon ? t('common.badgeSoon') : project.status === 'active' ? t('common.badgeOnSale') : t('common.badgeSold')
   const modal = useLeadModalOptional()

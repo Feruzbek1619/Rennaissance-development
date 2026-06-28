@@ -10,9 +10,12 @@ import { ChevronLeft, ChevronRight } from '@/components/icons'
 import { useLeadModalOptional } from '@/components/LeadModal'
 import { CountUp } from '@/components/CountUp'
 import { SkeletonImage } from '@/components/SkeletonImage'
-import { projects } from '@/data/projects'
+import { projects, type Project } from '@/data/projects'
+import { useTranslation } from '@/i18n'
+import { useLocalizedProject, useLocalizedProjects } from '@/i18n/projectsI18n'
 
 /* ─── SHARQ AVENUE — dedicated page, built on the BOTANIKA LUXURY template ─── */
+const SLUG = 'sharq-avenue'
 
 const SUPPORT_TEL = 'tel:+998783333331'
 
@@ -25,78 +28,43 @@ const gallery = [
   '/assets/sharq-4.webp',
 ]
 
-/* ПРЕИМУЩЕСТВА mosaic — image + text card per cell */
-const advantages = [
-  {
-    image: '/assets/sharq-1.webp',
-    title: 'Закрытая охраняемая территория',
-    desc: 'Контролируемый въезд и видеонаблюдение по всей территории — спокойная и безопасная среда для всей семьи.',
-  },
-  {
-    image: '/assets/sharq-4.webp',
-    title: '547 квартир',
-    desc: '547 функционально спланированных квартир с рациональной геометрией и продуманным использованием пространства.',
-  },
-  {
-    image: '/assets/sharq-5.webp',
-    title: '12 блоков по 5 этажей',
-    desc: 'Малоэтажная застройка комфорт-класса: 12 жилых блоков высотой 5 этажей на территории в 3 гектара.',
-  },
-  {
-    image: '/assets/sharq-6.webp',
-    title: 'Подземный паркинг',
-    desc: 'Просторный подземный паркинг — автомобили под домом, а двор остаётся свободным и безопасным.',
-  },
-  {
-    image: '/assets/sharq-2.webp',
-    title: 'Благоустроенные дворы',
-    desc: 'Озеленённые дворы, прогулочные аллеи и зоны отдыха для семейного досуга на свежем воздухе.',
-  },
-  {
-    image: '/assets/sharq-3.webp',
-    title: 'Современный образ жизни',
-    desc: 'Приватная и уютная среда, где гармонично сочетаются безопасность, комфорт и качество жизни.',
-  },
+/* ПРЕИМУЩЕСТВА mosaic — page images (card text comes from i18n proj.pages) */
+const advantageImages = [
+  '/assets/sharq-1.webp',
+  '/assets/sharq-4.webp',
+  '/assets/sharq-5.webp',
+  '/assets/sharq-6.webp',
+  '/assets/sharq-2.webp',
+  '/assets/sharq-3.webp',
 ]
 
-/* Navy specs card — exact values */
-const specRows: { label: string; value: string; icon: JSX.Element }[] = [
-  { label: 'Название', value: 'SHARQ AVENUE', icon: <HomeIcon /> },
-  { label: 'Адрес', value: 'Ташкент, Мирзо-Улугбекский район', icon: <PinIcon /> },
-  { label: 'Застройка', value: '3 гектара', icon: <RulerIcon /> },
-  { label: 'Блоки', value: '12 блоков · 5 этажей', icon: <LayersIcon /> },
-  { label: 'Квартир', value: '547', icon: <LayersIcon /> },
-  { label: 'Жилая площадь', value: '58 728 м²', icon: <RulerIcon /> },
-  { label: 'Коммерция', value: '3 237 м²', icon: <TagIcon /> },
-  { label: 'Паркинг', value: '1 900 м²', icon: <CarIcon /> },
-]
+/* Navy specs card icons (labels/values from i18n) */
+const specIcons = [<HomeIcon />, <PinIcon />, <RulerIcon />, <LayersIcon />, <LayersIcon />, <RulerIcon />, <TagIcon />, <CarIcon />]
 
-/* Interior features panel */
-const interior = [
-  { label: 'Скоростные лифты', Icon: ElevatorIcon },
-  { label: 'Витражные окна', Icon: WindowIcon },
-  { label: 'Металлические двери', Icon: DoorIcon },
-  { label: 'Мягкое освещение', Icon: LightIcon },
-]
+/* Interior features panel icons (labels from i18n) */
+const interiorIcons = [ElevatorIcon, WindowIcon, DoorIcon, LightIcon]
 
-const stats = [
-  { value: '12+', label: 'проектов реализовано и строится' },
-  { value: '5+', label: 'проектов в продаже сейчас' },
-  { value: '2021', label: 'собственный бетонный завод' },
-  { value: '2019', label: 'год основания' },
-]
+const statValues = ['12+', '5+', '2021', '2019']
 
 export default function SharqAvenue() {
+  const { t } = useTranslation()
   const modal = useLeadModalOptional()
   const navigate = useNavigate()
 
-  const project = projects.find((p) => p.slug === 'sharq-avenue')!
+  const project = useLocalizedProject(projects.find((p) => p.slug === SLUG)) as Project
   const details = project.details!
-  const others = projects.filter((p) => p.slug !== 'sharq-avenue').slice(0, 3)
+  const others = useLocalizedProjects(projects.filter((p) => p.slug !== SLUG).slice(0, 3))
 
-  const idx = projects.findIndex((p) => p.slug === 'sharq-avenue')
+  const idx = projects.findIndex((p) => p.slug === SLUG)
   const prevProject = projects[(idx - 1 + projects.length) % projects.length]
   const nextProject = projects[(idx + 1) % projects.length]
+
+  const stats = [
+    { value: statValues[0], label: t('home.stats.l1') },
+    { value: statValues[1], label: t('home.stats.l2') },
+    { value: statValues[2], label: t('home.stats.l3') },
+    { value: statValues[3], label: t('home.stats.l4') },
+  ]
 
   const [active, setActive] = useState(0)
   const galleryPrev = () => setActive((c) => (c - 1 + gallery.length) % gallery.length)
@@ -106,21 +74,21 @@ export default function SharqAvenue() {
     <main>
       {/* ── 1. Hero ─────────────────────────────────────── */}
       <section className="relative h-[720px] 2xl:h-[888px] overflow-hidden bg-primary">
-        <img loading="eager" decoding="async" src="/assets/sharq-4.webp" alt="SHARQ AVENUE" className="absolute inset-0 size-full object-cover" />
+        <img loading="eager" decoding="async" src="/assets/sharq-4.webp" alt={project.title} className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/80" />
 
         <div className="absolute inset-x-[60px] 2xl:inset-x-[116px] top-[42%] flex items-center justify-between z-10">
-          <button type="button" aria-label={`Проект ${prevProject.title}`} onClick={() => navigate(`/projects/${prevProject.slug}`)} className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
+          <button type="button" aria-label={`${t('proj.projectNav')} ${prevProject.title}`} onClick={() => navigate(`/projects/${prevProject.slug}`)} className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
             <ChevronLeft className="size-6" />
           </button>
-          <button type="button" aria-label={`Проект ${nextProject.title}`} onClick={() => navigate(`/projects/${nextProject.slug}`)} className="flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
+          <button type="button" aria-label={`${t('proj.projectNav')} ${nextProject.title}`} onClick={() => navigate(`/projects/${nextProject.slug}`)} className="flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
             <ChevronRight className="size-6" />
           </button>
         </div>
 
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-[28px] px-6 text-center">
           <h1 className="font-heading text-[56px] 2xl:text-[80px] font-bold uppercase leading-none text-bg-subtle">
-            SHARQ AVENUE
+            {project.title}
           </h1>
           <div className="flex items-center gap-4">
             <button
@@ -128,13 +96,13 @@ export default function SharqAvenue() {
               onClick={() => modal?.openLead()}
               className="flex w-[268px] items-center justify-between gap-3 rounded-[90px] bg-primary px-[21px] py-[16px] font-body text-[20px] font-medium leading-[1.6] text-white hover:bg-[#2F3A45] transition-colors"
             >
-              Заказать звонок
+              {t('common.orderCall')}
               <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
                 <ArrowIcon />
               </span>
             </button>
             <a href={SUPPORT_TEL} className="flex items-center justify-center rounded-[90px] bg-accent px-[32px] py-[16px] font-body text-[20px] font-medium leading-[1.6] text-bg-subtle hover:bg-[#A2814E] transition-colors">
-              Позвонить
+              {t('proj.callNow')}
             </a>
           </div>
         </div>
@@ -145,7 +113,7 @@ export default function SharqAvenue() {
         <Container>
           <div data-reveal className="flex flex-col gap-8">
             <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
-              О проекте SHARQ AVENUE
+              {t('proj.aboutPrefix')} {project.title}
             </h2>
             <div className="flex flex-col gap-6 max-w-[1730px]">
               {details.description.map((para, i) => (
@@ -160,13 +128,13 @@ export default function SharqAvenue() {
       <section className="bg-white py-[24px]">
         <Container>
           <div data-reveal="scale" className="relative h-[460px] 2xl:h-[700px] w-full overflow-hidden rounded-[5px] bg-black">
-            <SkeletonImage key={gallery[active]} src={gallery[active]} alt="SHARQ AVENUE — общий вид" className="absolute inset-0" imgClassName="size-full object-cover" />
+            <SkeletonImage key={gallery[active]} src={gallery[active]} alt={`${project.title} — ${t('proj.generalView')}`} className="absolute inset-0" imgClassName="size-full object-cover" />
             <div className="absolute inset-x-0 bottom-0 h-[224px] bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
             <div className="absolute bottom-[40px] right-[40px] flex items-center gap-3">
-              <button type="button" onClick={galleryPrev} aria-label="Предыдущее фото" className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
+              <button type="button" onClick={galleryPrev} aria-label={t('proj.photoPrev')} className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
                 <ChevronLeft className="size-6" />
               </button>
-              <button type="button" onClick={galleryNext} aria-label="Следующее фото" className="flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
+              <button type="button" onClick={galleryNext} aria-label={t('proj.photoNext')} className="flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
                 <ChevronRight className="size-6" />
               </button>
             </div>
@@ -174,7 +142,7 @@ export default function SharqAvenue() {
 
           <div className="mt-[17px] grid gap-[12px] 2xl:gap-[17px]" style={{ gridTemplateColumns: `repeat(${gallery.length}, minmax(0, 1fr))` }}>
             {gallery.map((src, i) => (
-              <button key={i} type="button" onClick={() => setActive(i)} aria-label={`Фото ${i + 1}`} aria-current={i === active} className={`h-[100px] 2xl:h-[140px] overflow-hidden rounded-[4px] bg-white transition-all duration-300 ${i === active ? 'ring-2 ring-accent ring-offset-2' : 'opacity-70 hover:opacity-100'}`}>
+              <button key={i} type="button" onClick={() => setActive(i)} aria-label={`${t('proj.photo')} ${i + 1}`} aria-current={i === active} className={`h-[100px] 2xl:h-[140px] overflow-hidden rounded-[4px] bg-white transition-all duration-300 ${i === active ? 'ring-2 ring-accent ring-offset-2' : 'opacity-70 hover:opacity-100'}`}>
                 <img loading="lazy" decoding="async" src={src} alt="" className="size-full object-cover" />
               </button>
             ))}
@@ -187,17 +155,17 @@ export default function SharqAvenue() {
         <Container>
           <div className="relative">
             <div className="h-[460px] 2xl:h-[560px] w-full overflow-hidden rounded-[5px]">
-              <iframe title="SHARQ AVENUE на карте" src="https://yandex.ru/map-widget/v1/?ll=69.30%2C41.34&z=14&pt=69.30%2C41.34%2Cpm2rdm" className="size-full border-0" loading="lazy" />
+              <iframe title={`${project.title} ${t('proj.onMap')}`} src="https://yandex.ru/map-widget/v1/?ll=69.30%2C41.34&z=14&pt=69.30%2C41.34%2Cpm2rdm" className="size-full border-0" loading="lazy" />
             </div>
             <div data-reveal className="relative z-10 mx-auto -mt-[96px] w-[92%] max-w-[1312px] rounded-[5px] border border-primary/30 bg-primary px-[40px] py-[44px] 2xl:px-[80px] 2xl:py-[56px] shadow-[0_30px_60px_rgba(10,15,40,0.25)]">
               <div className="grid grid-cols-1 gap-x-[60px] gap-y-[24px] md:grid-cols-2">
-                {specRows.map((row) => (
-                  <div key={row.label} className="flex items-start gap-3">
+                {specIcons.map((icon, i) => (
+                  <div key={i} className="flex items-start gap-3">
                     <div className="flex w-[190px] shrink-0 items-center gap-2 pt-[2px] text-white">
-                      <span className="text-white/90 shrink-0">{row.icon}</span>
-                      <span className="font-body text-[16px] leading-[1.6] text-white whitespace-nowrap">{row.label}:</span>
+                      <span className="text-white/90 shrink-0">{icon}</span>
+                      <span className="font-body text-[16px] leading-[1.6] text-white whitespace-nowrap">{t(`proj.pages.${SLUG}.specs.${i}.label`)}:</span>
                     </div>
-                    <span className="font-vela text-[18px] 2xl:text-[20px] font-medium leading-[1.4] text-[#afbaca]">{row.value}</span>
+                    <span className="font-vela text-[18px] 2xl:text-[20px] font-medium leading-[1.4] text-[#afbaca]">{t(`proj.pages.${SLUG}.specs.${i}.value`)}</span>
                   </div>
                 ))}
               </div>
@@ -211,27 +179,25 @@ export default function SharqAvenue() {
         <Container>
           <div data-reveal className="flex flex-col gap-10 2xl:flex-row 2xl:items-start 2xl:justify-between">
             <div className="flex flex-col gap-5">
-              <SectionTag>Почему Sharq Avenue</SectionTag>
+              <SectionTag>{t(`proj.pages.${SLUG}.whyTag`)}</SectionTag>
               <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
-                Преимущества
+                {t('proj.advantagesTitle')}
               </h2>
             </div>
             <p className="font-vela text-[18px] 2xl:text-[20px] leading-[1.3] text-ink 2xl:w-[735px] 2xl:shrink-0">
-              «Sharq Avenue» — закрытый комплекс комфорт-класса на 3 гектарах: 12 малоэтажных блоков, 547 квартир,
-              подземный паркинг и благоустроенные дворы. Приватная и уютная среда, где безопасность сочетается с
-              современным комфортом.
+              {t(`proj.pages.${SLUG}.intro`)}
             </p>
           </div>
 
           <div className="mt-[40px] grid grid-cols-2 gap-[20px] 2xl:gap-[32px]">
-            {advantages.map((a, i) => (
-              <div key={a.title} data-reveal style={{ transitionDelay: `${(i % 2) * 90}ms` }} className="group flex flex-col overflow-hidden">
+            {advantageImages.map((image, i) => (
+              <div key={image} data-reveal style={{ transitionDelay: `${(i % 2) * 90}ms` }} className="group flex flex-col overflow-hidden">
                 <div className="h-[340px] 2xl:h-[498px] w-full overflow-hidden">
-                  <img loading="lazy" decoding="async" src={a.image} alt={a.title} className="size-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-105" />
+                  <img loading="lazy" decoding="async" src={image} alt={t(`proj.pages.${SLUG}.advantages.${i}.title`)} className="size-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-105" />
                 </div>
                 <div className="flex min-h-[200px] 2xl:h-[241px] items-center gap-6 border border-[#c4c4c4] bg-[#f8f8f8] px-[32px] py-[28px] 2xl:px-[48px]">
-                  <h3 className="font-heading text-[24px] 2xl:text-[31px] font-bold leading-[1.4] text-black w-[230px] 2xl:w-[275px] shrink-0">{a.title}</h3>
-                  <p className="font-vela text-[19px] 2xl:text-[24px] leading-[1.3] text-secondary">{a.desc}</p>
+                  <h3 className="font-heading text-[24px] 2xl:text-[31px] font-bold leading-[1.4] text-black w-[230px] 2xl:w-[275px] shrink-0">{t(`proj.pages.${SLUG}.advantages.${i}.title`)}</h3>
+                  <p className="font-vela text-[19px] 2xl:text-[24px] leading-[1.3] text-secondary">{t(`proj.pages.${SLUG}.advantages.${i}.desc`)}</p>
                 </div>
               </div>
             ))}
@@ -247,19 +213,17 @@ export default function SharqAvenue() {
               <img loading="lazy" decoding="async" src="/assets/sharq-2.webp" alt="" className="size-full object-cover" />
             </div>
             <div className="flex-1 bg-primary p-[60px] flex flex-col gap-8">
-              <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-bg-subtle">ПРЕИМУЩЕСТВА</h2>
+              <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-bg-subtle">{t('proj.advantagesTitle')}</h2>
               <p className="font-body text-[20px] leading-[1.6] text-white/80">
-                Это просторные помещения с огромными витражными окнами. В каждом из них предусмотрен лифт для подъёма
-                на территорию приватного двора, в полном соответствии с концепцией безбарьерной среды. А для получения
-                посылок будут установлены постаматы.
+                {t(`proj.pages.${SLUG}.interiorText`)}
               </p>
               <div className="grid grid-cols-2 gap-4 mt-4">
-                {interior.map(({ label, Icon }) => (
-                  <div key={label} className="flex items-center gap-3 bg-white/10 rounded-[5px] px-4 py-3">
+                {interiorIcons.map((Icon, i) => (
+                  <div key={i} className="flex items-center gap-3 bg-white/10 rounded-[5px] px-4 py-3">
                     <div className="size-9 rounded-full bg-white/15 flex items-center justify-center shrink-0 text-white">
                       <Icon />
                     </div>
-                    <span className="font-vela text-[16px] font-medium text-white">{label}</span>
+                    <span className="font-vela text-[16px] font-medium text-white">{t(`proj.pages.${SLUG}.interior.${i}`)}</span>
                   </div>
                 ))}
               </div>
@@ -272,8 +236,8 @@ export default function SharqAvenue() {
       <section className="bg-bg-subtle py-[64px]">
         <Container>
           <p data-reveal className="text-center font-heading text-[34px] 2xl:text-[45px] font-semibold leading-[1.4] mb-[40px] 2xl:mb-[64px]">
-            <span className="text-black">Мы не просто строим здания — мы создаём надёжное пространство для будущих поколений. </span>
-            <span className="text-accent">Renaissance Development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.</span>
+            <span className="text-black">{t('home.stats.s1')}</span>
+            <span className="text-accent">{t('home.stats.s2')}</span>
           </p>
           <div className="flex items-stretch gap-4">
             {stats.map((s, i) => (
@@ -290,7 +254,7 @@ export default function SharqAvenue() {
       <section className="bg-white py-[100px]">
         <Container>
           <h2 data-reveal className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink mb-[60px]">
-            Места поблизости
+            {t('proj.nearbyTitle')}
           </h2>
           <div className="grid grid-cols-3 gap-4">
             {details.nearby.map((place, i) => (
@@ -310,7 +274,7 @@ export default function SharqAvenue() {
       <section className="bg-bg-subtle py-[100px]">
         <Container>
           <h2 data-reveal className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink mb-[40px]">
-            Смотрите также наши другие проекты
+            {t('proj.alsoTitle')}
           </h2>
           <div className="flex gap-8 overflow-hidden">
             {others.map((p, i) => (
@@ -319,7 +283,7 @@ export default function SharqAvenue() {
                   <div className="relative h-[320px] rounded-[5px] overflow-hidden">
                     <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="size-full object-cover transition-transform hover:scale-105" />
                     <div className="absolute top-4 left-4 bg-[#BE9C68] px-6 py-2 rounded-full">
-                      <span className="font-vela text-[16px] font-medium text-white">{p.status === 'active' ? 'Идут продажи' : 'Распродан'}</span>
+                      <span className="font-vela text-[16px] font-medium text-white">{p.status === 'active' ? t('common.badgeOnSale') : t('proj.statusSold')}</span>
                     </div>
                   </div>
                   <div className="mt-4 flex flex-col gap-4">
@@ -330,25 +294,25 @@ export default function SharqAvenue() {
                     <div className="flex flex-col gap-2">
                       <div className="h-px bg-border" />
                       <div className="flex items-center justify-between gap-4">
-                        <span className="font-vela text-[14px] text-secondary">Площадь</span>
+                        <span className="font-vela text-[14px] text-secondary">{t('common.area')}</span>
                         <span className="font-vela text-[14px] font-semibold text-secondary text-right">{p.area}</span>
                       </div>
                       <div className="h-px bg-border" />
                       <div className="flex items-center justify-between gap-4">
-                        <span className="font-vela text-[14px] text-secondary shrink-0">Локация</span>
+                        <span className="font-vela text-[14px] text-secondary shrink-0">{t('common.location')}</span>
                         <span className="font-vela text-[14px] font-semibold text-secondary text-right">{p.location}</span>
                       </div>
                       <div className="h-px bg-border" />
                     </div>
                     <div className="flex gap-3 flex-wrap">
                       <span className="flex-auto flex items-center justify-between bg-primary text-white rounded-full px-5 py-3">
-                        <span className="font-vela text-[16px] font-medium whitespace-nowrap">Выбрать квартиру</span>
+                        <span className="font-vela text-[16px] font-medium whitespace-nowrap">{t('common.chooseApartment')}</span>
                         <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
                           <ArrowIcon />
                         </span>
                       </span>
                       <span className="flex-auto flex items-center justify-between border border-primary text-primary rounded-full px-5 py-3">
-                        <span className="font-vela text-[16px] font-medium whitespace-nowrap">Заказать звонок</span>
+                        <span className="font-vela text-[16px] font-medium whitespace-nowrap">{t('common.orderCall')}</span>
                         <span className="flex size-7 items-center justify-center rounded-full bg-primary shrink-0">
                           <ArrowIcon light />
                         </span>

@@ -9,6 +9,8 @@ import { projects } from '@/data/projects'
 import { useLeadModalOptional } from '@/components/LeadModal'
 import { CountUp } from '@/components/CountUp'
 import { SkeletonImage } from '@/components/SkeletonImage'
+import { useTranslation } from '@/i18n'
+import { useLocalizedProject, useLocalizedProjects } from '@/i18n/projectsI18n'
 
 /* ─── Icon helpers ───────────────────────────────────── */
 function ArrowIcon({ light = false }: { light?: boolean }) {
@@ -181,15 +183,16 @@ function InfoChip({ icon, label, sub }: { icon: React.ReactNode; label: string; 
 }
 
 export default function ProjectDetails() {
+  const { t } = useTranslation()
   const { slug } = useParams<{ slug: string }>()
   const modal = useLeadModalOptional()
   const [active, setActive] = useState(0)
-  const project = projects.find((p) => p.slug === slug)
+  const project = useLocalizedProject(projects.find((p) => p.slug === slug))
+  const others = useLocalizedProjects(projects.filter((p) => p.slug !== slug && !p.cardOnly).slice(0, 3))
 
   // Business centers are card-only (no detail page) — send them back to catalog.
   if (!project || project.cardOnly) return <Navigate to="/projects" replace />
 
-  const others = projects.filter((p) => p.slug !== slug && !p.cardOnly).slice(0, 3)
   const details = project.details
   const gallery = project.gallery ?? [project.image]
   const galleryPrev = () => setActive((c) => (c - 1 + gallery.length) % gallery.length)
@@ -227,24 +230,24 @@ export default function ProjectDetails() {
                     <InfoChip
                       icon={<MapPinIcon />}
                       label={details?.specs.address ?? project.location}
-                      sub="Адрес объекта"
+                      sub={t('proj.detail.heroAddressSub')}
                     />
                     <InfoChip
                       icon={<ResizeIcon />}
                       label={details?.specs.area ?? project.area}
-                      sub="Площадь квартир"
+                      sub={t('proj.detail.heroAreaSub')}
                     />
                   </div>
                   <div className="flex gap-[10px]">
                     <InfoChip
                       icon={<CraneIcon />}
                       label={project.category}
-                      sub="Тип объекта"
+                      sub={t('proj.detail.heroTypeSub')}
                     />
                     <InfoChip
                       icon={<SparklesIcon />}
-                      label={details?.advantage ?? 'Современный комплекс'}
-                      sub="Преимущество"
+                      label={details?.advantage ?? t('proj.modernComplex')}
+                      sub={t('proj.detail.heroAdvantageSub')}
                     />
                   </div>
                 </div>
@@ -256,13 +259,13 @@ export default function ProjectDetails() {
                     onClick={() => modal?.openLead()}
                     className="flex items-center gap-3 bg-primary text-white rounded-full px-[21px] py-[16px] font-vela text-[20px] font-medium leading-[1.6] hover:bg-[#2F3A45] transition-colors"
                   >
-                    Заказать звонок
+                    {t('common.orderCall')}
                     <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
                       <ArrowIcon />
                     </span>
                   </button>
                   <Button variant="accent" size="lg" href="tel:+998783333331">
-                    Позвонить
+                    {t('proj.callNow')}
                   </Button>
                 </div>
               </div>
@@ -277,7 +280,7 @@ export default function ProjectDetails() {
           <Container>
             <div className="flex flex-col gap-8 max-w-[1390px]">
               <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
-                О проекте {project.title}
+                {t('proj.aboutPrefix')} {project.title}
               </h2>
               <div className="flex flex-col gap-6">
                 {details.description.map((para, i) => (
@@ -300,10 +303,10 @@ export default function ProjectDetails() {
               <>
                 <div className="absolute inset-x-0 bottom-0 h-[200px] bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
                 <div className="absolute bottom-[32px] right-[32px] flex items-center gap-3">
-                  <button type="button" onClick={galleryPrev} aria-label="Предыдущее фото" className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
+                  <button type="button" onClick={galleryPrev} aria-label={t('proj.photoPrev')} className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
                     <ChevronLeft className="size-6" />
                   </button>
-                  <button type="button" onClick={galleryNext} aria-label="Следующее фото" className="flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
+                  <button type="button" onClick={galleryNext} aria-label={t('proj.photoNext')} className="flex size-[53px] items-center justify-center rounded-full bg-white/40 text-white hover:bg-white/60 transition-colors">
                     <ChevronRight className="size-6" />
                   </button>
                 </div>
@@ -321,7 +324,7 @@ export default function ProjectDetails() {
                   key={src}
                   type="button"
                   onClick={() => setActive(i)}
-                  aria-label={`Фото ${i + 1}`}
+                  aria-label={`${t('proj.photo')} ${i + 1}`}
                   aria-current={i === active}
                   className={`h-[90px] 2xl:h-[120px] overflow-hidden rounded-[4px] bg-white transition-all duration-300 ${
                     i === active ? 'ring-2 ring-accent ring-offset-2' : 'opacity-70 hover:opacity-100'
@@ -339,15 +342,15 @@ export default function ProjectDetails() {
       <section className="bg-bg-subtle py-[60px]">
         <Container>
           <p className="text-center font-heading text-[45px] font-semibold leading-[1.4] mb-10">
-            <span className="text-ink">Мы не просто строим здания — мы создаём надёжное пространство для будущих поколений. </span>
-            <span className="text-accent">Renaissance Development — застройщик полного цикла. С 2019 года — 12 проектов в Ташкенте.</span>
+            <span className="text-ink">{t('home.stats.s1')}</span>
+            <span className="text-accent">{t('home.stats.s2')}</span>
           </p>
           <div className="flex items-center gap-4">
             {[
-              { value: '12+', label: 'проектов реализовано и строится' },
-              { value: '5+', label: 'проектов в продаже сейчас' },
-              { value: '2021', label: 'собственный бетонный завод' },
-              { value: '2019', label: 'год основания' },
+              { value: '12+', label: t('home.stats.l1') },
+              { value: '5+', label: t('home.stats.l2') },
+              { value: '2021', label: t('home.stats.l3') },
+              { value: '2019', label: t('home.stats.l4') },
             ].map((s) => (
               <div key={s.label} className="stat-card flex flex-1 flex-col items-start gap-2 px-8 py-6">
                 <p className="font-heading text-[75px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>
@@ -369,11 +372,9 @@ export default function ProjectDetails() {
                   <img loading="lazy" decoding="async" src={project.image} alt="" className="size-full object-cover" />
                 </div>
                 <div>
-                  <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink mb-4">ПРЕИМУЩЕСТВА</h2>
+                  <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink mb-4">{t('proj.advantagesTitle')}</h2>
                   <p className="font-body text-[20px] leading-[1.6] text-ink">
-                    Во дворе слышно детей, а не машины: автомобили уходят под землю,
-                    поэтому остаётся закрытый двор с детской площадкой и зелёными
-                    деревьями. Видеонаблюдение работает круглосуточно по всей территории.
+                    {t('proj.detail.outdoorText')}
                   </p>
                 </div>
               </div>
@@ -405,25 +406,17 @@ export default function ProjectDetails() {
             </div>
             {/* Right: dark panel */}
             <div className="flex-1 bg-primary p-[60px] flex flex-col gap-8">
-              <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-bg-subtle">ПРЕИМУЩЕСТВА</h2>
+              <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-bg-subtle">{t('proj.advantagesTitle')}</h2>
               <p className="font-body text-[20px] leading-[1.6] text-white/80">
-                Это просторные помещения с огромными витражными окнами. В каждом из
-                них предусмотрен лифт для подъема на территорию приватного двора
-                нажатием ступеней, в полном соответствии с концепцией безбарьерной среды.
-                А для получения посылок будут установлены постаматы.
+                {t('proj.detail.interiorText')}
               </p>
               <div className="grid grid-cols-2 gap-4 mt-4">
-                {[
-                  { label: 'Скоростные лифты', Icon: ElevatorIcon },
-                  { label: 'Витражные окна', Icon: WindowIcon },
-                  { label: 'Металлические двери', Icon: DoorIcon },
-                  { label: 'Мягкое освещение', Icon: LightIcon },
-                ].map(({ label, Icon }) => (
-                  <div key={label} className="flex items-center gap-3 bg-white/10 rounded-[5px] px-4 py-3">
+                {[ElevatorIcon, WindowIcon, DoorIcon, LightIcon].map((Icon, i) => (
+                  <div key={i} className="flex items-center gap-3 bg-white/10 rounded-[5px] px-4 py-3">
                     <div className="size-9 rounded-full bg-white/15 flex items-center justify-center shrink-0 text-white">
                       <Icon />
                     </div>
-                    <span className="font-vela text-[16px] font-medium text-white">{label}</span>
+                    <span className="font-vela text-[16px] font-medium text-white">{t(`proj.detail.interior.${i}`)}</span>
                   </div>
                 ))}
               </div>
@@ -437,7 +430,7 @@ export default function ProjectDetails() {
         <section className="bg-primary py-[80px]">
           <Container>
             <h2 className="font-heading text-[49px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-bg-subtle text-center mb-[48px]">
-              План этажа на отм.
+              {t('proj.floorPlansTitle')}
             </h2>
             <div className="grid grid-cols-3 gap-6">
               {details.floorPlans.map((plan) => (
@@ -460,7 +453,7 @@ export default function ProjectDetails() {
                     onClick={() => modal?.openLead()}
                     className="mt-auto h-[56px] w-full bg-accent rounded-full flex items-center justify-center gap-3 font-body font-medium text-[20px] text-white hover:bg-[#A2814E] transition-colors"
                   >
-                    Заказать звонок
+                    {t('common.orderCall')}
                     <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
                       <ArrowIcon />
                     </span>
@@ -479,16 +472,16 @@ export default function ProjectDetails() {
             <div className="flex items-stretch gap-8">
               {/* Left: spec table */}
               <div className="w-[500px] shrink-0">
-                <h2 className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink mb-6">Адрес объекта</h2>
+                <h2 className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink mb-6">{t('proj.detail.addressTitle')}</h2>
                 <div className="flex flex-col">
                   {[
-                    { label: 'Название', value: project.title },
-                    { label: 'Адрес', value: details.specs.address },
-                    { label: 'Площадь', value: details.specs.area },
-                    { label: 'Этажность', value: details.specs.floors },
-                    { label: 'Категория', value: details.specs.category },
-                    { label: 'Год', value: details.specs.year },
-                    { label: 'Статус', value: details.specs.status },
+                    { label: t('proj.spec.name'), value: project.title },
+                    { label: t('proj.spec.address'), value: details.specs.address },
+                    { label: t('proj.spec.area'), value: details.specs.area },
+                    { label: t('proj.spec.floors'), value: details.specs.floors },
+                    { label: t('proj.spec.category'), value: details.specs.category },
+                    { label: t('proj.spec.year'), value: details.specs.year },
+                    { label: t('proj.spec.status'), value: details.specs.status },
                   ].map((row) => (
                     <div key={row.label} className="flex items-center gap-8 py-[14px] border-b border-border last:border-0">
                       <span className="font-vela text-[16px] text-secondary w-[130px] shrink-0">{row.label}</span>
@@ -501,7 +494,7 @@ export default function ProjectDetails() {
               {/* Right: live map */}
               <div className="flex-1 rounded-[5px] overflow-hidden min-h-[400px]">
                 <iframe
-                  title={`${project.title} на карте`}
+                  title={`${project.title} ${t('proj.onMap')}`}
                   src={mapSrc}
                   className="size-full border-0"
                   loading="lazy"
@@ -517,7 +510,7 @@ export default function ProjectDetails() {
         <section className="bg-white py-[100px]">
           <Container>
             <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink mb-[60px]">
-              Места поблизости
+              {t('proj.nearbyTitle')}
             </h2>
             <div className="grid grid-cols-3 gap-4">
               {details.nearby.map((place) => (
@@ -538,7 +531,7 @@ export default function ProjectDetails() {
       <section className="bg-bg-subtle py-[100px]">
         <Container>
           <h2 className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink mb-[40px]">
-            Смотрите также наши другие проекты
+            {t('proj.alsoTitle')}
           </h2>
           <div className="flex gap-8 overflow-hidden">
             {others.map((p) => (
@@ -547,7 +540,7 @@ export default function ProjectDetails() {
                   <div className="relative h-[320px] rounded-[5px] overflow-hidden">
                     <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="size-full object-cover transition-transform hover:scale-105" />
                     <div className="absolute top-4 left-4 bg-[#BE9C68] px-6 py-2 rounded-full">
-                      <span className="font-vela text-[16px] font-medium text-white">Идут продажи</span>
+                      <span className="font-vela text-[16px] font-medium text-white">{p.status === 'active' ? t('common.badgeOnSale') : t('proj.statusSold')}</span>
                     </div>
                   </div>
                   <div className="mt-4 flex flex-col gap-4">
@@ -559,12 +552,12 @@ export default function ProjectDetails() {
                     <div className="flex flex-col gap-2">
                       <div className="h-px bg-border" />
                       <div className="flex items-center justify-between gap-4">
-                        <span className="font-vela text-[14px] text-secondary">Площадь</span>
+                        <span className="font-vela text-[14px] text-secondary">{t('common.area')}</span>
                         <span className="font-vela text-[14px] font-semibold text-secondary text-right">{p.area}</span>
                       </div>
                       <div className="h-px bg-border" />
                       <div className="flex items-center justify-between gap-4">
-                        <span className="font-vela text-[14px] text-secondary shrink-0">Локация</span>
+                        <span className="font-vela text-[14px] text-secondary shrink-0">{t('common.location')}</span>
                         <span className="font-vela text-[14px] font-semibold text-secondary text-right">{p.location}</span>
                       </div>
                       <div className="h-px bg-border" />
@@ -572,13 +565,13 @@ export default function ProjectDetails() {
                     {/* two actions */}
                     <div className="flex gap-3 flex-wrap">
                       <span className="flex-auto flex items-center justify-between bg-primary text-white rounded-full px-5 py-3">
-                        <span className="font-vela text-[16px] font-medium whitespace-nowrap">Выбрать квартиру</span>
+                        <span className="font-vela text-[16px] font-medium whitespace-nowrap">{t('common.chooseApartment')}</span>
                         <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
                           <ArrowIcon />
                         </span>
                       </span>
                       <span className="flex-auto flex items-center justify-between border border-primary text-primary rounded-full px-5 py-3">
-                        <span className="font-vela text-[16px] font-medium whitespace-nowrap">Заказать звонок</span>
+                        <span className="font-vela text-[16px] font-medium whitespace-nowrap">{t('common.orderCall')}</span>
                         <span className="flex size-7 items-center justify-center rounded-full bg-primary shrink-0">
                           <ArrowIcon light />
                         </span>
@@ -601,9 +594,9 @@ export default function ProjectDetails() {
           <div className="flex flex-col gap-5 mb-8">
             <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
-              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">Завод</span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('home.production.tag')}</span>
             </div>
-            <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">ПРОИЗВОДСТВО</h2>
+            <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">{t('home.production.title')}</h2>
           </div>
           <div className="flex items-center gap-[60px]">
             <div className="w-[698px] h-[420px] shrink-0 rounded-[5px] overflow-hidden">
@@ -612,12 +605,11 @@ export default function ProjectDetails() {
             <div className="flex flex-col gap-6 flex-1">
               <h3 className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink">UNIVERSAL TEMIR BETON</h3>
               <p className="font-body text-[20px] leading-[1.6] text-secondary">
-                С 2021 года завод обеспечивает все объекты компании товарным бетоном, железобетонными изделиями,
-                газоблоком, вентиляционными шахтами и термо-рамами. Строим из своих материалов — контролируем качество на каждом этапе.
+                {t('proj.detail.productionText')}
               </p>
               <div className="flex items-center gap-4">
-                <Button to="/b2b" variant="primary" size="lg">Подробнее</Button>
-                <Button to="/quote" variant="outlineLight" size="lg">Оставить заявку</Button>
+                <Button to="/b2b" variant="primary" size="lg">{t('common.learnMore')}</Button>
+                <Button to="/quote" variant="outlineLight" size="lg">{t('common.leaveRequest')}</Button>
               </div>
             </div>
           </div>
