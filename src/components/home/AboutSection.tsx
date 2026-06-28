@@ -10,10 +10,10 @@ export default function AboutSection() {
   return (
     <section className="bg-white pt-[65px] pb-[100px]">
       <Container>
-        <div className="flex items-start gap-[69px] max-lg:flex-col max-lg:gap-10">
+        <div className="flex items-start gap-[69px] max-lg:!flex-col max-lg:gap-10">
 
           {/* Left column */}
-          <div data-reveal="left" className="w-[782px] max-lg:w-full shrink-0 flex flex-col">
+          <div data-reveal="left" className="w-[782px] max-lg:!w-full shrink-0 flex flex-col">
             {/* Header: badge + heading */}
             <div className="flex flex-col gap-5">
               <div className="flex w-fit items-center gap-3 self-start">

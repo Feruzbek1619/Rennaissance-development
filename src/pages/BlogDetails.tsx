@@ -55,7 +55,7 @@ export default function BlogDetails() {
       {/* ── Article body + sidebar ────────────────────────── */}
       <section className="bg-white py-[100px]">
         <Container>
-          <div className="flex items-start gap-[80px]">
+          <div className="flex items-start gap-[80px] max-lg:!flex-col max-lg:gap-8">
 
             {/* Main content */}
             <article className="flex-1 min-w-0">
@@ -93,7 +93,7 @@ export default function BlogDetails() {
             </article>
 
             {/* Sidebar */}
-            <aside className="w-[360px] shrink-0 flex flex-col gap-8 sticky top-8">
+            <aside className="w-[360px] max-lg:!w-full shrink-0 flex flex-col gap-8 lg:sticky top-8">
 
               {/* About company card */}
               <div className="bg-primary p-[36px] flex flex-col gap-5">
@@ -170,7 +170,7 @@ export default function BlogDetails() {
                 {t('pages.blog.allArticles')} →
               </Link>
             </div>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 max-md:!grid-cols-1 gap-6">
               {related.map((p) => (
                 <Link
                   key={p.slug}

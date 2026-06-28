@@ -31,7 +31,7 @@ export default function StatsSection() {
             <span className="text-muted-text">{t('home.stats.s2')}</span>
           </p>
 
-          <div className="flex items-center gap-4 max-md:flex-col">
+          <div className="flex items-center gap-4 max-md:!flex-col">
             {stats.map((s, i) => (
               <div key={s.labelKey} data-reveal style={{ transitionDelay: `${i * 90}ms` }} className="stat-card card-lift flex flex-1 items-center justify-center px-[26px] py-6">
                 <div className="flex flex-col items-center gap-2">
@@ -42,7 +42,7 @@ export default function StatsSection() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4 max-md:flex-col">
+          <div className="flex items-center gap-4 max-md:!flex-col">
             {images.map((img, i) => (
               <Link
                 key={img.src}

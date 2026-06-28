@@ -212,7 +212,7 @@ export default function CompletedProject() {
             <h2 data-reveal className="mb-[40px] font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink">
               {t('proj.otherCompleted')}
             </h2>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-3 max-md:!grid-cols-1 gap-8">
               {others.map((p, i) => (
                 <Link key={p.slug} to={`/completed/${p.slug}`} data-reveal style={{ transitionDelay: `${i * 100}ms` }} className="group flex flex-col gap-4">
                   <div className="relative h-[320px] overflow-hidden rounded-[8px]">

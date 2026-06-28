@@ -16,11 +16,11 @@ export default function Process() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="bg-primary py-[100px]">
         <Container>
-          <div className="flex items-end justify-between gap-8">
+          <div className="flex items-end justify-between gap-8 max-lg:!flex-col max-lg:items-start max-lg:gap-6">
             <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[800px]">
               {t('pages.process.heroTitle')}
             </h1>
-            <div className="flex flex-col gap-5 items-end w-[460px] shrink-0">
+            <div className="flex flex-col gap-5 items-end w-[460px] max-lg:!w-full max-lg:items-start shrink-0">
               <p className="font-body text-[18px] leading-[1.7] text-white/70 text-right">
                 {t('pages.process.heroDesc')}
               </p>
@@ -43,10 +43,10 @@ export default function Process() {
             {stages.map((stage, idx) => (
               <div
                 key={stage.num}
-                className={`flex items-start gap-[80px] ${idx % 2 === 1 ? 'flex-row-reverse' : ''}`}
+                className={`flex items-start gap-[80px] max-lg:!flex-col max-lg:gap-8 ${idx % 2 === 1 ? 'flex-row-reverse' : ''}`}
               >
                 {/* Image side */}
-                <div className="w-[620px] shrink-0 overflow-hidden">
+                <div className="w-[620px] max-lg:!w-full shrink-0 overflow-hidden">
                   <img loading="lazy" decoding="async"
                     src="/assets/about-company.webp"
                     alt={stage.title}
@@ -70,7 +70,7 @@ export default function Process() {
                   <p className="font-body text-[18px] leading-[1.7] text-secondary">
                     {stage.body}
                   </p>
-                  <ul className="grid grid-cols-2 gap-3 mt-2">
+                  <ul className="grid grid-cols-2 max-sm:!grid-cols-1 gap-3 mt-2">
                     {stage.details.map((d) => (
                       <li key={d} className="flex items-start gap-3 font-body text-[16px] leading-[1.6] text-ink">
                         <span className="text-accent mt-[3px] shrink-0">•</span>
@@ -89,7 +89,7 @@ export default function Process() {
       {/* ── Stats strip ──────────────────────────────────── */}
       <section className="bg-primary py-[80px]">
         <Container>
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-4 max-md:!grid-cols-2 gap-6">
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col gap-2">
                 <span className="font-heading text-[61px] max-md:text-[34px] font-bold leading-none text-white">

@@ -26,8 +26,8 @@ export default function ProjectsSection() {
         <div className="flex flex-col gap-12 items-center">
 
           {/* Header */}
-          <div data-reveal="left" className="flex items-center justify-between w-full max-lg:flex-col max-lg:items-start max-lg:gap-6">
-            <div className="flex flex-col gap-5 w-[764px] max-lg:w-full">
+          <div data-reveal="left" className="flex items-center justify-between w-full max-lg:!flex-col max-lg:items-start max-lg:gap-6">
+            <div className="flex flex-col gap-5 w-[764px] max-lg:!w-full">
               <div className="flex w-fit items-center gap-3 self-start">
                 <span className="rule-gold shrink-0" aria-hidden></span>
                 <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('home.projects.tag')}</span>
@@ -36,7 +36,7 @@ export default function ProjectsSection() {
                 {t('home.projects.title')}
               </h2>
             </div>
-            <div className="flex flex-col gap-6 items-end w-[698px] max-lg:w-full max-lg:items-start">
+            <div className="flex flex-col gap-6 items-end w-[698px] max-lg:!w-full max-lg:items-start">
               <p className="font-body text-[20px] leading-[1.6] text-ink text-right">
                 {t('home.projects.desc')}
               </p>
@@ -61,7 +61,7 @@ export default function ProjectsSection() {
           </div>
 
           {/* Project grid */}
-          <div className="grid grid-cols-2 max-md:grid-cols-1 gap-x-16 max-lg:gap-x-8 gap-y-[80px] max-lg:gap-y-12 w-full">
+          <div className="grid grid-cols-2 max-md:!grid-cols-1 gap-x-16 max-lg:gap-x-8 gap-y-[80px] max-lg:gap-y-12 w-full">
             {list.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}

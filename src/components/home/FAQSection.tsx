@@ -14,10 +14,10 @@ export default function FAQSection() {
   return (
     <section className="bg-white py-[100px]">
       <Container>
-        <div className="flex items-start gap-[105px] max-lg:flex-col max-lg:gap-10">
+        <div className="flex items-start gap-[105px] max-lg:!flex-col max-lg:gap-10">
 
           {/* Left column */}
-          <div data-reveal="left" className="flex flex-col gap-5 w-[665px] max-lg:w-full shrink-0">
+          <div data-reveal="left" className="flex flex-col gap-5 w-[665px] max-lg:!w-full shrink-0">
             <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
               <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('home.faq.tag')}</span>

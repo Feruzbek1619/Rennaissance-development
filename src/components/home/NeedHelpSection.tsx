@@ -23,10 +23,10 @@ export default function NeedHelpSection() {
   return (
     <section className="bg-primary py-[80px]">
       <Container>
-        <div className="flex items-center justify-between gap-8 max-lg:flex-col max-lg:items-start">
+        <div className="flex items-center justify-between gap-8 max-lg:!flex-col max-lg:items-start">
 
           {/* Left: heading + description + phone */}
-          <div data-reveal="left" className="flex flex-col gap-[45px] w-[723px] max-lg:w-full shrink min-w-0">
+          <div data-reveal="left" className="flex flex-col gap-[45px] w-[723px] max-lg:!w-full shrink min-w-0">
             <div className="flex flex-col text-bg-subtle">
               <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3]">
                 {t('home.needhelp.title')}
@@ -49,7 +49,7 @@ export default function NeedHelpSection() {
           </div>
 
           {/* Right: form */}
-          <div data-reveal="right" className="flex flex-col gap-5 w-[515px] max-lg:w-full shrink-0 min-w-0">
+          <div data-reveal="right" className="flex flex-col gap-5 w-[515px] max-lg:!w-full shrink-0 min-w-0">
 
             {/* Name field */}
             <div className="flex flex-col gap-[10px]">

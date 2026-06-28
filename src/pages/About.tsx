@@ -41,21 +41,21 @@ export default function About() {
       {/* ── 3. Team section ────────────────────────────────── */}
       <section className="bg-white py-[100px]">
         <Container>
-          <div className="flex items-end justify-between gap-16 mb-[60px]">
+          <div className="flex items-end justify-between gap-16 mb-[60px] max-lg:!flex-col max-lg:items-start max-lg:gap-8">
             <div className="flex flex-col gap-5 max-w-[820px]">
               <SectionTag>{t('pages.about.teamTag')}</SectionTag>
               <h2 className="font-heading text-[44px] max-md:text-[27px] 2xl:text-[56px] font-bold uppercase leading-[1.15] text-ink">
                 {t('pages.about.teamTitle')}
               </h2>
             </div>
-            <p className="font-body text-[20px] leading-[1.6] text-secondary w-[520px] shrink-0">
+            <p className="font-body text-[20px] leading-[1.6] text-secondary w-[520px] max-lg:!w-full shrink-0">
               {t('pages.about.teamDesc')}
             </p>
           </div>
 
           {/* CEO photo — centered, with name card overlapping bottom (Figma 7801:3087) */}
           <div className="flex justify-center">
-            <div className="relative w-[406px]">
+            <div className="relative w-[406px] max-sm:!w-full">
               <div className="h-[495px] overflow-hidden">
                 <img loading="lazy" decoding="async"
                   src="/assets/director-photo.webp"

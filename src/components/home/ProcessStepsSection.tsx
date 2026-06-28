@@ -12,8 +12,8 @@ export default function ProcessStepsSection() {
         <div className="flex flex-col gap-[64px]">
 
           {/* Header */}
-          <div data-reveal="left" className="flex items-start justify-between max-lg:flex-col max-lg:gap-6">
-            <div className="flex flex-col gap-5 w-[850px] max-lg:w-full shrink min-w-0">
+          <div data-reveal="left" className="flex items-start justify-between max-lg:!flex-col max-lg:gap-6">
+            <div className="flex flex-col gap-5 w-[850px] max-lg:!w-full shrink min-w-0">
               <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
               <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('home.process.tag')}</span>
@@ -22,16 +22,16 @@ export default function ProcessStepsSection() {
                 {t('home.process.title')}
               </h2>
             </div>
-            <p className="font-body text-[24px] leading-[1.6] text-secondary w-[692px] max-lg:w-full shrink min-w-0 pt-2">
+            <p className="font-body text-[24px] leading-[1.6] text-secondary w-[692px] max-lg:!w-full shrink min-w-0 pt-2">
               {t('home.process.desc')}
             </p>
           </div>
 
           {/* Content */}
-          <div data-reveal="right" className="flex items-center gap-[72px] max-lg:flex-col max-lg:gap-8">
+          <div data-reveal="right" className="flex items-center gap-[72px] max-lg:!flex-col max-lg:gap-8">
 
             {/* Left: photo */}
-            <div className="w-[698px] h-[678px] max-lg:w-full max-lg:h-[340px] shrink-0 rounded-[5px] overflow-hidden">
+            <div className="w-[698px] h-[678px] max-lg:!w-full max-lg:!h-[340px] shrink-0 rounded-[5px] overflow-hidden">
               <img loading="lazy" decoding="async"
                 src="/assets/home-process.webp"
                 alt="Renaissance Development"
@@ -43,8 +43,8 @@ export default function ProcessStepsSection() {
             <div className="flex-1 min-w-0 flex flex-col">
               {Array.from({ length: COUNT }, (_, i) => (
                 <div key={i}>
-                  <div className="py-[40px] flex items-center gap-[53px] max-md:flex-col max-md:items-start max-md:gap-5">
-                    <div className="flex flex-col gap-[26px] shrink-0 w-[256px] max-md:w-full">
+                  <div className="py-[40px] flex items-center gap-[53px] max-md:!flex-col max-md:items-start max-md:gap-5">
+                    <div className="flex flex-col gap-[26px] shrink-0 w-[256px] max-md:!w-full">
                       <span className="font-body text-[22px] leading-[1.4] text-ink">{t(`home.process.steps.${i}.num`)}</span>
                       <p className="font-heading font-bold text-[34px] leading-[1.4] text-ink">
                         {t(`home.process.steps.${i}.title`)}

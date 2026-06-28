@@ -170,12 +170,12 @@ function LightIcon() {
 /* ─── InfoChip ───────────────────────────────────────── */
 function InfoChip({ icon, label, sub }: { icon: React.ReactNode; label: string; sub: string }) {
   return (
-    <div className="bg-white/25 border border-white/10 rounded-[5px] h-[72px] w-[379px] flex items-center px-[15px] gap-3 shadow-[0_20px_40px_rgba(19,22,18,0.1)]">
+    <div className="bg-white/25 border border-white/10 rounded-[5px] h-[72px] w-[379px] max-md:!w-full flex items-center px-[15px] gap-3 shadow-[0_20px_40px_rgba(19,22,18,0.1)]">
       <div className="flex items-center justify-center size-10 rounded-[8px] bg-white/10 border border-white/10 shrink-0 text-white">
         {icon}
       </div>
       <div className="flex flex-col gap-[2px]">
-        <p className="font-vela text-[16px] font-bold text-white leading-none whitespace-nowrap">{label}</p>
+        <p className="font-vela text-[16px] font-bold text-white leading-none whitespace-nowrap max-md:whitespace-normal">{label}</p>
         <p className="font-vela text-[12px] font-medium text-white/60 leading-none">{sub}</p>
       </div>
     </div>
@@ -223,10 +223,10 @@ export default function ProjectDetails() {
               </p>
 
               {/* Chips (left) + CTAs (right) — per Figma 94:4873 */}
-              <div className="flex items-end justify-between gap-8 flex-wrap">
+              <div className="flex items-end justify-between gap-8 max-lg:!flex-col max-lg:items-start max-lg:gap-6 flex-wrap">
                 {/* Info chips: 2 rows × 2 cols */}
                 <div className="flex flex-col gap-[10px]">
-                  <div className="flex gap-[10px]">
+                  <div className="flex gap-[10px] max-md:!flex-col">
                     <InfoChip
                       icon={<MapPinIcon />}
                       label={details?.specs.address ?? project.location}
@@ -238,7 +238,7 @@ export default function ProjectDetails() {
                       sub={t('proj.detail.heroAreaSub')}
                     />
                   </div>
-                  <div className="flex gap-[10px]">
+                  <div className="flex gap-[10px] max-md:!flex-col">
                     <InfoChip
                       icon={<CraneIcon />}
                       label={project.category}
@@ -365,9 +365,9 @@ export default function ProjectDetails() {
       {details && (
         <section className="bg-white py-[100px]">
           <Container>
-            <div className="flex items-start gap-16">
+            <div className="flex items-start gap-16 max-lg:!flex-col max-lg:gap-10">
               {/* Left: photo + text */}
-              <div className="flex flex-col gap-8 w-[698px] shrink-0">
+              <div className="flex flex-col gap-8 w-[698px] max-lg:!w-full shrink-0">
                 <div className="h-[450px] rounded-[5px] overflow-hidden">
                   <img loading="lazy" decoding="async" src={project.image} alt="" className="size-full object-cover" />
                 </div>
@@ -380,7 +380,7 @@ export default function ProjectDetails() {
               </div>
 
               {/* Right: 2×3 feature grid */}
-              <div className="flex-1 min-w-0 grid grid-cols-2 gap-4">
+              <div className="flex-1 min-w-0 grid grid-cols-2 max-sm:!grid-cols-1 gap-4">
                 {details.features.map((feature, i) => (
                   <div key={i} className="flex flex-col gap-3 p-6 border border-border rounded-[5px]">
                     <div className="flex size-10 items-center justify-center rounded-full bg-bg-subtle text-ink">
@@ -399,9 +399,9 @@ export default function ProjectDetails() {
       {/* ── 6. Features (interior) ───────────────────────── */}
       <section className="bg-white py-[100px]">
         <Container>
-          <div className="flex items-stretch gap-0 rounded-[5px] overflow-hidden">
+          <div className="flex items-stretch gap-0 rounded-[5px] overflow-hidden max-lg:!flex-col">
             {/* Left: photo */}
-            <div className="w-[698px] shrink-0 min-h-[500px]">
+            <div className="w-[698px] max-lg:!w-full shrink-0 min-h-[500px] max-lg:!min-h-0 max-lg:!h-[280px]">
               <img loading="lazy" decoding="async" src={project.image} alt="" className="size-full object-cover" />
             </div>
             {/* Right: dark panel */}
@@ -410,7 +410,7 @@ export default function ProjectDetails() {
               <p className="font-body text-[20px] leading-[1.6] text-white/80">
                 {t('proj.detail.interiorText')}
               </p>
-              <div className="grid grid-cols-2 gap-4 mt-4">
+              <div className="grid grid-cols-2 max-sm:!grid-cols-1 gap-4 mt-4">
                 {[ElevatorIcon, WindowIcon, DoorIcon, LightIcon].map((Icon, i) => (
                   <div key={i} className="flex items-center gap-3 bg-white/10 rounded-[5px] px-4 py-3">
                     <div className="size-9 rounded-full bg-white/15 flex items-center justify-center shrink-0 text-white">
@@ -432,7 +432,7 @@ export default function ProjectDetails() {
             <h2 className="font-heading text-[49px] max-md:text-[30px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-bg-subtle text-center mb-[48px]">
               {t('proj.floorPlansTitle')}
             </h2>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 max-md:!grid-cols-1 gap-6">
               {details.floorPlans.map((plan) => (
                 <div key={plan.title} className="bg-white rounded-[5px] shadow-[0_27px_40px_rgba(10,15,40,0.12)] p-[24px] flex flex-col gap-5">
                   <div className="h-[300px] overflow-hidden flex items-center justify-center">
@@ -469,9 +469,9 @@ export default function ProjectDetails() {
       {details && (
         <section className="bg-bg-subtle py-[80px]">
           <Container>
-            <div className="flex items-stretch gap-8">
+            <div className="flex items-stretch gap-8 max-lg:!flex-col">
               {/* Left: spec table */}
-              <div className="w-[500px] shrink-0">
+              <div className="w-[500px] max-lg:!w-full shrink-0">
                 <h2 className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink mb-6">{t('proj.detail.addressTitle')}</h2>
                 <div className="flex flex-col">
                   {[
@@ -512,7 +512,7 @@ export default function ProjectDetails() {
             <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink mb-[60px]">
               {t('proj.nearbyTitle')}
             </h2>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 max-md:!grid-cols-1 gap-4">
               {details.nearby.map((place) => (
                 <div key={place.title} className="flex flex-col gap-4 p-8 bg-bg-subtle rounded-[5px]">
                   <div className="text-ink">
@@ -533,9 +533,9 @@ export default function ProjectDetails() {
           <h2 className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink mb-[40px]">
             {t('proj.alsoTitle')}
           </h2>
-          <div className="flex gap-8 overflow-hidden">
+          <div className="flex gap-8 overflow-hidden max-lg:overflow-x-auto">
             {others.map((p) => (
-              <div key={p.slug} className="w-[520px] shrink-0">
+              <div key={p.slug} className="w-[520px] max-sm:!w-[300px] shrink-0">
                 <Link to={`/projects/${p.slug}`}>
                   <div className="relative h-[320px] rounded-[5px] overflow-hidden">
                     <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="size-full object-cover transition-transform hover:scale-105" />
@@ -598,8 +598,8 @@ export default function ProjectDetails() {
             </div>
             <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink">{t('home.production.title')}</h2>
           </div>
-          <div className="flex items-center gap-[60px]">
-            <div className="w-[698px] h-[420px] shrink-0 rounded-[5px] overflow-hidden">
+          <div className="flex items-center gap-[60px] max-lg:!flex-col max-lg:gap-8">
+            <div className="w-[698px] h-[420px] max-lg:!w-full max-lg:!h-[240px] shrink-0 rounded-[5px] overflow-hidden">
               <img loading="lazy" decoding="async" src="/assets/production.webp" alt="Universal Temir Beton" className="size-full object-cover" />
             </div>
             <div className="flex flex-col gap-6 flex-1">

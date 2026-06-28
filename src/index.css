@@ -44,6 +44,13 @@
     body { min-width: 1280px; }
   }
 
+  /* Mobile/tablet (<1024): clip residual horizontal overflow (off-screen carousel
+     slides, sub-pixel rounding) so there's no dead rightward scroll. Inner
+     overflow-x-auto scrollers (e.g. related-project rails) keep their own scroll. */
+  @media (max-width: 1023px) {
+    html, body { overflow-x: clip; }
+  }
+
   h1,
   h2,
   h3,

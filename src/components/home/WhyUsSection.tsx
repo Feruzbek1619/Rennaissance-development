@@ -30,7 +30,7 @@ export default function WhyUsSection() {
               shows ONLY the video; the IG header (top) and the likes / "View more"
               / comments footer (bottom) fall outside the tile and are clipped. */}
           <div className="flex flex-col gap-10 w-full">
-            <div className="grid grid-cols-5 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-4 w-full">
+            <div className="grid grid-cols-5 max-lg:!grid-cols-2 max-sm:!grid-cols-1 gap-4 w-full">
               {reels.map((id, i) => (
                 <div
                   key={id}

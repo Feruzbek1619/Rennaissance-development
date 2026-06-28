@@ -72,7 +72,7 @@ export default function Hero() {
   const next = () => setCurrent((c) => (c + 1) % slides.length)
 
   return (
-    <section className="bg-bg overflow-hidden h-[calc(100vh_-_151px)] min-h-[600px] max-lg:h-auto max-lg:min-h-0">
+    <section className="bg-bg overflow-hidden h-[calc(100vh_-_151px)] min-h-[600px] max-lg:h-auto max-lg:!min-h-0">
       <Container className="h-full">
         <div className="overflow-hidden h-full">
           <div
@@ -82,8 +82,8 @@ export default function Hero() {
             {slides.map((slide, i) => (
               <div key={slide.id} className="w-full shrink-0 h-full flex flex-col gap-5 2xl:gap-7 py-4 2xl:py-5 max-lg:py-6">
                 {/* Title row — eyebrow + serif name (left), description + CTAs (right) */}
-                <div className="flex w-full items-end justify-between gap-10 shrink-0 max-lg:flex-col max-lg:items-start max-lg:gap-5">
-                  <div className="flex shrink-0 flex-col gap-3 max-lg:w-full">
+                <div className="flex w-full items-end justify-between gap-10 shrink-0 max-lg:!flex-col max-lg:items-start max-lg:gap-5">
+                  <div className="flex shrink-0 flex-col gap-3 max-lg:!w-full">
                     <div data-reveal className="flex items-center gap-3">
                       <span className="rule-gold shrink-0" aria-hidden />
                       <span className="font-body text-[13px] 2xl:text-[14px] font-semibold uppercase tracking-[0.22em] text-accent-dark">
@@ -94,7 +94,7 @@ export default function Hero() {
                       {slide.titleKey ? t(slide.titleKey) : slide.title}
                     </h1>
                   </div>
-                  <div data-reveal style={{ transitionDelay: '120ms' }} className="flex w-[460px] 2xl:w-[574px] shrink min-w-0 flex-col gap-6 2xl:gap-7 pb-1 max-lg:w-full max-lg:gap-4">
+                  <div data-reveal style={{ transitionDelay: '120ms' }} className="flex w-[460px] 2xl:w-[574px] shrink min-w-0 flex-col gap-6 2xl:gap-7 pb-1 max-lg:!w-full max-lg:gap-4">
                     <p className="font-body text-[19px] 2xl:text-[20px] leading-[1.6] text-primary">{t(slide.descKey)}</p>
                     <div className="flex flex-col items-stretch gap-4 2xl:flex-row 2xl:items-center">
                       {slide.slug ? (
@@ -115,7 +115,7 @@ export default function Hero() {
 
                 {/* Photo (skeleton until loaded) — fills the rest so title + photo
                     always fit one screen. Slide counter + arrows bottom-right. */}
-                <div data-reveal="scale" className="relative flex-1 min-h-0 w-full overflow-hidden rounded-[8px] max-lg:flex-none max-lg:h-[340px] max-sm:h-[240px]">
+                <div data-reveal="scale" className="relative flex-1 min-h-0 w-full overflow-hidden rounded-[8px] max-lg:!flex-none max-lg:!h-[340px] max-sm:!h-[240px]">
                   <SkeletonImage
                     eager={i === 0}
                     src={slide.image}

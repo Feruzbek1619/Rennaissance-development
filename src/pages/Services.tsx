@@ -42,12 +42,12 @@ function ServiceAccordion() {
           </button>
 
           {open === i && (
-            <div className="pb-[40px] pl-[88px] flex items-start gap-10">
+            <div className="pb-[40px] pl-[88px] max-md:pl-0 flex items-start gap-10 max-lg:!flex-col max-lg:gap-6">
               <div className="flex flex-col gap-6 flex-1">
                 <p className="font-body text-[18px] leading-[1.7] text-secondary">
                   {s.longDescription}
                 </p>
-                <ul className="grid grid-cols-2 gap-3">
+                <ul className="grid grid-cols-2 max-sm:!grid-cols-1 gap-3">
                   {s.features.map((f) => (
                     <li key={f} className="flex items-start gap-3 font-body text-[16px] leading-[1.6] text-ink">
                       <span className="text-accent mt-[3px] shrink-0">•</span>
@@ -62,7 +62,7 @@ function ServiceAccordion() {
                   {t('common.learnMore')} →
                 </Link>
               </div>
-              <div className="w-[360px] shrink-0 aspect-[4/3] overflow-hidden">
+              <div className="w-[360px] max-lg:!w-full shrink-0 aspect-[4/3] overflow-hidden">
                 <img loading="lazy" decoding="async" src={s.image} alt={s.title} className="w-full h-full object-cover" />
               </div>
             </div>
@@ -84,11 +84,11 @@ export default function Services() {
       <section className="bg-primary py-[100px]">
         <Container>
           <div className="flex flex-col gap-10">
-            <div className="flex items-end justify-between gap-8">
+            <div className="flex items-end justify-between gap-8 max-lg:!flex-col max-lg:items-start max-lg:gap-6">
               <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[900px]">
                 {t('pages.services.heroTitle')}
               </h1>
-              <div className="flex flex-col gap-5 items-end w-[460px] shrink-0">
+              <div className="flex flex-col gap-5 items-end w-[460px] max-lg:!w-full max-lg:items-start shrink-0">
                 <p className="font-body text-[18px] leading-[1.7] text-white/70 text-right">
                   {t('pages.services.heroDesc')}
                 </p>
@@ -108,7 +108,7 @@ export default function Services() {
       <section className="bg-white py-[100px]">
         <Container>
           <div className="flex flex-col gap-[60px]">
-            <div className="flex items-end justify-between gap-8">
+            <div className="flex items-end justify-between gap-8 max-lg:!flex-col max-lg:items-start max-lg:gap-6">
               <div className="flex flex-col gap-4">
                 <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
@@ -149,7 +149,7 @@ export default function Services() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 max-md:!grid-cols-1 gap-6">
               {steps.map((step) => (
                 <div key={step.num} className="bg-white p-[40px] flex flex-col gap-5">
                   <span className="font-heading text-[61px] max-md:text-[34px] font-bold leading-none text-accent/20">

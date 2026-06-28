@@ -38,7 +38,7 @@ export default function ServiceDetails() {
                 <span className="font-body text-body-sm text-white/60">{service.category}</span>
               </div>
             </div>
-            <div className="flex items-end justify-between gap-8">
+            <div className="flex items-end justify-between gap-8 max-lg:!flex-col max-lg:items-start max-lg:gap-6">
               <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[780px]">
                 {service.title}
               </h1>
@@ -53,7 +53,7 @@ export default function ServiceDetails() {
       {/* ── Stats row ────────────────────────────────────── */}
       <section className="bg-ink py-[60px]">
         <Container>
-          <div className="grid grid-cols-4 gap-0 divide-x divide-white/10">
+          <div className="grid grid-cols-4 max-md:!grid-cols-2 gap-0 divide-x divide-white/10">
             {service.stats.map((s) => (
               <div key={s.label} className="flex flex-col gap-2 px-8 first:pl-0 last:pr-0">
                 <span className="font-heading text-[49px] max-md:text-[30px] font-bold leading-none text-white">
@@ -71,7 +71,7 @@ export default function ServiceDetails() {
       {/* ── Description + features ───────────────────────── */}
       <section className="bg-white py-[100px]">
         <Container>
-          <div className="flex items-start gap-[80px]">
+          <div className="flex items-start gap-[80px] max-lg:!flex-col max-lg:gap-8">
             <div className="flex-1 min-w-0">
               <div className="flex flex-col gap-8">
                 <div className="flex w-fit items-center gap-3 self-start">
@@ -102,7 +102,7 @@ export default function ServiceDetails() {
                 </div>
               </div>
             </div>
-            <div className="w-[520px] shrink-0 overflow-hidden">
+            <div className="w-[520px] max-lg:!w-full shrink-0 overflow-hidden">
               <img loading="lazy" decoding="async"
                 src={service.image}
                 alt={service.title}
@@ -126,7 +126,7 @@ export default function ServiceDetails() {
                 {t('pages.services.howTitle')}
               </h2>
             </div>
-            <div className="grid grid-cols-4 gap-6">
+            <div className="grid grid-cols-4 max-md:!grid-cols-2 gap-6">
               {processSteps.map((step) => (
                 <div key={step.num} className="bg-white p-[36px] flex flex-col gap-5">
                   <span className="font-heading text-[49px] max-md:text-[30px] font-bold leading-none text-accent/20">
@@ -162,7 +162,7 @@ export default function ServiceDetails() {
                 {t('catalog.all')} →
               </Link>
             </div>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 max-md:!grid-cols-1 gap-6">
               {relatedProjects.map((p) => (
                 <ProjectCard key={p.slug} project={p} />
               ))}

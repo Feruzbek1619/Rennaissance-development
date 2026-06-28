@@ -94,7 +94,7 @@ export default function Quote() {
       {/* ── Quote form + image (Figma 7802:9343 — inset navy card on white) ── */}
       <section className="bg-white py-[60px]">
         <Container>
-          <div className="bg-primary p-8 2xl:p-[52px] flex items-stretch gap-8 2xl:gap-[56px]">
+          <div className="bg-primary p-8 2xl:p-[52px] flex items-stretch gap-8 2xl:gap-[56px] max-lg:!flex-col">
             {/* Left: form */}
             <div className="flex flex-col gap-[40px] 2xl:gap-[59px] flex-1 min-w-0 2xl:max-w-[730px]">
               <div className="flex flex-col gap-[15px]">
@@ -152,7 +152,7 @@ export default function Quote() {
             </div>
 
             {/* Right: building image (Figma 7802:9364) */}
-            <div className="flex-1 min-w-0 min-h-[600px] overflow-hidden relative">
+            <div className="flex-1 min-w-0 min-h-[600px] max-lg:min-h-[300px] overflow-hidden relative">
               <img loading="lazy" decoding="async"
                 src="/assets/contacts-form.webp"
                 alt={t('pages.contacts.imageAlt')}
@@ -197,22 +197,22 @@ export default function Quote() {
       {/* ── Contact cards ─────────────────────────────────── */}
       <section className="bg-white py-[100px]">
         <Container>
-          <div className="flex items-start justify-between mb-[64px]">
+          <div className="flex items-start justify-between mb-[64px] max-lg:!flex-col max-lg:gap-6">
             <div className="flex flex-col gap-5">
               <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
               <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('nav.contacts')}</span>
             </div>
-              <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink w-[850px]">
+              <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink w-[850px] max-lg:!w-full">
                 {t('home.contact.title')}
               </h2>
             </div>
-            <p className="font-body text-[24px] leading-[1.6] text-ink w-[692px] self-end">
+            <p className="font-body text-[24px] leading-[1.6] text-ink w-[692px] max-lg:!w-full self-end">
               {t('home.contact.desc')}
             </p>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 max-md:!flex-col">
             {contactCards.map((card) => (
               <div key={card.title} className="flex-1 border border-[#c4c4c4] p-10 flex flex-col gap-12">
                 <div className="text-ink">{card.icon}</div>

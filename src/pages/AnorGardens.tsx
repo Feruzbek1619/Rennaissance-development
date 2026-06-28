@@ -77,7 +77,7 @@ export default function AnorGardens() {
         <img loading="eager" decoding="async" src="/assets/anor-1.webp" alt={project.title} className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/80" />
 
-        <div className="absolute inset-x-[60px] 2xl:inset-x-[116px] top-[42%] flex items-center justify-between z-10">
+        <div className="absolute inset-x-[60px] max-sm:inset-x-3 2xl:inset-x-[116px] top-[42%] flex items-center justify-between z-10">
           <button type="button" aria-label={`${t('proj.projectNav')} ${prevProject.title}`} onClick={() => navigate(`/projects/${prevProject.slug}`)} className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
             <ChevronLeft className="size-6" />
           </button>
@@ -189,14 +189,14 @@ export default function AnorGardens() {
             </p>
           </div>
 
-          <div className="mt-[40px] grid grid-cols-2 gap-[20px] 2xl:gap-[32px]">
+          <div className="mt-[40px] grid grid-cols-2 max-sm:!grid-cols-1 gap-[20px] 2xl:gap-[32px]">
             {advantageImages.map((image, i) => (
               <div key={image} data-reveal style={{ transitionDelay: `${(i % 2) * 90}ms` }} className="group flex flex-col overflow-hidden">
                 <div className="h-[340px] 2xl:h-[498px] w-full overflow-hidden">
                   <img loading="lazy" decoding="async" src={image} alt={t(`proj.pages.${SLUG}.advantages.${i}.title`)} className="size-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-105" />
                 </div>
                 <div className="flex min-h-[200px] 2xl:h-[241px] items-center gap-6 border border-[#c4c4c4] bg-[#f8f8f8] px-[32px] py-[28px] 2xl:px-[48px]">
-                  <h3 className="font-heading text-[24px] 2xl:text-[31px] font-bold leading-[1.4] text-black w-[230px] 2xl:w-[275px] shrink-0">{t(`proj.pages.${SLUG}.advantages.${i}.title`)}</h3>
+                  <h3 className="font-heading text-[24px] 2xl:text-[31px] font-bold leading-[1.4] text-black w-[230px] 2xl:w-[275px] max-sm:!w-full shrink-0">{t(`proj.pages.${SLUG}.advantages.${i}.title`)}</h3>
                   <p className="font-vela text-[19px] 2xl:text-[24px] leading-[1.3] text-secondary">{t(`proj.pages.${SLUG}.advantages.${i}.desc`)}</p>
                 </div>
               </div>
@@ -208,8 +208,8 @@ export default function AnorGardens() {
       {/* ── 5.5 Interior features (navy panel) ───────────── */}
       <section className="bg-white pb-[100px]">
         <Container>
-          <div className="flex items-stretch gap-0 rounded-[5px] overflow-hidden">
-            <div className="w-[698px] shrink-0 min-h-[500px]">
+          <div className="flex items-stretch gap-0 rounded-[5px] overflow-hidden max-lg:!flex-col">
+            <div className="w-[698px] max-lg:!w-full shrink-0 min-h-[500px] max-lg:!min-h-0 max-lg:!h-[280px]">
               <img loading="lazy" decoding="async" src="/assets/anor-3.webp" alt="" className="size-full object-cover" />
             </div>
             <div className="flex-1 bg-primary p-[60px] flex flex-col gap-8">
@@ -256,7 +256,7 @@ export default function AnorGardens() {
           <h2 data-reveal className="font-heading text-[44px] max-md:text-[27px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink mb-[60px]">
             {t('proj.nearbyTitle')}
           </h2>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 max-md:!grid-cols-1 gap-4">
             {details.nearby.map((place, i) => (
               <div key={place.title} data-reveal style={{ transitionDelay: `${(i % 3) * 90}ms` }} className="card-lift flex flex-col gap-4 p-8 bg-bg-subtle rounded-[5px]">
                 <div className="text-ink">
@@ -276,9 +276,9 @@ export default function AnorGardens() {
           <h2 data-reveal className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink mb-[40px]">
             {t('proj.alsoTitle')}
           </h2>
-          <div className="flex gap-8 overflow-hidden">
+          <div className="flex gap-8 overflow-hidden max-lg:overflow-x-auto">
             {others.map((p, i) => (
-              <div key={p.slug} data-reveal style={{ transitionDelay: `${i * 100}ms` }} className="w-[520px] shrink-0">
+              <div key={p.slug} data-reveal style={{ transitionDelay: `${i * 100}ms` }} className="w-[520px] max-sm:!w-[300px] shrink-0">
                 <Link to={`/projects/${p.slug}`}>
                   <div className="relative h-[320px] rounded-[5px] overflow-hidden">
                     <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="size-full object-cover transition-transform hover:scale-105" />

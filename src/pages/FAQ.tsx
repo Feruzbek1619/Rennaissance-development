@@ -22,13 +22,13 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between py-[24px] text-left gap-4"
       >
-        <span className="font-heading text-[25px] font-medium leading-[1.4] text-ink w-[700px]">
+        <span className="font-heading text-[25px] font-medium leading-[1.4] text-ink w-[700px] max-lg:!w-full">
           {question}
         </span>
         <PlusIcon open={open} />
       </button>
       {open && (
-        <p className="font-body text-[16px] leading-[1.6] text-secondary pb-[24px] w-[882px]">
+        <p className="font-body text-[16px] leading-[1.6] text-secondary pb-[24px] w-[882px] max-w-full">
           {answer}
         </p>
       )}
@@ -67,9 +67,9 @@ export default function FAQ() {
       {/* ── Need Help (extended form + image) ────────────── */}
       <section className="bg-primary py-[52px]">
         <Container>
-          <div className="flex items-stretch gap-[56px]">
+          <div className="flex items-stretch gap-[56px] max-lg:!flex-col max-lg:gap-10">
             {/* Left: form */}
-            <div className="flex flex-col gap-[27px] w-[730px] shrink-0">
+            <div className="flex flex-col gap-[27px] w-[730px] max-lg:!w-full shrink-0">
               <div className="flex flex-col gap-[15px]">
                 <h2 className="font-heading text-[59px] font-bold uppercase leading-none text-bg-subtle">
                   {t('home.needhelp.title')}
