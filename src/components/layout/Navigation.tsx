@@ -3,6 +3,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { ChevronDown, Phone } from '@/components/icons'
 import { cn } from '@/lib/cn'
+import { useTranslation } from '@/i18n'
 import { projects as allProjects } from '@/data/projects'
 import { completedProjects } from '@/data/completed'
 
@@ -24,18 +25,19 @@ const linkActive = 'bg-accent/[0.12] text-accent-dark font-medium ring-1 ring-in
 const linkIdle = 'text-ink hover:bg-accent/[0.07]'
 
 const simpleLinks = [
-  { label: 'Главная', to: '/' },
-  { label: 'О компании', to: '/about' },
+  { key: 'nav.home', to: '/' },
+  { key: 'nav.about', to: '/about' },
 ] as const
 
 const trailingLinks = [
-  { label: 'Производство', to: '/b2b' },
-  { label: 'Контакты', to: '/contacts' },
+  { key: 'nav.production', to: '/b2b' },
+  { key: 'nav.contacts', to: '/contacts' },
 ] as const
 
 // Main navigation bar (Figma 129:4743).
 export default function Navigation() {
   const { pathname } = useLocation()
+  const { t } = useTranslation()
   const catalogActive = pathname.startsWith('/projects') || pathname.startsWith('/completed')
 
   return (
@@ -55,7 +57,7 @@ export default function Navigation() {
                   end={l.to === '/'}
                   className={({ isActive }) => cn(linkBase, isActive ? linkActive : linkIdle)}
                 >
-                  {l.label}
+                  {t(l.key)}
                 </NavLink>
               </li>
             ))}
@@ -67,12 +69,12 @@ export default function Navigation() {
                 aria-haspopup="menu"
                 className={cn(linkBase, 'gap-2', catalogActive ? linkActive : linkIdle)}
               >
-                Каталог объектов
+                {t('nav.catalog')}
                 <ChevronDown className="size-3 transition-transform duration-200 group-hover:rotate-180" />
               </button>
               <div className="invisible absolute left-0 top-full z-50 pt-3 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                 <div className="max-h-[70vh] w-[280px] overflow-y-auto rounded-xl border border-border bg-white py-2 shadow-xl">
-                  <p className="px-5 pb-1 pt-2 font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-secondary">В продаже</p>
+                  <p className="px-5 pb-1 pt-2 font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-secondary">{t('catalog.onSale')}</p>
                   {activeNav.map((p) => (
                     <NavLink
                       key={p.to}
@@ -82,7 +84,7 @@ export default function Navigation() {
                       {p.label}
                     </NavLink>
                   ))}
-                  <p className="mt-1 border-t border-border px-5 pb-1 pt-3 font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-secondary">Реализованные</p>
+                  <p className="mt-1 border-t border-border px-5 pb-1 pt-3 font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-secondary">{t('catalog.completed')}</p>
                   {completedNav.map((p) => (
                     <NavLink
                       key={p.to}
@@ -96,7 +98,7 @@ export default function Navigation() {
                     to="/projects"
                     className="mt-1 block border-t border-border px-5 pb-1 pt-3 font-body text-body-sm font-medium text-accent transition-colors hover:bg-bg-subtle"
                   >
-                    Все проекты
+                    {t('catalog.all')}
                   </NavLink>
                 </div>
               </div>
@@ -108,7 +110,7 @@ export default function Navigation() {
                   to={l.to}
                   className={({ isActive }) => cn(linkBase, isActive ? linkActive : linkIdle)}
                 >
-                  {l.label}
+                  {t(l.key)}
                 </NavLink>
               </li>
             ))}
@@ -123,7 +125,7 @@ export default function Navigation() {
             </a>
             <span className="hidden 2xl:block h-[27px] w-px bg-border" />
             <Button to="/quote" variant="accent" size="lg">
-              Заказать звонок
+              {t('common.orderCall')}
             </Button>
           </div>
         </div>
