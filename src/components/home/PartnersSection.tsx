@@ -1,4 +1,5 @@
 import { Container } from '@/components/Container'
+import { useTranslation } from '@/i18n'
 
 const logos = [
   { src: '/assets/partner-1.svg', alt: 'Партнёр 1', width: 199 },
@@ -10,6 +11,7 @@ const logos = [
 
 // «Партнёры в архитектурном совершенстве» (Figma 7778:3869)
 export default function PartnersSection() {
+  const { t } = useTranslation()
   return (
     <section className="bg-white py-[100px]">
       <Container>
@@ -20,15 +22,14 @@ export default function PartnersSection() {
             <div className="flex flex-col gap-5 w-[961px] shrink min-w-0">
               <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
-              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">НАШИ КЛИЕНТЫ</span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('home.partners.tag')}</span>
             </div>
               <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
-                Партнеры в архитектурном совершенстве.
+                {t('home.partners.title')}
               </h2>
             </div>
             <p className="font-body text-[20px] leading-[1.6] text-ink w-[666px] shrink min-w-0 pt-2">
-              Наша команда экспертов гарантирует, что каждый проект будет реализован точно в срок,
-              в рамках бюджета и с бескомпромиссным качеством.
+              {t('home.partners.desc')}
             </p>
           </div>
 

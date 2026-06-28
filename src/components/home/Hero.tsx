@@ -4,46 +4,54 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { SkeletonImage } from '@/components/SkeletonImage'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
+import { useTranslation } from '@/i18n'
 
 // Home hero carousel. First slide = company intro; the rest = featured projects.
 // Each slide: gold eyebrow + serif name + description + CTAs, then the photo.
 type Slide = {
   id: string
   title: string
-  eyebrow: string
-  desc: string
+  /** If set, the title is translated (e.g. the "About" slide). */
+  titleKey?: string
+  /** Literal eyebrow (brand name). */
+  eyebrow?: string
+  /** Translated eyebrow. */
+  eyebrowKey?: string
+  /** Translated description. */
+  descKey: string
   image: string
   /** Project slug → "Выбрать квартиру" CTA. */
   slug?: string
   /** Coming-soon project → "Подробнее" instead of "Выбрать квартиру". */
   comingSoon?: boolean
   /** Custom primary CTA (non-project slides). */
-  cta?: { label: string; to: string }
+  cta?: { labelKey: string; to: string }
 }
 
 const slides: Slide[] = [
   {
     id: 'about',
     title: 'О КОМПАНИИ',
+    titleKey: 'nav.about',
     eyebrow: 'Renaissance Development',
-    desc: 'Девелопер полного цикла: более 7 лет опыта и 12+ реализованных и строящихся проектов. Создаём современные жилые и коммерческие здания — с высоким уровнем надёжности, качества и архитектурной эстетики.',
+    descKey: 'home.hero.aboutDesc',
     image: '/assets/company-hero.webp',
-    cta: { label: 'О компании', to: '/about' },
+    cta: { labelKey: 'nav.about', to: '/about' },
   },
   {
     id: 'vatan-village',
     slug: 'vatan-village',
     title: 'VATAN VILLAGE',
-    eyebrow: 'Коттеджный городок · Комфорт+',
-    desc: 'Просторные квартиры в тихом зелёном квартале Мирзо-Улугбекского района — собственный двор и всё необходимое в шаговой доступности.',
+    eyebrowKey: 'home.hero.vatanEyebrow',
+    descKey: 'home.hero.vatanDesc',
     image: '/assets/project-vatan.webp',
   },
   {
     id: 'challet-resort',
     slug: 'challet-resort',
     title: 'CHALLET RESORT',
-    eyebrow: 'Загородный комплекс · Комфорт',
-    desc: 'Загородный комплекс в Юсуфхоне, в часе от Ташкента: чистый воздух, приватная территория и атмосфера курорта круглый год.',
+    eyebrowKey: 'home.hero.chaletEyebrow',
+    descKey: 'home.hero.chaletDesc',
     image: '/assets/project-chalet.webp',
   },
   {
@@ -51,13 +59,14 @@ const slides: Slide[] = [
     slug: 'botanika-luxury',
     comingSoon: true,
     title: 'BOTANIKA LUXURY',
-    eyebrow: 'Жилой комплекс · Комфорт',
-    desc: 'Монолитный комплекс комфорт-класса в Мирзо-Улугбекском районе: закрытая территория, подземный паркинг и развитая инфраструктура рядом.',
+    eyebrowKey: 'home.hero.botanikaEyebrow',
+    descKey: 'home.hero.botanikaDesc',
     image: '/assets/project-botanika.webp',
   },
 ]
 
 export default function Hero() {
+  const { t } = useTranslation()
   const [current, setCurrent] = useState(0)
   const prev = () => setCurrent((c) => (c - 1 + slides.length) % slides.length)
   const next = () => setCurrent((c) => (c + 1) % slides.length)
@@ -78,27 +87,27 @@ export default function Hero() {
                     <div data-reveal className="flex items-center gap-3">
                       <span className="rule-gold shrink-0" aria-hidden />
                       <span className="font-body text-[13px] 2xl:text-[14px] font-semibold uppercase tracking-[0.22em] text-accent-dark">
-                        {slide.eyebrow}
+                        {slide.eyebrowKey ? t(slide.eyebrowKey) : slide.eyebrow}
                       </span>
                     </div>
                     <h1 data-reveal="clip" className="font-heading text-[60px] 2xl:text-[100px] font-bold uppercase leading-[0.98] tracking-[0.01em] text-ink whitespace-nowrap">
-                      {slide.title}
+                      {slide.titleKey ? t(slide.titleKey) : slide.title}
                     </h1>
                   </div>
                   <div data-reveal style={{ transitionDelay: '120ms' }} className="flex w-[460px] 2xl:w-[574px] shrink min-w-0 flex-col gap-6 2xl:gap-7 pb-1">
-                    <p className="font-body text-[19px] 2xl:text-[20px] leading-[1.6] text-primary">{slide.desc}</p>
+                    <p className="font-body text-[19px] 2xl:text-[20px] leading-[1.6] text-primary">{t(slide.descKey)}</p>
                     <div className="flex flex-col items-stretch gap-4 2xl:flex-row 2xl:items-center">
                       {slide.slug ? (
                         <Button to={`/projects/${slide.slug}`} variant="accent" size="lg" className="!px-8">
-                          {slide.comingSoon ? 'Подробнее' : 'Выбрать квартиру'}
+                          {slide.comingSoon ? t('common.learnMore') : t('common.chooseApartment')}
                         </Button>
                       ) : (
                         <Button to={slide.cta?.to ?? '/about'} variant="accent" size="lg" className="!px-8">
-                          {slide.cta?.label ?? 'О компании'}
+                          {slide.cta ? t(slide.cta.labelKey) : t('nav.about')}
                         </Button>
                       )}
                       <Button to="/quote" variant="outlineLight" size="lg" className="!px-8">
-                        Заказать звонок
+                        {t('common.orderCall')}
                       </Button>
                     </div>
                   </div>

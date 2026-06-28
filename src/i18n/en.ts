@@ -21,6 +21,12 @@ export default {
     learnMore: 'Learn more',
     chooseApartment: 'Choose an apartment',
     call: 'Call',
+    projects: 'Projects',
+    area: 'Area',
+    location: 'Location',
+    badgeOnSale: 'On sale now',
+    badgeSoon: 'Coming soon',
+    badgeSold: 'Sold out',
   },
   lang: {
     ru: 'Русский',
@@ -38,5 +44,135 @@ export default {
     addr1: 'Tashkent, Makhtumkuli 100116,',
     addr2: 'Republic of Uzbekistan',
     rights: '© Renaissance Development. All rights reserved, 2026',
+  },
+  home: {
+    hero: {
+      aboutDesc:
+        'A full-cycle developer: over 7 years of experience and 12+ completed and ongoing projects. We create modern residential and commercial buildings with high reliability, quality and architectural elegance.',
+      vatanEyebrow: 'Cottage town · Comfort+',
+      vatanDesc:
+        'Spacious apartments in a quiet, green neighbourhood of the Mirzo-Ulugbek district — your own courtyard and everything you need within walking distance.',
+      chaletEyebrow: 'Countryside resort · Comfort',
+      chaletDesc:
+        'A countryside community in Yusufkhona, an hour from Tashkent: clean air, a private territory and a resort atmosphere all year round.',
+      botanikaEyebrow: 'Residential complex · Comfort',
+      botanikaDesc:
+        'A monolithic comfort-class complex in the Mirzo-Ulugbek district: gated territory, underground parking and well-developed infrastructure nearby.',
+    },
+    stats: {
+      s1: 'We don’t just build — we create reliable space for future generations. ',
+      s2: 'Renaissance Development is a full-cycle developer. Since 2019 — 12 projects in Tashkent.',
+      l1: 'Completed projects',
+      l2: 'Projects under construction',
+      l3: 'own concrete plant',
+      l4: 'year founded',
+    },
+    whyus: {
+      tag: 'Why us',
+      title: 'Why clients choose us',
+      instagram: 'Open Instagram',
+      cards: [
+        { title: 'In-house production', desc: 'Our own building-materials plant since 2021. Full control over quality and timelines.' },
+        { title: 'Our own machinery', desc: 'Our own equipment on every site. Construction runs with no downtime or dependence on contractors.' },
+        { title: 'Full-cycle works', desc: 'From design to handover — one company runs every stage. Single accountability and quality control.' },
+        { title: 'Experienced leadership', desc: 'The company is led by a civil engineer with 15 years of delivering public and private projects.' },
+      ],
+    },
+    projects: {
+      tag: 'Projects',
+      title: 'Our projects',
+      desc: 'Residential complexes and business centers by Renaissance Development — from installment apartments to commercial spaces',
+      filterResidential: 'Residential',
+      filterBusiness: 'Business centers',
+    },
+    about: {
+      tag: 'About us',
+      title: 'About the company',
+      p1: 'We don’t just build — we create reliable space for future generations. Every Renaissance Development project begins not with a foundation pit, but with one question: what will this home be like in thirty years.',
+      p2: 'That is why we control everything ourselves. Concrete — from our own plant. Aerated blocks, ventilation shafts and thermal frames — our own production. The machinery on site is ours. When there are no random contractors in the chain, there is no randomness in quality.',
+    },
+    production: {
+      tag: 'Plant',
+      title: 'Production',
+      slides: [
+        {
+          title: 'Concrete plant',
+          subtitle: 'Universal Temir Beton — the basis of every project',
+          desc: 'A modern concrete plant supplies the company’s projects with high-quality materials: ready-mix concrete for monolithic construction, aerated concrete blocks and reinforced-concrete products. Our own capacity lets us optimise timelines and keep quality consistent across all sites.',
+        },
+        {
+          title: 'Liquid travertine',
+          subtitle: 'Decorative coatings for facades',
+          desc: 'We produce modern liquid-travertine coatings used in our own projects — in particular for finishing building facades. The material provides an elegant look, high durability and a long service life, giving every project a distinctive architectural style.',
+        },
+        {
+          title: 'Ventilation systems',
+          subtitle: 'Efficient air exchange for housing and commerce',
+          desc: 'For the company’s residential and commercial projects we produce modern ventilation systems. The products are made to design documentation in line with building codes, ensuring high quality and efficient air exchange. Available for external clients too.',
+        },
+        {
+          title: 'Aluminium profiles',
+          subtitle: 'Window, door and facade structures',
+          desc: 'We produce aluminium profiles used in window, door and facade structures. The products stand out for their strength and modern design, are used on all company sites and are available to external clients.',
+        },
+        {
+          title: 'Tower cranes and machinery',
+          subtitle: 'Our own fleet — construction without downtime',
+          desc: 'The company operates modern tower cranes and lifting equipment for its sites. The machinery is used in residential and commercial projects, ensuring continuous construction and delivery on schedule. Construction stays on track — independent of external contractors.',
+        },
+      ],
+    },
+    faq: {
+      tag: 'FAQ',
+      title: 'Frequently asked questions',
+      desc: 'If you have a question that isn’t on this list, you can always contact us directly.',
+      items: [
+        { q: 'When was the company founded?', a: 'Renaissance Development has operated since 2019. In that time 12+ projects have been completed or are under construction in Tashkent. Since 2021 our own Universal Temir Beton plant has been running — all projects are built from our own materials with quality control at every stage.' },
+        { q: 'How do I buy an apartment?', a: 'Leave a request on the website or call 78-333-33-31. A manager will get in touch, arrange a viewing, help you choose a suitable apartment and complete the contract.' },
+        { q: 'Is installment payment available?', a: 'Yes, we offer installment plans for apartment purchases. Terms depend on the specific project and the buyer’s situation — ask the manager about current offers.' },
+        { q: 'What determines the price per square metre?', a: 'The price is based on the project’s location, the floor, the apartment’s area, the views and the construction stage. As a rule, the price is lower at early stages.' },
+        { q: 'Which apartments are on sale?', a: 'Apartments are on sale in several residential complexes: Alandalus, Botanika Luxury, Vatan Village and Turon. Areas from 26 to 80 m². Ask the manager for the current list of available apartments.' },
+        { q: 'What materials are used?', a: 'The structure is a monolithic concrete frame made from materials from our own Universal Temir Beton plant. Walls — our own aerated blocks, facade — brick, floors — reinforced-concrete slabs. All with full quality control.' },
+      ],
+    },
+    contact: {
+      title: 'Contact us',
+      desc: 'A manager will answer any questions about apartments, installments and projects. We work seven days a week.',
+      office: 'Sales office',
+      phone: 'Phone',
+      messengers: 'Messengers',
+      hours: 'Working hours',
+      hoursValue: 'Mon–Fri: 9:00–21:00.',
+    },
+    partners: {
+      tag: 'Our clients',
+      title: 'Partners in architectural excellence.',
+      desc: 'Our team of experts ensures that every project is delivered exactly on time, on budget and with uncompromising quality.',
+    },
+    process: {
+      tag: 'How we work',
+      title: 'From the first call to the keys — three simple steps',
+      desc: 'Buying an apartment shouldn’t be complicated. We have built the process so you spend the least time and get maximum clarity at every stage.',
+      steps: [
+        { num: 'Step 01', title: 'Choose an apartment', desc: 'Browse the website or call a manager — we’ll show available apartments, layouts and prices by floor. Visit the site or view it online.' },
+        { num: 'Step 02', title: 'Sign the contract', desc: 'We fix the price and installment terms. Make a down payment from 30% — the apartment is yours. No bank, no hidden fees.' },
+        { num: 'Step 03', title: 'Get the keys', desc: 'Pay the balance on schedule and receive your finished apartment. We deliver on time — because we build with our own materials and machinery.' },
+      ],
+    },
+    needhelp: {
+      title: 'Need help?',
+      desc: 'Reach out to us with any question or proposal through our support service',
+      phoneLabel: 'Support phone',
+      name: 'Full name',
+      namePlaceholder: 'Enter your name',
+      phone: 'Phone number',
+      privacyPrefix: 'By submitting this request, you agree to the ',
+      privacyLink: 'data processing terms',
+    },
+    map: {
+      tag: 'Project geography',
+      title: 'Our properties on the map',
+      desc: 'All Renaissance Development projects — on the map of Tashkent and the region. Click a marker to open the project.',
+    },
   },
 }

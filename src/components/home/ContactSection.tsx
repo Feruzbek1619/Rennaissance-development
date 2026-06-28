@@ -1,4 +1,5 @@
 import { Container } from '@/components/Container'
+import { useTranslation } from '@/i18n'
 
 function OfficeIcon() {
   return (
@@ -51,32 +52,17 @@ function ClockIcon() {
   )
 }
 
-const cards = [
-  {
-    icon: <OfficeIcon />,
-    title: 'Офис продаж',
-    lines: ['г. Ташкент, Махтумкули, 100116,', 'Республика Узбекистан'],
-  },
-  {
-    icon: <PhoneIcon />,
-    title: 'Телефон',
-    lines: ['78-333-33-31'],
-  },
-  {
-    icon: <MessengerIcon />,
-    title: 'Мессенджеры',
-    lines: ['Telegram: @rbcompanyuzchat', 'Instagram: @rbcompany.uz'],
-  },
-  {
-    icon: <ClockIcon />,
-    title: 'Часы работы',
-    lines: ['Пн-Пт: 9:00–21:00.'],
-  },
-]
-
 // «Свяжитесь с нами» — контакты (Figma 7781:2372).
-// Header: badge + h2 LEFT, description RIGHT. Then 4 equal-width contact cards.
 export default function ContactSection() {
+  const { t } = useTranslation()
+
+  const cards = [
+    { icon: <OfficeIcon />, title: t('home.contact.office'), lines: [t('footer.addr1'), t('footer.addr2')] },
+    { icon: <PhoneIcon />, title: t('home.contact.phone'), lines: ['78-333-33-31'] },
+    { icon: <MessengerIcon />, title: t('home.contact.messengers'), lines: ['Telegram: @rbcompanyuzchat', 'Instagram: @rbcompany.uz'] },
+    { icon: <ClockIcon />, title: t('home.contact.hours'), lines: [t('home.contact.hoursValue')] },
+  ]
+
   return (
     <section className="bg-white py-[100px]">
       <Container>
@@ -87,15 +73,14 @@ export default function ContactSection() {
             <div className="flex flex-col gap-5 w-[850px] shrink min-w-0">
               <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
-              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">Контакты</span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('nav.contacts')}</span>
             </div>
               <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
-                Свяжитесь с нами
+                {t('home.contact.title')}
               </h2>
             </div>
             <p className="font-body text-[24px] leading-[1.6] text-ink w-[692px] shrink min-w-0 pt-2">
-              Менеджер ответит на любые вопросы по квартирам, рассрочке и объектам.
-              Работаем без выходных.
+              {t('home.contact.desc')}
             </p>
           </div>
 
@@ -107,11 +92,9 @@ export default function ContactSection() {
                 className="card-lift flex-1 border border-[#c4c4c4] h-[323px] overflow-hidden"
               >
                 <div className="px-[26px] pt-[39px] flex flex-col gap-12">
-                  {/* Icon */}
                   <div className="shrink-0">
                     {card.icon}
                   </div>
-                  {/* Text */}
                   <div className="flex flex-col gap-6">
                     <p className="font-heading font-bold text-[31px] leading-[1.4] text-ink">
                       {card.title}

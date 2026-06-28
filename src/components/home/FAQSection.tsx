@@ -1,43 +1,14 @@
 'use client'
 import { useState } from 'react'
 import { Container } from '@/components/Container'
+import { useTranslation } from '@/i18n'
 
-const faqs = [
-  {
-    question: 'Когда основана компания?',
-    answer:
-      'Renaissance Development работает с 2019 года. За это время реализовано и строится 12+ проектов в Ташкенте. С 2021 года работает собственный завод Universal Temir Beton — все объекты строятся из своих материалов с контролем качества на каждом этапе.',
-  },
-  {
-    question: 'Как купить квартиру?',
-    answer:
-      'Оставьте заявку на сайте или позвоните по номеру 78-333-33-31. Менеджер свяжется с вами, проведёт показ объекта, поможет выбрать подходящую квартиру и оформить договор.',
-  },
-  {
-    question: 'Есть ли рассрочка?',
-    answer:
-      'Да, мы предлагаем рассрочку на приобретение квартир. Условия зависят от конкретного объекта и индивидуальной ситуации покупателя — уточняйте у менеджера актуальные предложения.',
-  },
-  {
-    question: 'От чего зависит цена квадратного метра?',
-    answer:
-      'Цена формируется исходя из расположения объекта, этажа, площади квартиры, видовых характеристик и стадии строительства. Как правило, на ранних стадиях цена ниже.',
-  },
-  {
-    question: 'Какие квартиры есть в продаже?',
-    answer:
-      'В продаже квартиры в нескольких жилых комплексах: Alandalus, Botanika Luxury, Vatan Village и Turon. Площади от 26 до 80 м². Актуальный список доступных квартир уточняйте у менеджера.',
-  },
-  {
-    question: 'Какие материалы используются?',
-    answer:
-      'Конструктив — монолитно-бетонный каркас из материалов собственного завода Universal Temir Beton. Стены — газоблок собственного производства, фасад — кирпич, перекрытия — железобетонные плиты. Всё с полным контролем качества.',
-  },
-]
+const COUNT = 6
 
 // FAQ accordion (Figma 314:3272).
 // Left: badge + h2 + description. Right (flex-1): 6 accordion items with dividers.
 export default function FAQSection() {
+  const { t } = useTranslation()
   const [open, setOpen] = useState(0)
 
   return (
@@ -49,42 +20,39 @@ export default function FAQSection() {
           <div data-reveal="left" className="flex flex-col gap-5 w-[665px] shrink-0">
             <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
-              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">FAQ</span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('home.faq.tag')}</span>
             </div>
             <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
-              Часто задаваемые вопросы
+              {t('home.faq.title')}
             </h2>
             <p className="font-body text-[20px] leading-[1.6] text-secondary w-[575px]">
-              Если у вас есть вопросы, которых нет в этом списке, вы всегда можете связаться с нами напрямую.
+              {t('home.faq.desc')}
             </p>
           </div>
 
-          {/* Right column: accordion (w-950px implied by flex-1 in 1720px container) */}
+          {/* Right column: accordion */}
           <div data-reveal="right" className="flex-1 min-w-0 flex flex-col">
-            {faqs.map((faq, i) => (
+            {Array.from({ length: COUNT }, (_, i) => (
               <div key={i}>
-                {/* Item header */}
                 <button
                   type="button"
                   onClick={() => setOpen(open === i ? -1 : i)}
                   className="w-full flex items-center justify-between py-[30px] text-left gap-4"
                 >
                   <span className="font-heading font-medium text-[25px] leading-[1.3] text-ink flex-1 min-w-0 max-w-[700px]">
-                    {faq.question}
+                    {t(`home.faq.items.${i}.q`)}
                   </span>
                   <span className="text-[32px] leading-none text-ink shrink-0">
                     {open === i ? '×' : '+'}
                   </span>
                 </button>
 
-                {/* Answer */}
-                {open === i && faq.answer && (
+                {open === i && (
                   <p className="font-body text-[16px] leading-[1.6] text-secondary pb-[30px]">
-                    {faq.answer}
+                    {t(`home.faq.items.${i}.a`)}
                   </p>
                 )}
 
-                {/* Divider */}
                 <div className="h-px bg-border" />
               </div>
             ))}

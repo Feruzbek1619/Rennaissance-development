@@ -1,5 +1,6 @@
 import { Container } from '@/components/Container'
 import { useLeadModalOptional } from '@/components/LeadModal'
+import { useTranslation } from '@/i18n'
 
 function PhoneIcon() {
   return (
@@ -18,6 +19,7 @@ function PhoneIcon() {
 // «Вам нужна помощь?» CTA + form (Figma 7828:3982).
 export default function NeedHelpSection() {
   const modal = useLeadModalOptional()
+  const { t } = useTranslation()
   return (
     <section className="bg-primary py-[80px]">
       <Container>
@@ -27,10 +29,10 @@ export default function NeedHelpSection() {
           <div data-reveal="left" className="flex flex-col gap-[45px] w-[723px] shrink min-w-0">
             <div className="flex flex-col text-bg-subtle">
               <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3]">
-                Вам нужна помощь?
+                {t('home.needhelp.title')}
               </h2>
               <p className="font-body text-[20px] leading-[1.6] w-[628px]">
-                Обращайтесь к нам с любым вопросом или предложением через службу поддержки
+                {t('home.needhelp.desc')}
               </p>
             </div>
 
@@ -40,7 +42,7 @@ export default function NeedHelpSection() {
                 <PhoneIcon />
               </div>
               <div className="flex flex-col gap-[5px]">
-                <p className="font-vela text-[19px] leading-[1.3] text-white/60">Телефон для поддержки</p>
+                <p className="font-vela text-[19px] leading-[1.3] text-white/60">{t('home.needhelp.phoneLabel')}</p>
                 <p className="font-vela text-[22px] font-semibold leading-[1.3] text-white">78-333-33-31</p>
               </div>
             </div>
@@ -51,19 +53,19 @@ export default function NeedHelpSection() {
 
             {/* Name field */}
             <div className="flex flex-col gap-[10px]">
-              <label htmlFor="needhelp-name" className="font-body font-medium text-[20px] text-bg-subtle leading-[1.6]">ФИО</label>
+              <label htmlFor="needhelp-name" className="font-body font-medium text-[20px] text-bg-subtle leading-[1.6]">{t('home.needhelp.name')}</label>
               <input
                 id="needhelp-name"
                 name="name"
                 type="text"
-                placeholder="Введите имя"
+                placeholder={t('home.needhelp.namePlaceholder')}
                 className="h-[67px] bg-[#f8f8f8] border border-secondary rounded-[5px] px-6 font-body text-[18px] text-secondary placeholder:text-secondary/50 outline-none focus:border-primary/50"
               />
             </div>
 
             {/* Phone field */}
             <div className="flex flex-col gap-[10px]">
-              <label htmlFor="needhelp-phone" className="font-body font-medium text-[20px] text-bg-subtle leading-[1.6]">Номер телефона</label>
+              <label htmlFor="needhelp-phone" className="font-body font-medium text-[20px] text-bg-subtle leading-[1.6]">{t('home.needhelp.phone')}</label>
               <input
                 id="needhelp-phone"
                 name="phone"
@@ -79,13 +81,13 @@ export default function NeedHelpSection() {
               onClick={() => modal?.openSuccess()}
               className="h-[56px] w-full bg-accent rounded-[5px] font-body font-medium text-[20px] text-white text-center leading-[1.6] hover:bg-[#A2814E] transition-colors"
             >
-              Заказать звонок
+              {t('common.orderCall')}
             </button>
 
             {/* Privacy */}
             <p className="font-vela text-[14px] text-white leading-[1.3]">
-              Отправляя этот запрос, вы соглашаетесь с{' '}
-              <span className="font-semibold text-green">условиями обработки данных</span>
+              {t('home.needhelp.privacyPrefix')}
+              <span className="font-semibold text-green">{t('home.needhelp.privacyLink')}</span>
             </p>
 
           </div>

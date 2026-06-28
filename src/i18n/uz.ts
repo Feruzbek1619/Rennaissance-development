@@ -21,6 +21,12 @@ export default {
     learnMore: 'Batafsil',
     chooseApartment: 'Kvartira tanlash',
     call: "Qo‘ng‘iroq qilish",
+    projects: 'Loyihalar',
+    area: 'Maydon',
+    location: 'Joylashuv',
+    badgeOnSale: 'Sotuv ketmoqda',
+    badgeSoon: 'Tez orada sotuvda',
+    badgeSold: 'Sotilgan',
   },
   lang: {
     ru: 'Русский',
@@ -38,5 +44,135 @@ export default {
     addr1: 'Toshkent sh., Maxtumquli 100116,',
     addr2: "O‘zbekiston Respublikasi",
     rights: '© «Renaissance Development». Barcha huquqlar himoyalangan, 2026',
+  },
+  home: {
+    hero: {
+      aboutDesc:
+        "To‘liq tsikl developeri: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyiha. Biz yuqori ishonchlilik, sifat va arxitektura nafosatiga ega zamonaviy turar-joy va tijorat binolarini yaratamiz.",
+      vatanEyebrow: 'Kottej shaharchasi · Komfort+',
+      vatanDesc:
+        "Mirzo Ulug‘bek tumanining tinch va yashil mahallasida keng kvartiralar — o‘z hovlingiz va barcha zarur narsalar piyoda yetib boradigan masofada.",
+      chaletEyebrow: 'Shahar tashqarisidagi maskan · Komfort',
+      chaletDesc:
+        "Toshkentdan bir soat masofadagi Yusufxonadagi shahar tashqarisi majmuasi: toza havo, yopiq hudud va yil davomida kurort muhiti.",
+      botanikaEyebrow: 'Turar-joy majmuasi · Komfort',
+      botanikaDesc:
+        "Mirzo Ulug‘bek tumanidagi komfort darajasidagi monolit majmua: yopiq hudud, yer osti avtoturargohi va yaqin atrofda rivojlangan infratuzilma.",
+    },
+    stats: {
+      s1: "Biz shunchaki bino qurmaymiz — biz kelajak avlodlar uchun ishonchli makon yaratamiz. ",
+      s2: 'Renaissance Development — to‘liq tsikl quruvchisi. 2019-yildan beri — Toshkentda 12 loyiha.',
+      l1: 'Topshirilgan loyihalar',
+      l2: 'Qurilayotgan loyihalar',
+      l3: 'xususiy beton zavodi',
+      l4: 'tashkil etilgan yil',
+    },
+    whyus: {
+      tag: 'Nega biz',
+      title: 'Nega bizni tanlashadi',
+      instagram: 'Instagramni ochish',
+      cards: [
+        { title: 'Xususiy ishlab chiqarish', desc: "2021-yildan beri xususiy qurilish materiallari zavodi. Sifat va muddatlar to‘liq nazoratda." },
+        { title: 'O‘z maxsus texnikamiz', desc: "Har bir ob'ektda o‘z texnikamiz. Qurilish to‘xtovsiz va pudratchilarga bog‘liq bo‘lmagan holda boradi." },
+        { title: 'To‘liq ish tsikli', desc: "Loyihadan kalit topshirishgacha — barcha bosqichni bitta kompaniya bajaradi. Yagona javobgarlik va sifat nazorati." },
+        { title: 'Tajribali rahbariyat', desc: 'Kompaniyani davlat va xususiy loyihalarni amalga oshirishda 15 yillik tajribaga ega muhandis-quruvchi boshqaradi.' },
+      ],
+    },
+    projects: {
+      tag: 'Loyihalar',
+      title: 'Bizning loyihalar',
+      desc: "Renaissance Development turar-joy majmualari va biznes-markazlari — bo‘lib to‘lash kvartiralaridan tijorat ob'ektlarigacha",
+      filterResidential: 'Turar-joy majmualari',
+      filterBusiness: 'Biznes-markazlar',
+    },
+    about: {
+      tag: 'Biz haqimizda',
+      title: 'Kompaniya haqida',
+      p1: "Biz shunchaki bino qurmaymiz — biz kelajak avlodlar uchun ishonchli makon yaratamiz. Renaissance Development har bir loyihasi poydevordan emas, balki bitta savolga javobdan boshlanadi: bu uy o‘ttiz yildan keyin qanday bo‘ladi.",
+      p2: "Shuning uchun biz hammasini o‘zimiz nazorat qilamiz. Beton — o‘z zavodimizdan. Gazoblok, ventilyatsiya shaxtalari, termo-romkalar — o‘z ishlab chiqarishimiz. Maydondagi texnika — o‘zimizniki. Zanjirda tasodifiy pudratchilar bo‘lmasa, sifatda ham tasodif bo‘lmaydi.",
+    },
+    production: {
+      tag: 'Zavod',
+      title: 'Ishlab chiqarish',
+      slides: [
+        {
+          title: 'Beton zavodi',
+          subtitle: "Universal Temir Beton — har bir ob'ekt asosi",
+          desc: "Zamonaviy beton zavodi kompaniya ob'ektlarini yuqori sifatli materiallar bilan ta'minlaydi: monolit qurilish uchun tovar beton, gazobeton bloklar va temir-beton buyumlar. O‘z quvvatlarimiz muddatlarni optimallashtirish va barcha ob'ektlarda barqaror sifatni saqlash imkonini beradi.",
+        },
+        {
+          title: 'Suyuq travertin',
+          subtitle: 'Fasadlar uchun dekorativ qoplamalar',
+          desc: "Biz xususiy loyihalarda — xususan, bino fasadlarini bezashda qo‘llaniladigan zamonaviy suyuq travertin qoplamalarini ishlab chiqaramiz. Material chiroyli ko‘rinish, yuqori mustahkamlik va uzoq xizmat muddatini ta'minlab, ob'ektlarga noyob arxitektura uslubini beradi.",
+        },
+        {
+          title: 'Ventilyatsiya tizimlari',
+          subtitle: 'Turar-joy va tijorat uchun samarali havo almashinuvi',
+          desc: "Kompaniyaning turar-joy va tijorat loyihalari uchun zamonaviy ventilyatsiya tizimlari ishlab chiqariladi. Mahsulot loyiha hujjatlari asosida qurilish me'yorlariga muvofiq tayyorlanadi, yuqori sifat va samarali havo almashinuvini ta'minlaydi. Tashqi buyurtmachilar uchun ham mavjud.",
+        },
+        {
+          title: 'Alyumin profillar',
+          subtitle: 'Deraza, eshik va fasad konstruksiyalari',
+          desc: "Deraza, eshik va fasad konstruksiyalarida ishlatiladigan alyumin profillar ishlab chiqaramiz. Mahsulot mustahkamligi va zamonaviy dizayni bilan ajralib turadi, barcha ob'ektlarda qo‘llaniladi va tashqi buyurtmachilarga taqdim etiladi.",
+        },
+        {
+          title: 'Minora kranlari va maxsus texnika',
+          subtitle: "O‘z texnika parki — to‘xtovsiz qurilish",
+          desc: "Kompaniya o‘z maydonlari uchun zamonaviy minora kranlari va ko‘tarish texnikasiga ega. Texnika turar-joy va tijorat loyihalarida qo‘llanilib, qurilish uzluksizligini va ishlarning belgilangan muddatda bajarilishini ta'minlaydi. Qurilish jadval bo‘yicha boradi — tashqi pudratchilarga bog‘liq emas.",
+        },
+      ],
+    },
+    faq: {
+      tag: 'FAQ',
+      title: 'Ko‘p so‘raladigan savollar',
+      desc: "Agar ushbu ro‘yxatda yo‘q savolingiz bo‘lsa, har doim biz bilan to‘g‘ridan-to‘g‘ri bog‘lanishingiz mumkin.",
+      items: [
+        { q: 'Kompaniya qachon tashkil etilgan?', a: "Renaissance Development 2019-yildan beri faoliyat yuritadi. Shu vaqt ichida Toshkentda 12+ loyiha topshirilgan va qurilmoqda. 2021-yildan beri xususiy Universal Temir Beton zavodi ishlaydi — barcha ob'ektlar o‘z materiallarimizdan, har bosqichda sifat nazorati bilan quriladi." },
+        { q: 'Kvartirani qanday sotib olaman?', a: "Saytda ariza qoldiring yoki 78-333-33-31 raqamiga qo‘ng‘iroq qiling. Menejer siz bilan bog‘lanadi, ob'ektni ko‘rsatadi, mos kvartira tanlash va shartnoma rasmiylashtirishda yordam beradi." },
+        { q: "Bo‘lib to‘lash bormi?", a: "Ha, kvartira xaridi uchun bo‘lib to‘lashni taklif qilamiz. Shartlar aniq ob'ekt va xaridorning holatiga bog‘liq — dolzarb takliflarni menejerdan aniqlang." },
+        { q: 'Kvadrat metr narxi nimaga bog‘liq?', a: "Narx ob'ekt joylashuvi, qavat, kvartira maydoni, manzara xususiyatlari va qurilish bosqichidan kelib chiqib shakllanadi. Odatda, dastlabki bosqichlarda narx arzonroq bo‘ladi." },
+        { q: 'Sotuvda qanday kvartiralar bor?', a: "Bir nechta turar-joy majmualarida kvartiralar sotuvda: Alandalus, Botanika Luxury, Vatan Village va Turon. Maydonlari 26 dan 80 m² gacha. Mavjud kvartiralarning dolzarb ro‘yxatini menejerdan aniqlang." },
+        { q: 'Qanday materiallar ishlatiladi?', a: "Konstruksiya — o‘z Universal Temir Beton zavodimiz materiallaridan monolit-beton karkas. Devorlar — o‘z ishlab chiqarishimiz gazoblok, fasad — g‘isht, oraliq qavatlar — temir-beton plitalar. Hammasi to‘liq sifat nazorati bilan." },
+      ],
+    },
+    contact: {
+      title: 'Biz bilan bog‘laning',
+      desc: "Menejer kvartiralar, bo‘lib to‘lash va ob'ektlar bo‘yicha har qanday savolga javob beradi. Dam olish kunlarisiz ishlaymiz.",
+      office: 'Sotuv ofisi',
+      phone: 'Telefon',
+      messengers: 'Messenjerlar',
+      hours: 'Ish vaqti',
+      hoursValue: 'Du–Ju: 9:00–21:00.',
+    },
+    partners: {
+      tag: 'Bizning mijozlar',
+      title: 'Arxitektura mukammalligida hamkorlar.',
+      desc: "Mutaxassislar jamoamiz har bir loyiha aniq muddatda, budjet doirasida va murosasiz sifat bilan amalga oshirilishini kafolatlaydi.",
+    },
+    process: {
+      tag: 'Biz qanday ishlaymiz',
+      title: "Birinchi qo‘ng‘iroqdan kalitgacha — uchta oddiy qadam",
+      desc: "Kvartira sotib olish murakkab bo‘lmasligi kerak. Biz jarayonni shunday qurdikki, siz minimal vaqt sarflab, har bosqichda maksimal aniqlikka ega bo‘lasiz.",
+      steps: [
+        { num: '01-qadam', title: 'Kvartira tanlaysiz', desc: "Saytdan tanlaysiz yoki menejerga qo‘ng‘iroq qilasiz — bo‘sh kvartiralar, planirovkalar va qavatlar bo‘yicha narxlarni ko‘rsatamiz. Ob'ektga keling yoki onlayn ko‘ring." },
+        { num: '02-qadam', title: 'Shartnoma imzolaysiz', desc: "Narx va bo‘lib to‘lash shartlarini qayd etamiz. 30% dan boshlanadigan boshlang‘ich to‘lovni kiritasiz — kvartira sizniki. Banksiz, yashirin to‘lovlarsiz." },
+        { num: '03-qadam', title: 'Kalitlarni olasiz', desc: "Qoldiqni jadval bo‘yicha to‘laysiz va tayyor kvartirani qabul qilasiz. Biz o‘z vaqtida topshiramiz — chunki o‘z materiallarimiz va texnikamiz bilan quramiz." },
+      ],
+    },
+    needhelp: {
+      title: 'Yordam kerakmi?',
+      desc: "Qo‘llab-quvvatlash xizmati orqali har qanday savol yoki taklif bilan murojaat qiling",
+      phoneLabel: "Qo‘llab-quvvatlash telefoni",
+      name: 'F.I.Sh.',
+      namePlaceholder: 'Ismingizni kiriting',
+      phone: 'Telefon raqami',
+      privacyPrefix: "Ushbu so‘rovni yuborish orqali siz ",
+      privacyLink: "ma'lumotlarni qayta ishlash shartlariga rozilik bildirasiz",
+    },
+    map: {
+      tag: 'Loyihalar geografiyasi',
+      title: "Ob'ektlarimiz xaritada",
+      desc: "Renaissance Development barcha loyihalari — Toshkent va viloyat xaritasida. Ob'ektga o‘tish uchun belgini bosing.",
+    },
   },
 }

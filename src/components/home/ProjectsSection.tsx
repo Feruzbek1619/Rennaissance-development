@@ -4,16 +4,18 @@ import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { ProjectCard } from '@/components/ProjectCard'
 import { projects } from '@/data/projects'
+import { useTranslation } from '@/i18n'
 
 const FILTERS = [
-  { key: 'residential', label: 'Жилые комплексы' },
-  { key: 'business', label: 'Бизнес-центры' },
+  { key: 'residential', labelKey: 'home.projects.filterResidential' },
+  { key: 'business', labelKey: 'home.projects.filterBusiness' },
 ] as const
 
 const kindOf = (p: (typeof projects)[number]) => p.kind ?? 'residential'
 
 // «Наши проекты» (Figma 7778:4485) — with category filter (жилые / бизнес-центры)
 export default function ProjectsSection() {
+  const { t } = useTranslation()
   const [tab, setTab] = useState<'residential' | 'business'>('residential')
 
   const list = projects.filter((p) => p.status === 'active' && kindOf(p) === tab).slice(0, 4)
@@ -28,15 +30,15 @@ export default function ProjectsSection() {
             <div className="flex flex-col gap-5 w-[764px]">
               <div className="flex w-fit items-center gap-3 self-start">
                 <span className="rule-gold shrink-0" aria-hidden></span>
-                <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">ПРОЕКТЫ</span>
+                <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('home.projects.tag')}</span>
               </div>
               <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
-                Наши проекты
+                {t('home.projects.title')}
               </h2>
             </div>
             <div className="flex flex-col gap-6 items-end w-[698px]">
               <p className="font-body text-[20px] leading-[1.6] text-ink text-right">
-                Жилые комплексы и бизнес-центры Renaissance Development — от квартир в рассрочку до коммерческих объектов
+                {t('home.projects.desc')}
               </p>
               {/* Category filter — in place of the old CTA buttons */}
               <div className="flex gap-3 items-center">
@@ -51,7 +53,7 @@ export default function ProjectsSection() {
                         : 'bg-white border border-border text-ink hover:border-accent hover:text-accent-dark'
                     }`}
                   >
-                    {f.label}
+                    {t(f.labelKey)}
                   </button>
                 ))}
               </div>
@@ -67,7 +69,7 @@ export default function ProjectsSection() {
 
           {/* Bottom CTA */}
           <Button to="/projects" variant="primary" size="lg">
-            Все проекты
+            {t('catalog.all')}
           </Button>
 
         </div>

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import type { Project } from '@/data/projects'
 import { useLeadModalOptional } from '@/components/LeadModal'
 import { SkeletonImage } from '@/components/SkeletonImage'
+import { useTranslation } from '@/i18n'
 
 function AreaIcon() {
   return (
@@ -29,8 +30,9 @@ function ArrowUpRightIcon({ light = false }: { light?: boolean }) {
 }
 
 export function ProjectCard({ project }: { project: Project }) {
+  const { t } = useTranslation()
   const badgeClass = project.comingSoon ? 'bg-primary' : project.status === 'active' ? 'bg-[#BE9C68]' : 'bg-[#8C8275]'
-  const badgeLabel = project.comingSoon ? 'Скоро в продаже' : project.status === 'active' ? 'Идут продажи' : 'Распродано'
+  const badgeLabel = project.comingSoon ? t('common.badgeSoon') : project.status === 'active' ? t('common.badgeOnSale') : t('common.badgeSold')
   const modal = useLeadModalOptional()
 
   return (
@@ -62,7 +64,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <AreaIcon />
-              <span className="font-vela text-[16px] font-semibold text-secondary leading-[1.6]">Площадь</span>
+              <span className="font-vela text-[16px] font-semibold text-secondary leading-[1.6]">{t('common.area')}</span>
             </div>
             <span className="font-vela text-[16px] font-semibold text-secondary leading-[1.6]">{project.area}</span>
           </div>
@@ -70,7 +72,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <LocationIconSmall />
-              <span className="font-vela text-[16px] font-semibold text-secondary leading-[1.6]">Локация</span>
+              <span className="font-vela text-[16px] font-semibold text-secondary leading-[1.6]">{t('common.location')}</span>
             </div>
             <span className="font-vela text-[16px] font-semibold text-secondary leading-[1.6] text-right max-w-[505px]">{project.location}</span>
           </div>
@@ -87,13 +89,13 @@ export function ProjectCard({ project }: { project: Project }) {
         ) : project.status === 'active' ? (
           <div className="flex items-center gap-4 flex-wrap">
             <Link to={`/projects/${project.slug}`} className="flex flex-auto items-center justify-between bg-primary text-white rounded-full px-7 py-4 min-w-0 hover:bg-[#2F3A45] transition-colors">
-              <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">{project.comingSoon ? 'Подробнее' : 'Выбрать квартиру'}</span>
+              <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">{project.comingSoon ? t('common.learnMore') : t('common.chooseApartment')}</span>
               <span className="flex size-[37px] items-center justify-center rounded-full bg-white shrink-0 ml-2">
                 <ArrowUpRightIcon light={false} />
               </span>
             </Link>
             <button type="button" onClick={() => modal?.openLead()} className="flex flex-auto items-center justify-between border border-primary text-primary rounded-full px-7 py-4 min-w-0">
-              <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">Заказать звонок</span>
+              <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">{t('common.orderCall')}</span>
               <span className="flex size-[37px] items-center justify-center rounded-full bg-primary shrink-0 ml-2">
                 <ArrowUpRightIcon light={true} />
               </span>
@@ -101,7 +103,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
         ) : (
           <Link to={project.href ?? `/projects/${project.slug}`} className="flex items-center justify-between bg-primary text-white rounded-full px-7 py-4 hover:bg-[#2F3A45] transition-colors">
-            <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">Подробно</span>
+            <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">{t('common.learnMore')}</span>
             <span className="flex size-[37px] items-center justify-center rounded-full bg-white shrink-0 ml-2">
               <ArrowUpRightIcon light={false} />
             </span>

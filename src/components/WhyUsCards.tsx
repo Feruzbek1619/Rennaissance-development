@@ -1,5 +1,6 @@
 // Shared «Почему выбирают нас» card row — used on Home and About.
 // White by default, navy on hover; thematic icon per card (recolours on hover).
+import { useTranslation } from '@/i18n'
 
 function FactoryIcon() {
   return (
@@ -34,35 +35,15 @@ function LeaderIcon() {
   )
 }
 
-const cards = [
-  {
-    title: 'Собственное производство',
-    description: 'Собственный завод строительных материалов с 2021 года. Полный контроль качества и сроков.',
-    Icon: FactoryIcon,
-  },
-  {
-    title: 'Своя спецтехника',
-    description: 'Собственной техники на объектах. Строительство идёт без простоев и зависимости от подрядчиков.',
-    Icon: TruckIcon,
-  },
-  {
-    title: 'Полный цикл работ',
-    description: 'От проекта до передачи ключей — все этапы реализует одна компания. Единая ответственность и контроль качества.',
-    Icon: CycleIcon,
-  },
-  {
-    title: 'Опытное руководство',
-    description: 'Компанию возглавляет инженер-строитель с 15-летним опытом реализации государственных и частных проектов.',
-    Icon: LeaderIcon,
-  },
-]
+const icons = [FactoryIcon, TruckIcon, CycleIcon, LeaderIcon]
 
 export function WhyUsCards() {
+  const { t } = useTranslation()
   return (
     <div data-reveal-stagger className="flex gap-4 w-full items-stretch">
-      {cards.map(({ title, description, Icon }) => (
+      {icons.map((Icon, i) => (
         <div
-          key={title}
+          key={i}
           className="card-lift group flex-1 min-w-0 min-h-[286px] border border-border px-[26px] py-[46px] flex flex-col gap-12 bg-white hover:bg-primary transition-colors duration-300"
         >
           <div className="text-ink transition-colors duration-300 group-hover:text-bg-subtle">
@@ -70,10 +51,10 @@ export function WhyUsCards() {
           </div>
           <div className="flex flex-col gap-[11px]">
             <p className="font-heading text-[22px] font-bold uppercase leading-[1.17] text-ink transition-colors duration-300 group-hover:text-bg-subtle">
-              {title}
+              {t(`home.whyus.cards.${i}.title`)}
             </p>
             <p className="font-body text-[18px] leading-[1.37] text-secondary transition-colors duration-300 group-hover:text-border">
-              {description}
+              {t(`home.whyus.cards.${i}.desc`)}
             </p>
           </div>
         </div>
