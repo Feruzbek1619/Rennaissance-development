@@ -2,8 +2,12 @@ import { Link } from 'react-router-dom'
 import { Container } from '@/components/Container'
 import { posts } from '@/data/blog'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
+import { useTranslation } from '@/i18n'
+import { useLocalizedPosts } from '@/i18n/blogI18n'
+import type { BlogPost } from '@/data/blog'
 
-function BlogCard({ post }: { post: typeof posts[0] }) {
+function BlogCard({ post }: { post: BlogPost }) {
+  const { t } = useTranslation()
   return (
     <Link to={`/blog/${post.slug}`} className="group flex flex-col gap-0 bg-white overflow-hidden hover:shadow-lg transition-shadow">
       <div className="overflow-hidden aspect-[556/360]">
@@ -30,7 +34,7 @@ function BlogCard({ post }: { post: typeof posts[0] }) {
           {post.excerpt}
         </p>
         <span className="font-body text-[14px] font-medium text-accent mt-1 group-hover:underline">
-          Читать →
+          {t('pages.blog.readMore')} →
         </span>
       </div>
     </Link>
@@ -38,6 +42,9 @@ function BlogCard({ post }: { post: typeof posts[0] }) {
 }
 
 export default function Blog() {
+  const { t, tx } = useTranslation()
+  const localizedPosts = useLocalizedPosts(posts)
+  const filters = tx<string[]>('pages.blog.filters')
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────── */}
@@ -45,10 +52,10 @@ export default function Blog() {
         <Container>
           <div className="flex items-end justify-between gap-8">
             <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[900px]">
-              News, Insights &amp; Articles
+              {t('pages.blog.heroTitle')}
             </h1>
             <p className="font-body text-[18px] leading-[1.7] text-white/70 w-[440px] shrink-0 self-end">
-              Отраслевые тренды, новости компании и практические материалы о строительстве.
+              {t('pages.blog.heroDesc')}
             </p>
           </div>
         </Container>
@@ -62,12 +69,12 @@ export default function Blog() {
             {/* Filter row */}
             <div className="flex items-center justify-between gap-6">
               <div className="flex items-center gap-3 flex-wrap">
-                {['Все', 'Тренды', 'Строительство', 'Технологии', 'Безопасность', 'Экология'].map((cat) => (
+                {filters.map((cat, i) => (
                   <button
                     key={cat}
                     type="button"
                     className={`h-[40px] px-5 font-body text-[14px] font-medium border transition-colors ${
-                      cat === 'Все'
+                      i === 0
                         ? 'bg-primary text-white border-primary'
                         : 'bg-white text-ink border-border hover:border-primary hover:text-primary'
                     }`}
@@ -80,7 +87,7 @@ export default function Blog() {
 
             {/* Cards grid */}
             <div className="grid grid-cols-3 gap-6">
-              {posts.map((post) => (
+              {localizedPosts.map((post) => (
                 <BlogCard key={post.slug} post={post} />
               ))}
             </div>

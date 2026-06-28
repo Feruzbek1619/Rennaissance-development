@@ -3,14 +3,18 @@ import { Container } from '@/components/Container'
 import { posts } from '@/data/blog'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
 import NotFound from './NotFound'
+import { useTranslation } from '@/i18n'
+import { useLocalizedPost, useLocalizedPosts } from '@/i18n/blogI18n'
 
 export default function BlogDetails() {
+  const { t, tx } = useTranslation()
   const { slug } = useParams<{ slug: string }>()
-  const post = posts.find((p) => p.slug === slug)
+  const post = useLocalizedPost(posts.find((p) => p.slug === slug))
+  const related = useLocalizedPosts(posts.filter((p) => p.slug !== slug).slice(0, 3))
+  const navLabels = tx<string[]>('pages.blog.navLabels')
+  const extraTags = tx<string[]>('pages.blog.extraTags')
 
   if (!post) return <NotFound />
-
-  const related = posts.filter((p) => p.slug !== slug).slice(0, 3)
 
   return (
     <main>
@@ -28,7 +32,7 @@ export default function BlogDetails() {
                   to="/blog"
                   className="font-body text-[14px] text-white/50 hover:text-white/80 transition-colors"
                 >
-                  ← Блог
+                  ← {t('pages.blog.backToBlog')}
                 </Link>
                 <span className="text-white/30">•</span>
                 <span className="font-body text-[13px] uppercase tracking-[0.1em] text-accent font-medium">
@@ -41,7 +45,7 @@ export default function BlogDetails() {
               <div className="flex items-center gap-5">
                 <span className="font-body text-[15px] text-white/60">{post.date}</span>
                 <span className="text-white/30">•</span>
-                <span className="font-body text-[15px] text-white/60">{post.readTime} чтения</span>
+                <span className="font-body text-[15px] text-white/60">{post.readTime} {t('pages.blog.readingSuffix')}</span>
               </div>
             </div>
           </Container>
@@ -76,8 +80,8 @@ export default function BlogDetails() {
 
               {/* Tags */}
               <div className="flex items-center gap-3 mt-[48px] pt-[48px] border-t border-border">
-                <span className="font-body text-[14px] text-secondary/60">Теги:</span>
-                {[post.category, 'Строительство', 'Узбекистан'].map((tag) => (
+                <span className="font-body text-[14px] text-secondary/60">{t('pages.blog.tagsLabel')}</span>
+                {[post.category, ...extraTags].map((tag) => (
                   <span
                     key={tag}
                     className="h-[32px] px-4 bg-bg-subtle font-body text-[13px] text-ink flex items-center"
@@ -95,42 +99,36 @@ export default function BlogDetails() {
               <div className="bg-primary p-[36px] flex flex-col gap-5">
                 <div className="flex flex-col gap-2">
                   <span className="font-body text-[13px] uppercase tracking-[0.1em] text-white/50">
-                    О компании
+                    {t('pages.blog.aboutTag')}
                   </span>
                   <h3 className="font-heading text-[25px] font-bold uppercase leading-[1.3] text-white">
                     Renaissance Development
                   </h3>
                 </div>
                 <p className="font-body text-[15px] leading-[1.7] text-white/70">
-                  Застройщик полного цикла. Собственный завод UTB, проектирование, строительство и сдача объектов под ключ.
+                  {t('pages.blog.aboutDesc')}
                 </p>
                 <Link
                   to="/about"
                   className="inline-flex items-center justify-center h-[48px] px-6 bg-accent rounded-[5px] font-body font-medium text-[16px] text-white hover:bg-[#A2814E] transition-colors"
                 >
-                  О компании →
+                  {t('pages.blog.aboutTag')} →
                 </Link>
               </div>
 
               {/* Quick nav */}
               <div className="bg-bg-subtle p-[36px] flex flex-col gap-4">
                 <h3 className="font-heading text-[20px] font-bold uppercase leading-[1.3] text-ink">
-                  Разделы
+                  {t('pages.blog.sectionsTitle')}
                 </h3>
                 <div className="flex flex-col gap-2">
-                  {[
-                    { label: 'Проекты', to: '/projects' },
-                    { label: 'Услуги', to: '/services' },
-                    { label: 'О компании', to: '/about' },
-                    { label: 'B2B / Производство', to: '/b2b' },
-                    { label: 'Связаться', to: '/quote' },
-                  ].map((item) => (
+                  {['/projects', '/services', '/about', '/b2b', '/quote'].map((to, i) => (
                     <Link
-                      key={item.to}
-                      to={item.to}
+                      key={to}
+                      to={to}
                       className="font-body text-[16px] text-ink hover:text-accent transition-colors py-[6px] border-b border-border last:border-0"
                     >
-                      {item.label} →
+                      {navLabels[i]} →
                     </Link>
                   ))}
                 </div>
@@ -139,16 +137,16 @@ export default function BlogDetails() {
               {/* CTA card */}
               <div className="border border-border p-[36px] flex flex-col gap-5">
                 <h3 className="font-heading text-[20px] font-bold uppercase leading-[1.3] text-ink">
-                  Нужна консультация?
+                  {t('pages.blog.consultTitle')}
                 </h3>
                 <p className="font-body text-[15px] leading-[1.7] text-secondary">
-                  Задайте вопрос по строительству или приобретению недвижимости.
+                  {t('pages.blog.consultDesc')}
                 </p>
                 <Link
                   to="/quote"
                   className="inline-flex items-center justify-center h-[48px] px-6 bg-primary rounded-[5px] font-body font-medium text-[16px] text-white hover:bg-primary/90 transition-colors"
                 >
-                  Оставить заявку
+                  {t('common.leaveRequest')}
                 </Link>
               </div>
 
@@ -163,13 +161,13 @@ export default function BlogDetails() {
           <div className="flex flex-col gap-[48px]">
             <div className="flex items-center justify-between">
               <h2 className="font-heading text-[49px] font-bold uppercase leading-[1.2] text-ink">
-                Похожие статьи
+                {t('pages.blog.relatedTitle')}
               </h2>
               <Link
                 to="/blog"
                 className="font-body font-medium text-[16px] text-primary hover:text-accent transition-colors"
               >
-                Все статьи →
+                {t('pages.blog.allArticles')} →
               </Link>
             </div>
             <div className="grid grid-cols-3 gap-6">

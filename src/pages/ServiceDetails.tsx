@@ -6,33 +6,16 @@ import { ProjectCard } from '@/components/ProjectCard'
 import FAQSection from '@/components/home/FAQSection'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
 import NotFound from './NotFound'
+import { useTranslation } from '@/i18n'
+import { useLocalizedService } from '@/i18n/servicesI18n'
 
-const processSteps = [
-  {
-    num: '01',
-    title: 'Первичная консультация',
-    body: 'Обсуждаем требования, сроки и бюджет. Формируем техническое задание.',
-  },
-  {
-    num: '02',
-    title: 'Проектирование',
-    body: 'Разрабатываем архитектурную концепцию и полную рабочую документацию.',
-  },
-  {
-    num: '03',
-    title: 'Производство и поставка',
-    body: 'Завод UTB производит все необходимые материалы с контролем качества.',
-  },
-  {
-    num: '04',
-    title: 'Строительство',
-    body: 'Ведём строительство в соответствии с проектом и установленным графиком.',
-  },
-]
+type Step = { num: string; title: string; body: string }
 
 export default function ServiceDetails() {
+  const { t, tx } = useTranslation()
   const { slug } = useParams<{ slug: string }>()
-  const service = services.find((s) => s.slug === slug)
+  const service = useLocalizedService(services.find((s) => s.slug === slug))
+  const processSteps = tx<Step[]>('pages.services.processSteps')
 
   if (!service) return <NotFound />
 
@@ -49,7 +32,7 @@ export default function ServiceDetails() {
                 to="/services"
                 className="font-body text-[14px] text-white/50 hover:text-white/80 transition-colors mt-2"
               >
-                ← Услуги
+                ← {t('pages.services.tag')}
               </Link>
               <div className="border border-white/20 px-[18px] py-[8px]">
                 <span className="font-body text-body-sm text-white/60">{service.category}</span>
@@ -93,10 +76,10 @@ export default function ServiceDetails() {
               <div className="flex flex-col gap-8">
                 <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
-              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">ОБ УСЛУГЕ</span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('pages.services.aboutTag')}</span>
             </div>
                 <h2 className="font-heading text-[49px] font-bold uppercase leading-[1.2] text-ink">
-                  Что входит в услугу
+                  {t('pages.services.whatIncluded')}
                 </h2>
                 <p className="font-body text-[18px] leading-[1.7] text-secondary max-w-[640px]">
                   {service.longDescription}
@@ -114,7 +97,7 @@ export default function ServiceDetails() {
                     to="/quote"
                     className="inline-flex items-center justify-center h-[56px] px-10 bg-primary rounded-[5px] font-body font-medium text-[18px] text-white hover:bg-primary/90 transition-colors"
                   >
-                    Получить консультацию
+                    {t('pages.services.heroCta')}
                   </Link>
                 </div>
               </div>
@@ -137,10 +120,10 @@ export default function ServiceDetails() {
             <div className="flex flex-col gap-4">
               <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
-              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">ПРОЦЕСС</span>
+              <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('pages.services.processTag')}</span>
             </div>
               <h2 className="font-heading text-[49px] font-bold uppercase leading-[1.2] text-ink">
-                Как мы работаем
+                {t('pages.services.howTitle')}
               </h2>
             </div>
             <div className="grid grid-cols-4 gap-6">
@@ -170,13 +153,13 @@ export default function ServiceDetails() {
           <div className="flex flex-col gap-[60px]">
             <div className="flex items-center justify-between">
               <h2 className="font-heading text-[49px] font-bold uppercase leading-[1.2] text-ink">
-                Похожие проекты
+                {t('pages.services.relatedTitle')}
               </h2>
               <Link
                 to="/projects"
                 className="font-body font-medium text-[16px] text-primary hover:text-accent transition-colors"
               >
-                Все проекты →
+                {t('catalog.all')} →
               </Link>
             </div>
             <div className="grid grid-cols-3 gap-6">

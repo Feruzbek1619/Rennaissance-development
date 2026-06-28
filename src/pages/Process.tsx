@@ -2,53 +2,15 @@ import { Link } from 'react-router-dom'
 import { Container } from '@/components/Container'
 import FAQSection from '@/components/home/FAQSection'
 import NeedHelpSection from '@/components/home/NeedHelpSection'
+import { useTranslation } from '@/i18n'
 
-const stages = [
-  {
-    num: '01',
-    title: 'Проектирование',
-    subtitle: 'Концепция → рабочая документация',
-    body: 'Начинаем с детального анализа участка и требований. Проектная команда разрабатывает архитектурную концепцию, конструктивные решения и полную рабочую документацию. Все проекты соответствуют нормам Республики Узбекистан.',
-    details: [
-      'Архитектурная концепция',
-      'Конструктивные решения',
-      'Инженерные системы (ВК, ОВ, ЭС)',
-      'Рабочая документация',
-      'BIM-моделирование',
-      'Авторский надзор',
-    ],
-  },
-  {
-    num: '02',
-    title: 'Производство',
-    subtitle: 'Завод UTB → стройплощадка',
-    body: 'Завод Universal Temir Beton производит все ключевые материалы: товарный бетон, железобетонные изделия, газоблок, вентиляционные шахты и термо-рамы. Собственное производство — это прямой контроль качества и сроков поставки.',
-    details: [
-      'Товарный бетон всех марок',
-      'Железобетонные изделия (ЖБИ)',
-      'Газобетонные блоки',
-      'Вентиляционные шахты',
-      'Термо-рамы',
-      'Логистика на объект',
-    ],
-  },
-  {
-    num: '03',
-    title: 'Строительство',
-    subtitle: 'Каркас → ключи',
-    body: 'Монолитно-бетонный каркас, кирпичный фасад, инженерные системы и чистовая отделка. Каждый этап фиксируется в системе контроля качества. Объект сдаётся в установленный срок с полным пакетом документации.',
-    details: [
-      'Монолитный каркас',
-      'Кирпичный фасад',
-      'Инженерные системы',
-      'Отделочные работы',
-      'Благоустройство территории',
-      'Сдача и документация',
-    ],
-  },
-]
+type Stage = { num: string; title: string; subtitle: string; body: string; details: string[] }
+type Stat = { value: string; label: string }
 
 export default function Process() {
+  const { t, tx } = useTranslation()
+  const stages = tx<Stage[]>('pages.process.stages')
+  const stats = tx<Stat[]>('pages.process.stats')
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────── */}
@@ -56,17 +18,17 @@ export default function Process() {
         <Container>
           <div className="flex items-end justify-between gap-8">
             <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[800px]">
-              Strategic Execution.
+              {t('pages.process.heroTitle')}
             </h1>
             <div className="flex flex-col gap-5 items-end w-[460px] shrink-0">
               <p className="font-body text-[18px] leading-[1.7] text-white/70 text-right">
-                Три этапа — один стандарт качества. Полный цикл от проектирования до передачи объекта.
+                {t('pages.process.heroDesc')}
               </p>
               <Link
                 to="/quote"
                 className="inline-flex items-center justify-center h-[56px] px-10 bg-accent rounded-[5px] font-body font-medium text-[18px] text-white hover:bg-[#A2814E] transition-colors"
               >
-                Обсудить проект
+                {t('pages.process.heroCta')}
               </Link>
             </div>
           </div>
@@ -128,12 +90,7 @@ export default function Process() {
       <section className="bg-primary py-[80px]">
         <Container>
           <div className="grid grid-cols-4 gap-6">
-            {[
-              { value: '12+', label: 'Реализованных проектов' },
-              { value: '2019', label: 'Год основания' },
-              { value: '2021', label: 'Запуск завода UTB' },
-              { value: '100%', label: 'Собственные материалы' },
-            ].map((s) => (
+            {stats.map((s) => (
               <div key={s.label} className="flex flex-col gap-2">
                 <span className="font-heading text-[61px] font-bold leading-none text-white">
                   {s.value}
