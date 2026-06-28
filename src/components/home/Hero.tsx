@@ -133,7 +133,7 @@ export default function Hero() {
                       <button
                         type="button"
                         onClick={prev}
-                        aria-label="Предыдущий проект"
+                        aria-label={t('common.prev')}
                         tabIndex={i === current ? 0 : -1}
                         className="flex size-[53.333px] items-center justify-center rounded-full bg-white/50 text-ink transition-colors hover:bg-white"
                       >
@@ -142,7 +142,7 @@ export default function Hero() {
                       <button
                         type="button"
                         onClick={next}
-                        aria-label="Следующий проект"
+                        aria-label={t('common.next')}
                         tabIndex={i === current ? 0 : -1}
                         className="flex size-[53.333px] items-center justify-center rounded-full bg-white text-ink transition-colors hover:bg-bg-subtle"
                       >

@@ -81,7 +81,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
         {project.cardOnly ? (
           <button type="button" onClick={() => modal?.openLead(project.title)} className="flex items-center justify-between bg-primary text-white rounded-full px-7 py-4 hover:bg-[#2F3A45] transition-colors">
-            <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">Оставить заявку</span>
+            <span className="font-vela text-[24px] font-medium leading-[1.6] whitespace-nowrap">{t('common.leaveRequest')}</span>
             <span className="flex size-[37px] items-center justify-center rounded-full bg-white shrink-0 ml-2">
               <ArrowUpRightIcon light={false} />
             </span>

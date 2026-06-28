@@ -89,7 +89,7 @@ export default function ProductionSection() {
             <button
               type="button"
               onClick={prev}
-              aria-label="Предыдущий"
+              aria-label={t('common.prev')}
               className="flex size-[65px] items-center justify-center rounded-full bg-primary/50 text-white transition-colors hover:bg-primary"
             >
               <ChevronLeft className="size-6" />
@@ -97,7 +97,7 @@ export default function ProductionSection() {
             <button
               type="button"
               onClick={next}
-              aria-label="Следующий"
+              aria-label={t('common.next')}
               className="flex size-[65px] items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-[#2F3A45]"
             >
               <ChevronRight className="size-6" />

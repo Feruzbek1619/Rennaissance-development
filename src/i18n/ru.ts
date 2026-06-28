@@ -27,6 +27,10 @@ export default {
     badgeOnSale: 'Идут продажи',
     badgeSoon: 'Скоро в продаже',
     badgeSold: 'Распродано',
+    prev: 'Предыдущий',
+    next: 'Следующий',
+    notFoundAlt: 'Страница в разработке',
+    notFoundBack: 'Вернуться на главную',
   },
   lang: {
     ru: 'Русский',

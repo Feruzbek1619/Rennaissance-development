@@ -59,6 +59,7 @@ const fieldCls =
   'w-full bg-[#ededed] border border-white/10 rounded-[6px] px-4 font-vela text-[16px] text-secondary placeholder:text-[#77797b] outline-none focus:ring-2 focus:ring-accent'
 
 function ModalShell({ children, onClose }: { children: ReactNode; onClose: () => void }) {
+  const { t } = useTranslation()
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
@@ -68,7 +69,7 @@ function ModalShell({ children, onClose }: { children: ReactNode; onClose: () =>
       {/* Backdrop */}
       <button
         type="button"
-        aria-label="Закрыть"
+        aria-label={t('lead.close')}
         onClick={onClose}
         className="absolute inset-0 bg-black/60 backdrop-blur-[2px] cursor-default motion-safe:animate-[fadeIn_.2s_ease-out]"
       />
@@ -77,7 +78,7 @@ function ModalShell({ children, onClose }: { children: ReactNode; onClose: () =>
         <button
           type="button"
           onClick={onClose}
-          aria-label="Закрыть"
+          aria-label={t('lead.close')}
           className="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full text-white/70 hover:bg-white/10 hover:text-white transition-colors"
         >
           <CloseIcon />

@@ -27,6 +27,10 @@ export default {
     badgeOnSale: 'Sotuv ketmoqda',
     badgeSoon: 'Tez orada sotuvda',
     badgeSold: 'Sotilgan',
+    prev: 'Oldingi',
+    next: 'Keyingi',
+    notFoundAlt: 'Sahifa ishlab chiqilmoqda',
+    notFoundBack: 'Bosh sahifaga qaytish',
   },
   lang: {
     ru: 'Русский',

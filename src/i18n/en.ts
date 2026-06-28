@@ -27,6 +27,10 @@ export default {
     badgeOnSale: 'On sale now',
     badgeSoon: 'Coming soon',
     badgeSold: 'Sold out',
+    prev: 'Previous',
+    next: 'Next',
+    notFoundAlt: 'Page under construction',
+    notFoundBack: 'Back to home',
   },
   lang: {
     ru: 'Русский',
