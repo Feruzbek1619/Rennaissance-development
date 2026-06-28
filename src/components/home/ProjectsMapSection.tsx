@@ -10,10 +10,10 @@ export default function ProjectsMapSection() {
   return (
     <section className="bg-white py-[100px]">
       <Container>
-        <div className="flex items-end justify-between gap-8 mb-[52px]">
+        <div className="flex items-end justify-between gap-8 mb-[52px] max-lg:flex-col max-lg:items-start max-lg:gap-5">
           <div className="flex flex-col gap-5 min-w-0" data-reveal="left">
             <SectionTag>{t('home.map.tag')}</SectionTag>
-            <h2 className="font-heading text-[61px] font-bold uppercase leading-none text-ink max-w-[764px]">
+            <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-none text-ink max-w-[764px]">
               {t('home.map.title')}
             </h2>
           </div>

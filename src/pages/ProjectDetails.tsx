@@ -218,7 +218,7 @@ export default function ProjectDetails() {
           <Container>
             <div className="pb-[40px]">
               {/* Title */}
-              <p className="font-heading text-[80px] font-bold uppercase leading-none text-bg-subtle mb-[40px]">
+              <p className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-none text-bg-subtle mb-[40px]">
                 {project.title}
               </p>
 
@@ -279,7 +279,7 @@ export default function ProjectDetails() {
         <section className="bg-white pt-[80px] pb-[60px]">
           <Container>
             <div className="flex flex-col gap-8 max-w-[1390px]">
-              <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
+              <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink">
                 {t('proj.aboutPrefix')} {project.title}
               </h2>
               <div className="flex flex-col gap-6">
@@ -341,7 +341,7 @@ export default function ProjectDetails() {
       {/* ── 4. Stats tagline ─────────────────────────────── */}
       <section className="bg-bg-subtle py-[60px]">
         <Container>
-          <p className="text-center font-heading text-[45px] font-semibold leading-[1.4] mb-10">
+          <p className="text-center font-heading text-[45px] max-md:text-[27px] font-semibold leading-[1.4] mb-10">
             <span className="text-ink">{t('home.stats.s1')}</span>
             <span className="text-accent">{t('home.stats.s2')}</span>
           </p>
@@ -353,7 +353,7 @@ export default function ProjectDetails() {
               { value: '2019', label: t('home.stats.l4') },
             ].map((s) => (
               <div key={s.label} className="stat-card flex flex-1 flex-col items-start gap-2 px-8 py-6">
-                <p className="font-heading text-[75px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>
+                <p className="font-heading text-[75px] max-md:text-[44px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>
                 <p className="font-body text-body-sm font-medium text-secondary">{s.label}</p>
               </div>
             ))}
@@ -372,7 +372,7 @@ export default function ProjectDetails() {
                   <img loading="lazy" decoding="async" src={project.image} alt="" className="size-full object-cover" />
                 </div>
                 <div>
-                  <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink mb-4">{t('proj.advantagesTitle')}</h2>
+                  <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink mb-4">{t('proj.advantagesTitle')}</h2>
                   <p className="font-body text-[20px] leading-[1.6] text-ink">
                     {t('proj.detail.outdoorText')}
                   </p>
@@ -406,7 +406,7 @@ export default function ProjectDetails() {
             </div>
             {/* Right: dark panel */}
             <div className="flex-1 bg-primary p-[60px] flex flex-col gap-8">
-              <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-bg-subtle">{t('proj.advantagesTitle')}</h2>
+              <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-bg-subtle">{t('proj.advantagesTitle')}</h2>
               <p className="font-body text-[20px] leading-[1.6] text-white/80">
                 {t('proj.detail.interiorText')}
               </p>
@@ -429,7 +429,7 @@ export default function ProjectDetails() {
       {details?.floorPlans && (
         <section className="bg-primary py-[80px]">
           <Container>
-            <h2 className="font-heading text-[49px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-bg-subtle text-center mb-[48px]">
+            <h2 className="font-heading text-[49px] max-md:text-[30px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-bg-subtle text-center mb-[48px]">
               {t('proj.floorPlansTitle')}
             </h2>
             <div className="grid grid-cols-3 gap-6">
@@ -509,7 +509,7 @@ export default function ProjectDetails() {
       {details && (
         <section className="bg-white py-[100px]">
           <Container>
-            <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink mb-[60px]">
+            <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink mb-[60px]">
               {t('proj.nearbyTitle')}
             </h2>
             <div className="grid grid-cols-3 gap-4">
@@ -596,7 +596,7 @@ export default function ProjectDetails() {
               <span className="rule-gold shrink-0" aria-hidden></span>
               <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('home.production.tag')}</span>
             </div>
-            <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">{t('home.production.title')}</h2>
+            <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink">{t('home.production.title')}</h2>
           </div>
           <div className="flex items-center gap-[60px]">
             <div className="w-[698px] h-[420px] shrink-0 rounded-[5px] overflow-hidden">

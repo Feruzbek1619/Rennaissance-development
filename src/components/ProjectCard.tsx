@@ -59,7 +59,7 @@ export function ProjectCard({ project: rawProject, localize = true }: { project:
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-[5px]">
           <p className="font-heading text-[14px] font-semibold leading-[1.4] text-ink">{project.category}</p>
-          <p className="font-heading text-[61px] font-bold uppercase leading-none text-ink">{project.title}</p>
+          <p className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-none text-ink">{project.title}</p>
         </div>
 
         <div className="flex flex-col gap-2">

@@ -16,7 +16,7 @@ export default function Terms() {
               <div className="border border-white/20 px-[24px] py-[16px] self-start">
                 <span className="font-body text-body-sm text-white/60">{t('pages.terms.heroTag')}</span>
               </div>
-              <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.1] text-bg-subtle">
+              <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.1] text-bg-subtle">
                 {t('pages.terms.heroTitle')}
               </h1>
             </div>

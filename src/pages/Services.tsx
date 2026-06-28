@@ -85,7 +85,7 @@ export default function Services() {
         <Container>
           <div className="flex flex-col gap-10">
             <div className="flex items-end justify-between gap-8">
-              <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[900px]">
+              <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[900px]">
                 {t('pages.services.heroTitle')}
               </h1>
               <div className="flex flex-col gap-5 items-end w-[460px] shrink-0">
@@ -114,7 +114,7 @@ export default function Services() {
               <span className="rule-gold shrink-0" aria-hidden></span>
               <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('pages.services.tag')}</span>
             </div>
-                <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.2] text-ink">
+                <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.2] text-ink">
                   {t('pages.services.whatTitle')}
                 </h2>
               </div>
@@ -137,7 +137,7 @@ export default function Services() {
               <span className="rule-gold shrink-0" aria-hidden></span>
               <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('pages.services.processTag')}</span>
             </div>
-                <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.2] text-ink">
+                <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.2] text-ink">
                   {t('pages.services.howTitle')}
                 </h2>
               </div>
@@ -152,7 +152,7 @@ export default function Services() {
             <div className="grid grid-cols-3 gap-6">
               {steps.map((step) => (
                 <div key={step.num} className="bg-white p-[40px] flex flex-col gap-5">
-                  <span className="font-heading text-[61px] font-bold leading-none text-accent/20">
+                  <span className="font-heading text-[61px] max-md:text-[34px] font-bold leading-none text-accent/20">
                     {step.num}
                   </span>
                   <div className="flex flex-col gap-3">

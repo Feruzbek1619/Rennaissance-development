@@ -69,17 +69,17 @@ export default function ContactSection() {
         <div className="flex flex-col gap-[64px]">
 
           {/* Header */}
-          <div data-reveal="left" className="flex items-start justify-between">
-            <div className="flex flex-col gap-5 w-[850px] shrink min-w-0">
+          <div data-reveal="left" className="flex items-start justify-between max-lg:flex-col max-lg:gap-6">
+            <div className="flex flex-col gap-5 w-[850px] max-lg:w-full shrink min-w-0">
               <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
               <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('nav.contacts')}</span>
             </div>
-              <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
+              <h2 data-reveal="clip" className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink">
                 {t('home.contact.title')}
               </h2>
             </div>
-            <p className="font-body text-[24px] leading-[1.6] text-ink w-[692px] shrink min-w-0 pt-2">
+            <p className="font-body text-[24px] leading-[1.6] text-ink w-[692px] max-lg:w-full shrink min-w-0 pt-2">
               {t('home.contact.desc')}
             </p>
           </div>

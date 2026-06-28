@@ -357,7 +357,7 @@ export default function B2B() {
           <div className="flex flex-col gap-8 2xl:flex-row 2xl:items-start 2xl:justify-between mb-[64px]">
             <div className="flex flex-col gap-5">
               <SectionTag>{t('nav.contacts')}</SectionTag>
-              <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink 2xl:w-[850px]">
+              <h2 className="font-heading text-[44px] max-md:text-[27px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink 2xl:w-[850px]">
                 {t('home.contact.title')}
               </h2>
             </div>

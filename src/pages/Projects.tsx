@@ -80,7 +80,7 @@ export default function Projects() {
         <Container className="relative">
           <div className="flex items-center justify-between gap-10 pt-[110px] pb-[90px]">
             {/* Left: heading */}
-            <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.3] text-bg-subtle flex-1 min-w-0">
+            <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.3] text-bg-subtle flex-1 min-w-0">
               {t('pages.catalog.heroTitle')}
             </h1>
             {/* Right: description + CTA */}
@@ -180,7 +180,7 @@ export default function Projects() {
           <Container>
             <div data-reveal className="mb-[56px] flex flex-col gap-5">
               <SectionTag>{t('pages.catalog.completedTag')}</SectionTag>
-              <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-ink">
+              <h2 className="font-heading text-[44px] max-md:text-[27px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-ink">
                 {t('pages.catalog.completedTitle')}
               </h2>
               <p className="font-body text-[20px] leading-[1.6] text-secondary max-w-[760px]">

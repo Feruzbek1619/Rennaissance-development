@@ -76,8 +76,8 @@ export default function Footer() {
       <Container>
         <div className="pb-10 pt-[97px]">
           {/* CTA */}
-          <div className="flex items-center justify-between gap-10">
-            <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-bg-subtle shrink min-w-0">
+          <div className="flex items-center justify-between gap-10 max-md:flex-col max-md:items-start max-md:gap-6">
+            <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-bg-subtle shrink min-w-0">
               {t('footer.ctaTitle')}
             </h2>
             <Button to="/quote" variant="white" size="lg" className="shrink-0">
@@ -88,20 +88,20 @@ export default function Footer() {
           <hr className="mt-[94px] border-t border-white/10" />
 
           {/* Columns */}
-          <div className="mt-[74px] flex items-start justify-between">
+          <div className="mt-[74px] flex items-start justify-between max-lg:flex-col max-lg:gap-12">
             {/* Brand + tagline */}
-            <div className="flex w-[523px] flex-col items-center gap-[57px]">
+            <div className="flex w-[523px] max-lg:w-full flex-col items-center max-lg:items-start gap-[57px]">
               <img loading="lazy" decoding="async" src="/logo-stacked.svg" alt="Renaissance Development" className="h-[253px] w-[256px]" />
-              <p className="w-[469px] text-center font-body text-body-md text-secondary">
+              <p className="w-[469px] max-lg:w-full text-center max-lg:text-left font-body text-body-md text-secondary">
                 {t('footer.tagline')}
               </p>
             </div>
 
-            <LinkColumn title={t('footer.navTitle')} links={navLinks} className="border-l border-white/10 pl-[60px]" />
-            <LinkColumn title={t('footer.projectsTitle')} uppercase links={projectLinks} className="border-l border-white/10 pl-[60px]" />
+            <LinkColumn title={t('footer.navTitle')} links={navLinks} className="border-l border-white/10 pl-[60px] max-lg:border-l-0 max-lg:pl-0" />
+            <LinkColumn title={t('footer.projectsTitle')} uppercase links={projectLinks} className="border-l border-white/10 pl-[60px] max-lg:border-l-0 max-lg:pl-0" />
 
             {/* Contacts */}
-            <div className="flex flex-col gap-8 border-l border-white/10 pl-[60px]">
+            <div className="flex flex-col gap-8 border-l border-white/10 pl-[60px] max-lg:border-l-0 max-lg:pl-0">
               <ColumnTitle>{t('footer.contactsTitle')}</ColumnTitle>
               <div className="flex flex-col gap-4 font-body text-body-sm text-secondary">
                 <a href={`tel:${PHONE.replace(/\D/g, '')}`} className="flex items-start gap-4 transition-colors hover:text-white">
@@ -132,7 +132,7 @@ export default function Footer() {
           {/* Bottom bar */}
           <div className="mt-[60px]">
             <hr className="border-t border-white/10" />
-            <div className="mt-6 flex items-center justify-between">
+            <div className="mt-6 flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-5">
               <p className="font-body text-body-sm text-secondary">
                 {t('footer.rights')}
               </p>

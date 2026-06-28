@@ -26,23 +26,23 @@ export default function StatsSection() {
     <section className="bg-bg-subtle pb-[145px] pt-[90px]">
       <Container>
         <div className="flex flex-col gap-16">
-          <p data-reveal className="text-center font-heading text-[45px] font-semibold leading-[1.4]">
+          <p data-reveal className="text-center font-heading text-[45px] max-md:text-[27px] font-semibold leading-[1.4]">
             <span className="text-ink">{t('home.stats.s1')}</span>
             <span className="text-muted-text">{t('home.stats.s2')}</span>
           </p>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 max-md:flex-col">
             {stats.map((s, i) => (
               <div key={s.labelKey} data-reveal style={{ transitionDelay: `${i * 90}ms` }} className="stat-card card-lift flex flex-1 items-center justify-center px-[26px] py-6">
                 <div className="flex flex-col items-center gap-2">
-                  <p className="font-heading text-[75px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>
+                  <p className="font-heading text-[75px] max-md:text-[44px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>
                   <p className="text-center font-body text-body-sm font-medium text-secondary">{t(s.labelKey)}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 max-md:flex-col">
             {images.map((img, i) => (
               <Link
                 key={img.src}

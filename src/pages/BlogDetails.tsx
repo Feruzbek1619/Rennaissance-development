@@ -39,7 +39,7 @@ export default function BlogDetails() {
                   {post.category}
                 </span>
               </div>
-              <h1 className="font-heading text-[61px] font-bold uppercase leading-[1.2] text-bg-subtle">
+              <h1 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.2] text-bg-subtle">
                 {post.title}
               </h1>
               <div className="flex items-center gap-5">
@@ -160,7 +160,7 @@ export default function BlogDetails() {
         <Container>
           <div className="flex flex-col gap-[48px]">
             <div className="flex items-center justify-between">
-              <h2 className="font-heading text-[49px] font-bold uppercase leading-[1.2] text-ink">
+              <h2 className="font-heading text-[49px] max-md:text-[30px] font-bold uppercase leading-[1.2] text-ink">
                 {t('pages.blog.relatedTitle')}
               </h2>
               <Link

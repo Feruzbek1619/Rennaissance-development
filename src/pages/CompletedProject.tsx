@@ -95,7 +95,7 @@ export default function CompletedProject() {
       <section className="bg-white pt-[80px] pb-[40px]">
         <Container>
           <div data-reveal className="flex flex-col gap-8">
-            <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
+            <h2 className="font-heading text-[44px] max-md:text-[27px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
               {t('proj.aboutPrefix')} {project.title}
             </h2>
             <div className="flex flex-col gap-6 max-w-[1500px]">
@@ -169,7 +169,7 @@ export default function CompletedProject() {
         <Container>
           <div data-reveal className="mb-[48px] flex flex-col gap-5">
             <SectionTag>{t('proj.infraTag')}</SectionTag>
-            <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-ink">{t('proj.nearbyTitle')}</h2>
+            <h2 className="font-heading text-[44px] max-md:text-[27px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-ink">{t('proj.nearbyTitle')}</h2>
           </div>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
             {project.nearby.map((place, i) => (

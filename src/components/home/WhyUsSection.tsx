@@ -17,7 +17,7 @@ export default function WhyUsSection() {
           {/* Header */}
           <div data-reveal className="flex flex-col items-center gap-4 w-[1295px] max-w-full">
             <SectionTag>{t('home.whyus.tag')}</SectionTag>
-            <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink text-center">
+            <h2 data-reveal="clip" className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink text-center">
               {t('home.whyus.title')}
             </h2>
           </div>
@@ -30,7 +30,7 @@ export default function WhyUsSection() {
               shows ONLY the video; the IG header (top) and the likes / "View more"
               / comments footer (bottom) fall outside the tile and are clipped. */}
           <div className="flex flex-col gap-10 w-full">
-            <div className="grid grid-cols-5 gap-4 w-full">
+            <div className="grid grid-cols-5 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-4 w-full">
               {reels.map((id, i) => (
                 <div
                   key={id}

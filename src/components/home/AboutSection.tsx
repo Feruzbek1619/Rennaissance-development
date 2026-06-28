@@ -10,17 +10,17 @@ export default function AboutSection() {
   return (
     <section className="bg-white pt-[65px] pb-[100px]">
       <Container>
-        <div className="flex items-start gap-[69px]">
+        <div className="flex items-start gap-[69px] max-lg:flex-col max-lg:gap-10">
 
           {/* Left column */}
-          <div data-reveal="left" className="w-[782px] shrink-0 flex flex-col">
+          <div data-reveal="left" className="w-[782px] max-lg:w-full shrink-0 flex flex-col">
             {/* Header: badge + heading */}
             <div className="flex flex-col gap-5">
               <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
               <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('home.about.tag')}</span>
             </div>
-              <h2 data-reveal="clip" className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink">
+              <h2 data-reveal="clip" className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink">
                 {t('home.about.title')}
               </h2>
             </div>
@@ -30,7 +30,7 @@ export default function AboutSection() {
 
             {/* Company content */}
             <div className="flex flex-col gap-8">
-              <p className="font-heading text-[50px] font-bold uppercase leading-[1.3] text-ink">
+              <p className="font-heading text-[50px] max-md:text-[30px] font-bold uppercase leading-[1.3] text-ink">
                 Renaissance Development
               </p>
               <div className="flex flex-col gap-0 font-body text-[20px] leading-[1.6] text-ink">
@@ -49,7 +49,7 @@ export default function AboutSection() {
           </div>
 
           {/* Right column: photo offset 194px from column top */}
-          <div data-reveal="right" className="mt-[194px] flex-1">
+          <div data-reveal="right" className="mt-[194px] max-lg:mt-0 flex-1">
             <div className="h-[754px] rounded-[5px] overflow-hidden">
               <img loading="lazy" decoding="async"
                 src="/assets/about-company.webp"

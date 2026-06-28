@@ -26,7 +26,7 @@ export default function TopHeader() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 max-sm:hidden"
             >
               <Instagram className="size-4 text-green" />
               <span className="font-vela text-xs font-medium leading-[1.3]">{INSTAGRAM}</span>
@@ -34,8 +34,8 @@ export default function TopHeader() {
           </div>
 
           {/* Links + language */}
-          <div className="flex items-center gap-[40px]">
-            <div className="flex gap-4 font-vela text-xs font-medium leading-[1.3] text-white/60">
+          <div className="flex items-center gap-[40px] max-lg:gap-0">
+            <div className="flex gap-4 font-vela text-xs font-medium leading-[1.3] text-white/60 max-lg:hidden">
               <a
                 href="/renaissance-catalog.pdf"
                 download="Renaissance-Development-katalog.pdf"

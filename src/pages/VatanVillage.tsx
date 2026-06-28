@@ -127,7 +127,7 @@ export default function VatanVillage() {
       <section className="bg-white pt-[80px] pb-[40px]">
         <Container>
           <div data-reveal className="flex flex-col gap-8">
-            <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
+            <h2 className="font-heading text-[44px] max-md:text-[27px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
               {t('proj.aboutPrefix')} {project.title}
             </h2>
             <div className="flex flex-col gap-6 max-w-[1730px]">
@@ -227,7 +227,7 @@ export default function VatanVillage() {
           <div data-reveal className="flex flex-col gap-10 2xl:flex-row 2xl:items-start 2xl:justify-between">
             <div className="flex flex-col gap-5">
               <SectionTag>{t(`proj.pages.${SLUG}.whyTag`)}</SectionTag>
-              <h2 className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
+              <h2 className="font-heading text-[44px] max-md:text-[27px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
                 {t('proj.advantagesTitle')}
               </h2>
             </div>
@@ -289,7 +289,7 @@ export default function VatanVillage() {
       {details.floorPlans && (
         <section className="bg-primary py-[80px]">
           <Container>
-            <h2 data-reveal className="font-heading text-[49px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-bg-subtle text-center mb-[48px]">
+            <h2 data-reveal className="font-heading text-[49px] max-md:text-[30px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-bg-subtle text-center mb-[48px]">
               {t('proj.floorPlansTitle')}
             </h2>
             <div className="grid grid-cols-3 gap-6">
@@ -333,7 +333,7 @@ export default function VatanVillage() {
       {/* ── 8. Места поблизости ──────────────────────────── */}
       <section className="bg-white py-[100px]">
         <Container>
-          <h2 data-reveal className="font-heading text-[44px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink mb-[60px]">
+          <h2 data-reveal className="font-heading text-[44px] max-md:text-[27px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink mb-[60px]">
             {t('proj.nearbyTitle')}
           </h2>
           <div className="grid grid-cols-3 gap-4">

@@ -39,7 +39,7 @@ export default function ServiceDetails() {
               </div>
             </div>
             <div className="flex items-end justify-between gap-8">
-              <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[780px]">
+              <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[780px]">
                 {service.title}
               </h1>
               <p className="font-body text-[18px] leading-[1.7] text-white/70 w-[460px] shrink-0 self-end">
@@ -56,7 +56,7 @@ export default function ServiceDetails() {
           <div className="grid grid-cols-4 gap-0 divide-x divide-white/10">
             {service.stats.map((s) => (
               <div key={s.label} className="flex flex-col gap-2 px-8 first:pl-0 last:pr-0">
-                <span className="font-heading text-[49px] font-bold leading-none text-white">
+                <span className="font-heading text-[49px] max-md:text-[30px] font-bold leading-none text-white">
                   {s.value}
                 </span>
                 <span className="font-body text-[15px] leading-[1.5] text-white/60">
@@ -78,7 +78,7 @@ export default function ServiceDetails() {
               <span className="rule-gold shrink-0" aria-hidden></span>
               <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('pages.services.aboutTag')}</span>
             </div>
-                <h2 className="font-heading text-[49px] font-bold uppercase leading-[1.2] text-ink">
+                <h2 className="font-heading text-[49px] max-md:text-[30px] font-bold uppercase leading-[1.2] text-ink">
                   {t('pages.services.whatIncluded')}
                 </h2>
                 <p className="font-body text-[18px] leading-[1.7] text-secondary max-w-[640px]">
@@ -122,14 +122,14 @@ export default function ServiceDetails() {
               <span className="rule-gold shrink-0" aria-hidden></span>
               <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('pages.services.processTag')}</span>
             </div>
-              <h2 className="font-heading text-[49px] font-bold uppercase leading-[1.2] text-ink">
+              <h2 className="font-heading text-[49px] max-md:text-[30px] font-bold uppercase leading-[1.2] text-ink">
                 {t('pages.services.howTitle')}
               </h2>
             </div>
             <div className="grid grid-cols-4 gap-6">
               {processSteps.map((step) => (
                 <div key={step.num} className="bg-white p-[36px] flex flex-col gap-5">
-                  <span className="font-heading text-[49px] font-bold leading-none text-accent/20">
+                  <span className="font-heading text-[49px] max-md:text-[30px] font-bold leading-none text-accent/20">
                     {step.num}
                   </span>
                   <div className="flex flex-col gap-3">
@@ -152,7 +152,7 @@ export default function ServiceDetails() {
         <Container>
           <div className="flex flex-col gap-[60px]">
             <div className="flex items-center justify-between">
-              <h2 className="font-heading text-[49px] font-bold uppercase leading-[1.2] text-ink">
+              <h2 className="font-heading text-[49px] max-md:text-[30px] font-bold uppercase leading-[1.2] text-ink">
                 {t('pages.services.relatedTitle')}
               </h2>
               <Link

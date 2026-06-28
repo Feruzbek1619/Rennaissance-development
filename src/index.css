@@ -36,10 +36,12 @@
 
   body {
     @apply bg-bg font-body text-ink;
-    /* Desktop-only target (Figma = 1920 only). Layout is fluid 1280→1920;
-       below 1280 the page scrolls horizontally honestly instead of clipping
-       content behind overflow:hidden. No mobile/tablet design exists yet. */
-    min-width: 1280px;
+  }
+
+  /* Desktop/laptop keep the fluid 1280→1920 floor (honest horizontal scroll
+     below 1280). Below lg (<1024) the layout goes fluid for the mobile design. */
+  @media (min-width: 1024px) {
+    body { min-width: 1280px; }
   }
 
   h1,
@@ -134,6 +136,11 @@
 @keyframes modalIn {
   from { opacity: 0; transform: translateY(12px) scale(0.98); }
   to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
 }
 
 /* ──────────────────────────────────────────────────────────

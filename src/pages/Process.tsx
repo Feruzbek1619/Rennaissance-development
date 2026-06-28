@@ -17,7 +17,7 @@ export default function Process() {
       <section className="bg-primary py-[100px]">
         <Container>
           <div className="flex items-end justify-between gap-8">
-            <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[800px]">
+            <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[800px]">
               {t('pages.process.heroTitle')}
             </h1>
             <div className="flex flex-col gap-5 items-end w-[460px] shrink-0">
@@ -63,7 +63,7 @@ export default function Process() {
                     <span className="font-body text-[13px] uppercase tracking-[0.12em] text-secondary/60">
                       {stage.subtitle}
                     </span>
-                    <h2 className="font-heading text-[49px] font-bold uppercase leading-[1.2] text-ink">
+                    <h2 className="font-heading text-[49px] max-md:text-[30px] font-bold uppercase leading-[1.2] text-ink">
                       {stage.title}
                     </h2>
                   </div>
@@ -92,7 +92,7 @@ export default function Process() {
           <div className="grid grid-cols-4 gap-6">
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col gap-2">
-                <span className="font-heading text-[61px] font-bold leading-none text-white">
+                <span className="font-heading text-[61px] max-md:text-[34px] font-bold leading-none text-white">
                   {s.value}
                 </span>
                 <span className="font-body text-[16px] leading-[1.5] text-white/60">

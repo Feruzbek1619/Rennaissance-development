@@ -51,7 +51,7 @@ export default function Blog() {
       <section className="bg-primary py-[100px]">
         <Container>
           <div className="flex items-end justify-between gap-8">
-            <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[900px]">
+            <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[900px]">
               {t('pages.blog.heroTitle')}
             </h1>
             <p className="font-body text-[18px] leading-[1.7] text-white/70 w-[440px] shrink-0 self-end">

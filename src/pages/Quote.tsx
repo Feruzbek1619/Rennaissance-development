@@ -85,7 +85,7 @@ export default function Quote() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="bg-gradient-to-b from-primary to-primary/70 py-[100px]">
         <Container>
-          <h1 className="font-heading text-[80px] font-bold uppercase leading-[1.3] text-bg-subtle">
+          <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.3] text-bg-subtle">
             {t('pages.contacts.heroTitle')}
           </h1>
         </Container>
@@ -98,7 +98,7 @@ export default function Quote() {
             {/* Left: form */}
             <div className="flex flex-col gap-[40px] 2xl:gap-[59px] flex-1 min-w-0 2xl:max-w-[730px]">
               <div className="flex flex-col gap-[15px]">
-                <h2 className="font-heading text-[61px] font-bold uppercase leading-none text-bg-subtle">
+                <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-none text-bg-subtle">
                   {t('common.leaveRequest')}
                 </h2>
                 <p className="font-vela text-[24px] leading-[1.3] text-white/70">
@@ -203,7 +203,7 @@ export default function Quote() {
               <span className="rule-gold shrink-0" aria-hidden></span>
               <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('nav.contacts')}</span>
             </div>
-              <h2 className="font-heading text-[61px] font-bold uppercase leading-[1.3] text-ink w-[850px]">
+              <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink w-[850px]">
                 {t('home.contact.title')}
               </h2>
             </div>
