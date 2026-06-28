@@ -21,12 +21,12 @@ const ROUTES = [
   { path: '/nonexistent-zzz', name: '404' },
 ]
 
-// In-scope per desktop-only strategy: gates must be green at 1280/1440/1920.
-// Below 1280 the page intentionally horizontal-scrolls (body min-width:1280).
+// Now responsive: gates must be green on mobile/tablet AND desktop.
 const VIEWPORTS = [
-  { w: 1920, h: 1080 },
+  { w: 390, h: 844 },
+  { w: 768, h: 1024 },
   { w: 1440, h: 900 },
-  { w: 1280, h: 800 },
+  { w: 1920, h: 1080 },
 ]
 
 type Finding = {

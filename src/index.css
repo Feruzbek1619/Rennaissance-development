@@ -167,8 +167,8 @@
       clip-path 1.05s cubic-bezier(0.76, 0, 0.24, 1);
     will-change: opacity, transform;
   }
-  html.reveal-ready [data-reveal='left'] { transform: translateX(-90px); }
-  html.reveal-ready [data-reveal='right'] { transform: translateX(90px); }
+  html.reveal-ready [data-reveal='left'] { transform: translateX(-40px); }
+  html.reveal-ready [data-reveal='right'] { transform: translateX(40px); }
   html.reveal-ready [data-reveal='scale'] { transform: scale(0.9); }
   html.reveal-ready [data-reveal='blur'] { transform: translateY(28px); filter: blur(12px); }
   html.reveal-ready [data-reveal='fade'] { transform: none; }

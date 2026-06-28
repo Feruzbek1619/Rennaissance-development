@@ -6,6 +6,7 @@ import { Container } from '@/components/Container'
 import { ChevronDown, Phone } from '@/components/icons'
 import { cn } from '@/lib/cn'
 import { useTranslation, LANGS } from '@/i18n'
+import { useLeadModalOptional } from '@/components/LeadModal'
 import { projects as allProjects } from '@/data/projects'
 import { completedProjects } from '@/data/completed'
 
@@ -55,6 +56,7 @@ const trailingLinks = [
 export default function Navigation() {
   const { pathname } = useLocation()
   const { t, lang, setLang } = useTranslation()
+  const modal = useLeadModalOptional()
   const catalogActive = pathname.startsWith('/projects') || pathname.startsWith('/completed')
   const [open, setOpen] = useState(false)
 
@@ -255,7 +257,7 @@ export default function Navigation() {
                 <Phone className="size-5 shrink-0" />
                 {PHONE}
               </a>
-              <Button to="/quote" variant="accent" size="lg" className="w-full justify-center">
+              <Button onClick={() => { setOpen(false); modal?.openLead() }} variant="accent" size="lg" className="w-full justify-center">
                 {t('common.orderCall')}
               </Button>
             </div>
