@@ -185,7 +185,7 @@ export default function Quote() {
       <section className="bg-white pb-[30px]">
         <Container>
           <div className="bg-white p-[30px]">
-            <div className="relative h-[607px] overflow-hidden rounded-[5px]">
+            <div className="relative isolate h-[607px] overflow-hidden rounded-[5px]">
               <ProjectsMap
                 points={officePoint}
                 zoom={15}
