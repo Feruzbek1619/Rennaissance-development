@@ -186,9 +186,10 @@ export default function ProjectDetails() {
   const [active, setActive] = useState(0)
   const project = projects.find((p) => p.slug === slug)
 
-  if (!project) return <Navigate to="/projects" replace />
+  // Business centers are card-only (no detail page) — send them back to catalog.
+  if (!project || project.cardOnly) return <Navigate to="/projects" replace />
 
-  const others = projects.filter((p) => p.slug !== slug).slice(0, 3)
+  const others = projects.filter((p) => p.slug !== slug && !p.cardOnly).slice(0, 3)
   const details = project.details
   const gallery = project.gallery ?? [project.image]
   const galleryPrev = () => setActive((c) => (c - 1 + gallery.length) % gallery.length)
