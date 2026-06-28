@@ -1,5 +1,5 @@
 'use client'
-import { createContext, useCallback, useContext, useState, type ReactNode } from 'react'
+import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react'
 import ru from './ru'
 import en from './en'
 import uz from './uz'
@@ -39,6 +39,11 @@ const I18nContext = createContext<Ctx | null>(null)
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>(initialLang)
+
+  // Keep <html lang> in sync (initial load + every change) for a11y/SEO.
+  useEffect(() => {
+    if (typeof document !== 'undefined') document.documentElement.lang = lang
+  }, [lang])
 
   const setLang = useCallback((l: Lang) => {
     setLangState(l)
