@@ -17,7 +17,7 @@ export default {
     directorAppeal: 'Direktorga murojaat',
   },
   common: {
-    orderCall: "Qo‘ng‘iroq so‘rash",
+    orderCall: "Ariza qoldirish",
     leaveRequest: 'Ariza qoldirish',
     learnMore: 'Batafsil',
     chooseApartment: 'Kvartira tanlash',
