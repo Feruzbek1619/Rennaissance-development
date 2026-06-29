@@ -1,9 +1,9 @@
 name: Build & Deploy to hosting
 
-# Запускается на каждый push в main + можно дёрнуть вручную (вкладка Actions → Run workflow).
+# Ручной запуск (вкладка Actions → Run workflow). Авто-деплой идёт через Vercel
+# Git-интеграцию; этот FTP-пайплайн оставлен как опция для хостинга bp.uztan.ru —
+# чтобы включить авто-запуск на push, верни блок `push:` и добавь FTP-секреты.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 # Не запускать два деплоя параллельно — отменяем предыдущий.
