@@ -1,4 +1,54 @@
 export default {
+  seo: {
+    suffix: ' | Renaissance Development',
+    ogLocale: 'uz_UZ',
+    pages: {
+      '/': {
+        title: 'Renaissance Development — Toshkentda turar-joy majmualari va kottedjlar',
+        desc: '2019 yildan beri Toshkentda to‘liq tsiklli quruvchi: ALANDALUS, BOTANIKA LUXURY, VATAN VILLAGE, TURON, SHARQ AVENUE majmualarida komfort darajasidagi kvartira va kottedjlar. O‘z materiallarimizdan quramiz.',
+      },
+      '/projects': {
+        title: 'Obyektlar katalogi — Toshkentda kvartira va kottedjlar',
+        desc: 'Renaissance Development ning Toshkentdagi turar-joy majmualari va kottedj shaharchalari: rejalar, joylashuv, sotuvdagi va topshirilgan loyihalar.',
+      },
+      '/about': {
+        title: 'Kompaniya haqida — Toshkentda to‘liq tsiklli quruvchi',
+        desc: 'Renaissance Development: 7+ yillik tajriba, 12+ loyiha, o‘z materiallar zavodi va texnikasi. Kompaniya, jamoa va ish tamoyillari haqida.',
+      },
+      '/contacts': {
+        title: 'Kontaktlar — Toshkentda Renaissance Development',
+        desc: 'Renaissance Development bilan bog‘laning: telefon, Toshkentdagi ofis manzili, messenjerlar. Ariza qoldiring — 5 daqiqada qo‘ng‘iroq qilamiz.',
+      },
+      '/b2b': {
+        title: 'Ishlab chiqarish — beton, TBM, gazoblok | Universal Temir Beton',
+        desc: 'O‘z zavodimiz Universal Temir Beton: tayyor beton, temir-beton mahsulotlari, gazoblok, ventilyatsiya tizimlari, alyumin profillar, maxsus texnika.',
+      },
+      '/faq': {
+        title: 'Kvartira sotib olish bo‘yicha savollar — Renaissance Development',
+        desc: 'Kvartira sotib olish, bo‘lib-bo‘lib to‘lash, topshirish muddatlari va shartlari bo‘yicha tez-tez so‘raladigan savollarga javoblar.',
+      },
+      '/services': {
+        title: 'Xizmatlar — Toshkentda loyihalash va qurilish',
+        desc: 'To‘liq tsikl: loyihalash, materiallar ishlab chiqarish hamda turar-joy va tijorat ko‘chmas mulkini qurish.',
+      },
+      '/process': {
+        title: 'Biz qanday ishlaymiz — to‘liq tsikl qurilish bosqichlari',
+        desc: 'Uch bosqich: loyihalash, UTB zavodida ishlab chiqarish va qurilish. Har bosqichda sifat nazorati — loyihadan kalitgacha.',
+      },
+      '/blog': {
+        title: 'Qurilish va ko‘chmas mulk blogi — Renaissance Development',
+        desc: 'Qurilish, texnologiyalar, xavfsizlik va Toshkentdagi ko‘chmas mulk haqida Renaissance Development quruvchisidan maqolalar.',
+      },
+      '/privacy': {
+        title: 'Maxfiylik siyosati',
+        desc: 'Renaissance Development shaxsiy ma\'lumotlaringizni qanday yig‘adi, ishlatadi va himoya qiladi.',
+      },
+      '/terms': {
+        title: 'Foydalanish shartlari',
+        desc: 'Renaissance Development sayti va xizmatlaridan foydalanish shartlari.',
+      },
+    },
+  },
   nav: {
     home: 'Bosh sahifa',
     about: 'Kompaniya haqida',

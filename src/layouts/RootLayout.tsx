@@ -4,6 +4,7 @@ import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import Preloader from '@/components/Preloader'
 import { LeadModalProvider } from '@/components/LeadModal'
+import RouteSeo from '@/components/Seo'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { useSmoothScroll } from '@/hooks/useSmoothScroll'
 
@@ -14,6 +15,7 @@ export default function RootLayout() {
   useScrollReveal()
   return (
     <LeadModalProvider>
+      <RouteSeo />
       <Preloader />
       <ScrollRestoration />
       <TopHeader />

@@ -1,4 +1,54 @@
 export default {
+  seo: {
+    suffix: ' | Renaissance Development',
+    ogLocale: 'en_US',
+    pages: {
+      '/': {
+        title: 'Renaissance Development — residential complexes & cottages in Tashkent',
+        desc: 'Full-cycle developer in Tashkent since 2019: comfort-class apartments and cottages in ALANDALUS, BOTANIKA LUXURY, VATAN VILLAGE, TURON, SHARQ AVENUE. Built from our own materials.',
+      },
+      '/projects': {
+        title: 'Properties — apartments & cottages in Tashkent',
+        desc: 'Residential complexes and cottage villages by Renaissance Development in Tashkent: layouts, location, on-sale and completed projects.',
+      },
+      '/about': {
+        title: 'About — full-cycle developer in Tashkent',
+        desc: 'Renaissance Development: 7+ years of experience, 12+ projects, an in-house materials plant and machinery. About the company, team and principles.',
+      },
+      '/contacts': {
+        title: 'Contacts — Renaissance Development in Tashkent',
+        desc: 'Get in touch with Renaissance Development: phone, office address in Tashkent, messengers. Leave a request — we call back within 5 minutes.',
+      },
+      '/b2b': {
+        title: 'Production — concrete, RC products, aerated blocks | UTB',
+        desc: 'The in-house Universal Temir Beton plant: ready-mix concrete, reinforced-concrete products, aerated blocks, ventilation systems, aluminium profiles, machinery.',
+      },
+      '/faq': {
+        title: 'FAQ about buying an apartment — Renaissance Development',
+        desc: 'Answers to common questions about buying apartments, instalments, delivery dates and terms in Renaissance Development projects in Tashkent.',
+      },
+      '/services': {
+        title: 'Services — design and construction in Tashkent',
+        desc: 'Full cycle: design, production of materials and construction of residential and commercial real estate in Tashkent.',
+      },
+      '/process': {
+        title: 'How we work — full-cycle construction stages',
+        desc: 'Three stages: design, production at the UTB plant and construction. Quality control at every stage — from design to keys.',
+      },
+      '/blog': {
+        title: 'Blog on construction and real estate — Renaissance Development',
+        desc: 'Articles on construction, technology, safety and real estate in Tashkent from developer Renaissance Development.',
+      },
+      '/privacy': {
+        title: 'Privacy Policy',
+        desc: 'How Renaissance Development collects, uses and protects your personal data.',
+      },
+      '/terms': {
+        title: 'Terms & Conditions',
+        desc: 'Terms of use of the Renaissance Development website and services.',
+      },
+    },
+  },
   nav: {
     home: 'Home',
     about: 'About',
