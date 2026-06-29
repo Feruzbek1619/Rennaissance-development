@@ -1,0 +1,36 @@
+name: Deploy to Vercel (prod)
+
+# Авто-деплой при каждом push в main. Не зависит от Vercel↔GitHub привязки —
+# работает через Vercel-токен. Vercel сам собирает из исходников (vercel.json:
+# framework vite, build, dist) и публикует на rnd-vatan.vercel.app.
+#
+# Единственное, что нужно добавить ОДИН раз:
+#   Settings → Secrets and variables → Actions → New repository secret
+#   Name: VERCEL_TOKEN   Value: токен с https://vercel.com/account/tokens
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: vercel-prod
+  cancel-in-progress: true
+
+# Не секреты — ID команды и проекта rnd-vatan (служит на rnd-vatan.vercel.app).
+env:
+  VERCEL_ORG_ID: team_UUKs79jwCekfkwpO1azD40O2
+  VERCEL_PROJECT_ID: prj_mA4i3EMj89qWooUOCpLrORqcRDNW
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to Vercel prod (source build)
+        run: |
+          npm i -g vercel@latest
+          vercel deploy --prod --yes --token="$VERCEL_TOKEN"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
