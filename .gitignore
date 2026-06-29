@@ -40,3 +40,4 @@ test-results/
 
 # local deploy bundle (не коммитим, 85MB)
 renaissance-site.zip
+redirect-to-main.htaccess

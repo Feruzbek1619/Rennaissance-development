@@ -12,7 +12,7 @@ import { localizeService } from '@/i18n/servicesI18n'
 import { localizePost } from '@/i18n/blogI18n'
 
 // Production origin (update when a custom domain is connected).
-export const SITE_URL = 'https://rnd-vatan.vercel.app'
+export const SITE_URL = 'https://renaissancebuilding.uz'
 const DEFAULT_OG = '/assets/project-vatan.webp'
 
 type Lang = 'ru' | 'uz' | 'en'

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rnd-vatan.vercel.app/sitemap.xml
+Sitemap: https://renaissancebuilding.uz/sitemap.xml
