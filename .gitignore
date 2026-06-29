@@ -32,3 +32,8 @@ tests/crop
 *.njsproj
 *.sln
 *.sw?
+
+# Playwright audit/recon output
+tests/audit-out/
+tests/recon-out/
+test-results/
