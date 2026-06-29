@@ -1,14 +1,20 @@
-name: Build & Deploy to hosting
+name: Build & Deploy to server (renaissancebuilding.uz)
 
-# Ручной запуск (вкладка Actions → Run workflow). Авто-деплой идёт через Vercel
-# Git-интеграцию; этот FTP-пайплайн оставлен как опция для хостинга bp.uztan.ru —
-# чтобы включить авто-запуск на push, верни блок `push:` и добавь FTP-секреты.
+# КАК ТЫ И ХОТЕЛ: каждый push в main → сборка → автозалив по FTP на твой сервер
+# (хостинг bp.uztan.ru) в папку домена → сайт сразу обновляется на renaissancebuilding.uz.
+#
+# Нужно ОДИН раз добавить FTP-доступы в Secrets репозитория
+# (Settings → Secrets and variables → Actions → New repository secret):
+#   FTP_HOST       — FTP-хост (из панели, раздел FTP; напр. bp.uztan.ru или IP 149.86.227.242)
+#   FTP_USERNAME   — FTP-логин
+#   FTP_PASSWORD   — FTP-пароль  (вписываешь ТЫ, в поле GitHub; мне не присылай)
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
-# Не запускать два деплоя параллельно — отменяем предыдущий.
 concurrency:
-  group: deploy-main
+  group: deploy-server
   cancel-in-progress: true
 
 jobs:
@@ -30,8 +36,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Заливаем содержимое dist/ на хостинг по FTP (incremental — шлёт только изменённое).
-      # Все значения берутся из Secrets репозитория (Settings → Secrets and variables → Actions).
+      # Заливаем собранный dist/ по FTP в корень домена. Incremental — шлёт только изменённое.
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -41,8 +46,12 @@ jobs:
           port: ${{ vars.FTP_PORT || 21 }}
           protocol: ${{ vars.FTP_PROTOCOL || 'ftp' }}
           local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
-          # dotfiles (.htaccess) тоже заливаются:
+          # Корень домена на сервере. Если после FTP-входа ты попадаешь НЕ в /www,
+          # поменяй это значение на то, что видишь (напр. "renaissancebuilding.uz/"
+          # или "./www/renaissancebuilding.uz/"). Можно переопределить переменной
+          # репозитория FTP_REMOTE_DIR (Settings → Variables).
+          server-dir: ${{ vars.FTP_REMOTE_DIR || '/www/renaissancebuilding.uz/' }}
+          # .htaccess (SPA-маршруты) тоже заливается:
           exclude: |
             **/.git*
             **/.git*/**

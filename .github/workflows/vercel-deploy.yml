@@ -1,15 +1,10 @@
 name: Deploy to Vercel (prod)
 
-# Авто-деплой при каждом push в main. Не зависит от Vercel↔GitHub привязки —
-# работает через Vercel-токен. Vercel сам собирает из исходников (vercel.json:
-# framework vite, build, dist) и публикует на rnd-vatan.vercel.app.
-#
-# Единственное, что нужно добавить ОДИН раз:
-#   Settings → Secrets and variables → Actions → New repository secret
-#   Name: VERCEL_TOKEN   Value: токен с https://vercel.com/account/tokens
+# ЗАПАСНОЙ путь — деплой на Vercel (rnd-vatan.vercel.app). Основной деплой идёт
+# на твой сервер (deploy.yml). Этот оставлен на РУЧНОЙ запуск, чтобы не падать на
+# каждый push. Нужен секрет VERCEL_TOKEN (https://vercel.com/account/tokens),
+# чтобы вернуть авто-запуск — добавь блок push: обратно.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 concurrency:
