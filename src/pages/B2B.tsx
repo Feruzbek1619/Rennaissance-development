@@ -194,7 +194,7 @@ export default function B2B() {
           <Container>
             <div className="flex max-w-[1100px] flex-col gap-7">
               <SectionTag className="[&_span:last-child]:text-accent">Renaissance Building Company</SectionTag>
-              <h1 className="font-heading text-[64px] 2xl:text-[92px] font-bold uppercase leading-[1.02] text-bg-subtle">
+              <h1 className="font-heading text-[64px] max-lg:text-[44px] max-sm:text-[34px] 2xl:text-[92px] font-bold uppercase leading-[1.02] text-bg-subtle">
                 {t('home.production.title')}
               </h1>
               <p className="font-vela text-[22px] 2xl:text-[26px] leading-[1.5] text-white/80 max-w-[840px]">
@@ -235,7 +235,7 @@ export default function B2B() {
           <div data-reveal className="flex flex-col gap-10 xl:flex-row xl:items-start xl:justify-between">
             <div className="flex flex-col gap-5 xl:w-[520px] 2xl:w-[640px] xl:shrink-0">
               <SectionTag>{t('pages.b2b.introTag')}</SectionTag>
-              <h2 className="font-heading text-[40px] 2xl:text-[56px] font-bold uppercase leading-[1.2] text-ink">
+              <h2 className="font-heading text-[40px] max-md:text-[27px] 2xl:text-[56px] font-bold uppercase leading-[1.2] text-ink">
                 {t('pages.b2b.introTitle')}
               </h2>
             </div>
@@ -326,7 +326,7 @@ export default function B2B() {
               {/* Left: copy */}
               <div className="flex flex-col gap-5 p-[44px] 2xl:p-[64px]">
                 <SectionTag className="[&_span:last-child]:text-accent">{t('pages.b2b.formTag')}</SectionTag>
-                <h2 className="font-heading text-[38px] 2xl:text-[50px] font-bold uppercase leading-[1.1] text-white">
+                <h2 className="font-heading text-[38px] max-md:text-[26px] 2xl:text-[50px] font-bold uppercase leading-[1.1] text-white">
                   {t('pages.b2b.formTitle')}
                 </h2>
                 <p className="font-vela text-[19px] 2xl:text-[22px] leading-[1.5] text-white/80">

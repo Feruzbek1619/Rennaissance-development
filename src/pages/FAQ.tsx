@@ -71,7 +71,7 @@ export default function FAQ() {
             {/* Left: form */}
             <div className="flex flex-col gap-[27px] w-[730px] max-lg:!w-full shrink-0">
               <div className="flex flex-col gap-[15px]">
-                <h2 className="font-heading text-[59px] font-bold uppercase leading-none text-bg-subtle">
+                <h2 className="font-heading text-[59px] max-md:text-[34px] font-bold uppercase leading-none text-bg-subtle">
                   {t('home.needhelp.title')}
                 </h2>
                 <p className="font-vela text-[24px] leading-[1.3] text-white/70">

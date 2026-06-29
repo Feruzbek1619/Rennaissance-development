@@ -82,7 +82,7 @@ export default function CompletedProject() {
             <span className="font-body text-[13px] font-semibold uppercase tracking-[0.22em] text-accent">{project.eyebrow}</span>
             <span className="h-px w-9 bg-accent" />
           </div>
-          <h1 className="font-heading text-[52px] 2xl:text-[80px] font-bold uppercase leading-none text-bg-subtle">{project.title}</h1>
+          <h1 className="font-heading text-[52px] max-md:text-[32px] 2xl:text-[80px] font-bold uppercase leading-none text-bg-subtle">{project.title}</h1>
           <p className="font-body text-[18px] leading-[1.5] text-white/80 max-w-[680px]">{project.location}</p>
           <span className="mt-1 inline-flex items-center gap-2 rounded-full border border-accent/60 bg-accent/15 px-5 py-2 font-vela text-[15px] font-medium uppercase tracking-[0.1em] text-accent backdrop-blur-sm">
             <CheckIcon />
@@ -197,7 +197,7 @@ export default function CompletedProject() {
           <div className="flex items-stretch gap-4">
             {stats.map((s, i) => (
               <div key={s.label} data-reveal style={{ transitionDelay: `${i * 90}ms` }} className="stat-card card-lift flex flex-1 flex-col items-center justify-center gap-2 px-[26px] py-[24px] text-center">
-                <p className="font-heading text-[56px] 2xl:text-[75px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>
+                <p className="font-heading text-[56px] max-lg:text-[40px] max-sm:text-[32px] 2xl:text-[75px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>
                 <p className="font-body text-[16px] font-medium leading-[1.6] text-secondary">{s.label}</p>
               </div>
             ))}

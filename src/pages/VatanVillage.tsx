@@ -99,7 +99,7 @@ export default function VatanVillage() {
 
         {/* Title + CTAs, centered */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-[28px] px-6 text-center">
-          <h1 className="font-heading text-[56px] 2xl:text-[80px] font-bold uppercase leading-none text-bg-subtle">
+          <h1 className="font-heading text-[56px] max-lg:text-[40px] max-sm:text-[32px] 2xl:text-[80px] font-bold uppercase leading-none text-bg-subtle">
             {project.title}
           </h1>
           <div className="flex items-center gap-4 max-sm:flex-col max-sm:w-full max-sm:gap-3">
@@ -277,7 +277,7 @@ export default function VatanVillage() {
                 style={{ transitionDelay: `${i * 90}ms` }}
                 className="stat-card card-lift flex flex-1 flex-col items-center justify-center gap-2 px-[26px] py-[24px] text-center"
               >
-                <p className="font-heading text-[56px] 2xl:text-[75px] font-bold uppercase leading-none text-black"><CountUp value={s.value} /></p>
+                <p className="font-heading text-[56px] max-lg:text-[40px] max-sm:text-[32px] 2xl:text-[75px] font-bold uppercase leading-none text-black"><CountUp value={s.value} /></p>
                 <p className="font-body text-[16px] leading-[1.6] font-medium text-secondary">{s.label}</p>
               </div>
             ))}

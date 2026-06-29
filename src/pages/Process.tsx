@@ -56,7 +56,7 @@ export default function Process() {
 
                 {/* Content side */}
                 <div className="flex-1 min-w-0 flex flex-col gap-6 pt-4">
-                  <span className="font-heading text-[120px] font-bold leading-none text-accent/10 select-none -mt-6">
+                  <span className="font-heading text-[120px] max-md:text-[64px] font-bold leading-none text-accent/10 select-none -mt-6">
                     {stage.num}
                   </span>
                   <div className="flex flex-col gap-2 -mt-10">
