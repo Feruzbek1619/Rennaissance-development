@@ -201,7 +201,7 @@ export default function B2B() {
                 {t('pages.b2b.heroSubtitle')}
               </p>
               <div className="flex flex-wrap items-center gap-4 pt-2">
-                <Button variant="accent" size="lg" onClick={() => modal?.openLead('Производство')}>
+                <Button variant="accent" size="lg" onClick={() => modal?.openLead('Производство', t('nav.production'))}>
                   {t('common.leaveRequest')}
                 </Button>
                 <button
@@ -307,7 +307,7 @@ export default function B2B() {
                     ))}
                   </ul>
                   <div className="pt-3">
-                    <Button variant="primary" size="lg" onClick={() => modal?.openLead(`Производство — ${d.ruTitle}`)}>
+                    <Button variant="primary" size="lg" onClick={() => modal?.openLead(`Производство — ${d.ruTitle}`, `${t('nav.production')} — ${t(`pages.b2b.directions.${i}.title`)}`)}>
                       {t('common.leaveRequest')}
                     </Button>
                   </div>

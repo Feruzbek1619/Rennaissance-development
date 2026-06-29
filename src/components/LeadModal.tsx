@@ -18,8 +18,13 @@ import { useTranslation } from '@/i18n'
 type Mode = 'closed' | 'form' | 'success'
 
 type LeadModalCtx = {
-  /** Open the form. Pass an object/project name, or omit to derive from the URL. */
-  openLead: (object?: string) => void
+  /**
+   * Open the form. `object` is the canonical (Russian) name sent to Telegram so
+   * the sales team sees stable object names; `displayObject` is the localized
+   * label shown to the user in the modal (defaults to `object`). Omit both to
+   * derive the object from the URL.
+   */
+  openLead: (object?: string, displayObject?: string) => void
   openSuccess: () => void
   close: () => void
 }
@@ -89,7 +94,7 @@ function ModalShell({ children, onClose }: { children: ReactNode; onClose: () =>
   )
 }
 
-function LeadForm({ object, onSuccess }: { object?: string; onSuccess: () => void }) {
+function LeadForm({ object, displayObject, onSuccess }: { object?: string; displayObject?: string; onSuccess: () => void }) {
   const { t } = useTranslation()
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
@@ -117,7 +122,7 @@ function LeadForm({ object, onSuccess }: { object?: string; onSuccess: () => voi
         </h2>
         {object ? (
           <p className="font-vela text-[15px] leading-[1.4] text-[#c7c7c7]">
-            {t('lead.objectLabel')} <span className="font-semibold text-accent">{object}</span>
+            {t('lead.objectLabel')} <span className="font-semibold text-accent">{displayObject || object}</span>
           </p>
         ) : null}
         <p className="font-vela text-[15px] leading-[1.4] text-[#c7c7c7]">
@@ -191,9 +196,12 @@ function SuccessBody({ onClose }: { onClose: () => void }) {
 export function LeadModalProvider({ children }: { children: ReactNode }) {
   const [mode, setMode] = useState<Mode>('closed')
   const [object, setObject] = useState<string>('')
+  const [display, setDisplay] = useState<string>('')
 
-  const openLead = useCallback((obj?: string) => {
-    setObject(obj ?? objectFromPath())
+  const openLead = useCallback((obj?: string, displayObject?: string) => {
+    const o = obj ?? objectFromPath()
+    setObject(o)
+    setDisplay(displayObject ?? o)
     setMode('form')
   }, [])
   const openSuccess = useCallback(() => setMode('success'), [])
@@ -217,7 +225,7 @@ export function LeadModalProvider({ children }: { children: ReactNode }) {
       {children}
       {mode !== 'closed' && (
         <ModalShell onClose={close}>
-          {mode === 'form' ? <LeadForm object={object} onSuccess={openSuccess} /> : <SuccessBody onClose={close} />}
+          {mode === 'form' ? <LeadForm object={object} displayObject={display} onSuccess={openSuccess} /> : <SuccessBody onClose={close} />}
         </ModalShell>
       )}
     </Ctx.Provider>

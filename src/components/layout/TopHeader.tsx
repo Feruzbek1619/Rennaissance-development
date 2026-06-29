@@ -43,7 +43,7 @@ export default function TopHeader() {
               >
                 {t('header.downloadCatalog')}
               </a>
-              <button type="button" onClick={() => modal?.openLead('Обращение к директору')} className="transition-colors hover:text-white">
+              <button type="button" onClick={() => modal?.openLead('Обращение к директору', t('header.directorAppeal'))} className="transition-colors hover:text-white">
                 {t('header.directorAppeal')}
               </button>
             </div>
