@@ -99,7 +99,7 @@ Node-id для `get_design_context`.
 
 ## Build Progress
 
-**Текущий этап:** Stage 8 COMPLETE + Responsive QA pass (desktop) COMPLETE.
+**Текущий этап:** Stages 0–8 COMPLETE · Desktop QA · Full Figma audit · **Mobile responsive · i18n (ru/uz/en) · SEO · Telegram-лиды — ВСЁ COMPLETE**. Осталось: Stage 9 (анимации) + custom domain.
 
 - [x] Stage 0 — Scaffold + tokens + fonts
 - [x] Stage 1 — Base components (Navigation, TopHeader, Button, Footer, ServiceCard, Form)
@@ -111,7 +111,13 @@ Node-id для `get_design_context`.
 - [x] Stage 7 — NotFound (404) + Privacy (`/privacy`) + Terms (`/terms`)
 - [x] Stage 8 — Services (`/services`) + ServiceDetails (`/services/:slug`) + Process (`/process`) + Blog (`/blog`) + BlogDetails (`/blog/:slug`) + data files (`services.ts`, `blog.ts`)
 - [x] QA — Responsive/browser-truth pass (desktop strategy): honest gates green @1280/1440/1920 via Playwright
-- [ ] Stage 9 — Animations pass (Framer Motion)
+- [x] QA — Full Figma audit pass (per-page deviation sweep, 14 страниц)
+- [x] **i18n** — ru/uz/en на весь сайт (`useTranslation`+`tx()`, оверлеи данных `*I18n.ts`). См. memory [[i18n-setup]].
+- [x] **SEO** — RouteSeo (per-route localized meta + canonical + OG/Twitter + JSON-LD), `robots.txt`, `sitemap.xml`. См. memory [[seo-setup]].
+- [x] **Telegram-лиды** — формы → serverless endpoint → группа, объект на канон-RU. См. memory [[telegram-lead-integration]].
+- [x] **Mobile responsive** — phones-first ниже lg(1024): burger-меню, max-* !important оверрайды, стек колонок/сеток. Реально-глаза Playwright-проход по КАЖДОЙ странице @375. Desktop ≥1024 не тронут. См. memory [[responsive-strategy]].
+- [~] Stage 9 — Animations pass (Framer Motion) — в работе (сейчас живой CSS scroll-reveal; framer-motion установлен)
+- [ ] Custom domain — обновить `SITE_URL` (Seo.tsx) + robots + sitemap при подключении домена (сейчас `rnd-vatan.vercel.app`)
 
 ---
 
@@ -203,6 +209,8 @@ Node-id для `get_design_context`.
 ### QA — Responsive / browser-truth pass (desktop strategy)
 **Решение Feruz (2026-06-23):** сайт **desktop-only**. Pixel-perfect на 1920, плавно держим 1440→1280; ниже 1280 — честный горизонтальный скролл. Мобайл/планшет ВНЕ scope (в Figma их нет). См. memory [[responsive-strategy]].
 
+> ⚠️ **ОБНОВЛЕНО (позже):** стратегия изменена — сайт теперь **полностью адаптивный**. Ниже lg(1024) — phones-first через `max-*` `!important`-оверрайды + burger-меню; desktop ≥1024 остаётся pixel-perfect нетронутым. `body{min-width:1280px}` scoped только в `@media(min-width:1024px)`. Проведён реально-глаза Playwright-проход по каждой странице @375 (см. секцию ниже «Mobile responsive pass»). Запись «desktop-only» выше — историческая.
+
 **Источник правды — реальный Chromium (Playwright), не превью.** Аудит-харнесс:
 - `tests/audit.spec.ts` + `playwright.audit.config.ts` (bundled chromium, viewports 1280/1440/1920). Гейты: scrollWidth ≤ clientWidth, ноль console-ошибок, ноль 404, ноль битых картинок, fonts incl. Cyrillic loaded (`document.fonts.check`), CLS, childOverflow. Артефакты → `tests/audit-out/*.json` (gitignored).
 - `tests/interaction.spec.ts` — состояния в браузере: дропдаун навигации (hover), FAQ-аккордеон (клик), видимый focus.
@@ -231,7 +239,18 @@ Node-id для `get_design_context`.
 - **ProjectDetails** (`7800:3198`, `7791:12363`): иконки «мест поблизости» (искры/шапка/машина/корзина) + серые карточки; карточки карусели → строки Площадь/Локация + 2 кнопки.
 
 **Решение Feruz (2026-06-23):** шаблонные страницы (Services, ServiceDetails, Process, Blog, BlogDetails) — их Figma это generic Solidus с английским placeholder-контентом → **оставлены как есть** (текущая RU-адаптация).
-**Отложено (real-content, по желанию):** B2B — отсутствует секция ПРОИЗВОДСТВО + порядок (FAQ→Production→форма→контакты); ProjectDetails — первый блок ПРЕИМУЩЕСТВА мозаикой фото (нужны ассеты интерьер/ландшафт).
+**~~Отложено~~ → СДЕЛАНО:** B2B секция ПРОИЗВОДСТВО (товары concrete/travertine/ventilation/aluminium/cranes + детальные блоки) есть; ProjectDetails/детальные страницы блок ПРЕИМУЩЕСТВА реализован карточками (фото + заголовок + описание). Оба пункта закрыты.
+
+### i18n / SEO / Telegram-лиды
+- **i18n:** `useTranslation()` → `{ t, lang, setLang, tx }`; `tx<T>()` возвращает массивы/объекты с RU-фолбэком. Локали `src/i18n/{ru,en,uz}.ts` (default-export вложенных объектов, 3×536 строк, симметрично). Оверлеи данных `projectsI18n/completedI18n/servicesI18n/blogI18n.ts` — локализуют по индексу, RU = источник правды.
+- **SEO:** `src/components/Seo.tsx` `RouteSeo` (вмонтирован в `RootLayout`) обновляет `<head>` per route+lang; JSON-LD (Organization/WebSite/Residence+geo/BreadcrumbList); canonical схлопывает дубли роутов (`/quote`→`/contacts`, `/production`→`/b2b`). `public/robots.txt` + `public/sitemap.xml`. **`SITE_URL` в Seo.tsx = `https://rnd-vatan.vercel.app` — менять при подключении домена** (+ robots + sitemap).
+- **Лиды:** `openLead(object?, displayObject?)` — `object`=канон-RU (уходит в Telegram), `displayObject`=локализованный (показ в модалке). Bot-token только в env-переменных serverless-функции, не в репо.
+
+### Mobile responsive pass
+- **Стратегия:** phones-first ниже `lg`(1024). `body{min-width:1280px}` обёрнут в `@media(min-width:1024px)`; `@media(max-width:1023px){html,body{overflow-x:clip}}`. Burger-меню + slide-out панель ниже lg.
+- **Правило оверрайдов:** мобильные правки ТОЛЬКО через `max-sm/max-md/max-lg` + `!important` (`max-md:!flex-col`, `max-sm:!w-full` …) — потому что произвольные утилити (`w-[Npx]`, `grid-cols-N`, `flex`) бьют по равной специфичности порядком в источнике. Desktop ≥1024 не трогать.
+- **Типовые баги (исправлены):** десктопные горизонтальные ряды (`flex`/фикс-ширина/`self-end`) не перестраивались → контент сжимался в полоску и обрезался `overflow-x:clip`. Чинится `max-*:flex-col` + сброс ширины (`max-sm:!w-full`) + `flex-wrap` для мета-рядов. Carousel-слайды (ProductionSection) — `max-md:!flex-col` на слайде + сброс w/h фото.
+- **Верификация:** реально-глаза (скриншоты Playwright @375), не только overflow-числа — 1fr/flex-1 колонки сжимаются БЕЗ горизонтального overflow, числовой аудит их не ловит.
 
 ---
 

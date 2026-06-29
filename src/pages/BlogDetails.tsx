@@ -81,9 +81,9 @@ export default function BlogDetails() {
               {/* Tags */}
               <div className="flex items-center gap-3 flex-wrap gap-y-3 mt-[48px] pt-[48px] border-t border-border">
                 <span className="font-body text-[14px] text-secondary/60">{t('pages.blog.tagsLabel')}</span>
-                {[post.category, ...extraTags].map((tag) => (
+                {[post.category, ...extraTags].map((tag, i) => (
                   <span
-                    key={tag}
+                    key={`${tag}-${i}`}
                     className="h-[32px] px-4 bg-bg-subtle font-body text-[13px] text-ink flex items-center"
                   >
                     {tag}
