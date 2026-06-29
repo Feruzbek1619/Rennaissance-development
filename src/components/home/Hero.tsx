@@ -72,7 +72,7 @@ export default function Hero() {
   const next = () => setCurrent((c) => (c + 1) % slides.length)
 
   return (
-    <section className="bg-bg overflow-hidden h-[calc(100vh_-_151px)] min-h-[600px] max-lg:h-auto max-lg:!min-h-0">
+    <section className="bg-bg overflow-hidden h-[calc(100vh_-_151px)] min-h-[600px] max-lg:!h-auto max-lg:!min-h-0">
       <Container className="h-full">
         <div className="overflow-hidden h-full">
           <div

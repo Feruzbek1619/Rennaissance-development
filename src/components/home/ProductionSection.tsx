@@ -23,7 +23,7 @@ export default function ProductionSection() {
   const next = () => go((current + 1) % slides.length)
 
   return (
-    <section className="bg-bg-subtle pt-[76px] pb-[60px]">
+    <section className="bg-bg-subtle pt-[76px] max-md:!pt-[44px] pb-[60px]">
       <Container>
         <div className="flex flex-col gap-8">
 

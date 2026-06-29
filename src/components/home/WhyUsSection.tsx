@@ -10,7 +10,7 @@ const reels = ['DZpAXTcKF-O', 'DZCCGtOimnV', 'DYWhU01igXe', 'DYHg1XgDbAx', 'DX1f
 export default function WhyUsSection() {
   const { t } = useTranslation()
   return (
-    <section className="bg-white py-[100px]">
+    <section className="bg-white py-[100px] max-md:!py-[56px]">
       <Container>
         <div className="flex flex-col gap-16 items-center">
 

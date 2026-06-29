@@ -74,7 +74,7 @@ export default function Footer() {
   return (
     <footer className="bg-ink text-white">
       <Container>
-        <div className="pb-10 pt-[97px]">
+        <div className="pb-10 pt-[97px] max-md:!pt-[48px]">
           {/* CTA */}
           <div className="flex items-center justify-between gap-10 max-md:!flex-col max-md:items-start max-md:gap-6">
             <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-bg-subtle shrink min-w-0">

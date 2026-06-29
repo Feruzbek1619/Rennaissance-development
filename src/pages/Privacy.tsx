@@ -9,7 +9,7 @@ export default function Privacy() {
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-b from-primary to-primary/80 py-[72px]">
+      <section className="bg-gradient-to-b from-primary to-primary/80 py-[72px] max-md:!py-[44px]">
         <Container>
           <div className="flex items-start justify-between">
             <div className="flex flex-col gap-5">
@@ -28,7 +28,7 @@ export default function Privacy() {
       </section>
 
       {/* ── Content ──────────────────────────────────────── */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="max-w-[820px] mx-auto flex flex-col gap-[60px]">
             {sections.map((s) => (

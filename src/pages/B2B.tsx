@@ -230,7 +230,7 @@ export default function B2B() {
       </section>
 
       {/* ── 2. Intro ────────────────────────────────────────── */}
-      <section className="bg-white py-[80px] 2xl:py-[100px]">
+      <section className="bg-white py-[80px] max-md:!py-[48px] 2xl:py-[100px]">
         <Container>
           <div data-reveal className="flex flex-col gap-10 xl:flex-row xl:items-start xl:justify-between">
             <div className="flex flex-col gap-5 xl:w-[520px] 2xl:w-[640px] xl:shrink-0">
@@ -319,7 +319,7 @@ export default function B2B() {
       </section>
 
       {/* ── 4. Inline lead form ─────────────────────────────── */}
-      <section id="lead" className="scroll-mt-[110px] bg-white py-[90px] 2xl:py-[110px]">
+      <section id="lead" className="scroll-mt-[110px] bg-white py-[90px] max-md:!py-[52px] 2xl:py-[110px]">
         <Container>
           <div className="overflow-hidden rounded-[12px] bg-primary">
             <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -352,7 +352,7 @@ export default function B2B() {
       <FAQSection />
 
       {/* ── 6. Contact cards ────────────────────────────────── */}
-      <section className="bg-white py-[100px] border-t border-border">
+      <section className="bg-white py-[100px] max-md:!py-[56px] border-t border-border">
         <Container>
           <div className="flex flex-col gap-8 2xl:flex-row 2xl:items-start 2xl:justify-between mb-[64px]">
             <div className="flex flex-col gap-5">

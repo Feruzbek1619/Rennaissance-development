@@ -24,7 +24,7 @@ export default function BlogDetails() {
           <img loading="lazy" decoding="async" src={post.image} alt="" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/30" />
         </div>
-        <div className="relative py-[100px]">
+        <div className="relative py-[100px] max-md:!py-[56px]">
           <Container>
             <div className="flex flex-col gap-6 max-w-[780px]">
               <div className="flex items-center gap-4">
@@ -53,7 +53,7 @@ export default function BlogDetails() {
       </section>
 
       {/* ── Article body + sidebar ────────────────────────── */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex items-start gap-[80px] max-lg:!flex-col max-lg:gap-8">
 
@@ -156,7 +156,7 @@ export default function BlogDetails() {
       </section>
 
       {/* ── Related articles ─────────────────────────────── */}
-      <section className="bg-bg-subtle py-[100px]">
+      <section className="bg-bg-subtle py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex flex-col gap-[48px]">
             <div className="flex items-center justify-between">

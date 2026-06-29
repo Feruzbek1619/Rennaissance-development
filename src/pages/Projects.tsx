@@ -78,7 +78,7 @@ export default function Projects() {
           className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
         />
         <Container className="relative">
-          <div className="flex items-center justify-between gap-10 pt-[110px] pb-[90px] max-lg:!flex-col max-lg:items-start max-lg:gap-8">
+          <div className="flex items-center justify-between gap-10 pt-[110px] max-md:!pt-[52px] pb-[90px] max-md:!pb-[48px] max-lg:!flex-col max-lg:items-start max-lg:gap-8">
             {/* Left: heading */}
             <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.3] text-bg-subtle flex-1 min-w-0">
               {t('pages.catalog.heroTitle')}
@@ -99,7 +99,7 @@ export default function Projects() {
       </section>
 
       {/* Projects grid */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           {/* Category filter */}
           <div className="mb-[56px] flex flex-wrap justify-center gap-3">
@@ -129,7 +129,7 @@ export default function Projects() {
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <section className="bg-white pb-[100px]">
+        <section className="bg-white pb-[100px] max-md:!pb-[56px]">
           <Container>
             <div className="flex items-center justify-center gap-6">
               {/* Prev */}
@@ -176,7 +176,7 @@ export default function Projects() {
 
       {/* Completed / sold-out projects — showcase, "Подробно" only */}
       {completedProjects.length > 0 && (
-        <section className="bg-bg-subtle py-[100px]">
+        <section className="bg-bg-subtle py-[100px] max-md:!py-[56px]">
           <Container>
             <div data-reveal className="mb-[56px] flex flex-col gap-5">
               <SectionTag>{t('pages.catalog.completedTag')}</SectionTag>

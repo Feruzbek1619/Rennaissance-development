@@ -205,8 +205,8 @@ export default function ProjectDetails() {
   return (
     <main>
       {/* ── 1. Hero ─────────────────────────────────────── */}
-      <section className="relative h-[888px] overflow-hidden bg-primary">
-        <img loading="lazy" decoding="async"
+      <section className="relative h-[888px] max-md:!h-[600px] overflow-hidden bg-primary">
+        <img loading="eager" decoding="async"
           src={project.image}
           alt={project.title}
           className="absolute inset-0 size-full object-cover"
@@ -253,18 +253,18 @@ export default function ProjectDetails() {
                 </div>
 
                 {/* CTAs — right side */}
-                <div className="flex items-center gap-4 shrink-0">
+                <div className="flex items-center gap-4 shrink-0 max-sm:flex-col max-sm:w-full max-sm:gap-3">
                   <button
                     type="button"
                     onClick={() => modal?.openLead()}
-                    className="flex items-center gap-3 bg-primary text-white rounded-full px-[21px] py-[16px] font-vela text-[20px] font-medium leading-[1.6] hover:bg-[#2F3A45] transition-colors"
+                    className="flex items-center gap-3 bg-primary text-white rounded-full px-[21px] py-[16px] font-vela text-[20px] font-medium leading-[1.6] hover:bg-[#2F3A45] transition-colors max-sm:w-full max-sm:justify-between"
                   >
                     {t('common.orderCall')}
                     <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
                       <ArrowIcon />
                     </span>
                   </button>
-                  <Button variant="accent" size="lg" href="tel:+998783333331">
+                  <Button variant="accent" size="lg" href="tel:+998783333331" className="max-sm:w-full max-sm:justify-center">
                     {t('proj.callNow')}
                   </Button>
                 </div>
@@ -276,7 +276,7 @@ export default function ProjectDetails() {
 
       {/* ── 2. About project ────────────────────────────── */}
       {details && (
-        <section className="bg-white pt-[80px] pb-[60px]">
+        <section className="bg-white pt-[80px] max-md:!pt-[44px] pb-[60px]">
           <Container>
             <div className="flex flex-col gap-8 max-w-[1390px]">
               <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink">
@@ -363,7 +363,7 @@ export default function ProjectDetails() {
 
       {/* ── 5. Features (outdoor) ────────────────────────── */}
       {details && (
-        <section className="bg-white py-[100px]">
+        <section className="bg-white py-[100px] max-md:!py-[56px]">
           <Container>
             <div className="flex items-start gap-16 max-lg:!flex-col max-lg:gap-10">
               {/* Left: photo + text */}
@@ -397,7 +397,7 @@ export default function ProjectDetails() {
       )}
 
       {/* ── 6. Features (interior) ───────────────────────── */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex items-stretch gap-0 rounded-[5px] overflow-hidden max-lg:!flex-col">
             {/* Left: photo */}
@@ -427,7 +427,7 @@ export default function ProjectDetails() {
 
       {/* ── 7. Floor plans (ПЛАН ЭТАЖА НА ОТМ.) ─────────── */}
       {details?.floorPlans && (
-        <section className="bg-primary py-[80px]">
+        <section className="bg-primary py-[80px] max-md:!py-[48px]">
           <Container>
             <h2 className="font-heading text-[49px] max-md:text-[30px] 2xl:text-[61px] font-bold uppercase leading-[1.2] text-bg-subtle text-center mb-[48px]">
               {t('proj.floorPlansTitle')}
@@ -467,7 +467,7 @@ export default function ProjectDetails() {
 
       {/* ── 8. Address / Map ─────────────────────────────── */}
       {details && (
-        <section className="bg-bg-subtle py-[80px]">
+        <section className="bg-bg-subtle py-[80px] max-md:!py-[48px]">
           <Container>
             <div className="flex items-stretch gap-8 max-lg:!flex-col">
               {/* Left: spec table */}
@@ -507,7 +507,7 @@ export default function ProjectDetails() {
 
       {/* ── 9. Nearby places ─────────────────────────────── */}
       {details && (
-        <section className="bg-white py-[100px]">
+        <section className="bg-white py-[100px] max-md:!py-[56px]">
           <Container>
             <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.3] text-ink mb-[60px]">
               {t('proj.nearbyTitle')}
@@ -528,7 +528,7 @@ export default function ProjectDetails() {
       )}
 
       {/* ── 10. Other projects carousel ──────────────────── */}
-      <section className="bg-bg-subtle py-[100px]">
+      <section className="bg-bg-subtle py-[100px] max-md:!py-[56px]">
         <Container>
           <h2 className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink mb-[40px]">
             {t('proj.alsoTitle')}
@@ -589,7 +589,7 @@ export default function ProjectDetails() {
       <NeedHelpSection />
 
       {/* ── 12. Production section ───────────────────────── */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex flex-col gap-5 mb-8">
             <div className="flex w-fit items-center gap-3 self-start">

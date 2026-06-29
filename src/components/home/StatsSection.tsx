@@ -23,7 +23,7 @@ const images = [
 export default function StatsSection() {
   const { t } = useTranslation()
   return (
-    <section className="bg-bg-subtle pb-[145px] pt-[90px]">
+    <section className="bg-bg-subtle pb-[145px] max-md:!pb-[56px] pt-[90px] max-md:!pt-[48px]">
       <Container>
         <div className="flex flex-col gap-16">
           <p data-reveal className="text-center font-heading text-[45px] max-md:text-[27px] font-semibold leading-[1.4]">

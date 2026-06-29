@@ -15,7 +15,7 @@ export default function About() {
   return (
     <main>
       {/* ── 1. Hero ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-b from-primary to-primary/80 py-[72px]">
+      <section className="bg-gradient-to-b from-primary to-primary/80 py-[72px] max-md:!py-[44px]">
         <Container>
           <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.3] text-bg-subtle">
             {t('nav.about')}
@@ -24,7 +24,7 @@ export default function About() {
       </section>
 
       {/* ── 2. Company description ──────────────────────────── */}
-      <section className="bg-bg-subtle py-[84px]">
+      <section className="bg-bg-subtle py-[84px] max-md:!py-[48px]">
         <Container>
           <h2 className="font-heading text-[61px] max-md:text-[34px] font-bold uppercase leading-[1.1] text-ink mb-[32px]">
             Renaissance Development
@@ -39,7 +39,7 @@ export default function About() {
       </section>
 
       {/* ── 3. Team section ────────────────────────────────── */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex items-end justify-between gap-16 mb-[60px] max-lg:!flex-col max-lg:items-start max-lg:gap-8">
             <div className="flex flex-col gap-5 max-w-[820px]">

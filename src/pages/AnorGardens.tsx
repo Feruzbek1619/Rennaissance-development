@@ -73,11 +73,11 @@ export default function AnorGardens() {
   return (
     <main>
       {/* ── 1. Hero ─────────────────────────────────────── */}
-      <section className="relative h-[720px] 2xl:h-[888px] overflow-hidden bg-primary">
+      <section className="relative h-[720px] max-md:!h-[470px] 2xl:h-[888px] overflow-hidden bg-primary">
         <img loading="eager" decoding="async" src="/assets/anor-1.webp" alt={project.title} className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/80" />
 
-        <div className="absolute inset-x-[60px] max-sm:inset-x-3 2xl:inset-x-[116px] top-[42%] flex items-center justify-between z-10">
+        <div className="absolute inset-x-[60px] max-sm:inset-x-3 2xl:inset-x-[116px] top-[42%] max-md:hidden flex items-center justify-between z-10">
           <button type="button" aria-label={`${t('proj.projectNav')} ${prevProject.title}`} onClick={() => navigate(`/projects/${prevProject.slug}`)} className="flex size-[53px] items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors">
             <ChevronLeft className="size-6" />
           </button>
@@ -90,18 +90,18 @@ export default function AnorGardens() {
           <h1 className="font-heading text-[56px] 2xl:text-[80px] font-bold uppercase leading-none text-bg-subtle">
             {project.title}
           </h1>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 max-sm:flex-col max-sm:w-full max-sm:gap-3">
             <button
               type="button"
               onClick={() => modal?.openLead()}
-              className="flex w-[268px] items-center justify-between gap-3 rounded-[90px] bg-primary px-[21px] py-[16px] font-body text-[20px] font-medium leading-[1.6] text-white hover:bg-[#2F3A45] transition-colors"
+              className="flex w-[268px] max-sm:w-full items-center justify-between gap-3 rounded-[90px] bg-primary px-[21px] py-[16px] font-body text-[20px] font-medium leading-[1.6] text-white hover:bg-[#2F3A45] transition-colors"
             >
               {t('common.orderCall')}
               <span className="flex size-7 items-center justify-center rounded-full bg-white shrink-0">
                 <ArrowIcon />
               </span>
             </button>
-            <a href={SUPPORT_TEL} className="flex items-center justify-center rounded-[90px] bg-accent px-[32px] py-[16px] font-body text-[20px] font-medium leading-[1.6] text-bg-subtle hover:bg-[#A2814E] transition-colors">
+            <a href={SUPPORT_TEL} className="flex items-center justify-center max-sm:w-full rounded-[90px] bg-accent px-[32px] py-[16px] font-body text-[20px] font-medium leading-[1.6] text-bg-subtle hover:bg-[#A2814E] transition-colors">
               {t('proj.callNow')}
             </a>
           </div>
@@ -109,7 +109,7 @@ export default function AnorGardens() {
       </section>
 
       {/* ── 2. О проекте ─────────────────────────────────── */}
-      <section className="bg-white pt-[80px] pb-[40px]">
+      <section className="bg-white pt-[80px] max-md:!pt-[44px] pb-[40px]">
         <Container>
           <div data-reveal className="flex flex-col gap-8">
             <h2 className="font-heading text-[44px] max-md:text-[27px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
@@ -151,7 +151,7 @@ export default function AnorGardens() {
       </section>
 
       {/* ── 4. Location map + specs card ─────────────────── */}
-      <section className="bg-white pt-[40px] pb-[80px]">
+      <section className="bg-white pt-[40px] pb-[80px] max-md:!pb-[44px]">
         <Container>
           <div className="relative">
             <div className="h-[460px] 2xl:h-[560px] w-full overflow-hidden rounded-[5px]">
@@ -175,7 +175,7 @@ export default function AnorGardens() {
       </section>
 
       {/* ── 5. ПРЕИМУЩЕСТВА mosaic ───────────────────────── */}
-      <section className="bg-white py-[71px]">
+      <section className="bg-white py-[71px] max-md:!py-[44px]">
         <Container>
           <div data-reveal className="flex flex-col gap-10 2xl:flex-row 2xl:items-start 2xl:justify-between">
             <div className="flex flex-col gap-5">
@@ -206,7 +206,7 @@ export default function AnorGardens() {
       </section>
 
       {/* ── 5.5 Interior features (navy panel) ───────────── */}
-      <section className="bg-white pb-[100px]">
+      <section className="bg-white pb-[100px] max-md:!pb-[56px]">
         <Container>
           <div className="flex items-stretch gap-0 rounded-[5px] overflow-hidden max-lg:!flex-col">
             <div className="w-[698px] max-lg:!w-full shrink-0 min-h-[500px] max-lg:!min-h-0 max-lg:!h-[280px]">
@@ -233,7 +233,7 @@ export default function AnorGardens() {
       </section>
 
       {/* ── 6. Statement + stats ─────────────────────────── */}
-      <section className="bg-bg-subtle py-[64px]">
+      <section className="bg-bg-subtle py-[64px] max-md:!py-[40px]">
         <Container>
           <p data-reveal className="text-center font-heading text-[34px] 2xl:text-[45px] font-semibold leading-[1.4] mb-[40px] 2xl:mb-[64px]">
             <span className="text-black">{t('home.stats.s1')}</span>
@@ -251,7 +251,7 @@ export default function AnorGardens() {
       </section>
 
       {/* ── 7. Места поблизости ──────────────────────────── */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           <h2 data-reveal className="font-heading text-[44px] max-md:text-[27px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink mb-[60px]">
             {t('proj.nearbyTitle')}
@@ -271,7 +271,7 @@ export default function AnorGardens() {
       </section>
 
       {/* ── 8. Смотрите также ────────────────────────────── */}
-      <section className="bg-bg-subtle py-[100px]">
+      <section className="bg-bg-subtle py-[100px] max-md:!py-[56px]">
         <Container>
           <h2 data-reveal className="font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink mb-[40px]">
             {t('proj.alsoTitle')}

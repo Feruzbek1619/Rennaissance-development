@@ -8,7 +8,7 @@ import { useTranslation } from '@/i18n'
 export default function AboutSection() {
   const { t } = useTranslation()
   return (
-    <section className="bg-white pt-[65px] pb-[100px]">
+    <section className="bg-white pt-[65px] max-md:!pt-[40px] pb-[100px] max-md:!pb-[56px]">
       <Container>
         <div className="flex items-start gap-[69px] max-lg:!flex-col max-lg:gap-10">
 

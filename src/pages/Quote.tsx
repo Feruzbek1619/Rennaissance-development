@@ -83,7 +83,7 @@ export default function Quote() {
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-b from-primary to-primary/70 py-[100px]">
+      <section className="bg-gradient-to-b from-primary to-primary/70 py-[100px] max-md:!py-[56px]">
         <Container>
           <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.3] text-bg-subtle">
             {t('pages.contacts.heroTitle')}
@@ -195,7 +195,7 @@ export default function Quote() {
       </section>
 
       {/* ── Contact cards ─────────────────────────────────── */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex items-start justify-between mb-[64px] max-lg:!flex-col max-lg:gap-6">
             <div className="flex flex-col gap-5">

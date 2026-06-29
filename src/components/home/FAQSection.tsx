@@ -12,7 +12,7 @@ export default function FAQSection() {
   const [open, setOpen] = useState(0)
 
   return (
-    <section className="bg-white py-[100px]">
+    <section className="bg-white py-[100px] max-md:!py-[56px]">
       <Container>
         <div className="flex items-start gap-[105px] max-lg:!flex-col max-lg:gap-10">
 

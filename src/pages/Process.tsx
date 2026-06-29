@@ -14,7 +14,7 @@ export default function Process() {
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="bg-primary py-[100px]">
+      <section className="bg-primary py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex items-end justify-between gap-8 max-lg:!flex-col max-lg:items-start max-lg:gap-6">
             <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[800px]">
@@ -36,7 +36,7 @@ export default function Process() {
       </section>
 
       {/* ── 3-Step process ───────────────────────────────── */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex flex-col gap-[80px]">
 
@@ -87,7 +87,7 @@ export default function Process() {
       </section>
 
       {/* ── Stats strip ──────────────────────────────────── */}
-      <section className="bg-primary py-[80px]">
+      <section className="bg-primary py-[80px] max-md:!py-[48px]">
         <Container>
           <div className="grid grid-cols-4 max-md:!grid-cols-2 gap-6">
             {stats.map((s) => (

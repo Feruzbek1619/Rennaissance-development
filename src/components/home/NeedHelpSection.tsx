@@ -21,7 +21,7 @@ export default function NeedHelpSection() {
   const modal = useLeadModalOptional()
   const { t } = useTranslation()
   return (
-    <section className="bg-primary py-[80px]">
+    <section className="bg-primary py-[80px] max-md:!py-[48px]">
       <Container>
         <div className="flex items-center justify-between gap-8 max-lg:!flex-col max-lg:items-start">
 

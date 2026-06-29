@@ -64,7 +64,7 @@ export default function ContactSection() {
   ]
 
   return (
-    <section className="bg-white py-[100px]">
+    <section className="bg-white py-[100px] max-md:!py-[56px]">
       <Container>
         <div className="flex flex-col gap-[64px]">
 

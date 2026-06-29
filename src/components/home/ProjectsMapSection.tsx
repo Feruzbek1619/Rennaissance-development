@@ -8,7 +8,7 @@ import { useTranslation } from '@/i18n'
 export default function ProjectsMapSection() {
   const { t } = useTranslation()
   return (
-    <section className="bg-white py-[100px]">
+    <section className="bg-white py-[100px] max-md:!py-[56px]">
       <Container>
         <div className="flex items-end justify-between gap-8 mb-[52px] max-lg:!flex-col max-lg:items-start max-lg:gap-5">
           <div className="flex flex-col gap-5 min-w-0" data-reveal="left">

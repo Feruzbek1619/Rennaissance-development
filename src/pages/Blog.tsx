@@ -48,7 +48,7 @@ export default function Blog() {
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="bg-primary py-[100px]">
+      <section className="bg-primary py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex items-end justify-between gap-8 max-lg:!flex-col max-lg:items-start max-lg:gap-6">
             <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[900px]">
@@ -62,7 +62,7 @@ export default function Blog() {
       </section>
 
       {/* ── Blog grid ────────────────────────────────────── */}
-      <section className="bg-bg-subtle py-[100px]">
+      <section className="bg-bg-subtle py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex flex-col gap-[60px]">
 

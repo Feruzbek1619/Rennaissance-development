@@ -81,7 +81,7 @@ export default function Services() {
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="bg-primary py-[100px]">
+      <section className="bg-primary py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex flex-col gap-10">
             <div className="flex items-end justify-between gap-8 max-lg:!flex-col max-lg:items-start max-lg:gap-6">
@@ -105,7 +105,7 @@ export default function Services() {
       </section>
 
       {/* ── Services accordion ───────────────────────────── */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex flex-col gap-[60px]">
             <div className="flex items-end justify-between gap-8 max-lg:!flex-col max-lg:items-start max-lg:gap-6">
@@ -128,7 +128,7 @@ export default function Services() {
       </section>
 
       {/* ── Process preview ──────────────────────────────── */}
-      <section className="bg-bg-subtle py-[100px]">
+      <section className="bg-bg-subtle py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex flex-col gap-[60px]">
             <div className="flex items-center justify-between gap-8">

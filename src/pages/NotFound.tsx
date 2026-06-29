@@ -10,7 +10,7 @@ export default function NotFound() {
   return (
     <main className="bg-white">
       <Container>
-        <div className="flex flex-col items-center justify-center gap-[40px] pt-[90px] pb-[120px] text-center">
+        <div className="flex flex-col items-center justify-center gap-[40px] pt-[90px] max-md:!pt-[48px] pb-[120px] max-md:!pb-[56px] text-center">
           <img loading="lazy" decoding="async"
             src="/assets/error-illustration.webp"
             alt={t('common.notFoundAlt')}

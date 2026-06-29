@@ -21,7 +21,7 @@ export default function ProjectsSection() {
   const list = projects.filter((p) => p.status === 'active' && kindOf(p) === tab).slice(0, 4)
 
   return (
-    <section className="bg-white py-[128px]">
+    <section className="bg-white py-[128px] max-md:!py-[56px]">
       <Container>
         <div className="flex flex-col gap-12 items-center">
 

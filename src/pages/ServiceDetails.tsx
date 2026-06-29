@@ -24,7 +24,7 @@ export default function ServiceDetails() {
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="bg-primary py-[100px]">
+      <section className="bg-primary py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex flex-col gap-8">
             <div className="flex items-start gap-5">
@@ -69,7 +69,7 @@ export default function ServiceDetails() {
       </section>
 
       {/* ── Description + features ───────────────────────── */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex items-start gap-[80px] max-lg:!flex-col max-lg:gap-8">
             <div className="flex-1 min-w-0">
@@ -114,7 +114,7 @@ export default function ServiceDetails() {
       </section>
 
       {/* ── Process steps ────────────────────────────────── */}
-      <section className="bg-bg-subtle py-[100px]">
+      <section className="bg-bg-subtle py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex flex-col gap-[60px]">
             <div className="flex flex-col gap-4">
@@ -148,7 +148,7 @@ export default function ServiceDetails() {
       </section>
 
       {/* ── Related projects ─────────────────────────────── */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="flex flex-col gap-[60px]">
             <div className="flex items-center justify-between">

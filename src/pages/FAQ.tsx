@@ -45,7 +45,7 @@ export default function FAQ() {
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-b from-primary to-primary/70 py-[72px]">
+      <section className="bg-gradient-to-b from-primary to-primary/70 py-[72px] max-md:!py-[44px]">
         <Container>
           <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.3] text-bg-subtle">
             {t('home.faq.title')}
@@ -54,7 +54,7 @@ export default function FAQ() {
       </section>
 
       {/* ── FAQ accordion ────────────────────────────────── */}
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[100px] max-md:!py-[56px]">
         <Container>
           <div className="max-w-[950px]">
             {Array.from({ length: COUNT }, (_, i) => (

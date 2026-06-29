@@ -92,7 +92,7 @@ export default function CompletedProject() {
       </section>
 
       {/* ── 2. About ─────────────────────────────────────── */}
-      <section className="bg-white pt-[80px] pb-[40px]">
+      <section className="bg-white pt-[80px] max-md:!pt-[44px] pb-[40px]">
         <Container>
           <div data-reveal className="flex flex-col gap-8">
             <h2 className="font-heading text-[44px] max-md:text-[27px] 2xl:text-[61px] font-bold uppercase leading-[1.3] text-ink">
@@ -138,7 +138,7 @@ export default function CompletedProject() {
       </section>
 
       {/* ── 4. Map + specs card ──────────────────────────── */}
-      <section className="bg-white pt-[40px] pb-[80px]">
+      <section className="bg-white pt-[40px] pb-[80px] max-md:!pb-[44px]">
         <Container>
           <div className="relative">
             <div className="h-[440px] 2xl:h-[540px] w-full overflow-hidden rounded-[8px]">
@@ -165,7 +165,7 @@ export default function CompletedProject() {
       </section>
 
       {/* ── 5. Nearby places ─────────────────────────────── */}
-      <section className="bg-bg-subtle py-[80px]">
+      <section className="bg-bg-subtle py-[80px] max-md:!py-[48px]">
         <Container>
           <div data-reveal className="mb-[48px] flex flex-col gap-5">
             <SectionTag>{t('proj.infraTag')}</SectionTag>
@@ -188,7 +188,7 @@ export default function CompletedProject() {
       </section>
 
       {/* ── 6. Statement + stats ─────────────────────────── */}
-      <section className="bg-white py-[64px]">
+      <section className="bg-white py-[64px] max-md:!py-[40px]">
         <Container>
           <p data-reveal className="mb-[40px] 2xl:mb-[56px] text-center font-heading text-[34px] 2xl:text-[45px] font-semibold leading-[1.4]">
             <span className="text-ink">{t('home.stats.s1')}</span>
@@ -207,7 +207,7 @@ export default function CompletedProject() {
 
       {/* ── 7. Other completed projects (no CTA) ─────────── */}
       {others.length > 0 && (
-        <section className="bg-bg-subtle py-[100px]">
+        <section className="bg-bg-subtle py-[100px] max-md:!py-[56px]">
           <Container>
             <h2 data-reveal className="mb-[40px] font-heading text-[34px] font-bold uppercase leading-[1.3] text-ink">
               {t('proj.otherCompleted')}

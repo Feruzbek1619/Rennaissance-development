@@ -13,7 +13,7 @@ const logos = [
 export default function PartnersSection() {
   const { t } = useTranslation()
   return (
-    <section className="bg-white py-[100px]">
+    <section className="bg-white py-[100px] max-md:!py-[56px]">
       <Container>
         <div className="flex flex-col gap-16">
 
