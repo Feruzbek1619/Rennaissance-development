@@ -27,7 +27,7 @@ export default function BlogDetails() {
         <div className="relative py-[100px] max-md:!py-[56px]">
           <Container>
             <div className="flex flex-col gap-6 max-w-[780px]">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 flex-wrap gap-y-1">
                 <Link
                   to="/blog"
                   className="font-body text-[14px] text-white/50 hover:text-white/80 transition-colors"
@@ -79,7 +79,7 @@ export default function BlogDetails() {
               </div>
 
               {/* Tags */}
-              <div className="flex items-center gap-3 mt-[48px] pt-[48px] border-t border-border">
+              <div className="flex items-center gap-3 flex-wrap gap-y-3 mt-[48px] pt-[48px] border-t border-border">
                 <span className="font-body text-[14px] text-secondary/60">{t('pages.blog.tagsLabel')}</span>
                 {[post.category, ...extraTags].map((tag) => (
                   <span

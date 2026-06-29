@@ -40,7 +40,7 @@ const icons = [FactoryIcon, TruckIcon, CycleIcon, LeaderIcon]
 export function WhyUsCards() {
   const { t } = useTranslation()
   return (
-    <div data-reveal-stagger className="flex gap-4 w-full items-stretch">
+    <div data-reveal-stagger className="flex gap-4 w-full items-stretch max-md:flex-col">
       {icons.map((Icon, i) => (
         <div
           key={i}

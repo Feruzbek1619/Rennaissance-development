@@ -85,7 +85,7 @@ export default function ContactSection() {
           </div>
 
           {/* 4 contact cards */}
-          <div data-reveal-stagger className="flex gap-4 items-stretch">
+          <div data-reveal-stagger className="flex gap-4 items-stretch max-md:flex-col">
             {cards.map((card, i) => (
               <div
                 key={i}

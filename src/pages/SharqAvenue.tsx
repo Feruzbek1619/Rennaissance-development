@@ -157,11 +157,11 @@ export default function SharqAvenue() {
             <div className="h-[460px] 2xl:h-[560px] w-full overflow-hidden rounded-[5px]">
               <iframe title={`${project.title} ${t('proj.onMap')}`} src="https://yandex.ru/map-widget/v1/?ll=69.30%2C41.34&z=14&pt=69.30%2C41.34%2Cpm2rdm" className="size-full border-0" loading="lazy" />
             </div>
-            <div data-reveal className="relative z-10 mx-auto -mt-[96px] w-[92%] max-w-[1312px] rounded-[5px] border border-primary/30 bg-primary px-[40px] py-[44px] 2xl:px-[80px] 2xl:py-[56px] shadow-[0_30px_60px_rgba(10,15,40,0.25)]">
+            <div data-reveal className="relative z-10 mx-auto -mt-[96px] w-[92%] max-w-[1312px] rounded-[5px] border border-primary/30 bg-primary px-[40px] max-sm:!px-[24px] py-[44px] max-sm:!py-[30px] 2xl:px-[80px] 2xl:py-[56px] shadow-[0_30px_60px_rgba(10,15,40,0.25)]">
               <div className="grid grid-cols-1 gap-x-[60px] gap-y-[24px] md:grid-cols-2">
                 {specIcons.map((icon, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="flex w-[190px] shrink-0 items-center gap-2 pt-[2px] text-white">
+                  <div key={i} className="flex items-start gap-3 max-sm:!flex-col max-sm:!gap-1">
+                    <div className="flex w-[190px] max-sm:!w-full shrink-0 items-center gap-2 pt-[2px] text-white">
                       <span className="text-white/90 shrink-0">{icon}</span>
                       <span className="font-body text-[16px] leading-[1.6] text-white whitespace-nowrap">{t(`proj.pages.${SLUG}.specs.${i}.label`)}:</span>
                     </div>
@@ -195,9 +195,9 @@ export default function SharqAvenue() {
                 <div className="h-[340px] 2xl:h-[498px] w-full overflow-hidden">
                   <img loading="lazy" decoding="async" src={image} alt={t(`proj.pages.${SLUG}.advantages.${i}.title`)} className="size-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-105" />
                 </div>
-                <div className="flex min-h-[200px] 2xl:h-[241px] items-center gap-6 border border-[#c4c4c4] bg-[#f8f8f8] px-[32px] py-[28px] 2xl:px-[48px]">
+                <div className="flex min-h-[200px] max-sm:!min-h-0 2xl:h-[241px] items-center max-sm:!flex-col max-sm:!items-start gap-6 max-sm:!gap-3 border border-[#c4c4c4] bg-[#f8f8f8] px-[32px] py-[28px] 2xl:px-[48px]">
                   <h3 className="font-heading text-[24px] 2xl:text-[31px] font-bold leading-[1.4] text-black w-[230px] 2xl:w-[275px] max-sm:!w-full shrink-0">{t(`proj.pages.${SLUG}.advantages.${i}.title`)}</h3>
-                  <p className="font-vela text-[19px] 2xl:text-[24px] leading-[1.3] text-secondary">{t(`proj.pages.${SLUG}.advantages.${i}.desc`)}</p>
+                  <p className="font-vela text-[19px] max-sm:!text-[16px] 2xl:text-[24px] leading-[1.3] text-secondary">{t(`proj.pages.${SLUG}.advantages.${i}.desc`)}</p>
                 </div>
               </div>
             ))}
@@ -239,7 +239,7 @@ export default function SharqAvenue() {
             <span className="text-black">{t('home.stats.s1')}</span>
             <span className="text-accent">{t('home.stats.s2')}</span>
           </p>
-          <div className="flex items-stretch gap-4">
+          <div className="flex items-stretch gap-4 max-md:flex-col">
             {stats.map((s, i) => (
               <div key={s.label} data-reveal style={{ transitionDelay: `${i * 90}ms` }} className="stat-card card-lift flex flex-1 flex-col items-center justify-center gap-2 px-[26px] py-[24px] text-center">
                 <p className="font-heading text-[56px] max-lg:text-[40px] max-sm:text-[32px] 2xl:text-[75px] font-bold uppercase leading-none text-black"><CountUp value={s.value} /></p>

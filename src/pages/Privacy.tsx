@@ -11,7 +11,7 @@ export default function Privacy() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="bg-gradient-to-b from-primary to-primary/80 py-[72px] max-md:!py-[44px]">
         <Container>
-          <div className="flex items-start justify-between">
+          <div className="flex items-start justify-between max-lg:!flex-col max-lg:gap-6">
             <div className="flex flex-col gap-5">
               <div className="border border-white/20 px-[24px] py-[16px] self-start">
                 <span className="font-body text-body-sm text-white/60">{t('pages.privacy.heroTag')}</span>
@@ -20,7 +20,7 @@ export default function Privacy() {
                 {t('pages.privacy.heroTitle')}
               </h1>
             </div>
-            <p className="font-body text-[20px] leading-[1.6] text-white/70 w-[580px] self-end">
+            <p className="font-body text-[20px] leading-[1.6] text-white/70 w-[580px] max-lg:!w-full self-end max-lg:!self-start">
               {t('pages.privacy.heroDesc')}
             </p>
           </div>

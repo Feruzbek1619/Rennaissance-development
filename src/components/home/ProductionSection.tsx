@@ -47,25 +47,25 @@ export default function ProductionSection() {
               {slides.map((slide, i) => (
                 <div
                   key={slide.to}
-                  className="w-full shrink-0 bg-white min-h-[759px] flex items-center gap-8 2xl:gap-[57px] px-9 py-[46px]"
+                  className="w-full shrink-0 bg-white min-h-[759px] max-md:!min-h-0 flex items-center max-md:!flex-col max-md:items-stretch gap-8 2xl:gap-[57px] max-md:!gap-6 px-9 max-md:!px-5 py-[46px] max-md:!py-7"
                 >
                   {/* Photo */}
-                  <div className="w-[52%] max-w-[940px] h-[667px] shrink-0 min-w-0 overflow-hidden">
+                  <div className="w-[52%] max-w-[940px] h-[667px] max-md:!w-full max-md:!h-[230px] shrink-0 min-w-0 overflow-hidden rounded-[5px]">
                     <img loading="lazy" decoding="async" src={slide.image} alt={t(`home.production.slides.${i}.title`)} className="size-full object-cover" />
                   </div>
 
                   {/* Text */}
-                  <div className="flex-1 min-w-0 flex flex-col gap-[60px]">
-                    <div className="flex flex-col gap-5">
+                  <div className="flex-1 min-w-0 flex flex-col gap-[60px] max-md:!gap-6">
+                    <div className="flex flex-col gap-5 max-md:!gap-3">
                       <div className="flex flex-col gap-[5px]">
-                        <p className="font-heading text-[51px] max-md:text-[30px] font-bold uppercase leading-[1.3] text-ink">
+                        <p className="font-heading text-[51px] max-md:text-[26px] font-bold uppercase leading-[1.3] text-ink">
                           {t(`home.production.slides.${i}.title`)}
                         </p>
-                        <p className="font-heading text-[20px] font-bold uppercase leading-[1.3] text-ink">
+                        <p className="font-heading text-[20px] max-md:text-[16px] font-bold uppercase leading-[1.3] text-ink">
                           {t(`home.production.slides.${i}.subtitle`)}
                         </p>
                       </div>
-                      <p className="font-body text-[22px] leading-[1.6] text-secondary">
+                      <p className="font-body text-[22px] max-md:text-[15px] leading-[1.6] text-secondary">
                         {t(`home.production.slides.${i}.desc`)}
                       </p>
                     </div>

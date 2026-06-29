@@ -144,17 +144,17 @@ export default function CompletedProject() {
             <div className="h-[440px] 2xl:h-[540px] w-full overflow-hidden rounded-[8px]">
               <iframe title={`${project.title} ${t('proj.onMap')}`} src={mapSrc} className="size-full border-0" loading="lazy" />
             </div>
-            <div data-reveal className="relative z-10 mx-auto -mt-[88px] w-[92%] max-w-[1312px] rounded-[8px] border border-primary/30 bg-primary px-[40px] py-[44px] 2xl:px-[72px] 2xl:py-[52px] shadow-[0_30px_60px_rgba(10,15,40,0.25)]">
+            <div data-reveal className="relative z-10 mx-auto -mt-[88px] w-[92%] max-w-[1312px] rounded-[8px] border border-primary/30 bg-primary px-[40px] max-sm:!px-[22px] py-[44px] max-sm:!py-[28px] 2xl:px-[72px] 2xl:py-[52px] shadow-[0_30px_60px_rgba(10,15,40,0.25)]">
               <div className="grid grid-cols-1 gap-x-[60px] gap-y-[22px] md:grid-cols-2">
                 <div className="flex items-start gap-3 md:col-span-2">
                   <span className="mt-[9px] size-[6px] shrink-0 rounded-full bg-accent" />
-                  <span className="font-body text-[16px] leading-[1.6] text-white/60 w-[150px] shrink-0">{t('proj.spec.name')}:</span>
+                  <span className="font-body text-[16px] leading-[1.6] text-white/60 w-[150px] max-sm:!w-[96px] shrink-0">{t('proj.spec.name')}:</span>
                   <span className="font-vela text-[18px] 2xl:text-[20px] font-medium leading-[1.4] text-[#cbd2dc]">{project.title}</span>
                 </div>
                 {project.specs.map((row) => (
                   <div key={row.label} className="flex items-start gap-3">
                     <span className="mt-[9px] size-[6px] shrink-0 rounded-full bg-accent" />
-                    <span className="font-body text-[16px] leading-[1.6] text-white/60 w-[150px] shrink-0">{row.label}:</span>
+                    <span className="font-body text-[16px] leading-[1.6] text-white/60 w-[150px] max-sm:!w-[96px] shrink-0">{row.label}:</span>
                     <span className="font-vela text-[18px] 2xl:text-[20px] font-medium leading-[1.4] text-[#cbd2dc]">{row.value}</span>
                   </div>
                 ))}
@@ -194,7 +194,7 @@ export default function CompletedProject() {
             <span className="text-ink">{t('home.stats.s1')}</span>
             <span className="text-accent">{t('home.stats.s2')}</span>
           </p>
-          <div className="flex items-stretch gap-4">
+          <div className="flex items-stretch gap-4 max-md:flex-col">
             {stats.map((s, i) => (
               <div key={s.label} data-reveal style={{ transitionDelay: `${i * 90}ms` }} className="stat-card card-lift flex flex-1 flex-col items-center justify-center gap-2 px-[26px] py-[24px] text-center">
                 <p className="font-heading text-[56px] max-lg:text-[40px] max-sm:text-[32px] 2xl:text-[75px] font-bold uppercase leading-none text-ink"><CountUp value={s.value} /></p>

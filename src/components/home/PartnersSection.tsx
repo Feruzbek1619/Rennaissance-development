@@ -18,8 +18,8 @@ export default function PartnersSection() {
         <div className="flex flex-col gap-16">
 
           {/* Header: badge+heading left, description right */}
-          <div data-reveal="left" className="flex items-start justify-between">
-            <div className="flex flex-col gap-5 w-[961px] shrink min-w-0">
+          <div data-reveal="left" className="flex items-start justify-between max-md:!flex-col max-md:!gap-6">
+            <div className="flex flex-col gap-5 w-[961px] max-md:!w-full shrink min-w-0">
               <div className="flex w-fit items-center gap-3 self-start">
               <span className="rule-gold shrink-0" aria-hidden></span>
               <span className="font-body text-[14px] font-semibold uppercase tracking-[0.2em] text-accent-dark leading-none">{t('home.partners.tag')}</span>
@@ -28,7 +28,7 @@ export default function PartnersSection() {
                 {t('home.partners.title')}
               </h2>
             </div>
-            <p className="font-body text-[20px] leading-[1.6] text-ink w-[666px] shrink min-w-0 pt-2">
+            <p className="font-body text-[20px] max-md:!text-[16px] leading-[1.6] text-ink w-[666px] max-md:!w-full shrink min-w-0 pt-2">
               {t('home.partners.desc')}
             </p>
           </div>

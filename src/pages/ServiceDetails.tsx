@@ -42,7 +42,7 @@ export default function ServiceDetails() {
               <h1 className="font-heading text-[80px] max-lg:text-[52px] max-sm:text-[38px] font-bold uppercase leading-[1.1] text-bg-subtle max-w-[780px]">
                 {service.title}
               </h1>
-              <p className="font-body text-[18px] leading-[1.7] text-white/70 w-[460px] shrink-0 self-end">
+              <p className="font-body text-[18px] leading-[1.7] text-white/70 w-[460px] max-lg:!w-full shrink-0 self-end max-lg:!self-start">
                 {service.description}
               </p>
             </div>
@@ -126,9 +126,9 @@ export default function ServiceDetails() {
                 {t('pages.services.howTitle')}
               </h2>
             </div>
-            <div className="grid grid-cols-4 max-md:!grid-cols-2 gap-6">
+            <div className="grid grid-cols-4 max-md:!grid-cols-2 max-sm:!grid-cols-1 gap-6 max-sm:!gap-4">
               {processSteps.map((step) => (
-                <div key={step.num} className="bg-white p-[36px] flex flex-col gap-5">
+                <div key={step.num} className="bg-white p-[36px] max-sm:!p-[24px] flex flex-col gap-5 max-sm:!gap-3">
                   <span className="font-heading text-[49px] max-md:text-[30px] font-bold leading-none text-accent/20">
                     {step.num}
                   </span>

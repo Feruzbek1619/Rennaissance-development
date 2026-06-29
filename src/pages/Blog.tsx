@@ -18,7 +18,7 @@ function BlogCard({ post }: { post: BlogPost }) {
         />
       </div>
       <div className="flex flex-col gap-4 p-[32px]">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 max-sm:!gap-x-2 flex-wrap gap-y-1">
           <span className="font-body text-[13px] uppercase tracking-[0.1em] text-accent font-medium">
             {post.category}
           </span>

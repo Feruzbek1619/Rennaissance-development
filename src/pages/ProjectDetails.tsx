@@ -345,7 +345,7 @@ export default function ProjectDetails() {
             <span className="text-ink">{t('home.stats.s1')}</span>
             <span className="text-accent">{t('home.stats.s2')}</span>
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 max-md:!flex-col">
             {[
               { value: '12+', label: t('home.stats.l1') },
               { value: '5+', label: t('home.stats.l2') },
@@ -607,7 +607,7 @@ export default function ProjectDetails() {
               <p className="font-body text-[20px] leading-[1.6] text-secondary">
                 {t('proj.detail.productionText')}
               </p>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 flex-wrap max-sm:!flex-col max-sm:!items-stretch">
                 <Button to="/b2b" variant="primary" size="lg">{t('common.learnMore')}</Button>
                 <Button to="/quote" variant="outlineLight" size="lg">{t('common.leaveRequest')}</Button>
               </div>

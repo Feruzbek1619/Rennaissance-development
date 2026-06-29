@@ -250,7 +250,7 @@ export default function B2B() {
           </div>
 
           {/* Direction quick-nav */}
-          <div className="mt-[48px] grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3">
+          <div className="mt-[48px] grid grid-cols-2 max-sm:!grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-3">
             {directions.map((d, i) => (
               <button
                 key={d.id}
