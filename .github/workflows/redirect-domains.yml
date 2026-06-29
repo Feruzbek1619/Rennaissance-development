@@ -1,0 +1,48 @@
+name: Set up domain redirects (-> renaissancebuilding.uz)
+
+# Кладёт .htaccess с 301-редиректом в корень 3 вторичных доменов на сервере,
+# чтобы они вели на главный renaissancebuilding.uz. Ручной запуск.
+# Использует те же FTP-секреты (FTP_HOST/USERNAME/PASSWORD) через FTPS + lftp
+# (put одного файла, без удаления чего-либо в папке).
+on:
+  workflow_dispatch:
+
+jobs:
+  redirects:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Create redirect .htaccess
+        run: |
+          cat > redirect.htaccess <<'EOF'
+          <IfModule mod_rewrite.c>
+            RewriteEngine On
+            RewriteCond %{HTTP_HOST} !^renaissancebuilding\.uz$ [NC]
+            RewriteRule ^(.*)$ https://renaissancebuilding.uz/$1 [R=301,L]
+          </IfModule>
+          EOF
+          echo "--- redirect.htaccess ---"; cat redirect.htaccess
+
+      - name: Upload redirect to each secondary domain via FTPS
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          set -e
+          for d in rbcompany.uz renaissancecompany.uz renaissancebuildingcompany.uz; do
+            echo "→ uploading redirect to /www/$d/.htaccess"
+            lftp -c "
+              set ftp:ssl-force true;
+              set ftp:ssl-protect-data true;
+              set ssl:verify-certificate no;
+              set ftp:passive-mode on;
+              open -u \"$FTP_USERNAME\",\"$FTP_PASSWORD\" \"$FTP_HOST\";
+              cd /www/$d/;
+              put redirect.htaccess -o .htaccess;
+              cls -l .htaccess;
+            "
+          done
+          echo "✓ all redirects uploaded"
