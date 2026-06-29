@@ -37,3 +37,6 @@ tests/crop
 tests/audit-out/
 tests/recon-out/
 test-results/
+
+# local deploy bundle (не коммитим, 85MB)
+renaissance-site.zip
