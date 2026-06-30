@@ -286,17 +286,17 @@ const en: Record<string, ProjectTr> = {
   },
   'challet-resort': {
     category: 'Residential complex · Comfort',
-    area: 'from 26.44 to 30.81 m²',
+    area: '8.5 hectares',
     location: 'Yusufkhona, 60 minutes from Tashkent',
     details: {
       description: [
         '«Challet Resort» is a countryside complex in a resort format in the picturesque Yusufkhona area, just an hour’s drive from Tashkent. Modern houses with panoramic glazing and finishes of natural stone and wood blend harmoniously into the surrounding natural landscape.',
-        'The complex grounds feature its own swimming pool with a recreation area, a restaurant and landscaped walking alleys. The gated guarded territory, clean air and silence create the atmosphere of a true resort for year-round living.',
+        'The total development area of the complex is 8.5 hectares: standard cottages — 15,297 m², luxury cottages — 1,387 m², a restaurant — 750 m² and 1,100 m² of parking space. The grounds feature their own swimming pool with a recreation area, a restaurant and landscaped walking alleys. The gated guarded territory, clean air and silence create the atmosphere of a true resort for year-round living.',
       ],
       advantage: 'A resort for year-round living',
       specs: {
         address: 'Yusufkhona, 60 minutes from Tashkent',
-        area: 'from 90 to 220 m²',
+        area: '8.5 hectares',
         floors: '2 floors',
         category: 'Countryside · Comfort',
         status: 'Under construction',
@@ -596,17 +596,17 @@ const uz: Record<string, ProjectTr> = {
   },
   'challet-resort': {
     category: 'Turar-joy majmuasi · Komfort',
-    area: '26,44 dan 30,81 m² gacha',
+    area: '8,5 gektar',
     location: 'Yusufxona, Toshkentdan 60 daqiqa',
     details: {
       description: [
         '«Challet Resort» — Toshkentdan atigi bir soatlik masofada, go‘zal Yusufxona hududidagi kurort formatidagi shahar tashqarisi majmuasi. Panoramali oynavand va tabiiy tosh hamda yog‘ochdan pardozlangan zamonaviy uylar atrofdagi tabiiy landshaftga uyg‘un tarzda mujassam.',
-        'Majmua hududida dam olish zonasiga ega o‘z basseyni, restoran va obod sayr yo‘laklari mavjud. Yopiq qo‘riqlanadigan hudud, toza havo va sukunat yil davomida yashash uchun haqiqiy kurort muhitini yaratadi.',
+        'Majmuaning umumiy qurilish maydoni — 8,5 gektar: standart kottedjlar — 15 297 m², lyuks kottedjlar — 1 387 m², restoran — 750 m² va 1 100 m² avtoturargoh maydoni. Majmua hududida dam olish zonasiga ega o‘z basseyni, restoran va obod sayr yo‘laklari mavjud. Yopiq qo‘riqlanadigan hudud, toza havo va sukunat yil davomida yashash uchun haqiqiy kurort muhitini yaratadi.',
       ],
       advantage: 'Yil davomida yashash uchun kurort',
       specs: {
         address: 'Yusufxona, Toshkentdan 60 daqiqa',
-        area: '90 dan 220 m² gacha',
+        area: '8,5 gektar',
         floors: '2 qavat',
         category: 'Shahar tashqarisi · Komfort',
         status: 'Qurilmoqda',

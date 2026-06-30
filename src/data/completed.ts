@@ -41,6 +41,9 @@ export const completedProjects: CompletedProject[] = [
     specs: [
       { label: 'Этажность', value: '9 этажей + мансарда' },
       { label: 'Квартир', value: '300' },
+      { label: 'Территория', value: '0,61 гектара' },
+      { label: 'Площадь квартир', value: '16 425 м²' },
+      { label: 'Паркинг', value: '500 м²' },
       { label: 'Район', value: 'Сергелийский · Куйлюк-5' },
       { label: 'Статус', value: 'Сдан' },
     ],
@@ -75,6 +78,9 @@ export const completedProjects: CompletedProject[] = [
     specs: [
       { label: 'Этажность', value: '5 этажей' },
       { label: 'Квартир', value: '306' },
+      { label: 'Территория', value: '1,3 гектара' },
+      { label: 'Площадь квартир', value: '22 883 м²' },
+      { label: 'Паркинг', value: '3 292 м²' },
       { label: 'Стиль', value: 'Национальный · современный' },
       { label: 'Район', value: 'Мирзо-Улугбекский · Ижодкор' },
       { label: 'Статус', value: 'Сдан' },
@@ -106,6 +112,9 @@ export const completedProjects: CompletedProject[] = [
     specs: [
       { label: 'Этажность', value: '6 этажей' },
       { label: 'Квартир', value: '250' },
+      { label: 'Территория', value: '0,15 гектара' },
+      { label: 'Площадь квартир', value: '6 373,75 м²' },
+      { label: 'Паркинг', value: '300 м²' },
       { label: 'Район', value: 'Яккасарайский · ул. Кушбеги' },
       { label: 'Статус', value: 'Сдан' },
     ],
@@ -136,6 +145,9 @@ export const completedProjects: CompletedProject[] = [
     specs: [
       { label: 'Этажность', value: '10 этажей + терраса' },
       { label: 'Квартир', value: '210' },
+      { label: 'Территория', value: '0,3 гектара' },
+      { label: 'Площадь квартир', value: '19 960 м²' },
+      { label: 'Паркинг', value: '15 968 м²' },
       { label: 'Среда', value: 'Эко · зелёная зона' },
       { label: 'Район', value: 'Мирзо-Улугбекский' },
       { label: 'Статус', value: 'Сдан' },

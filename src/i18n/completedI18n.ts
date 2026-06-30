@@ -26,6 +26,9 @@ const en: Record<string, CompletedTr> = {
     specs: [
       { label: 'Floors', value: '9 floors + attic' },
       { label: 'Apartments', value: '300' },
+      { label: 'Territory', value: '0.61 hectares' },
+      { label: 'Apartments area', value: '16,425 m²' },
+      { label: 'Parking', value: '500 m²' },
       { label: 'District', value: 'Sergeli · Kuyluk-5' },
       { label: 'Status', value: 'Completed' },
     ],
@@ -48,6 +51,9 @@ const en: Record<string, CompletedTr> = {
     specs: [
       { label: 'Floors', value: '5 floors' },
       { label: 'Apartments', value: '306' },
+      { label: 'Territory', value: '1.3 hectares' },
+      { label: 'Apartments area', value: '22,883 m²' },
+      { label: 'Parking', value: '3,292 m²' },
       { label: 'Style', value: 'National · modern' },
       { label: 'District', value: 'Mirzo-Ulugbek · Ijodkor' },
       { label: 'Status', value: 'Completed' },
@@ -67,6 +73,9 @@ const en: Record<string, CompletedTr> = {
     specs: [
       { label: 'Floors', value: '6 floors' },
       { label: 'Apartments', value: '250' },
+      { label: 'Territory', value: '0.15 hectares' },
+      { label: 'Apartments area', value: '6,373.75 m²' },
+      { label: 'Parking', value: '300 m²' },
       { label: 'District', value: 'Yakkasaray · Kushbegi st.' },
       { label: 'Status', value: 'Completed' },
     ],
@@ -85,6 +94,9 @@ const en: Record<string, CompletedTr> = {
     specs: [
       { label: 'Floors', value: '10 floors + terrace' },
       { label: 'Apartments', value: '210' },
+      { label: 'Territory', value: '0.3 hectares' },
+      { label: 'Apartments area', value: '19,960 m²' },
+      { label: 'Parking', value: '15,968 m²' },
       { label: 'Environment', value: 'Eco · green area' },
       { label: 'District', value: 'Mirzo-Ulugbek' },
       { label: 'Status', value: 'Completed' },
@@ -125,6 +137,9 @@ const uz: Record<string, CompletedTr> = {
     specs: [
       { label: 'Qavatlar', value: '9 qavat + mansarda' },
       { label: 'Kvartiralar', value: '300' },
+      { label: 'Hudud', value: '0,61 gektar' },
+      { label: 'Kvartiralar maydoni', value: '16 425 m²' },
+      { label: 'Avtoturargoh', value: '500 m²' },
       { label: 'Tuman', value: 'Sergeli · Quyluq-5' },
       { label: 'Holati', value: 'Topshirilgan' },
     ],
@@ -147,6 +162,9 @@ const uz: Record<string, CompletedTr> = {
     specs: [
       { label: 'Qavatlar', value: '5 qavat' },
       { label: 'Kvartiralar', value: '306' },
+      { label: 'Hudud', value: '1,3 gektar' },
+      { label: 'Kvartiralar maydoni', value: '22 883 m²' },
+      { label: 'Avtoturargoh', value: '3 292 m²' },
       { label: 'Uslub', value: 'Milliy · zamonaviy' },
       { label: 'Tuman', value: 'Mirzo Ulug‘bek · Ijodkor' },
       { label: 'Holati', value: 'Topshirilgan' },
@@ -166,6 +184,9 @@ const uz: Record<string, CompletedTr> = {
     specs: [
       { label: 'Qavatlar', value: '6 qavat' },
       { label: 'Kvartiralar', value: '250' },
+      { label: 'Hudud', value: '0,15 gektar' },
+      { label: 'Kvartiralar maydoni', value: '6 373,75 m²' },
+      { label: 'Avtoturargoh', value: '300 m²' },
       { label: 'Tuman', value: 'Yakkasaroy · Qo‘shbegi ko‘ch.' },
       { label: 'Holati', value: 'Topshirilgan' },
     ],
@@ -184,6 +205,9 @@ const uz: Record<string, CompletedTr> = {
     specs: [
       { label: 'Qavatlar', value: '10 qavat + terrasa' },
       { label: 'Kvartiralar', value: '210' },
+      { label: 'Hudud', value: '0,3 gektar' },
+      { label: 'Kvartiralar maydoni', value: '19 960 m²' },
+      { label: 'Avtoturargoh', value: '15 968 m²' },
       { label: 'Muhit', value: 'Eko · yashil hudud' },
       { label: 'Tuman', value: 'Mirzo Ulug‘bek' },
       { label: 'Holati', value: 'Topshirilgan' },
