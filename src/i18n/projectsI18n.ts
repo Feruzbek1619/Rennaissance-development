@@ -45,7 +45,7 @@ const en: Record<string, ProjectTr> = {
     details: {
       description: [
         'The «Alandalus» residential complex is a 10-storey project with modern architecture and a comfortable living environment. Located in a quiet, ecologically clean district, it features underground parking, a children’s playground and 24/7 video surveillance. The surrounding infrastructure is well developed — all services needed for daily life are within walking distance.',
-        'The total development area of the project is 0.75 hectares. The total area of residential apartments is 27,325 m², and the underground floor is 5,720 m². The apartments have 3-metre ceilings, interior walls of aerated concrete, and high-quality entrance doors and windows. The monolithic concrete structure ensures the building’s strength and long service life.',
+        'The total development area of the project is 0.75 hectares. The total area of residential apartments is 21,860 m², and the underground floor is 5,720 m². The apartments have 3-metre ceilings, interior walls of aerated concrete, and high-quality entrance doors and windows. The monolithic concrete structure ensures the building’s strength and long service life.',
       ],
       advantage: 'A quiet home in a big city',
       specs: {
@@ -110,12 +110,12 @@ const en: Record<string, ProjectTr> = {
   },
   'anor-gardens': {
     category: 'Residential complex · Comfort',
-    area: '3 hectares',
+    area: '1.4 hectares',
     location: 'Tashkent, Mirzo-Ulugbek district',
     details: {
       description: [
-        '«Anor Gardens» is a modern space created for those who value comfort, safety and a quality standard of living. The complex is located on a 3-hectare territory and includes 12 residential blocks 5 storeys high and 547 thoughtfully designed apartments.',
-        'The gated guarded territory, underground parking, landscaped courtyards and recreation areas create a private and cosy environment. The total area of residential apartments is 58,728 m², commercial premises 3,237 m², and parking spaces 1,900 m².',
+        '«Anor Gardens» is a modern space created for those who value comfort, safety and a quality standard of living. The complex sits on a 1.4-hectare territory — a low-rise comfort-class development with thoughtfully designed apartment layouts.',
+        'The gated guarded territory, underground parking, landscaped courtyards and recreation areas create a private and cosy environment. The total area of residential apartments is 10,483 m², and parking spaces 7,244 m².',
       ],
       advantage: 'Safety and comfort',
       specs: {
@@ -150,7 +150,7 @@ const en: Record<string, ProjectTr> = {
     details: {
       description: [
         'The «Botanika» residential complex is located in the Mirzo-Ulugbek district, opposite the Botanical Garden. The upper floors feature penthouses with private terraces and open balconies that let you enjoy the picturesque views of the Botanical Garden.',
-        'The complex consists of 3 blocks and 4 entrances and is built in an ecologically clean and green area. The underground part of the 11-storey building includes a modern parking of 15,968 m². The total development area of the project is 0.3 hectares, and the total area of residential apartments is 19,960 m².',
+        'The complex consists of 3 blocks and 4 entrances and is built in an ecologically clean and green area. The underground part of the 11-storey building includes a modern parking. The total development area of the project is 0.3 hectares, and the total area of residential apartments is 15,968 m².',
       ],
       advantage: 'Terraces overlooking the Botanical Garden',
       specs: {
@@ -256,7 +256,7 @@ const en: Record<string, ProjectTr> = {
     details: {
       description: [
         'The «Turon» residential complex is located in Tashkent, in the Mirzo-Ulugbek district. The project consists of buildings 5, 6 and 7 storeys high and includes 12 blocks located in the front and rear parts of the territory. Turon combines modern urban life with a calm atmosphere: low-rise comfort-class development, favourable climatic conditions and a quiet setting.',
-        'The total development area of the project is 2.5 hectares. The total area of residential apartments is 39,331.25 m², the underground floor area is 10,550 m², and the total area of commercial premises is 14,407.5 m². Shops, cafés and services are located on the ground floor — everything you need within walking distance.',
+        'The total development area of the project is 2.5 hectares. The total area of residential apartments is 31,465 m², the underground floor area is 10,550 m², and the total area of commercial premises (shops) is 11,526 m². Shops, cafés and services are located on the ground floor — everything you need within walking distance.',
       ],
       advantage: 'A quiet comfort-class neighborhood',
       specs: {
@@ -355,7 +355,7 @@ const uz: Record<string, ProjectTr> = {
     details: {
       description: [
         '«Alandalus» turar-joy majmuasi — zamonaviy meʼmorchilik va qulay yashash muhitiga ega 10 qavatli loyiha. Tinch, ekologik toza hududda joylashgan bo‘lib, yerto‘la avtoturargohi, bolalar maydonchasi va 24/7 videokuzatuv tizimi bilan jihozlangan. Atrofdagi infratuzilma rivojlangan — kundalik hayot uchun zarur barcha xizmatlar piyoda yetib boriladigan masofada.',
-        'Loyihaning umumiy qurilish maydoni — 0,75 gektar. Turar-joy kvartiralarining umumiy maydoni — 27 325 m², yerto‘la qavati — 5 720 m². Kvartiralarda shift balandligi 3 metr, ichki devorlar gazobetondan, sifatli kirish eshiklari va derazalar o‘rnatilgan. Monolit-beton konstruksiya bino mustahkamligini va uzoq muddat xizmat qilishini taʼminlaydi.',
+        'Loyihaning umumiy qurilish maydoni — 0,75 gektar. Turar-joy kvartiralarining umumiy maydoni — 21 860 m², yerto‘la qavati — 5 720 m². Kvartiralarda shift balandligi 3 metr, ichki devorlar gazobetondan, sifatli kirish eshiklari va derazalar o‘rnatilgan. Monolit-beton konstruksiya bino mustahkamligini va uzoq muddat xizmat qilishini taʼminlaydi.',
       ],
       advantage: 'Katta shaharda tinch uy',
       specs: {
@@ -420,12 +420,12 @@ const uz: Record<string, ProjectTr> = {
   },
   'anor-gardens': {
     category: 'Turar-joy majmuasi · Komfort',
-    area: '3 gektar',
+    area: '1,4 gektar',
     location: 'Toshkent, Mirzo Ulug‘bek tumani',
     details: {
       description: [
-        '«Anor Gardens» — komfort, xavfsizlik va sifatli hayot darajasini qadrlovchilar uchun yaratilgan zamonaviy makon. Majmua 3 gektar hududda joylashgan bo‘lib, 5 qavatli 12 ta turar-joy bloki va puxta loyihalashtirilgan 547 ta kvartirani o‘z ichiga oladi.',
-        'Yopiq qo‘riqlanadigan hudud, yerosti avtoturargohi, obod hovlilar va dam olish zonalari shaxsiy va shinam muhit yaratadi. Turar-joy kvartiralarining umumiy maydoni — 58 728 m², tijorat binolari — 3 237 m², avtoturargoh joylari — 1 900 m².',
+        '«Anor Gardens» — komfort, xavfsizlik va sifatli hayot darajasini qadrlovchilar uchun yaratilgan zamonaviy makon. Majmua 1,4 gektar hududda joylashgan — komfort darajasidagi past qavatli qurilish, puxta loyihalashtirilgan kvartiralar bilan.',
+        'Yopiq qo‘riqlanadigan hudud, yerosti avtoturargohi, obod hovlilar va dam olish zonalari shaxsiy va shinam muhit yaratadi. Turar-joy kvartiralarining umumiy maydoni — 10 483 m², avtoturargoh joylari — 7 244 m².',
       ],
       advantage: 'Xavfsizlik va komfort',
       specs: {
@@ -460,7 +460,7 @@ const uz: Record<string, ProjectTr> = {
     details: {
       description: [
         '«Botanika» turar-joy majmuasi Mirzo Ulug‘bek tumanida, Botanika bog‘i ro‘parasida joylashgan. Yuqori qavatlarda shaxsiy terrasalar va ochiq balkonlarga ega pentxauslar joylashgan bo‘lib, ular Botanika bog‘ining go‘zal manzaralaridan bahramand bo‘lish imkonini beradi.',
-        'Majmua 3 ta blok va 4 ta kirishdan iborat bo‘lib, ekologik toza va yashil hududda barpo etilgan. 11 qavatli binoning yerosti qismida 15 968 m² maydonli zamonaviy avtoturargoh mavjud. Loyihaning umumiy qurilish maydoni — 0,3 gektar, turar-joy kvartiralarining umumiy maydoni — 19 960 m².',
+        'Majmua 3 ta blok va 4 ta kirishdan iborat bo‘lib, ekologik toza va yashil hududda barpo etilgan. 11 qavatli binoning yerosti qismida zamonaviy avtoturargoh mavjud. Loyihaning umumiy qurilish maydoni — 0,3 gektar, turar-joy kvartiralarining umumiy maydoni — 15 968 m².',
       ],
       advantage: 'Botanika bog‘iga qaragan terrasalar',
       specs: {
@@ -566,7 +566,7 @@ const uz: Record<string, ProjectTr> = {
     details: {
       description: [
         '«Turon» turar-joy majmuasi Toshkentda, Mirzo Ulug‘bek tumanida joylashgan. Loyiha 5, 6 va 7 qavatli binolardan iborat bo‘lib, hududning old va orqa qismlarida joylashgan 12 ta blokni o‘z ichiga oladi. Turon zamonaviy shahar hayotini xotirjamlik muhiti bilan uyg‘unlashtiradi: komfort darajasidagi past qavatli qurilish, qulay iqlim sharoiti va tinch muhit.',
-        'Loyihaning umumiy qurilish maydoni — 2,5 gektar. Turar-joy kvartiralarining umumiy maydoni 39 331,25 m², yerto‘la qavati maydoni — 10 550 m², tijorat binolarining umumiy maydoni esa — 14 407,5 m². Birinchi qavatda do‘konlar, kafelar va xizmatlar joylashgan — zarur bo‘lgan hamma narsa piyoda yetib boriladigan masofada.',
+        'Loyihaning umumiy qurilish maydoni — 2,5 gektar. Turar-joy kvartiralarining umumiy maydoni 31 465 m², yerto‘la qavati maydoni — 10 550 m², do‘konlarning umumiy maydoni esa — 11 526 m². Birinchi qavatda do‘konlar, kafelar va xizmatlar joylashgan — zarur bo‘lgan hamma narsa piyoda yetib boriladigan masofada.',
       ],
       advantage: 'Komfort darajasidagi tinch hudud',
       specs: {
