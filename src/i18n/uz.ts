@@ -465,7 +465,7 @@ export default {
       },
       "anor-gardens": {
         whyTag: "Nega Anor Gardens",
-        intro: "«Anor Gardens» — 1,4 gektarda joylashgan komfort darajasidagi yopiq majmua: past qavatli qurilish, yerosti avtoturargohi va obod hovlilar. Xavfsizlik zamonaviy komfort bilan uyg‘unlashgan shaxsiy va shinam muhit.",
+        intro: "«Anor Gardens» — 3 gektarda joylashgan komfort darajasidagi yopiq majmua: 5 qavatli 12 ta past bino, 547 ta kvartira, yerosti avtoturargohi va obod hovlilar. Xavfsizlik zamonaviy komfort bilan uyg‘unlashgan shaxsiy va shinam muhit.",
         interiorText: "Bular katta vitraj oynalarga ega keng xonalar. Ularning har birida shaxsiy hovli hududiga ko‘tarilish uchun lift ko‘zda tutilgan, bu to‘liq to‘siqsiz muhit konsepsiyasiga mos keladi. Pochta jo‘natmalarini olish uchun esa postamatlar o‘rnatiladi.",
         interior: ["Tezyurar liftlar", "Vitraj oynalar", "Metall eshiklar", "Yumshoq yoritish"],
         advantages: [
@@ -479,11 +479,12 @@ export default {
         specs: [
           { label: "Nomi", value: "ANOR GARDENS" },
           { label: "Manzil", value: "Toshkent, Mirzo Ulug‘bek tumani" },
-          { label: "Qurilish maydoni", value: "1,4 gektar" },
+          { label: "Qurilish maydoni", value: "3 gektar" },
           { label: "Bloklar", value: "12 blok · 5 qavat" },
           { label: "Kvartiralar", value: "547" },
-          { label: "Turar-joy maydoni", value: "10 483 m²" },
-          { label: "Avtoturargoh", value: "7 244 m²" },
+          { label: "Turar-joy maydoni", value: "58 728 m²" },
+          { label: "Tijorat", value: "3 237 m²" },
+          { label: "Avtoturargoh", value: "1 900 m²" },
         ],
       },
       "botanika-luxury": {
@@ -493,7 +494,7 @@ export default {
           { title: "Gazoblokli uy", desc: "Yaxshi issiqlik izolyatsiyasi xususiyatlariga ega zamonaviy qurilish materiali. Uyda yil davomida qulay haroratni saqlashga yordam beradi." },
           { title: "10–11-qavatlarda terrasali kvartiralar", desc: "Keng shaxsiy terrasa va shaharning panoramali manzarasiga ega eksklyuziv kvartiralar. Dam olish, oilaviy kechalar va ochiq osmon ostida ertalabki qahva uchun ideal joy." },
           { title: "Baland shiftlar 3,10 m", desc: "Barcha qavatlar 3,10 metrli shiftlarga ega — havoga boy keng, yorug‘ xonalar va panoramali oynavandlik." },
-          { title: "Yer usti va yerosti avtoturargohlari", desc: "Aholi uchun qulay avtoturargoh yechimlari, jumladan zamonaviy yerosti avtoturargohi ko‘zda tutilgan — yilning istalgan faslida qulaylik va xavfsizlik." },
+          { title: "Yer usti va yerosti avtoturargohlari", desc: "Aholi uchun qulay avtoturargoh yechimlari, jumladan 15 968 m² maydonli zamonaviy yerosti avtoturargohi ko‘zda tutilgan — yilning istalgan faslida qulaylik va xavfsizlik." },
           { title: "Bolalar maydonchasi", desc: "Turli yoshdagi bolalarning o‘yinlari va rivojlanishi uchun zamonaviy va xavfsiz bolalar maydonchasi. Makon faol va qiziqarli dam olish uchun puxta o‘ylangan." },
           { title: "Ko‘kalamzorlashtirish va xiyobonlar", desc: "Majmua Botanika bog‘i ro‘parasidagi yashil hududda barpo etilgan. Daraxtlar va sayr xiyobonlari kundalik sayrlar uchun yoqimli muhit yaratadi." },
         ],
@@ -504,7 +505,8 @@ export default {
           { label: "Qurilish maydoni", value: "0,3 gektar" },
           { label: "Bloklar", value: "3 blok · 4 kirish" },
           { label: "Qavatlar", value: "10–11 qavat" },
-          { label: "Turar-joy maydoni", value: "15 968 m²" },
+          { label: "Turar-joy maydoni", value: "19 960 m²" },
+          { label: "Avtoturargoh", value: "15 968 m²" },
         ],
       },
       "vatan-village": {

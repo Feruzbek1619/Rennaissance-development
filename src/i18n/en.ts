@@ -465,7 +465,7 @@ export default {
       },
       "anor-gardens": {
         whyTag: "Why Anor Gardens",
-        intro: "«Anor Gardens» is a gated comfort-class complex on 1.4 hectares: low-rise development, underground parking and landscaped courtyards. A private and cosy environment where safety meets modern comfort.",
+        intro: "«Anor Gardens» is a gated comfort-class complex on 3 hectares: 12 low-rise blocks, 547 apartments, underground parking and landscaped courtyards. A private and cosy environment where safety meets modern comfort.",
         interiorText: "These are spacious rooms with huge stained-glass windows. Each of them has an elevator up to the private courtyard, fully in line with the barrier-free concept. Parcel lockers will be installed for receiving deliveries.",
         interior: ["High-speed elevators", "Stained-glass windows", "Metal doors", "Soft lighting"],
         advantages: [
@@ -479,11 +479,12 @@ export default {
         specs: [
           { label: "Name", value: "ANOR GARDENS" },
           { label: "Address", value: "Tashkent, Mirzo-Ulugbek district" },
-          { label: "Development", value: "1.4 hectares" },
+          { label: "Development", value: "3 hectares" },
           { label: "Blocks", value: "12 blocks · 5 floors" },
           { label: "Apartments", value: "547" },
-          { label: "Living area", value: "10,483 m²" },
-          { label: "Parking", value: "7,244 m²" },
+          { label: "Living area", value: "58,728 m²" },
+          { label: "Commercial", value: "3,237 m²" },
+          { label: "Parking", value: "1,900 m²" },
         ],
       },
       "botanika-luxury": {
@@ -493,7 +494,7 @@ export default {
           { title: "Aerated-concrete building", desc: "A modern building material with good thermal-insulation properties. It helps maintain a comfortable temperature inside the home all year round." },
           { title: "Apartments with terraces on floors 10–11", desc: "Exclusive apartments with a spacious private terrace and panoramic city views. The ideal place for relaxing, family evenings and morning coffee under the open sky." },
           { title: "High 3.10 m ceilings", desc: "All floors have 3.10-metre ceilings — spacious, bright rooms with plenty of air and panoramic glazing." },
-          { title: "Above-ground and underground parking", desc: "Convenient parking solutions are provided for residents, including a modern underground parking — comfort and safety in any season." },
+          { title: "Above-ground and underground parking", desc: "Convenient parking solutions are provided for residents, including a modern underground parking of 15,968 m² — comfort and safety in any season." },
           { title: "Children’s playground", desc: "A modern and safe playground for the games and development of children of different ages. The space is designed for active and engaging recreation." },
           { title: "Landscaping and alleys", desc: "The complex is built in a green area opposite the Botanical Garden. Trees and walking alleys create a pleasant atmosphere for daily strolls." },
         ],
@@ -504,7 +505,8 @@ export default {
           { label: "Development", value: "0.3 hectares" },
           { label: "Blocks", value: "3 blocks · 4 entrances" },
           { label: "Floors", value: "10–11 floors" },
-          { label: "Living area", value: "15,968 m²" },
+          { label: "Living area", value: "19,960 m²" },
+          { label: "Parking", value: "15,968 m²" },
         ],
       },
       "vatan-village": {
