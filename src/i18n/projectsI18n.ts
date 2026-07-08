@@ -150,7 +150,7 @@ const en: Record<string, ProjectTr> = {
     details: {
       description: [
         'The «Botanika» residential complex is located in the Mirzo-Ulugbek district, opposite the Botanical Garden. The upper floors feature penthouses with private terraces and open balconies that let you enjoy the picturesque views of the Botanical Garden.',
-        'The complex consists of 3 blocks and 4 entrances and is built in an ecologically clean and green area. The underground part of the 11-storey building includes a modern parking of 15,968 m². The total development area of the project is 0.3 hectares, and the total area of residential apartments is 19,960 m².',
+        'The complex consists of 3 blocks and 4 entrances and is built in an ecologically clean and green area. The underground part of the 11-storey building includes a modern parking of 3,100 m². The total development area of the project is 0.3 hectares, and the total area of residential apartments is 15,968 m².',
       ],
       advantage: 'Terraces overlooking the Botanical Garden',
       specs: {
@@ -256,7 +256,7 @@ const en: Record<string, ProjectTr> = {
     details: {
       description: [
         'The «Turon» residential complex is located in Tashkent, in the Mirzo-Ulugbek district. The project consists of buildings 5, 6 and 7 storeys high and includes 12 blocks located in the front and rear parts of the territory. Turon combines modern urban life with a calm atmosphere: low-rise comfort-class development, favourable climatic conditions and a quiet setting.',
-        'The total development area of the project is 2.5 hectares. The total area of residential apartments is 39,331.25 m², the underground floor area is 10,550 m², and the total area of commercial premises is 14,407.5 m². Shops, cafés and services are located on the ground floor — everything you need within walking distance.',
+        'The total development area of the project is 2.5 hectares. The total area of residential apartments is 31,465 m², the underground floor area is 10,550 m², and the total area of commercial premises is 11,526 m². Shops, cafés and services are located on the ground floor — everything you need within walking distance.',
       ],
       advantage: 'A quiet comfort-class neighborhood',
       specs: {
@@ -291,7 +291,7 @@ const en: Record<string, ProjectTr> = {
     details: {
       description: [
         '«Challet Resort» is a countryside complex in a resort format in the picturesque Yusufkhona area, just an hour’s drive from Tashkent. Modern houses with panoramic glazing and finishes of natural stone and wood blend harmoniously into the surrounding natural landscape.',
-        'The total development area of the complex is 8.5 hectares: standard cottages — 15,297 m², luxury cottages — 1,387 m², a restaurant — 750 m² and 1,100 m² of parking space. The grounds feature their own swimming pool with a recreation area, a restaurant and landscaped walking alleys. The gated guarded territory, clean air and silence create the atmosphere of a true resort for year-round living.',
+        'The total development area of the complex is 8.5 hectares: standard cottages — 12,238 m², luxury cottages — 1,110 m², a restaurant — 600 m² and 1,100 m² of parking space. The grounds feature their own swimming pool with a recreation area, a restaurant and landscaped walking alleys. The gated guarded territory, clean air and silence create the atmosphere of a true resort for year-round living.',
       ],
       advantage: 'A resort for year-round living',
       specs: {
@@ -460,7 +460,7 @@ const uz: Record<string, ProjectTr> = {
     details: {
       description: [
         '«Botanika» turar-joy majmuasi Mirzo Ulug‘bek tumanida, Botanika bog‘i ro‘parasida joylashgan. Yuqori qavatlarda shaxsiy terrasalar va ochiq balkonlarga ega pentxauslar joylashgan bo‘lib, ular Botanika bog‘ining go‘zal manzaralaridan bahramand bo‘lish imkonini beradi.',
-        'Majmua 3 ta blok va 4 ta kirishdan iborat bo‘lib, ekologik toza va yashil hududda barpo etilgan. 11 qavatli binoning yerosti qismida 15 968 m² maydonli zamonaviy avtoturargoh mavjud. Loyihaning umumiy qurilish maydoni — 0,3 gektar, turar-joy kvartiralarining umumiy maydoni — 19 960 m².',
+        'Majmua 3 ta blok va 4 ta kirishdan iborat bo‘lib, ekologik toza va yashil hududda barpo etilgan. 11 qavatli binoning yerosti qismida 3 100 m² maydonli zamonaviy avtoturargoh mavjud. Loyihaning umumiy qurilish maydoni — 0,3 gektar, turar-joy kvartiralarining umumiy maydoni — 15 968 m².',
       ],
       advantage: 'Botanika bog‘iga qaragan terrasalar',
       specs: {
@@ -566,7 +566,7 @@ const uz: Record<string, ProjectTr> = {
     details: {
       description: [
         '«Turon» turar-joy majmuasi Toshkentda, Mirzo Ulug‘bek tumanida joylashgan. Loyiha 5, 6 va 7 qavatli binolardan iborat bo‘lib, hududning old va orqa qismlarida joylashgan 12 ta blokni o‘z ichiga oladi. Turon zamonaviy shahar hayotini xotirjamlik muhiti bilan uyg‘unlashtiradi: komfort darajasidagi past qavatli qurilish, qulay iqlim sharoiti va tinch muhit.',
-        'Loyihaning umumiy qurilish maydoni — 2,5 gektar. Turar-joy kvartiralarining umumiy maydoni 39 331,25 m², yerto‘la qavati maydoni — 10 550 m², tijorat binolarining umumiy maydoni esa — 14 407,5 m². Birinchi qavatda do‘konlar, kafelar va xizmatlar joylashgan — zarur bo‘lgan hamma narsa piyoda yetib boriladigan masofada.',
+        'Loyihaning umumiy qurilish maydoni — 2,5 gektar. Turar-joy kvartiralarining umumiy maydoni 31 465 m², yerto‘la qavati maydoni — 10 550 m², tijorat binolarining umumiy maydoni esa — 11 526 m². Birinchi qavatda do‘konlar, kafelar va xizmatlar joylashgan — zarur bo‘lgan hamma narsa piyoda yetib boriladigan masofada.',
       ],
       advantage: 'Komfort darajasidagi tinch hudud',
       specs: {
@@ -601,7 +601,7 @@ const uz: Record<string, ProjectTr> = {
     details: {
       description: [
         '«Challet Resort» — Toshkentdan atigi bir soatlik masofada, go‘zal Yusufxona hududidagi kurort formatidagi shahar tashqarisi majmuasi. Panoramali oynavand va tabiiy tosh hamda yog‘ochdan pardozlangan zamonaviy uylar atrofdagi tabiiy landshaftga uyg‘un tarzda mujassam.',
-        'Majmuaning umumiy qurilish maydoni — 8,5 gektar: standart kottedjlar — 15 297 m², lyuks kottedjlar — 1 387 m², restoran — 750 m² va 1 100 m² avtoturargoh maydoni. Majmua hududida dam olish zonasiga ega o‘z basseyni, restoran va obod sayr yo‘laklari mavjud. Yopiq qo‘riqlanadigan hudud, toza havo va sukunat yil davomida yashash uchun haqiqiy kurort muhitini yaratadi.',
+        'Majmuaning umumiy qurilish maydoni — 8,5 gektar: standart kottedjlar — 12 238 m², lyuks kottedjlar — 1 110 m², restoran — 600 m² va 1 100 m² avtoturargoh maydoni. Majmua hududida dam olish zonasiga ega o‘z basseyni, restoran va obod sayr yo‘laklari mavjud. Yopiq qo‘riqlanadigan hudud, toza havo va sukunat yil davomida yashash uchun haqiqiy kurort muhitini yaratadi.',
       ],
       advantage: 'Yil davomida yashash uchun kurort',
       specs: {
