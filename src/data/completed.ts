@@ -113,7 +113,7 @@ export const completedProjects: CompletedProject[] = [
       { label: 'Этажность', value: '6 этажей' },
       { label: 'Квартир', value: '250' },
       { label: 'Территория', value: '0,15 гектара' },
-      { label: 'Площадь квартир', value: '6 373,75 м²' },
+      { label: 'Площадь квартир', value: '5 099 м²' },
       { label: 'Паркинг', value: '300 м²' },
       { label: 'Район', value: 'Яккасарайский · ул. Кушбеги' },
       { label: 'Статус', value: 'Сдан' },
