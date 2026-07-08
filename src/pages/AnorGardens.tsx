@@ -47,7 +47,7 @@ const interiorIcons = [ElevatorIcon, WindowIcon, DoorIcon, LightIcon]
 const statValues = ['12+', '5+', '2021', '2019']
 
 export default function AnorGardens() {
-  const { t } = useTranslation()
+  const { t, tx } = useTranslation()
   const modal = useLeadModalOptional()
   const navigate = useNavigate()
 
@@ -257,13 +257,12 @@ export default function AnorGardens() {
             {t('proj.nearbyTitle')}
           </h2>
           <div className="grid grid-cols-3 max-md:!grid-cols-1 gap-4">
-            {details.nearby.map((place, i) => (
+            {tx<{ icon: string; title: string }[]>('proj.nearby').map((place, i) => (
               <div key={place.title} data-reveal style={{ transitionDelay: `${(i % 3) * 90}ms` }} className="card-lift flex flex-col gap-4 p-8 bg-bg-subtle rounded-[5px]">
                 <div className="text-ink">
                   <NearbyIcon icon={place.icon} />
                 </div>
                 <h3 className="font-heading text-[22px] font-bold uppercase leading-[1.3] text-ink">{place.title}</h3>
-                <p className="font-body text-[16px] leading-[1.6] text-secondary">{place.description}</p>
               </div>
             ))}
           </div>

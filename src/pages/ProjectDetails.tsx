@@ -183,7 +183,7 @@ function InfoChip({ icon, label, sub }: { icon: React.ReactNode; label: string; 
 }
 
 export default function ProjectDetails() {
-  const { t } = useTranslation()
+  const { t, tx } = useTranslation()
   const { slug } = useParams<{ slug: string }>()
   const modal = useLeadModalOptional()
   const [active, setActive] = useState(0)
@@ -513,13 +513,12 @@ export default function ProjectDetails() {
               {t('proj.nearbyTitle')}
             </h2>
             <div className="grid grid-cols-3 max-md:!grid-cols-1 gap-4">
-              {details.nearby.map((place) => (
+              {tx<{ icon: string; title: string }[]>('proj.nearby').map((place) => (
                 <div key={place.title} className="flex flex-col gap-4 p-8 bg-bg-subtle rounded-[5px]">
                   <div className="text-ink">
                     <NearbyIconFor icon={place.icon} />
                   </div>
                   <h3 className="font-heading text-[22px] font-bold uppercase leading-[1.3] text-ink">{place.title}</h3>
-                  <p className="font-body text-[16px] leading-[1.6] text-secondary">{place.description}</p>
                 </div>
               ))}
             </div>

@@ -45,7 +45,7 @@ const specIcons = [<HomeIcon />, <PinIcon />, <TagIcon />, <RulerIcon />, <Layer
 const statValues = ['12+', '5+', '2021', '2019']
 
 export default function BotanikaLuxury() {
-  const { t } = useTranslation()
+  const { t, tx } = useTranslation()
   const modal = useLeadModalOptional()
   const navigate = useNavigate()
 
@@ -340,7 +340,7 @@ export default function BotanikaLuxury() {
             {t('proj.nearbyTitle')}
           </h2>
           <div className="grid grid-cols-3 max-md:!grid-cols-1 gap-4">
-            {details.nearby.map((place, i) => (
+            {tx<{ icon: string; title: string }[]>('proj.nearby').map((place, i) => (
               <div
                 key={place.title}
                 data-reveal
@@ -351,7 +351,6 @@ export default function BotanikaLuxury() {
                   <NearbyIcon icon={place.icon} />
                 </div>
                 <h3 className="font-heading text-[22px] font-bold uppercase leading-[1.3] text-ink">{place.title}</h3>
-                <p className="font-body text-[16px] leading-[1.6] text-secondary">{place.description}</p>
               </div>
             ))}
           </div>
