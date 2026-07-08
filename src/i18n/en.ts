@@ -117,7 +117,7 @@ export default {
     stats: {
       s1: 'We don’t just build — we create reliable space for future generations. ',
       s2: 'Renaissance Development is a full-cycle developer. Since 2019 — 12 projects in Tashkent.',
-      l1: 'Completed projects',
+      l1: 'Total number of projects',
       l2: 'Projects under construction',
       l3: 'own concrete plant',
       l4: 'year founded',
@@ -277,6 +277,9 @@ export default {
       teamDesc: 'Renaissance Development is a full-cycle company: a developer with over 7 years of experience and a portfolio of 12+ completed and ongoing projects.',
       ceoRole: 'Founder & CEO',
       ceoName: 'Jabborov Rufat Uzakovich',
+      ceoBioP1: 'He graduated from the Samarkand State University of Architecture and Civil Engineering and has over 12 years of hands-on experience in construction. He began his career in 2013, taking part in major public- and private-sector construction projects. He served as chief inspector at the Construction Supervision Inspectorate of Tashkent, where he gained significant experience in quality control of construction and assembly works and in delivering large-scale projects.',
+      ceoBioP2: 'In 2019 he founded Renaissance Development and RBC Stroy. Today, under his leadership, Renaissance Development successfully delivers modern residential and commercial projects in the capital that meet high standards of quality and architecture.',
+      ceoBioP3: 'His professional experience, high quality standards and modern management approach ensure the company’s reliable and steady development.',
       ceoPhotoAlt: 'Jabborov Rufat Uzakovich — founder & CEO',
     },
     b2b: {

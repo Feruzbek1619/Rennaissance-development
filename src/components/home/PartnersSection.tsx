@@ -12,6 +12,9 @@ const logos = [
 // «Партнёры в архитектурном совершенстве» (Figma 7778:3869)
 export default function PartnersSection() {
   const { t } = useTranslation()
+  // ⛔ Временно скрыто по просьбе клиента (пока нет данных партнёров). Блок НЕ удалён —
+  //    чтобы вернуть его на все страницы, где он используется, удалите строку `return null` ниже.
+  return null
   return (
     <section className="bg-white py-[100px] max-md:!py-[56px]">
       <Container>

@@ -117,7 +117,7 @@ export default {
     stats: {
       s1: "Biz shunchaki bino qurmaymiz — biz kelajak avlodlar uchun ishonchli makon yaratamiz. ",
       s2: 'Renaissance Development — to‘liq tsikl quruvchisi. 2019-yildan beri — Toshkentda 12 loyiha.',
-      l1: 'Topshirilgan loyihalar',
+      l1: 'Umumiy loyihalar soni',
       l2: 'Qurilayotgan loyihalar',
       l3: 'xususiy beton zavodi',
       l4: 'tashkil etilgan yil',
@@ -277,6 +277,9 @@ export default {
       teamDesc: "Renaissance Development — to‘liq tsiklli quruvchi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyihalar portfeliga ega.",
       ceoRole: 'Asoschi va CEO',
       ceoName: 'Jabborov Rufat Uzakovich',
+      ceoBioP1: "Samarqand Davlat Arxitektura va Qurilish Universitetini tamomlagan bo‘lib, qurilish sohasida 12 yildan ortiq amaliy tajribaga ega. Faoliyatini 2013-yildan boshlab, davlat va xususiy sektordagi yirik qurilish loyihalarida ishtirok etib kelmoqda. U Toshkent shahar Qurilish nazorat inspeksiyasida bosh inspektor lavozimida faoliyat yuritib, qurilish-montaj ishlari sifatini nazorat qilish va yirik loyihalarni amalga oshirish jarayonida katta tajriba orttirgan.",
+      ceoBioP2: "2019-yilda u tomonidan Renaissance Development hamda RBC Stroy kompaniyalariga asos solingan. Bugungi kunda uning rahbarligida Renaissance Development kompaniyasi faoliyat yuritib, poytaxtda zamonaviy va yuqori sifat standartlariga javob beradigan turar-joy hamda tijorat loyihalarini muvaffaqiyatli amalga oshirib kelmoqda.",
+      ceoBioP3: "Kasbiy tajriba, sifatga bo‘lgan yuksak talab va zamonaviy yondashuv uning rahbarligida kompaniyaning ishonchli va barqaror rivojlanishiga xizmat qilmoqda.",
       ceoPhotoAlt: 'Jabborov Rufat Uzakovich — asoschi va CEO',
     },
     b2b: {

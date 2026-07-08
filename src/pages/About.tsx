@@ -53,9 +53,9 @@ export default function About() {
             </p>
           </div>
 
-          {/* CEO photo — centered, with name card overlapping bottom (Figma 7801:3087) */}
-          <div className="flex justify-center">
-            <div className="relative w-[406px] max-sm:!w-full">
+          {/* CEO photo + bio (Figma 7801:3087) */}
+          <div className="flex justify-center items-start gap-[60px] max-lg:!flex-col max-lg:items-center max-lg:gap-8">
+            <div className="relative w-[406px] max-sm:!w-full shrink-0">
               <div className="h-[495px] overflow-hidden">
                 <img loading="lazy" decoding="async"
                   src="/assets/director-photo.webp"
@@ -67,6 +67,11 @@ export default function About() {
                 <p className="font-heading text-[20px] font-bold text-ink">{t('pages.about.ceoName')}</p>
                 <p className="font-body text-[16px] text-secondary mt-1">{t('pages.about.ceoRole')}</p>
               </div>
+            </div>
+            <div className="flex flex-col gap-5 max-w-[640px] font-body text-[18px] 2xl:text-[20px] leading-[1.7] text-secondary">
+              <p>{t('pages.about.ceoBioP1')}</p>
+              <p>{t('pages.about.ceoBioP2')}</p>
+              <p>{t('pages.about.ceoBioP3')}</p>
             </div>
           </div>
         </Container>
