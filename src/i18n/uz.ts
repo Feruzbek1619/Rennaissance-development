@@ -73,7 +73,7 @@ export default {
     chooseApartment: 'Kvartira tanlash',
     call: "Qo‘ng‘iroq qilish",
     projects: 'Loyihalar',
-    area: 'Maydon',
+    area: 'Loyiha maydoni',
     location: 'Joylashuv',
     badgeOnSale: 'Sotuv ketmoqda',
     badgeSoon: 'Tez orada sotuvda',
