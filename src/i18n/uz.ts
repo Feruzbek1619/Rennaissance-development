@@ -432,7 +432,7 @@ export default {
     cityTashkent: "Toshkent sh.",
     detail: {
       heroAddressSub: "Obyekt manzili",
-      heroAreaSub: "Kvartiralar maydoni",
+      heroAreaSub: "Loyiha maydoni",
       heroTypeSub: "Obyekt turi",
       heroAdvantageSub: "Afzallik",
       addressTitle: "Obyekt manzili",
@@ -444,7 +444,7 @@ export default {
     spec: {
       name: "Nomi",
       address: "Manzil",
-      area: "Maydon",
+      area: "Loyiha maydoni",
       floors: "Qavatlar",
       category: "Toifa",
       year: "Yil",
