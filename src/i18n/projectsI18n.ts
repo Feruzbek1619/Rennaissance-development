@@ -27,6 +27,7 @@ type DetailsTr = {
   features?: TextPair[]
   nearby?: TextPair[]
   floorPlans?: FloorPlanTr[]
+  breakdown?: { label?: string; value?: string }[]
 }
 
 type ProjectTr = {
@@ -266,6 +267,11 @@ const en: Record<string, ProjectTr> = {
         category: 'Comfort',
         status: 'Under construction',
       },
+      breakdown: [
+        { label: 'Apartments area', value: '31,465 m²' },
+        { label: 'Underground floor', value: '10,550 m²' },
+        { label: 'Commercial areas', value: '11,526 m²' },
+      ],
       features: [
         { title: 'Aerated-concrete building', description: 'A modern building material with good thermal-insulation properties. It helps maintain a comfortable temperature inside the home all year round.' },
         { title: 'High 3.10 m ceilings', description: 'All floors have 3.10-metre ceilings — spacious rooms with plenty of light and air.' },
@@ -301,6 +307,12 @@ const en: Record<string, ProjectTr> = {
         category: 'Countryside · Comfort',
         status: 'Under construction',
       },
+      breakdown: [
+        { label: 'Standard cottages', value: '12,238 m²' },
+        { label: 'Luxury cottages', value: '1,110 m²' },
+        { label: 'Restaurant', value: '600 m²' },
+        { label: 'Parking area', value: '1,100 m²' },
+      ],
       features: [
         { title: 'Natural stone and wood', description: 'Façades made of natural stone and wood — durability, prestige and unity with the surrounding nature.' },
         { title: 'Swimming pool and recreation area', description: 'Your own swimming pool with a recreation area and sun loungers — outdoor relaxation without leaving the territory.' },
@@ -576,6 +588,11 @@ const uz: Record<string, ProjectTr> = {
         category: 'Komfort',
         status: 'Qurilmoqda',
       },
+      breakdown: [
+        { label: 'Xonadonlar maydoni', value: '31 465 m²' },
+        { label: 'Yerosti qavati', value: '10 550 m²' },
+        { label: 'Savdo maydonlari', value: '11 526 m²' },
+      ],
       features: [
         { title: 'Gazoblokli uy', description: 'Yaxshi issiqlik izolyatsiyasi xususiyatlariga ega zamonaviy qurilish materiali. Uyda yil davomida qulay haroratni saqlashga yordam beradi.' },
         { title: 'Baland shiftlar 3,10 m', description: 'Barcha qavatlar 3,10 metrli shiftlarga ega — yorug‘lik va havoga boy keng xonalar.' },
@@ -611,6 +628,12 @@ const uz: Record<string, ProjectTr> = {
         category: 'Shahar tashqarisi · Komfort',
         status: 'Qurilmoqda',
       },
+      breakdown: [
+        { label: 'Standart kottejlar', value: '12 238 m²' },
+        { label: 'Lyuks kottejlar', value: '1 110 m²' },
+        { label: 'Restoran', value: '600 m²' },
+        { label: 'Avtoturargoh maydoni', value: '1 100 m²' },
+      ],
       features: [
         { title: 'Tabiiy tosh va yog‘och', description: 'Tabiiy tosh va yog‘ochdan tayyorlangan fasadlar — uzoq umrlilik, nufuz va atrofdagi tabiat bilan uyg‘unlik.' },
         { title: 'Basseyn va dam olish zonasi', description: 'Dam olish zonasi va shezlonglarga ega o‘z basseyni — hududdan chiqmasdan ochiq havoda dam olish.' },
@@ -666,6 +689,7 @@ function mergeDetails(base: ProjectDetails, tr: DetailsTr): ProjectDetails {
     specs: { ...base.specs, ...(tr.specs ?? {}) },
     features: base.features.map((f, i) => ({ ...f, ...(tr.features?.[i] ?? {}) })),
     nearby: base.nearby.map((n, i) => ({ ...n, ...(tr.nearby?.[i] ?? {}) })),
+    breakdown: base.breakdown?.map((b, i) => ({ ...b, ...(tr.breakdown?.[i] ?? {}) })),
     floorPlans: base.floorPlans?.map((fp, i) => {
       const t = tr.floorPlans?.[i]
       if (!t) return fp

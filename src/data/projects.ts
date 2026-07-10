@@ -30,6 +30,8 @@ export type ProjectDetails = {
   nearby: ProjectNearby[]
   advantage: string
   floorPlans?: FloorPlan[]
+  /** Extra area breakdown rows shown in the spec table (after the area row). */
+  breakdown?: { label: string; value: string }[]
 }
 
 export type Project = {
@@ -171,6 +173,11 @@ const turonDetails: ProjectDetails = {
     year: '2027–2028',
     status: 'Строится',
   },
+  breakdown: [
+    { label: 'Площадь квартир', value: '31 465 м²' },
+    { label: 'Подземный этаж', value: '10 550 м²' },
+    { label: 'Торговые площади', value: '11 526 м²' },
+  ],
   advantage: 'Тихий район комфорт-класса',
   features: [
     { icon: 'home', title: 'Дом из газоблока', description: 'Современный строительный материал с хорошими теплоизоляционными свойствами. Помогает сохранять комфортную температуру в доме круглый год.' },
@@ -235,6 +242,12 @@ const chaletDetails: ProjectDetails = {
     year: '2026',
     status: 'Строится',
   },
+  breakdown: [
+    { label: 'Стандартные коттеджи', value: '12 238 м²' },
+    { label: 'Люкс-коттеджи', value: '1 110 м²' },
+    { label: 'Ресторан', value: '600 м²' },
+    { label: 'Площадь паркинга', value: '1 100 м²' },
+  ],
   advantage: 'Курорт для жизни круглый год',
   features: [
     { icon: 'home', title: 'Натуральный камень и дерево', description: 'Фасады из природного камня и дерева — долговечность, престиж и единство с окружающей природой.' },

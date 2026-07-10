@@ -478,6 +478,7 @@ export default function ProjectDetails() {
                     { label: t('proj.spec.name'), value: project.title },
                     { label: t('proj.spec.address'), value: details.specs.address },
                     { label: t('proj.spec.area'), value: details.specs.area },
+                    ...(details.breakdown ?? []),
                     { label: t('proj.spec.floors'), value: details.specs.floors },
                     { label: t('proj.spec.category'), value: details.specs.category },
                     { label: t('proj.spec.year'), value: details.specs.year },
