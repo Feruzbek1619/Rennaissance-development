@@ -120,6 +120,10 @@ const en: Record<string, CompletedTr> = {
     ],
     specs: [
       { label: 'Floors', value: '9 floors + terrace' },
+      { label: 'Apartments', value: '361' },
+      { label: 'Territory', value: '1 hectare' },
+      { label: 'Apartments area', value: '23,066 m²' },
+      { label: 'Parking', value: '2,505 m²' },
       { label: 'Style', value: 'Minimalism · modern' },
       { label: 'District', value: 'Yashnabad · Makhtumkuli st.' },
       { label: 'Status', value: 'Completed' },
@@ -236,6 +240,10 @@ const uz: Record<string, CompletedTr> = {
     ],
     specs: [
       { label: 'Qavatlar', value: '9 qavat + terrasa' },
+      { label: 'Kvartiralar', value: '361' },
+      { label: 'Loyiha maydoni', value: '1 gektar' },
+      { label: 'Xonadonlar maydoni', value: '23 066 m²' },
+      { label: 'Avtoturargoh maydoni', value: '2 505 m²' },
       { label: 'Uslub', value: 'Minimalizm · zamonaviy' },
       { label: 'Tuman', value: 'Yashnobod · Maxtumquli ko‘ch.' },
       { label: 'Holati', value: 'Topshirilgan' },

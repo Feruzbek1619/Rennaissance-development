@@ -183,6 +183,10 @@ export const completedProjects: CompletedProject[] = [
     ],
     specs: [
       { label: 'Этажность', value: '9 этажей + терраса' },
+      { label: 'Квартир', value: '361' },
+      { label: 'Территория', value: '1 гектар' },
+      { label: 'Площадь квартир', value: '23 066 м²' },
+      { label: 'Паркинг', value: '2 505 м²' },
       { label: 'Стиль', value: 'Минимализм · современный' },
       { label: 'Район', value: 'Яшнабадский · ул. Махтумкули' },
       { label: 'Статус', value: 'Сдан' },
