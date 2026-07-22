@@ -2,6 +2,13 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Канонический домен: любой другой хост (www, старый домен и т.д.), попавший
+  # в этот docroot, 301-редиректится на renaissancedevelopment.uz — чтобы в
+  # адресной строке всегда был единый основной домен.
+  RewriteCond %{HTTP_HOST} !^renaissancedevelopment\.uz$ [NC]
+  RewriteRule ^(.*)$ https://renaissancedevelopment.uz/$1 [R=301,L]
+
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

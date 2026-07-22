@@ -1,4 +1,4 @@
-name: Build & Deploy to server (renaissancebuilding.uz)
+name: Build & Deploy to server (renaissancedevelopment.uz)
 
 # КАК ТЫ И ХОТЕЛ: каждый push в main → сборка → автозалив по FTP на твой сервер
 # (хостинг bp.uztan.ru) в папку домена → сайт сразу обновляется на renaissancebuilding.uz.
@@ -50,7 +50,7 @@ jobs:
           # поменяй это значение на то, что видишь (напр. "renaissancebuilding.uz/"
           # или "./www/renaissancebuilding.uz/"). Можно переопределить переменной
           # репозитория FTP_REMOTE_DIR (Settings → Variables).
-          server-dir: ${{ vars.FTP_REMOTE_DIR || '/www/renaissancebuilding.uz/' }}
+          server-dir: ${{ vars.FTP_REMOTE_DIR || '/www/renaissancedevelopment.uz/' }}
           # .htaccess (SPA-маршруты) тоже заливается:
           exclude: |
             **/.git*
