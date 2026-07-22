@@ -10,7 +10,10 @@ import { completedProjects } from '@/data/completed'
 import { useTranslation } from '@/i18n'
 import { useLocalizedCompletedList } from '@/i18n/completedI18n'
 
-const activeProjects = projects.filter((p) => p.status === 'active')
+// Каталог: активные проекты + карточки бизнес-центров (cardOnly) всегда,
+// даже если проданы — у них показывается бейдж «Продано». Проданные жилые
+// (не cardOnly, напр. Western) остаются только в разделе «Реализованные».
+const activeProjects = projects.filter((p) => p.status === 'active' || p.cardOnly)
 
 const FILTERS = [
   { key: 'all', labelKey: 'pages.catalog.filterAll' },

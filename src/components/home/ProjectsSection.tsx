@@ -18,7 +18,8 @@ export default function ProjectsSection() {
   const { t } = useTranslation()
   const [tab, setTab] = useState<'residential' | 'business'>('residential')
 
-  const list = projects.filter((p) => p.status === 'active' && kindOf(p) === tab).slice(0, 4)
+  // Бизнес-центры (cardOnly) показываем и когда проданы — с бейджем «Продано».
+  const list = projects.filter((p) => (p.status === 'active' || p.cardOnly) && kindOf(p) === tab).slice(0, 4)
 
   return (
     <section className="bg-white py-[128px] max-md:!py-[56px]">
