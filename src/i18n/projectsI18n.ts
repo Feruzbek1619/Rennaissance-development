@@ -341,7 +341,7 @@ const en: Record<string, ProjectTr> = {
   chulpon: {
     category: 'Business center',
     area: '500 m² · 6 floors',
-    location: 'Tashkent, Yunusabad district',
+    location: 'Tashkent, Yashnabad district',
   },
   aviasozlar: {
     category: 'Business center',
@@ -664,7 +664,7 @@ const uz: Record<string, ProjectTr> = {
   chulpon: {
     category: 'Biznes-markaz',
     area: '500 m² · 6 qavat',
-    location: 'Toshkent sh., Yunusobod tumani',
+    location: 'Toshkent sh., Yashnobod tumani',
   },
   aviasozlar: {
     category: 'Biznes-markaz',

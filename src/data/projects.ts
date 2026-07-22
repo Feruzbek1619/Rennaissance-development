@@ -457,10 +457,10 @@ export const projects: Project[] = [
   /* ─── Бизнес-центры (карточка + «Оставить заявку», без отдельной страницы) ─── */
   {
     slug: 'chulpon',
-    title: 'CHULPON',
+    title: 'CHOLPON',
     category: 'Бизнес-центр',
     area: '500 м² · 6 этажей',
-    location: 'г. Ташкент, Юнусабадский район',
+    location: 'г. Ташкент, Яшнабадский район',
     image: '/assets/bc-chulpon.webp',
     status: 'sold',
     kind: 'business',
