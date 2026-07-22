@@ -45,8 +45,10 @@ const en: Record<string, ProjectTr> = {
     location: 'Yukorichirchik district, Yangi Uzbekiston street',
     details: {
       description: [
-        'The «Alandalus» residential complex is a 10-storey project with modern architecture and a comfortable living environment. Located in a quiet, ecologically clean district, it features underground parking, a children’s playground and 24/7 video surveillance. The surrounding infrastructure is well developed — all services needed for daily life are within walking distance.',
-        'The total development area of the project is 0.75 hectares. The total area of residential apartments is 27,325 m², and the underground floor is 5,720 m². The apartments have 3-metre ceilings, interior walls of aerated concrete, and high-quality entrance doors and windows. The monolithic concrete structure ensures the building’s strength and long service life.',
+        'The «Alandalus» residential complex is a modern 10-storey project where thoughtful architecture is combined with comfort and safety. The complex is located in a quiet, ecologically clean district and features underground parking, a landscaped territory, a children’s playground and round-the-clock video surveillance. All the necessary infrastructure is nearby.',
+        'The project is built on a 0.75-hectare plot. The building footprint is 2,825 m², and the total floor area of the buildings is 30,140 m². The complex has 3 blocks, 5 entrances and 298 apartments with convenient layouts.',
+        'The total usable area is 21,990 m², of which 21,860 m² is residential and 130 m² is commercial premises. An underground parking of 5,870 m² for 140 parking spaces is provided for residents.',
+        'The ceiling height is 3 metres. Monolithic reinforced-concrete construction technology, aerated-concrete walls, quality doors and energy-efficient windows ensure a high level of comfort, reliability and durability.',
       ],
       advantage: 'A quiet home in a big city',
       specs: {
@@ -80,8 +82,9 @@ const en: Record<string, ProjectTr> = {
     location: 'Tashkent, Mirzo-Ulugbek district',
     details: {
       description: [
-        '«Sharq Avenue» is a modern space created for those who value comfort, safety and a quality standard of living. The complex is located on a 3-hectare territory and includes 12 residential blocks 5 storeys high and 547 thoughtfully designed apartments.',
-        'The gated guarded territory, underground parking, landscaped courtyards and recreation areas create a private and cosy environment. The total area of residential apartments is 58,728 m², commercial premises 3,237 m², and parking spaces 1,900 m².',
+        '«Sharq Avenue» is a modern residential complex created for those who value comfort, safety and a high quality of life. The project is located on a 3-hectare territory and brings together 12 residential blocks, 21 entrances and 547 apartments with thoughtful layouts.',
+        'The building footprint is 11,360 m², and the total floor area of the buildings is 58,242 m². The complex has a gated guarded territory, landscaped courtyards, recreation areas and underground parking of 18,424 m² designed for 540 parking spaces.',
+        'The total usable area of the complex is 49,573 m², of which 46,983 m² is residential apartments and 2,590 m² is commercial premises. Each floor has 5, 6 or 7 apartments, providing a comfortable number of neighbours and a cosy atmosphere.',
       ],
       advantage: 'Safety and comfort',
       specs: {
@@ -115,14 +118,15 @@ const en: Record<string, ProjectTr> = {
     location: 'Tashkent, Mirzo-Ulugbek district',
     details: {
       description: [
-        '«Anor Gardens» is a cosy, private club complex created for those who value calm, safety and comfort. The complex sits on 1.4 hectares and includes just 5 residential blocks 5 storeys high and 137 apartments — a club-format development.',
-        'The gated guarded territory, underground parking, landscaped courtyards and recreation areas create a private and cosy environment. The total area of residential apartments is 13,103.75 m², and parking spaces 7,244 m².',
+        '«Anor Gardens» is a cosy club residential complex created for those who value calm, safety and comfort. The project is located on a 1.4-hectare territory and includes 3 residential blocks, 7 entrances and 189 apartments with thoughtful layouts.',
+        'The building footprint is 2,718 m², and the total floor area of the buildings is 13,198 m². A gated guarded territory, landscaped courtyards, recreation areas and underground parking of 7,244 m² for 190 parking spaces create a comfortable living environment.',
+        'The total usable area of the complex is 10,483 m². Each floor has only 5 apartments, ensuring privacy, quiet and the atmosphere of a club-format residence.',
       ],
       advantage: 'Safety and comfort',
       specs: {
         address: 'Tashkent, Mirzo-Ulugbek district',
         area: '1.4 hectares',
-        floors: '5 floors · 5 blocks',
+        floors: '5 floors · 3 blocks',
         category: 'Comfort',
         status: 'On sale',
       },
@@ -150,13 +154,14 @@ const en: Record<string, ProjectTr> = {
     location: 'Mirzo-Ulugbek district, Nemat dead end 197, Tashkent',
     details: {
       description: [
-        'The «Botanika» residential complex is located in the Mirzo-Ulugbek district, opposite the Botanical Garden. The upper floors feature penthouses with private terraces and open balconies that let you enjoy the picturesque views of the Botanical Garden.',
-        'The complex consists of 3 blocks and 4 entrances and is built in an ecologically clean and green area. The underground part of the 11-storey building includes a modern parking of 3,100 m². The total development area of the project is 0.3 hectares, and the total area of residential apartments is 15,968 m².',
+        'The premium «Botanika Luxury» residential complex is located in the Mirzo-Ulugbek district, opposite the Botanical Garden. Modern architecture, spacious layouts and penthouses with private terraces and open balconies let you enjoy panoramic views of one of the greenest locations in the city.',
+        'The project is being built on a 2.5-hectare territory and includes 7 residential blocks, 11 entrances and 227 apartments. The building footprint is 8,199 m², and the total floor area of the buildings is 42,211 m².',
+        'The total usable area of the complex is 32,489 m², of which 30,390 m² is residential apartments and 2,099 m² is commercial premises. An underground parking of 20,765 m² designed for 305 parking spaces is provided for residents.',
       ],
       advantage: 'Terraces overlooking the Botanical Garden',
       specs: {
         address: 'Tashkent, Mirzo-Ulugbek district',
-        area: '0.3 hectares',
+        area: '2.5 hectares',
         floors: '10–11 floors',
         category: 'Comfort',
         status: 'Under construction',
@@ -181,17 +186,18 @@ const en: Record<string, ProjectTr> = {
   },
   'vatan-village': {
     category: 'Cottage village · Comfort+',
-    area: 'plots from 3 to 7 sotka',
+    area: '4.5 hectares',
     location: 'Mirzo-Ulugbek district, Yangi Uzbekiston street',
     details: {
       description: [
-        '«Vatan Village» is a modern cottage village built on a 460-sotka territory. The complex brings together around 90 cottages; each house has its own land plot ranging from 3 to 7 sotka. The total development area is 24,375 m², and the parking space is 1,100 m².',
-        'The territory includes children’s playgrounds, a mini-stadium, recreation areas and numerous green spaces for family leisure. The gated and guarded territory provides residents with a safe and comfortable living environment.',
+        '«Vatan Village» is a modern cottage town created for comfortable countryside living surrounded by nature. The project is located on a 4.5-hectare territory and includes 90 cottages with their own land plots, combining privacy, safety and a well-developed internal infrastructure.',
+        'The building footprint is 19,500 m², and the total floor area of the buildings is 45,873 m². The territory features children’s playgrounds, recreation areas, sports spaces and landscaped green alleys for the whole family.',
+        'The gated guarded territory ensures a calm living atmosphere, while parking is designed for 110 spaces, creating additional comfort for residents and guests of the complex.',
       ],
       advantage: 'A home for a big family',
       specs: {
         address: 'Tashkent, Mirzo-Ulugbek district',
-        area: '460 sotka',
+        area: '4.5 hectares',
         floors: '3 floors',
         category: 'Comfort+',
         status: 'Under construction',
@@ -256,13 +262,14 @@ const en: Record<string, ProjectTr> = {
     location: 'Mirzo-Ulugbek district, Yangi Uzbekiston street',
     details: {
       description: [
-        'The «Turon» residential complex is located in Tashkent, in the Mirzo-Ulugbek district. The project consists of buildings 5, 6 and 7 storeys high and includes 12 blocks located in the front and rear parts of the territory. Turon combines modern urban life with a calm atmosphere: low-rise comfort-class development, favourable climatic conditions and a quiet setting.',
-        'The total development area of the project is 2.5 hectares. The total area of residential apartments is 31,465 m², the underground floor area is 10,550 m², and the total area of commercial premises is 11,526 m². Shops, cafés and services are located on the ground floor — everything you need within walking distance.',
+        'The «Turon» residential complex is located in the Mirzo-Ulugbek district of Tashkent and combines the advantages of modern urban life with the cosiness of low-rise comfort-class development. The project is built on a 1.8-hectare territory and includes 12 residential blocks, 21 entrances and 542 apartments with thoughtful layouts.',
+        'The building footprint is 8,049 m², and the total floor area of the buildings is 49,300 m². An underground parking of 10,550 m² designed for 500 parking spaces is provided for residents.',
+        'The total usable area of the complex is 42,991 m², of which 31,465 m² is residential apartments and 11,526 m² is commercial premises. Shops, cafés and services are located on the ground floors, so everything you need is within walking distance.',
       ],
       advantage: 'A quiet comfort-class neighborhood',
       specs: {
         address: 'Tashkent, Mirzo-Ulugbek district',
-        area: '2.5 hectares',
+        area: '1.8 hectares',
         floors: '5, 6 and 7 floors',
         category: 'Comfort',
         status: 'Under construction',
@@ -296,8 +303,9 @@ const en: Record<string, ProjectTr> = {
     location: 'Yusufkhona, 60 minutes from Tashkent',
     details: {
       description: [
-        '«Challet Resort» is a countryside complex in a resort format in the picturesque Yusufkhona area, just an hour’s drive from Tashkent. Modern houses with panoramic glazing and finishes of natural stone and wood blend harmoniously into the surrounding natural landscape.',
-        'The total development area of the complex is 8.5 hectares: standard cottages — 12,238 m², luxury cottages — 1,110 m², a restaurant — 600 m² and 1,100 m² of parking space. The grounds feature their own swimming pool with a recreation area, a restaurant and landscaped walking alleys. The gated guarded territory, clean air and silence create the atmosphere of a true resort for year-round living.',
+        '«Challet Resort» is a countryside complex in a resort format in the picturesque Yusufkhona area, just an hour’s drive from Tashkent. Modern cottages with panoramic glazing and natural-material finishes blend harmoniously into the natural landscape, creating an atmosphere of relaxation and seclusion all year round.',
+        'The project is located on an 8.5-hectare territory. The building footprint is 14,308 m², and the total floor area of the buildings is 27,656 m². The complex includes 64 cottages with thoughtful layouts and spacious plots.',
+        'Residents have a restaurant, a swimming pool with a recreation area, walking alleys and a gated guarded territory. Parking is designed for 100 spaces, providing comfort for both owners and guests of the complex.',
       ],
       advantage: 'A resort for year-round living',
       specs: {
@@ -307,12 +315,6 @@ const en: Record<string, ProjectTr> = {
         category: 'Countryside · Comfort',
         status: 'Under construction',
       },
-      breakdown: [
-        { label: 'Standard cottages', value: '12,238 m²' },
-        { label: 'Luxury cottages', value: '1,110 m²' },
-        { label: 'Restaurant', value: '600 m²' },
-        { label: 'Parking area', value: '1,100 m²' },
-      ],
       features: [
         { title: 'Natural stone and wood', description: 'Façades made of natural stone and wood — durability, prestige and unity with the surrounding nature.' },
         { title: 'Swimming pool and recreation area', description: 'Your own swimming pool with a recreation area and sun loungers — outdoor relaxation without leaving the territory.' },
@@ -338,17 +340,17 @@ const en: Record<string, ProjectTr> = {
   },
   chulpon: {
     category: 'Business center',
-    area: '625 m² · 5 floors',
+    area: '500 m² · 6 floors',
     location: 'Tashkent, Yunusabad district',
   },
   aviasozlar: {
     category: 'Business center',
-    area: '5 floors',
+    area: '500 m² · 4 floors',
     location: 'Tashkent',
   },
   'bogi-shamol': {
     category: 'Business center',
-    area: '625 m² · 5 floors',
+    area: '500 m² · 5 floors',
     location: 'Tashkent, Yunusabad district',
   },
   'yakkasaroy-bc': {
@@ -366,8 +368,10 @@ const uz: Record<string, ProjectTr> = {
     location: 'Yuqori Chirchiq tumani, Yangi O‘zbekiston ko‘chasi',
     details: {
       description: [
-        '«Alandalus» turar-joy majmuasi — zamonaviy meʼmorchilik va qulay yashash muhitiga ega 10 qavatli loyiha. Tinch, ekologik toza hududda joylashgan bo‘lib, yerto‘la avtoturargohi, bolalar maydonchasi va 24/7 videokuzatuv tizimi bilan jihozlangan. Atrofdagi infratuzilma rivojlangan — kundalik hayot uchun zarur barcha xizmatlar piyoda yetib boriladigan masofada.',
-        'Loyihaning umumiy qurilish maydoni — 0,75 gektar. Turar-joy kvartiralarining umumiy maydoni — 27 325 m², yerto‘la qavati — 5 720 m². Kvartiralarda shift balandligi 3 metr, ichki devorlar gazobetondan, sifatli kirish eshiklari va derazalar o‘rnatilgan. Monolit-beton konstruksiya bino mustahkamligini va uzoq muddat xizmat qilishini taʼminlaydi.',
+        '«Alandalus» turar-joy majmuasi — puxta meʼmorchilik komfort va xavfsizlik bilan uyg‘unlashgan zamonaviy 10 qavatli loyiha. Majmua tinch, ekologik toza hududda joylashgan bo‘lib, yerto‘la avtoturargohi, obod hudud, bolalar maydonchasi va kechayu kunduz videokuzatuv tizimi bilan jihozlangan. Barcha zarur infratuzilma yaqin atrofda.',
+        'Loyiha 0,75 ga uchastkada barpo etilgan. Qurilish maydoni — 2 825 m², binolarning umumiy maydoni — 30 140 m². Majmuada 3 blok, 5 kirish va qulay tartibdagi 298 kvartira mavjud.',
+        'Umumiy foydali maydon — 21 990 m², shundan 21 860 m² turar-joy, 130 m² esa tijorat binolari. Aholi uchun 140 mashina-o‘ringa mo‘ljallangan 5 870 m² maydonli yerto‘la avtoturargohi ko‘zda tutilgan.',
+        'Shift balandligi — 3 metr. Monolit-temirbeton qurilish texnologiyasi, gazobetondan devorlar, sifatli eshiklar va energiya tejamkor derazalar yuqori darajadagi qulaylik, ishonchlilik va uzoq umrlilikni taʼminlaydi.',
       ],
       advantage: 'Katta shaharda tinch uy',
       specs: {
@@ -401,8 +405,9 @@ const uz: Record<string, ProjectTr> = {
     location: 'Toshkent, Mirzo Ulug‘bek tumani',
     details: {
       description: [
-        '«Sharq Avenue» — komfort, xavfsizlik va sifatli hayot darajasini qadrlovchilar uchun yaratilgan zamonaviy makon. Majmua 3 gektar hududda joylashgan bo‘lib, 5 qavatli 12 ta turar-joy bloki va puxta loyihalashtirilgan 547 ta kvartirani o‘z ichiga oladi.',
-        'Yopiq qo‘riqlanadigan hudud, yerosti avtoturargohi, obod hovlilar va dam olish zonalari shaxsiy va shinam muhit yaratadi. Turar-joy kvartiralarining umumiy maydoni — 58 728 m², tijorat binolari — 3 237 m², avtoturargoh joylari — 1 900 m².',
+        '«Sharq Avenue» — komfort, xavfsizlik va yuqori hayot sifatini qadrlovchilar uchun yaratilgan zamonaviy turar-joy majmuasi. Loyiha 3 gektar hududda joylashgan bo‘lib, 12 ta turar-joy bloki, 21 ta kirish va puxta rejalashtirilgan 547 ta kvartirani birlashtiradi.',
+        'Qurilish maydoni — 11 360 m², binolarning umumiy maydoni — 58 242 m². Majmua yopiq qo‘riqlanadigan hudud, obod hovlilar, dam olish zonalari va 540 mashina-o‘ringa mo‘ljallangan 18 424 m² maydonli yerosti avtoturargohiga ega.',
+        'Majmuaning umumiy foydali maydoni — 49 573 m², shundan 46 983 m² turar-joy kvartiralari, 2 590 m² esa tijorat binolari. Har bir qavatda 5, 6 yoki 7 ta kvartira joylashgan bo‘lib, bu qo‘shnilarning qulay soni va shinam muhitni taʼminlaydi.',
       ],
       advantage: 'Xavfsizlik va komfort',
       specs: {
@@ -436,14 +441,15 @@ const uz: Record<string, ProjectTr> = {
     location: 'Toshkent, Mirzo Ulug‘bek tumani',
     details: {
       description: [
-        '«Anor Gardens» — osoyishtalik, xavfsizlik va komfortni qadrlovchilar uchun yaratilgan shinam va shaxsiy klub majmua. Majmua 1,4 gektar hududda joylashgan bo‘lib, jami 5 qavatli 5 ta turar-joy bloki va 137 ta kvartirani o‘z ichiga oladi — klub format uy-joy.',
-        'Yopiq qo‘riqlanadigan hudud, yerosti avtoturargohi, obod hovlilar va dam olish zonalari shaxsiy va shinam muhit yaratadi. Turar-joy kvartiralarining umumiy maydoni — 13 103,75 m², avtoturargoh joylari — 7 244 m².',
+        '«Anor Gardens» — osoyishtalik, xavfsizlik va komfortni qadrlovchilar uchun yaratilgan shinam klub turar-joy majmuasi. Loyiha 1,4 gektar hududda joylashgan bo‘lib, 3 ta turar-joy bloki, 7 ta kirish va puxta rejalashtirilgan 189 ta kvartirani o‘z ichiga oladi.',
+        'Qurilish maydoni — 2 718 m², binolarning umumiy maydoni — 13 198 m². Yopiq qo‘riqlanadigan hudud, obod hovlilar, dam olish zonalari va 190 mashina-o‘ringa mo‘ljallangan 7 244 m² maydonli yerosti avtoturargohi yashash uchun qulay muhit yaratadi.',
+        'Majmuaning umumiy foydali maydoni — 10 483 m². Har bir qavatda atigi 5 ta kvartira joylashgan bo‘lib, bu shaxsiylik, osoyishtalik va klub formatidagi yashash muhitini taʼminlaydi.',
       ],
       advantage: 'Xavfsizlik va komfort',
       specs: {
         address: 'Toshkent, Mirzo Ulug‘bek tumani',
         area: '1,4 gektar',
-        floors: '5 qavat · 5 blok',
+        floors: '5 qavat · 3 blok',
         category: 'Komfort',
         status: 'Sotuvda',
       },
@@ -471,13 +477,14 @@ const uz: Record<string, ProjectTr> = {
     location: 'Mirzo Ulug‘bek tumani, Nemat berk ko‘chasi 197, Toshkent',
     details: {
       description: [
-        '«Botanika» turar-joy majmuasi Mirzo Ulug‘bek tumanida, Botanika bog‘i ro‘parasida joylashgan. Yuqori qavatlarda shaxsiy terrasalar va ochiq balkonlarga ega pentxauslar joylashgan bo‘lib, ular Botanika bog‘ining go‘zal manzaralaridan bahramand bo‘lish imkonini beradi.',
-        'Majmua 3 ta blok va 4 ta kirishdan iborat bo‘lib, ekologik toza va yashil hududda barpo etilgan. 11 qavatli binoning yerosti qismida 3 100 m² maydonli zamonaviy avtoturargoh mavjud. Loyihaning umumiy qurilish maydoni — 0,3 gektar, turar-joy kvartiralarining umumiy maydoni — 15 968 m².',
+        'Premium «Botanika Luxury» turar-joy majmuasi Mirzo Ulug‘bek tumanida, Botanika bog‘i ro‘parasida joylashgan. Zamonaviy meʼmorchilik, keng planirovkalar va shaxsiy terrasalar hamda ochiq balkonlarga ega pentxauslar shaharning eng yashil hududlaridan birining panoramali manzaralaridan bahramand bo‘lish imkonini beradi.',
+        'Loyiha 2,5 gektar hududda barpo etilmoqda va 7 ta turar-joy bloki, 11 ta kirish hamda 227 ta kvartirani o‘z ichiga oladi. Qurilish maydoni — 8 199 m², binolarning umumiy maydoni — 42 211 m².',
+        'Majmuaning umumiy foydali maydoni — 32 489 m², shundan 30 390 m² turar-joy kvartiralari, 2 099 m² esa tijorat binolari. Aholi uchun 305 mashina-o‘ringa mo‘ljallangan 20 765 m² maydonli yerosti avtoturargohi ko‘zda tutilgan.',
       ],
       advantage: 'Botanika bog‘iga qaragan terrasalar',
       specs: {
         address: 'Toshkent, Mirzo Ulug‘bek tumani',
-        area: '0,3 gektar',
+        area: '2,5 gektar',
         floors: '10–11 qavat',
         category: 'Komfort',
         status: 'Qurilmoqda',
@@ -502,17 +509,18 @@ const uz: Record<string, ProjectTr> = {
   },
   'vatan-village': {
     category: 'Kottedj shaharchasi · Komfort+',
-    area: '3 dan 7 sotixgacha uchastkalar',
+    area: '4,5 gektar',
     location: 'Mirzo Ulug‘bek tumani, Yangi O‘zbekiston ko‘chasi',
     details: {
       description: [
-        '«Vatan Village» — 460 sotix hududda qurilgan zamonaviy kottedj shaharchasi. Majmua qariyb 90 ta kottedjni birlashtiradi; har bir uy 3 dan 7 sotixgacha bo‘lgan o‘z yer uchastkasiga ega. Umumiy qurilish maydoni — 24 375 m², avtoturargoh maydoni — 1 100 m².',
-        'Hududda bolalar maydonchalari, mini-stadion, dam olish zonalari va oilaviy hordiq uchun ko‘plab yashil maydonlar mavjud. Yopiq va qo‘riqlanadigan hudud aholiga xavfsiz va qulay yashash muhitini taʼminlaydi.',
+        '«Vatan Village» — tabiat qo‘ynida qulay shahar tashqarisi hayoti uchun yaratilgan zamonaviy kottedj shaharchasi. Loyiha 4,5 gektar hududda joylashgan bo‘lib, shaxsiy yer uchastkalariga ega 90 ta kottedjni o‘z ichiga oladi, shaxsiylik, xavfsizlik va rivojlangan ichki infratuzilmani uyg‘unlashtiradi.',
+        'Qurilish maydoni — 19 500 m², binolarning umumiy maydoni — 45 873 m². Hududda butun oila uchun bolalar maydonchalari, dam olish zonalari, sport maydonlari va obod yashil xiyobonlar mavjud.',
+        'Yopiq qo‘riqlanadigan hudud osoyishta yashash muhitini taʼminlaydi, avtoturargoh esa 110 mashina-o‘ringa mo‘ljallangan bo‘lib, aholi va mehmonlar uchun qo‘shimcha qulaylik yaratadi.',
       ],
       advantage: 'Katta oila uchun uy',
       specs: {
         address: 'Toshkent, Mirzo Ulug‘bek tumani',
-        area: '460 sotix',
+        area: '4,5 gektar',
         floors: '3 qavat',
         category: 'Komfort+',
         status: 'Qurilmoqda',
@@ -577,13 +585,14 @@ const uz: Record<string, ProjectTr> = {
     location: 'Mirzo Ulug‘bek tumani, Yangi O‘zbekiston ko‘chasi',
     details: {
       description: [
-        '«Turon» turar-joy majmuasi Toshkentda, Mirzo Ulug‘bek tumanida joylashgan. Loyiha 5, 6 va 7 qavatli binolardan iborat bo‘lib, hududning old va orqa qismlarida joylashgan 12 ta blokni o‘z ichiga oladi. Turon zamonaviy shahar hayotini xotirjamlik muhiti bilan uyg‘unlashtiradi: komfort darajasidagi past qavatli qurilish, qulay iqlim sharoiti va tinch muhit.',
-        'Loyihaning umumiy qurilish maydoni — 2,5 gektar. Turar-joy kvartiralarining umumiy maydoni 31 465 m², yerto‘la qavati maydoni — 10 550 m², tijorat binolarining umumiy maydoni esa — 11 526 m². Birinchi qavatda do‘konlar, kafelar va xizmatlar joylashgan — zarur bo‘lgan hamma narsa piyoda yetib boriladigan masofada.',
+        '«Turon» turar-joy majmuasi Toshkentning Mirzo Ulug‘bek tumanida joylashgan bo‘lib, zamonaviy shahar hayoti afzalliklarini komfort darajasidagi past qavatli qurilish shinamligi bilan uyg‘unlashtiradi. Loyiha 1,8 gektar hududda barpo etilgan va 12 ta turar-joy bloki, 21 ta kirish hamda puxta rejalashtirilgan 542 ta kvartirani o‘z ichiga oladi.',
+        'Qurilish maydoni — 8 049 m², binolarning umumiy maydoni — 49 300 m². Aholi uchun 500 mashina-o‘ringa mo‘ljallangan 10 550 m² maydonli yerosti avtoturargohi ko‘zda tutilgan.',
+        'Majmuaning umumiy foydali maydoni — 42 991 m², shundan 31 465 m² turar-joy kvartiralari, 11 526 m² esa tijorat binolari. Birinchi qavatlarda do‘konlar, kafelar va xizmatlar joylashgan, shu tufayli zarur bo‘lgan hamma narsa piyoda yetib boriladigan masofada.',
       ],
       advantage: 'Komfort darajasidagi tinch hudud',
       specs: {
         address: 'Toshkent, Mirzo Ulug‘bek tumani',
-        area: '2,5 gektar',
+        area: '1,8 gektar',
         floors: '5, 6 va 7 qavat',
         category: 'Komfort',
         status: 'Qurilmoqda',
@@ -617,8 +626,9 @@ const uz: Record<string, ProjectTr> = {
     location: 'Yusufxona, Toshkentdan 60 daqiqa',
     details: {
       description: [
-        '«Challet Resort» — Toshkentdan atigi bir soatlik masofada, go‘zal Yusufxona hududidagi kurort formatidagi shahar tashqarisi majmuasi. Panoramali oynavand va tabiiy tosh hamda yog‘ochdan pardozlangan zamonaviy uylar atrofdagi tabiiy landshaftga uyg‘un tarzda mujassam.',
-        'Majmuaning umumiy qurilish maydoni — 8,5 gektar: standart kottedjlar — 12 238 m², lyuks kottedjlar — 1 110 m², restoran — 600 m² va 1 100 m² avtoturargoh maydoni. Majmua hududida dam olish zonasiga ega o‘z basseyni, restoran va obod sayr yo‘laklari mavjud. Yopiq qo‘riqlanadigan hudud, toza havo va sukunat yil davomida yashash uchun haqiqiy kurort muhitini yaratadi.',
+        '«Challet Resort» — Toshkentdan atigi bir soatlik masofada, go‘zal Yusufxona hududidagi kurort formatidagi shahar tashqarisi majmuasi. Panoramali oynavand va tabiiy materiallar bilan pardozlangan zamonaviy kottedjlar tabiiy landshaftga uyg‘un tarzda mujassam bo‘lib, yil davomida dam olish va yakkalik muhitini yaratadi.',
+        'Loyiha 8,5 gektar hududda joylashgan. Qurilish maydoni — 14 308 m², binolarning umumiy maydoni — 27 656 m². Majmua puxta rejalashtirilgan va keng uchastkalarga ega 64 ta kottedjni o‘z ichiga oladi.',
+        'Aholi uchun restoran, dam olish zonasiga ega basseyn, sayr xiyobonlari va yopiq qo‘riqlanadigan hudud ko‘zda tutilgan. Avtoturargoh 100 mashina-o‘ringa mo‘ljallangan bo‘lib, ham egalar, ham mehmonlar uchun qulaylik taʼminlaydi.',
       ],
       advantage: 'Yil davomida yashash uchun kurort',
       specs: {
@@ -628,12 +638,6 @@ const uz: Record<string, ProjectTr> = {
         category: 'Shahar tashqarisi · Komfort',
         status: 'Qurilmoqda',
       },
-      breakdown: [
-        { label: 'Standart kottejlar', value: '12 238 m²' },
-        { label: 'Lyuks kottejlar', value: '1 110 m²' },
-        { label: 'Restoran', value: '600 m²' },
-        { label: 'Avtoturargoh maydoni', value: '1 100 m²' },
-      ],
       features: [
         { title: 'Tabiiy tosh va yog‘och', description: 'Tabiiy tosh va yog‘ochdan tayyorlangan fasadlar — uzoq umrlilik, nufuz va atrofdagi tabiat bilan uyg‘unlik.' },
         { title: 'Basseyn va dam olish zonasi', description: 'Dam olish zonasi va shezlonglarga ega o‘z basseyni — hududdan chiqmasdan ochiq havoda dam olish.' },
@@ -659,17 +663,17 @@ const uz: Record<string, ProjectTr> = {
   },
   chulpon: {
     category: 'Biznes-markaz',
-    area: '625 m² · 5 qavat',
+    area: '500 m² · 6 qavat',
     location: 'Toshkent sh., Yunusobod tumani',
   },
   aviasozlar: {
     category: 'Biznes-markaz',
-    area: '5 qavat',
+    area: '500 m² · 4 qavat',
     location: 'Toshkent sh.',
   },
   'bogi-shamol': {
     category: 'Biznes-markaz',
-    area: '625 m² · 5 qavat',
+    area: '500 m² · 5 qavat',
     location: 'Toshkent sh., Yunusobod tumani',
   },
   'yakkasaroy-bc': {

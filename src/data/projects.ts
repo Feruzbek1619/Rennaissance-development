@@ -397,7 +397,7 @@ export const projects: Project[] = [
     slug: 'vatan-village',
     title: 'VATAN VILLAGE',
     category: 'Коттеджный городок · Комфорт+',
-    area: 'участки от 3 до 7 соток',
+    area: '4,5 гектара',
     location: 'Мирзо-Улугбекский район, улица Янги Узбекистон',
     image: '/assets/project-vatan.webp',
     coords: [41.326667, 69.402944],
