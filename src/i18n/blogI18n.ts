@@ -73,7 +73,7 @@ const uz: Record<string, PostTr> = {
     date: '2026-yil 12-yanvar',
     readTime: '5 daqiqa',
     excerpt: 'Zamonaviy qurilish texnologiyalari shahar muhitini yaratishga yondashuvni qanday o‘zgartirmoqda.',
-    content: 'Qurilish sohasi transformatsiyani boshdan kechirmoqda. O‘z materiallaridan foydalanish, har bosqichdagi nazorat va uzoq muddatli fikrlash — kelajak quruvchilarini o‘tmish quruvchilaridan ajratib turadigan narsa shu.\n\nRenaissance Development to‘liq tsikl tamoyili asosida quradi: loyihadan kalitlargacha. Bu shunchaki marketing shiori emas — bu har bir bosqich jamoaning bevosita nazoratida bo‘lgan biznes arxitekturasi.\n\nMonolit karkas, g‘isht fasad, gazoblok va o‘z Universal Temir Beton zavodimizdan beton — har bir material qurilish maydoniga tushishidan oldin tekshiruvdan o‘tadi.',
+    content: 'Qurilish sohasi transformatsiyani boshdan kechirmoqda. O‘z materiallaridan foydalanish, har bosqichdagi nazorat va uzoq muddatli fikrlash — kelajak quruvchilarini o‘tmish quruvchilaridan ajratib turadigan narsa shu.\n\nRenaissance Development to‘liq jarayon tamoyili asosida quradi: loyihadan kalitlargacha. Bu shunchaki marketing shiori emas — bu har bir bosqich jamoaning bevosita nazoratida bo‘lgan biznes arxitekturasi.\n\nMonolit karkas, g‘isht fasad, gazoblok va o‘z Universal Temir Beton zavodimizdan beton — har bir material qurilish maydoniga tushishidan oldin tekshiruvdan o‘tadi.',
   },
   'tochnost-v-smetnom-planirovanii': {
     title: 'Smeta rejalashtirishdagi aniqlik',

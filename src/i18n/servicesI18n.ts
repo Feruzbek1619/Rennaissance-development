@@ -113,7 +113,7 @@ const uz: Record<string, ServiceTr> = {
   proektirovanie: {
     title: 'Loyihalash',
     category: 'Loyihalash',
-    description: 'Arxitektura va konstruktiv loyihalashning to‘liq tsikli.',
+    description: 'Arxitektura va konstruktiv loyihalashning to‘liq jarayoni.',
     longDescription: "Loyiha jamoamiz arxitektura konsepsiyalari, konstruktiv yechimlar va ishchi hujjatlarni ishlab chiqadi. Biz O‘zbekiston Respublikasi me'yorlari va xalqaro standartlarga muvofiq ishlaymiz.",
     stats: [
       { label: 'Loyihalar' },
