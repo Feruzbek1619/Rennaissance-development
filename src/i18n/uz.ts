@@ -5,14 +5,14 @@ export default {
     pages: {
       '/': {
         title: 'Renaissance Development — Toshkentda turar-joy majmualari va kottedjlar',
-        desc: '2019 yildan beri Toshkentda to‘liq tsiklli quruvchi: ALANDALUS, BOTANIKA LUXURY, VATAN VILLAGE, TURON, SHARQ AVENUE majmualarida komfort darajasidagi kvartira va kottedjlar. O‘z materiallarimizdan quramiz.',
+        desc: '2019 yildan beri Toshkentda barcha jarayonlarni o‘zi bajaradigan quruvchi: ALANDALUS, BOTANIKA LUXURY, VATAN VILLAGE, TURON, SHARQ AVENUE majmualarida komfort darajasidagi kvartira va kottedjlar. O‘z materiallarimizdan quramiz.',
       },
       '/projects': {
         title: 'Obyektlar katalogi — Toshkentda kvartira va kottedjlar',
         desc: 'Renaissance Development ning Toshkentdagi turar-joy majmualari va kottedj shaharchalari: rejalar, joylashuv, sotuvdagi va topshirilgan loyihalar.',
       },
       '/about': {
-        title: 'Kompaniya haqida — Toshkentda to‘liq tsiklli quruvchi',
+        title: 'Kompaniya haqida — Toshkentda barcha jarayonlarni o‘zi bajaradigan quruvchi',
         desc: 'Renaissance Development: 7+ yillik tajriba, 12+ loyiha, o‘z materiallar zavodi va texnikasi. Kompaniya, jamoa va ish tamoyillari haqida.',
       },
       '/contacts': {
@@ -29,10 +29,10 @@ export default {
       },
       '/services': {
         title: 'Xizmatlar — Toshkentda loyihalash va qurilish',
-        desc: 'To‘liq tsikl: loyihalash, materiallar ishlab chiqarish hamda turar-joy va tijorat ko‘chmas mulkini qurish.',
+        desc: 'To‘liq jarayon: loyihalash, materiallar ishlab chiqarish hamda turar-joy va tijorat ko‘chmas mulkini qurish.',
       },
       '/process': {
-        title: 'Biz qanday ishlaymiz — to‘liq tsikl qurilish bosqichlari',
+        title: 'Biz qanday ishlaymiz — to‘liq qurilish jarayoni bosqichlari',
         desc: 'Uch bosqich: loyihalash, UTB zavodida ishlab chiqarish va qurilish. Har bosqichda sifat nazorati — loyihadan kalitgacha.',
       },
       '/blog': {
@@ -103,7 +103,7 @@ export default {
   home: {
     hero: {
       aboutDesc:
-        "To‘liq tsiklli quruvchi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyiha. Biz yuqori ishonchlilik, sifat va arxitektura nafosatiga ega zamonaviy turar-joy va tijorat binolarini yaratamiz.",
+        "Barcha jarayonlarni o‘zi bajaradigan quruvchi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyiha. Biz yuqori ishonchlilik, sifat va arxitektura nafosatiga ega zamonaviy turar-joy va tijorat binolarini yaratamiz.",
       vatanEyebrow: 'Kottej shaharchasi · Komfort+',
       vatanDesc:
         "Mirzo Ulug‘bek tumanining tinch va yashil mahallasida keng kvartiralar — o‘z hovlingiz va barcha zarur narsalar piyoda yetib boradigan masofada.",
@@ -116,7 +116,7 @@ export default {
     },
     stats: {
       s1: "Biz shunchaki bino qurmaymiz — biz kelajak avlodlar uchun ishonchli makon yaratamiz. ",
-      s2: 'Renaissance Development — to‘liq tsikl quruvchisi. 2019-yildan beri — Toshkentda 12 loyiha.',
+      s2: 'Renaissance Development — barcha jarayonlarni o‘zi bajaradigan quruvchi. 2019-yildan beri — Toshkentda 12 loyiha.',
       l1: 'Umumiy loyihalar soni',
       l2: 'Qurilayotgan loyihalar',
       l3: 'xususiy beton zavodi',
@@ -129,7 +129,7 @@ export default {
       cards: [
         { title: 'Xususiy ishlab chiqarish', desc: "2021-yildan beri xususiy qurilish materiallari zavodi. Sifat va muddatlar to‘liq nazoratda." },
         { title: 'O‘z maxsus texnikamiz', desc: "Har bir ob'ektda o‘z texnikamiz. Qurilish to‘xtovsiz va pudratchilarga bog‘liq bo‘lmagan holda boradi." },
-        { title: 'To‘liq ish tsikli', desc: "Loyihadan kalit topshirishgacha — barcha bosqichni bitta kompaniya bajaradi. Yagona javobgarlik va sifat nazorati." },
+        { title: 'To‘liq ish jarayoni', desc: "Loyihadan kalit topshirishgacha — barcha bosqichni bitta kompaniya bajaradi. Yagona javobgarlik va sifat nazorati." },
         { title: 'Tajribali rahbariyat', desc: 'Kompaniyani davlat va xususiy loyihalarni amalga oshirishda 15 yillik tajribaga ega muhandis-quruvchi boshqaradi.' },
       ],
     },
@@ -253,7 +253,7 @@ export default {
   pages: {
     catalog: {
       heroTitle: 'Topshirilgan va davom etayotgan loyihalarimiz',
-      heroDesc: "Renaissance Development har bir ob'ekti to‘liq ishlab chiqarish tsiklining natijasidir — o‘z materiallaridan yakuniy pardozgacha. Yigirma yildan keyin ham faxrlanadigan narsani quramiz.",
+      heroDesc: "Renaissance Development har bir ob'ekti to‘liq ishlab chiqarish jarayonining natijasidir — o‘z materiallaridan yakuniy pardozgacha. Yigirma yildan keyin ham faxrlanadigan narsani quramiz.",
       filterAll: 'Hammasi',
       completedTag: 'Topshirilgan loyihalar',
       completedTitle: "Topshirilgan ob'ektlar",
@@ -274,7 +274,7 @@ export default {
       companyP4: "Renaissance Building Company — tajriba, o‘z qurilish bo‘linmasi va ishlab chiqarish quvvatlarini birlashtirgan, zamonaviy shahar muhitini yaratish va yuqori sifatli loyihalarni amalga oshirishga yo‘naltirilgan kompaniya.",
       teamTag: 'Bizning jamoa',
       teamTitle: 'Toshkentni quruvchi mutaxassislar',
-      teamDesc: "Renaissance Development — to‘liq tsiklli quruvchi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyihalar portfeliga ega.",
+      teamDesc: "Renaissance Development — barcha jarayonlarni o‘zi bajaradigan quruvchi: 7 yildan ortiq tajriba va 12+ topshirilgan hamda qurilayotgan loyihalar portfeliga ega.",
       ceoRole: 'Asoschi va CEO',
       ceoName: 'Jabborov Rufat Uzakovich',
       ceoBioP1: "Samarqand Davlat Arxitektura va Qurilish Universitetini tamomlagan bo‘lib, qurilish sohasida 12 yildan ortiq amaliy tajribaga ega. Faoliyatini 2013-yildan boshlab, davlat va xususiy sektordagi yirik qurilish loyihalarida ishtirok etib kelmoqda. U Toshkent shahar Qurilish nazorat inspeksiyasida bosh inspektor lavozimida faoliyat yuritib, qurilish-montaj ishlari sifatini nazorat qilish va yirik loyihalarni amalga oshirish jarayonida katta tajriba orttirgan.",
@@ -323,7 +323,7 @@ export default {
       tagsLabel: "Teglar:",
       extraTags: ["Qurilish", "O‘zbekiston"],
       aboutTag: "Kompaniya haqida",
-      aboutDesc: "To‘liq tsiklli quruvchi. O‘z UTB zavodi, loyihalash, qurilish va obyektlarni kalit topshirish asosida topshirish.",
+      aboutDesc: "Barcha jarayonlarni o‘zi bajaradigan quruvchi. O‘z UTB zavodi, loyihalash, qurilish va obyektlarni kalit topshirish asosida topshirish.",
       sectionsTitle: "Bo‘limlar",
       navLabels: ["Loyihalar", "Xizmatlar", "Kompaniya haqida", "B2B / Ishlab chiqarish", "Bog‘lanish"],
       consultTitle: "Maslahat kerakmi?",
@@ -333,7 +333,7 @@ export default {
     },
     services: {
       heroTitle: "Strukturaviy aniqlik mahorati.",
-      heroDesc: "Loyihalashdan kalitlarni topshirishgacha — o‘z ishlab chiqarishimiz bilan to‘liq qurilish tsikli.",
+      heroDesc: "Loyihalashdan kalitlarni topshirishgacha — o‘z ishlab chiqarishimiz bilan to‘liq qurilish jarayoni.",
       heroCta: "Maslahat olish",
       tag: "Xizmatlar",
       whatTitle: "Biz nima qilamiz",
@@ -358,7 +358,7 @@ export default {
     },
     process: {
       heroTitle: "Strategik amalga oshirish.",
-      heroDesc: "Uch bosqich — yagona sifat standarti. Loyihalashdan obyektni topshirishgacha to‘liq tsikl.",
+      heroDesc: "Uch bosqich — yagona sifat standarti. Loyihalashdan obyektni topshirishgacha to‘liq jarayon.",
       heroCta: "Loyihani muhokama qilish",
       stages: [
         { num: "01", title: "Loyihalash", subtitle: "Konsepsiya → ishchi hujjatlar", body: "Biz uchastka va talablarni batafsil tahlil qilishdan boshlaymiz. Loyiha jamoasi arxitektura konsepsiyasi, konstruktiv yechimlar va to‘liq ishchi hujjatlarni ishlab chiqadi. Barcha loyihalar O‘zbekiston Respublikasi me'yorlariga mos keladi.", details: ["Arxitektura konsepsiyasi", "Konstruktiv yechimlar", "Muhandislik tizimlari (VK, OV, ES)", "Ishchi hujjatlar", "BIM modellashtirish", "Mualliflik nazorati"] },

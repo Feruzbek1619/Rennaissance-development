@@ -41,7 +41,7 @@ type ProjectTr = {
 const en: Record<string, ProjectTr> = {
   alandalus: {
     category: 'Residential complex · Comfort+',
-    area: 'from 26.44 to 30.81 m²',
+    area: '0.75 hectares',
     location: 'Yukorichirchik district, Yangi Uzbekiston street',
     details: {
       description: [
@@ -150,8 +150,8 @@ const en: Record<string, ProjectTr> = {
   },
   'botanika-luxury': {
     category: 'Residential complex · Comfort',
-    area: '0.3 hectares',
-    location: 'Mirzo-Ulugbek district, Nemat dead end 197, Tashkent',
+    area: '2.5 hectares',
+    location: 'Tashkent, Mirzo-Ulugbek district',
     details: {
       description: [
         'The premium «Botanika Luxury» residential complex is located in the Mirzo-Ulugbek district, opposite the Botanical Garden. Modern architecture, spacious layouts and penthouses with private terraces and open balconies let you enjoy panoramic views of one of the greenest locations in the city.',
@@ -258,7 +258,7 @@ const en: Record<string, ProjectTr> = {
   },
   turon: {
     category: 'Residential complex · Comfort',
-    area: '2.5 hectares',
+    area: '1.8 hectares',
     location: 'Mirzo-Ulugbek district, Yangi Uzbekiston street',
     details: {
       description: [
@@ -335,7 +335,7 @@ const en: Record<string, ProjectTr> = {
   },
   'western-housing': {
     category: 'Residential complex · Comfort',
-    area: 'from 26.44 to 30.81 m²',
+    area: '0.61 hectares',
     location: 'Tashkent, Sergeli district, Kuyluk-5, Khalkabad mahalla',
   },
   chulpon: {
@@ -355,7 +355,7 @@ const en: Record<string, ProjectTr> = {
   },
   'yakkasaroy-bc': {
     category: 'Business center',
-    area: '5 floors',
+    area: '500 m² · 5 floors',
     location: 'Tashkent',
   },
 }
@@ -364,7 +364,7 @@ const en: Record<string, ProjectTr> = {
 const uz: Record<string, ProjectTr> = {
   alandalus: {
     category: 'Turar-joy majmuasi · Komfort+',
-    area: '26,44 dan 30,81 m² gacha',
+    area: '0,75 gektar',
     location: 'Yuqori Chirchiq tumani, Yangi O‘zbekiston ko‘chasi',
     details: {
       description: [
@@ -473,8 +473,8 @@ const uz: Record<string, ProjectTr> = {
   },
   'botanika-luxury': {
     category: 'Turar-joy majmuasi · Komfort',
-    area: '0,3 gektar',
-    location: 'Mirzo Ulug‘bek tumani, Nemat berk ko‘chasi 197, Toshkent',
+    area: '2,5 gektar',
+    location: 'Toshkent shahar, Mirzo Ulug‘bek tumani',
     details: {
       description: [
         'Premium «Botanika Luxury» turar-joy majmuasi Mirzo Ulug‘bek tumanida, Botanika bog‘i ro‘parasida joylashgan. Zamonaviy meʼmorchilik, keng planirovkalar va shaxsiy terrasalar hamda ochiq balkonlarga ega pentxauslar shaharning eng yashil hududlaridan birining panoramali manzaralaridan bahramand bo‘lish imkonini beradi.',
@@ -581,7 +581,7 @@ const uz: Record<string, ProjectTr> = {
   },
   turon: {
     category: 'Turar-joy majmuasi · Komfort',
-    area: '2,5 gektar',
+    area: '1,8 gektar',
     location: 'Mirzo Ulug‘bek tumani, Yangi O‘zbekiston ko‘chasi',
     details: {
       description: [
@@ -658,7 +658,7 @@ const uz: Record<string, ProjectTr> = {
   },
   'western-housing': {
     category: 'Turar-joy majmuasi · Komfort',
-    area: '26,44 dan 30,81 m² gacha',
+    area: '0,61 gektar',
     location: 'Toshkent sh., Sergeli tumani, Quyluq-5, Xalqobod mahallasi',
   },
   chulpon: {
@@ -678,7 +678,7 @@ const uz: Record<string, ProjectTr> = {
   },
   'yakkasaroy-bc': {
     category: 'Biznes-markaz',
-    area: '5 qavat',
+    area: '500 m² · 5 qavat',
     location: 'Toshkent sh.',
   },
 }

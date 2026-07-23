@@ -53,7 +53,8 @@ export default function Projects() {
     slug: c.slug,
     title: c.title,
     category: c.eyebrow,
-    area: t('pages.catalog.completedArea'),
+    // Площадь карточки = территория проекта из спеков (локализована); фолбэк — старый ключ.
+    area: c.specs.find((s) => /гектар|gektar|hectare/i.test(s.value))?.value ?? t('pages.catalog.completedArea'),
     location: c.location,
     image: c.hero,
     status: 'sold',
