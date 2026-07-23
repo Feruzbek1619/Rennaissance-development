@@ -9,6 +9,9 @@
   RewriteCond %{HTTP_HOST} !^renaissancedevelopment\.uz$ [NC]
   RewriteRule ^(.*)$ https://renaissancedevelopment.uz/$1 [R=301,L]
 
+  # Старый URL каталога → русская версия (каталог теперь трёхъязычный: -ru/-uz/-en)
+  RewriteRule ^renaissance-catalog\.pdf$ /renaissance-catalog-ru.pdf [R=301,L]
+
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

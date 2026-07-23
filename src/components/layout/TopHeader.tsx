@@ -36,9 +36,10 @@ export default function TopHeader() {
           {/* Links + language */}
           <div className="flex items-center gap-[40px] max-lg:gap-0">
             <div className="flex gap-4 font-vela text-xs font-medium leading-[1.3] text-white/60 max-lg:hidden">
+              {/* Каталог — своя PDF-версия для каждого языка (ru/uz/en) */}
               <a
-                href="/renaissance-catalog.pdf"
-                download="Renaissance-Development-katalog.pdf"
+                href={`/renaissance-catalog-${lang}.pdf`}
+                download={`Renaissance-Development-catalog-${lang}.pdf`}
                 className="transition-colors hover:text-white"
               >
                 {t('header.downloadCatalog')}
