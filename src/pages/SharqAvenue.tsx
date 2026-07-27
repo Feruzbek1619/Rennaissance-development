@@ -155,7 +155,7 @@ export default function SharqAvenue() {
         <Container>
           <div className="relative">
             <div className="h-[460px] 2xl:h-[560px] w-full overflow-hidden rounded-[5px]">
-              <iframe title={`${project.title} ${t('proj.onMap')}`} src="https://yandex.ru/map-widget/v1/?ll=69.30%2C41.34&z=14&pt=69.30%2C41.34%2Cpm2rdm" className="size-full border-0" loading="lazy" />
+              <iframe title={`${project.title} ${t('proj.onMap')}`} src="https://www.google.com/maps?q=41.331197,69.431032&z=16&output=embed" className="size-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
             </div>
             <div data-reveal className="relative z-10 mx-auto -mt-[96px] w-[92%] max-w-[1312px] rounded-[5px] border border-primary/30 bg-primary px-[40px] max-sm:!px-[24px] py-[44px] max-sm:!py-[30px] 2xl:px-[80px] 2xl:py-[56px] shadow-[0_30px_60px_rgba(10,15,40,0.25)]">
               <div className="grid grid-cols-1 gap-x-[60px] gap-y-[24px] md:grid-cols-2">
