@@ -3,8 +3,8 @@ import { SectionTag } from '@/components/SectionTag'
 import { WhyUsCards } from '@/components/WhyUsCards'
 import { useTranslation } from '@/i18n'
 
-// Instagram reels shown under the why-us cards (5 across, reel-sized 9:16).
-const reels = ['DZpAXTcKF-O', 'DZCCGtOimnV', 'DYWhU01igXe', 'DYHg1XgDbAx', 'DX1fZI9o6My']
+// Instagram reels shown under the why-us cards (3 across, reel-sized 9:16).
+const reels = ['DalHZyvqWhn', 'DapwiWQKbnM', 'DbN-GbPqHVT']
 
 // «Почему выбирают нас» (Figma 314:2944)
 export default function WhyUsSection() {
@@ -25,12 +25,12 @@ export default function WhyUsSection() {
           {/* Service cards */}
           <WhyUsCards />
 
-          {/* Instagram reels — 5 across, reel-sized 9:16. The embed renders the
+          {/* Instagram reels — 3 across, reel-sized 9:16. The embed renders the
               vertical video at full width, so a 9:16 tile + a header-height pull-up
               shows ONLY the video; the IG header (top) and the likes / "View more"
               / comments footer (bottom) fall outside the tile and are clipped. */}
           <div className="flex flex-col gap-10 w-full">
-            <div className="grid grid-cols-5 max-lg:!grid-cols-2 max-sm:!grid-cols-1 gap-4 w-full">
+            <div className="grid grid-cols-3 max-lg:!grid-cols-2 max-sm:!grid-cols-1 gap-4 w-full max-w-[1000px] mx-auto">
               {reels.map((id, i) => (
                 <div
                   key={id}
