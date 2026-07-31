@@ -538,7 +538,7 @@ export const projects: Project[] = [
     category: 'Бизнес-центр',
     area: '500 м² · 5 этажей',
     location: 'г. Ташкент',
-    image: '/assets/bc-yakkasaroy.webp',
+    image: '/assets/yak-bc-a.webp',
     status: 'sold',
     kind: 'business',
     cardOnly: true,
