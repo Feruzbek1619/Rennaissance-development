@@ -87,29 +87,6 @@ const en: Record<string, CompletedTr> = {
       { label: 'Grocery store', time: '5 min' },
     ],
   },
-  botanika: {
-    eyebrow: 'Residential complex · Eco-environment',
-    location: 'Tashkent, Mirzo-Ulugbek district',
-    description: [
-      '«Botanika» is a modern residential complex in the Mirzo-Ulugbek district of Tashkent, located in an ecologically clean green area. The project combines modern architecture, a landscaped territory and a comfortable living environment. The complex is fully put into operation.',
-      'The project is built on a 0.33-hectare territory and includes 3 residential blocks, 4 entrances and 209 apartments. The building footprint is 2,445 m², and the total floor area of the buildings is 26,900 m².',
-      'The total usable area of the complex is 15,968 m². Parking of 2,431 m² for 50 parking spaces is provided for residents. Depending on the section, each floor has 4 or 6 apartments, ensuring comfort and privacy.',
-    ],
-    specs: [
-      { label: 'Floors', value: '10 floors + terrace' },
-      { label: 'Apartments', value: '209' },
-      { label: 'Territory', value: '0.33 hectares' },
-      { label: 'Apartments area', value: '15,968 m²' },
-      { label: 'Parking', value: '2,431 m²' },
-      { label: 'Environment', value: 'Eco · green area' },
-      { label: 'District', value: 'Mirzo-Ulugbek' },
-      { label: 'Status', value: 'Completed' },
-    ],
-    nearby: [
-      { label: 'School', time: '3 min' },
-      { label: 'Kindergarten', time: '3 min' },
-    ],
-  },
   poytaxt: {
     eyebrow: 'Residential complex · Minimalism',
     location: 'Tashkent, Yashnabad district, Makhtumkuli street',
@@ -205,29 +182,6 @@ const uz: Record<string, CompletedTr> = {
     nearby: [
       { label: 'Davlat xizmatlari agentligi', time: '5 daqiqa' },
       { label: 'Oziq-ovqat do‘koni', time: '5 daqiqa' },
-    ],
-  },
-  botanika: {
-    eyebrow: 'Turar-joy majmuasi · Eko-muhit',
-    location: 'Toshkent, Mirzo Ulug‘bek tumani',
-    description: [
-      "«Botanika» — Toshkentning Mirzo Ulug‘bek tumanida, ekologik toza yashil hududda joylashgan zamonaviy turar-joy majmuasi. Loyiha zamonaviy meʼmorchilik, obod hudud va yashash uchun qulay muhitni uyg‘unlashtiradi. Majmua to‘liq foydalanishga topshirilgan.",
-      "Loyiha 0,33 gektar hududda barpo etilgan va 3 ta turar-joy bloki, 4 ta kirish hamda 209 ta kvartirani o‘z ichiga oladi. Qurilish maydoni — 2 445 m², binolarning umumiy maydoni — 26 900 m².",
-      "Majmuaning umumiy foydali maydoni — 15 968 m². Aholi uchun 50 mashina-o‘ringa mo‘ljallangan 2 431 m² avtoturargoh ko‘zda tutilgan. Seksiyaga qarab, har bir qavatda 4 yoki 6 ta kvartira joylashgan bo‘lib, bu qulaylik va shaxsiylikni taʼminlaydi.",
-    ],
-    specs: [
-      { label: 'Qavatlar', value: '10 qavat + terrasa' },
-      { label: 'Kvartiralar', value: '209' },
-      { label: 'Loyiha maydoni', value: '0,33 gektar' },
-      { label: 'Xonadonlar maydoni', value: '15 968 m²' },
-      { label: 'Avtoturargoh maydoni', value: '2 431 m²' },
-      { label: 'Muhit', value: 'Eko · yashil hudud' },
-      { label: 'Tuman', value: 'Mirzo Ulug‘bek' },
-      { label: 'Holati', value: 'Topshirilgan' },
-    ],
-    nearby: [
-      { label: 'Maktab', time: '3 daqiqa' },
-      { label: 'Bolalar bog‘chasi', time: '3 daqiqa' },
     ],
   },
   poytaxt: {

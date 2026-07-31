@@ -12,6 +12,9 @@
   # Старый URL каталога → русская версия (каталог теперь трёхъязычный: -ru/-uz/-en)
   RewriteRule ^renaissance-catalog\.pdf$ /renaissance-catalog-ru.pdf [R=301,L]
 
+  # Botanika переехала из «Реализованных» в активные (идут продажи)
+  RewriteRule ^completed/botanika/?$ /projects/botanika [R=301,L]
+
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

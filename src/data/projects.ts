@@ -333,6 +333,31 @@ const anorDetails: ProjectDetails = {
   ],
 }
 
+// «Botanika» — сданный дом, теперь в активной продаже (перенесён из completed).
+const botanikaResidenceDetails: ProjectDetails = {
+  description: [
+    '«Botanika» — современный жилой комплекс в Мирзо-Улугбекском районе Ташкента, расположенный в экологически чистой зелёной зоне. Проект сочетает современную архитектуру, благоустроенную территорию и комфортную среду для жизни. Дом сдан и готов к заселению.',
+    'Проект реализован на территории 0,33 гектара и включает 3 жилых блока, 4 подъезда и 209 квартир. Площадь застройки составляет 2 445 м², общая площадь зданий — 26 900 м².',
+    'Общая полезная площадь комплекса — 15 968 м². Для жителей предусмотрена парковка площадью 2 431 м², рассчитанная на 50 машино-мест. В зависимости от секции на каждом этаже расположено 4 или 6 квартир, что обеспечивает комфорт и приватность проживания.',
+  ],
+  specs: {
+    address: 'Ташкент, Мирзо-Улугбекский район',
+    area: '0,33 гектара',
+    floors: '10 этажей + терраса',
+    category: 'Комфорт',
+    year: '2024',
+    status: 'Идут продажи',
+  },
+  breakdown: [
+    { label: 'Квартир', value: '209' },
+    { label: 'Площадь квартир', value: '15 968 м²' },
+    { label: 'Паркинг', value: '2 431 м²' },
+  ],
+  advantage: 'Готовые квартиры в зелёной зоне',
+  features: botanikaDetails.features,
+  nearby: botanikaDetails.nearby,
+}
+
 export const projects: Project[] = [
   {
     slug: 'alandalus',
@@ -392,6 +417,25 @@ export const projects: Project[] = [
     ],
     status: 'active',
     details: botanikaDetails,
+  },
+  {
+    slug: 'botanika',
+    title: 'BOTANIKA',
+    category: 'Жилой комплекс · Комфорт',
+    area: '0,33 гектара',
+    location: 'г. Ташкент, Мирзо-Улугбекский район',
+    image: '/assets/botc-1.webp',
+    coords: [41.338694, 69.317611],
+    gallery: [
+      '/assets/botc-2.webp',
+      '/assets/botc-3.webp',
+      '/assets/botc-4.webp',
+      '/assets/botc-5.webp',
+      '/assets/botc-6.webp',
+      '/assets/botc-7.webp',
+    ],
+    status: 'active',
+    details: botanikaResidenceDetails,
   },
   {
     slug: 'vatan-village',

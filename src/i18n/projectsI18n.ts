@@ -39,6 +39,39 @@ type ProjectTr = {
 
 // ── English ──────────────────────────────────────────────────────────────────
 const en: Record<string, ProjectTr> = {
+  botanika: {
+    category: 'Residential complex · Comfort',
+    area: '0.33 hectares',
+    location: 'Tashkent, Mirzo-Ulugbek district',
+    details: {
+      description: [
+        '«Botanika» is a modern residential complex in the Mirzo-Ulugbek district of Tashkent, located in an ecologically clean green area. The project combines modern architecture, a landscaped territory and a comfortable living environment. The complex is completed and ready to move in.',
+        'The project is built on a 0.33-hectare territory and includes 3 residential blocks, 4 entrances and 209 apartments. The building footprint is 2,445 m², and the total floor area of the buildings is 26,900 m².',
+        'The total usable area of the complex is 15,968 m². Parking of 2,431 m² for 50 parking spaces is provided for residents. Depending on the section, each floor has 4 or 6 apartments, ensuring comfort and privacy.',
+      ],
+      advantage: 'Move-in-ready apartments in a green area',
+      specs: {
+        address: 'Tashkent, Mirzo-Ulugbek district',
+        area: '0.33 hectares',
+        floors: '10 floors + terrace',
+        category: 'Comfort',
+        status: 'On sale',
+      },
+      breakdown: [
+        { label: 'Apartments', value: '209' },
+        { label: 'Apartments area', value: '15,968 m²' },
+        { label: 'Parking', value: '2,431 m²' },
+      ],
+      features: [
+        { title: 'Aerated-concrete building', description: 'A modern building material with good thermal-insulation properties. It helps maintain a comfortable temperature inside the home all year round.' },
+        { title: 'Apartments with terraces on floors 10–11', description: 'Exclusive apartments with a spacious private terrace and panoramic city views. The ideal place for relaxing, family evenings and morning coffee under the open sky.' },
+        { title: 'High 3.10 m ceilings', description: 'All floors have 3.10-metre ceilings — spacious, bright rooms with plenty of air.' },
+        { title: 'Above-ground and underground parking', description: 'Convenient parking solutions are provided for residents. This ensures comfort and safety for cars in any season.' },
+        { title: 'Children’s playground', description: 'A modern and safe playground for the games and development of children of different ages. The space is designed for active and engaging recreation.' },
+        { title: 'Landscaping and alleys', description: 'The complex grounds are decorated with trees and greenery. Walking alleys create a pleasant atmosphere for daily strolls.' },
+      ],
+    },
+  },
   alandalus: {
     category: 'Residential complex · Comfort+',
     area: '0.75 hectares',
@@ -362,6 +395,39 @@ const en: Record<string, ProjectTr> = {
 
 // ── Uzbek (Latin) ────────────────────────────────────────────────────────────
 const uz: Record<string, ProjectTr> = {
+  botanika: {
+    category: 'Turar-joy majmuasi · Komfort',
+    area: '0,33 gektar',
+    location: 'Toshkent, Mirzo Ulug‘bek tumani',
+    details: {
+      description: [
+        '«Botanika» — Toshkentning Mirzo Ulug‘bek tumanida, ekologik toza yashil hududda joylashgan zamonaviy turar-joy majmuasi. Loyiha zamonaviy meʼmorchilik, obod hudud va yashash uchun qulay muhitni uyg‘unlashtiradi. Majmua topshirilgan va yashashga tayyor.',
+        'Loyiha 0,33 gektar hududda barpo etilgan va 3 ta turar-joy bloki, 4 ta kirish hamda 209 ta kvartirani o‘z ichiga oladi. Qurilish maydoni — 2 445 m², binolarning umumiy maydoni — 26 900 m².',
+        'Majmuaning umumiy foydali maydoni — 15 968 m². Aholi uchun 50 mashina-o‘ringa mo‘ljallangan 2 431 m² avtoturargoh ko‘zda tutilgan. Seksiyaga qarab, har bir qavatda 4 yoki 6 ta kvartira joylashgan bo‘lib, bu qulaylik va shaxsiylikni taʼminlaydi.',
+      ],
+      advantage: 'Yashil hududda tayyor kvartiralar',
+      specs: {
+        address: 'Toshkent, Mirzo Ulug‘bek tumani',
+        area: '0,33 gektar',
+        floors: '10 qavat + terrasa',
+        category: 'Komfort',
+        status: 'Sotuvda',
+      },
+      breakdown: [
+        { label: 'Kvartiralar', value: '209' },
+        { label: 'Xonadonlar maydoni', value: '15 968 m²' },
+        { label: 'Avtoturargoh maydoni', value: '2 431 m²' },
+      ],
+      features: [
+        { title: 'Gazoblokli uy', description: 'Yaxshi issiqlik izolyatsiyasi xususiyatlariga ega zamonaviy qurilish materiali. Uyda yil davomida qulay haroratni saqlashga yordam beradi.' },
+        { title: '10–11-qavatlarda terrasali kvartiralar', description: 'Keng shaxsiy terrasa va shaharning panoramali manzarasiga ega eksklyuziv kvartiralar. Dam olish, oilaviy kechalar va ochiq osmon ostida ertalabki qahva uchun ideal joy.' },
+        { title: 'Baland shiftlar 3,10 m', description: 'Barcha qavatlar 3,10 metrli shiftlarga ega — havoga boy keng va yorug‘ xonalar.' },
+        { title: 'Yer usti va yerosti avtoturargohlari', description: 'Aholi uchun qulay avtoturargoh yechimlari ko‘zda tutilgan. Bu yilning istalgan faslida avtomobillar uchun qulaylik va xavfsizlikni taʼminlaydi.' },
+        { title: 'Bolalar maydonchasi', description: 'Turli yoshdagi bolalarning o‘yinlari va rivojlanishi uchun zamonaviy va xavfsiz bolalar maydonchasi. Makon faol va qiziqarli dam olish uchun puxta o‘ylangan.' },
+        { title: 'Ko‘kalamzorlashtirish va xiyobonlar', description: 'Majmua hududi daraxtlar va yashil o‘simliklar bilan bezatilgan. Sayr xiyobonlari kundalik sayrlar uchun yoqimli muhit yaratadi.' },
+      ],
+    },
+  },
   alandalus: {
     category: 'Turar-joy majmuasi · Komfort+',
     area: '0,75 gektar',
